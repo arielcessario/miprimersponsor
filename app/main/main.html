@@ -1,0 +1,9 @@
+<div id="main" ng-controller="MainController as mainCtrl">
+    <div id="main-proyectos">
+        <div ng-repeat="proyecto in mainCtrl.proyectos">
+            {{proyecto.nombre}}
+            {{proyecto.descripcion}}
+            <button ng-click="mainCtrl.goToDetalle(proyecto.proyecto_id)">Detalles</button>
+        </div>
+    </div>
+</div>

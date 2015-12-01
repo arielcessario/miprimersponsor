@@ -1,0 +1,30 @@
+<div ng-controller="AdministracionController as administracionCtrl">
+    <div id="administracion-left">
+        <div id="administracion-datos" ng-click="administracionCtrl.screen = 'administracion/datos.html'">Datos
+            Personales
+        </div>
+        <div id="administracion-proyectos" ng-click="administracionCtrl.screen = 'administracion/proyectos.html'">Mis
+            Proyectos
+        </div>
+        <div id="administracion-aportes" ng-click="administracionCtrl.screen = 'administracion/aportes.html'">Mis
+            Aportes
+        </div>
+        <div id="administracion-patrocinadores" ng-click="administracionCtrl.screen = 'administracion/patrocinadores.html'">Mis
+            Patrocinadores
+        </div>
+        <div id="administracion-cambios" ng-click="administracionCtrl.screen = 'administracion/cambios.html'" ng-if="administracionCtrl.user.data.rol == 0">
+            Cambios Pendientes
+        </div>
+        <div id="administracion-donaciones-pendientes" ng-click="administracionCtrl.screen = 'administracion/donaciones_pendientes.html'" ng-if="administracionCtrl.user.data.rol == 0">
+            Donaciones Pendientes
+        </div>
+        <div id="administracion-categorias" ng-click="administracionCtrl.screen = 'administracion/categorias.html'" ng-if="administracionCtrl.user.data.rol == 0">
+            Categorias
+        </div>
+    </div>
+    <div id="administracion-main" ng-include="administracionCtrl.screen">
+
+    </div>
+
+    <button ng-click="administracionCtrl.logout();">SALIR</button>
+</div>

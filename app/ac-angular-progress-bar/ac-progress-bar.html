@@ -1,0 +1,19 @@
+<div id="ac-progress-bar" style="position:relative; width: 520px; height: 40px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; background-color: #888888">
+    <div ng-style="acProgressCtrl.toShow <1 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(227, 0, 27, 1)'}" class="ac-progress-first" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <2 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(227, 0, 27, 1)'}" class="ac-progress-first" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <3 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(227, 0, 27, 1)'}" class="ac-progress-first" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <4 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(227, 0, 27, 1)'}" class="ac-progress-first" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <5 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(250, 152, 25, 1)'}" class="ac-progress-second" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <6 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(250, 152, 25, 1)'}" class="ac-progress-second" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <7 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(250, 152, 25, 1)'}" class="ac-progress-second" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <8 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(250, 152, 25, 1)'}" class="ac-progress-second" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <9 &&  {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(254, 237, 1, 1)'}" class="ac-progress-third" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <10 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(254, 237, 1, 1)'}" class="ac-progress-third" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <11 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(254, 237, 1, 1)'}" class="ac-progress-third" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <12 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(254, 237, 1, 1)'}" class="ac-progress-third" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <13 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(0, 161, 72, 1)'}" class="ac-progress-fourth" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <14 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(0, 161, 72, 1)'}" class="ac-progress-fourth" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <15 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(0, 161, 72, 1)'}" class="ac-progress-fourth" style="width: 10px; height: 30px;"></div>
+    <div ng-style="acProgressCtrl.toShow <16 && {'background-color':'rgba(0,0,0,0)'} || {'background-color':'rgba(0, 161, 72, 1)'}" class="ac-progress-fourth" style="width: 10px; height: 30px;"></div>
+    <div ng-if="acProgressCtrl.showHint" style="position:absolute;top:40%;left: 50%;">{{acProgressCtrl.hint}}</div>
+</div>

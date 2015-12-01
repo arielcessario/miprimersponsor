@@ -1,0 +1,136 @@
+<div class="administracion-inputs">
+
+    <div class="administracion-input">
+
+        <span>Nombre</span>
+
+        <input type="text" id="nombre" ng-model="administracionCtrl.proyecto.nombre">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Descripción</span>
+
+        <textarea id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Costo Inicial</span>
+
+        <input type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Fecha de Finalización</span>
+
+        <input type="date" id="fecha_fin" ng-model="administracionCtrl.proyecto.fecha_fin">
+
+    </div>
+
+
+    <div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">
+
+        <span>Estado</span>
+
+        <select id="rol" ng-model="administracionCtrl.proyecto.status">
+
+            <option value="0">Cancelado</option>
+
+            <option value="1">Activo</option>
+
+        </select>
+
+    </div>
+
+    <select ng-click=""
+            ng-model="administracionCtrl.proyecto_categoria"
+            ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.categorias"
+            class="">
+    </select>
+
+
+</div>
+
+<div class="administracion-button-bar">
+    <button ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
+    <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
+    </button>
+    <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
+</div>
+
+<table id="administracion-proyectos-tabla" class="table table-striped" style="width: 100%"
+       ng-if="administracionCtrl.user.data.rol == 0">
+
+    <tbody>
+    <tr>
+        <th>Proyecto</th>
+        <th>Avance</th>
+    </tr>
+    <tr ng-repeat="row in administracionCtrl.proyectos"
+        ng-click="administracionCtrl.modificarProyecto(row);"
+        ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
+        class="administracion-row">
+        <td class="">{{row.nombre}}</td>
+        <td class=""><ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}" hint="true"></ac-progress-bar></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="administracion-foto">
+
+    <div class="foto">
+        <span>Foto 1</span>
+
+        <div id="slider-01-foto" class="input-foto">
+            <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50" width="50">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
+        </div>
+    </div>
+
+    <div class="foto">
+        <span>Foto 2</span>
+
+        <div id="slider-02-foto" class="input-foto">
+            <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50" width="50">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
+        </div>
+    </div>
+
+    <div class="foto">
+        <span>Foto 3</span>
+
+        <div id="slider-03-foto" class="input-foto">
+            <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50" width="50">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
+        </div>
+    </div>
+
+    <div class="foto">
+        <span>Foto 4</span>
+
+        <div id="slider-04-foto" class="input-foto">
+            <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50" width="50">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
+        </div>
+    </div>
+
+    <div ng-if="administracionCtrl.showJustificaciones">
+        <span>Justificación de cambios</span>
+        <textarea name="justificacion" id="" cols="30" rows="10"
+                  ng-model="administracionCtrl.proyecto.justificacion"></textarea>
+        <button ng-click="administracionCtrl.createCambio();">ENVIAR</button>
+    </div>
+
+
+
+</div>

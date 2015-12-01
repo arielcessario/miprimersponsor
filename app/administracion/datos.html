@@ -1,0 +1,108 @@
+<div class="administracion-inputs">
+
+    <div class="administracion-input">
+
+        <span>Nombre</span>
+
+        <input type="text" id="nombre" ng-model="administracionCtrl.usuario.nombre">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Apellido</span>
+
+        <input type="text" id="apellido" ng-model="administracionCtrl.usuario.apellido">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Cuit</span>
+
+        <input type="text" id="cuit" ng-model="administracionCtrl.usuario.nro_doc">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Telefono</span>
+
+        <input type="text" id="telefono" ng-model="administracionCtrl.usuario.telefono">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Contraseña</span>
+
+        <input type="password" id="password" ng-model="administracionCtrl.usuario.password">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Dirección</span>
+
+        <input type="text" id="direccion" ng-model="administracionCtrl.usuario.direccion">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>Mail</span>
+
+        <input type="email" id="mail" ng-model="administracionCtrl.usuario.mail">
+
+    </div>
+
+    <div class="administracion-input">
+
+        <span>CBU</span>
+
+        <input type="cbu" id="cbu" ng-model="administracionCtrl.usuario.cbu">
+
+    </div>
+
+    <div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">
+
+        <span>Rol</span>
+
+        <select id="rol" ng-model="administracionCtrl.usuario.rol_id">
+
+            <option value="1">Usuario</option>
+
+            <option value="0">Administrador</option>
+
+        </select>
+
+    </div>
+
+
+</div>
+
+<div class="administracion-button-bar">
+    <button ng-click="administracionCtrl.updateUsuario();">GUARDAR</button>
+    <button ng-click="administracionCtrl.removeUsuario();" ng-if="administracionCtrl.user.data.rol == 0">BORRAR</button>
+    <button ng-click="administracionCtrl.resetUsuario();">CANCELAR</button>
+</div>
+
+<table id="administracion-usuarios-tabla" class="table table-striped" style="width: 100%"
+       ng-if="administracionCtrl.user.data.rol == 0">
+
+    <tbody>
+    <tr>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>CUIT</th>
+    </tr>
+    <tr ng-repeat="row in administracionCtrl.usuarios"
+        ng-click="administracionCtrl.modificarUsuario(row);"
+        ng-class="{'tr-selected': row.cliente_id == administracionCtrl.usuario.cliente_id}"
+        class="administracion-row">
+        <td class="">{{row.nombre}}</td>
+        <td class="">{{row.apellido}}</td>
+        <td class="">{{row.nro_doc}}</td>
+    </tr>
+    </tbody>
+</table>

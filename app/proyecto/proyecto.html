@@ -1,0 +1,12 @@
+<div ng-controller="ProyectoController as proyectoCtrl">
+    {{proyectoCtrl.proyecto.nombre}}
+    <input type="number" step="0.1" ng-model="proyectoCtrl.donacion_cantidad">
+    <button ng-click="proyectoCtrl.donar()">Donar</button>
+
+    <div id="proyecto-comentarios">
+        <textarea name="" id="proyecto-comentario-nuevo" ng-model="proyectoCtrl.comentario.detalles"  cols="30" rows="10"></textarea>
+        <button id="proyecto-comentario-comentar" ng-click="proyectoCtrl.comentar()">Comentar</button>
+
+        <div ng-repeat="comentario in proyectoCtrl.comentarios">{{comentario.detalles}}</div>
+    </div>
+</div>
