@@ -108,6 +108,9 @@
     AppController.$inject = [];
     function AppController() {
 
+        var vm = this;
+        vm.menu_mobile_open = false;
+
 
     }
 })();

@@ -13,8 +13,8 @@
      */
 
 
-    AcProgressBar.$inject = ['$injector', '$compile'];
-    function AcProgressBar($injector, $compile) {
+    AcProgressBar.$inject = ['$injector', '$compile', '$rootScope', '$timeout'];
+    function AcProgressBar($injector, $compile, $rootScope, $timeout) {
         return {
             restrict: 'AE',
             scope: {
@@ -25,13 +25,12 @@
             controller: function ($scope, $element, $attrs) {
                 var vm = this;
 
-                vm.showHint = $scope.hint == 'true';
-                vm.hint = $scope.recaudado + '/' + $scope.objetivo;
-
-
-                vm.porcentaje = (parseFloat($scope.recaudado) * 100) / parseFloat($scope.objetivo);
-
-                vm.toShow = parseInt((vm.porcentaje * 16) / 100);
+                $timeout(function(){
+                    vm.showHint = $scope.hint == 'true';
+                    vm.hint = $scope.recaudado + '/' + $scope.objetivo;
+                    vm.porcentaje = (parseFloat($scope.recaudado) * 100) / parseFloat($scope.objetivo);
+                    vm.toShow = parseInt((vm.porcentaje * 16) / 100);
+                }, 1);
 
 
             },

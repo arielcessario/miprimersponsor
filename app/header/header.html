@@ -1,5 +1,47 @@
-    <div id="header-mobile"></div>
-    <div id="header-desktop">
-        <div id="header-desktop-top"></div>
-        <div id="header-desktop-bottom"></div>
+<div id="header-mobile" class="menu-type-mobile">
+    <div class="nav-button"
+         ng-click="appCtrl.menu_mobile_open = !appCtrl.menu_mobile_open;"
+         ng-class="{'nav-button-transformed':appCtrl.menu_mobile_open}">
+        <div ng-class="{'nav-button-top-transformed':appCtrl.menu_mobile_open}"></div>
+        <div ng-class="{'nav-button-mid-transformed':appCtrl.menu_mobile_open}"></div>
+        <div ng-class="{'nav-button-bot-transformed':appCtrl.menu_mobile_open}"></div>
     </div>
+    <div class="header-separator"></div>
+    <div class="bienvenidos">Bienvenidos</div>
+    <div class="logo">
+        <img src="img/logo.png" alt="logo" height="45px" width="45px">
+    </div>
+</div>
+<div id="header-desktop" class="menu-type-desktop">
+    <div class="desktop-link-nav"><a href="#/main">view1</a></div>
+    <div class="desktop-link-nav"><a href="#/administracion">view2</a></div>
+    <div class="desktop-link-nav"><a href="#/nuevo_usuario">nuevo usuario</a></div>
+    <div class="desktop-link-nav"><a href="#/ingreso">ingreso</a></div>
+
+
+    <div class="desktop-link-social">Registrate</div>
+    <div class="desktop-link-social">Ingresá</div>
+    <div class="desktop-link-social">Ingresá</div>
+    Contacto:
+    <img src="" alt="">
+    <img src="" alt="">
+
+
+</div>
+
+<div class="menu-mobile-panel" ng-class="{'menu-mobile-panel-show':appCtrl.menu_mobile_open}">
+
+    <div ng-click="appCtrl.menu_mobile_open=false;"
+         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
+         class="menu-desktop-btn"><a href="#/main">view1</a></div>
+    <div ng-click="appCtrl.menu_mobile_open=false;"
+         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
+         class="menu-desktop-btn"><a href="#/administracion">view2</a></div>
+    <div ng-click="appCtrl.menu_mobile_open=false;"
+         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
+         class="menu-desktop-btn"><a href="#/nuevo_usuario">nuevo usuario</a></div>
+    <div ng-click="appCtrl.menu_mobile_open=false;"
+         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
+         class="menu-desktop-btn"><a href="#/ingreso">ingreso</a></div>
+
+</div>

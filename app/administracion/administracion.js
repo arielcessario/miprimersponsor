@@ -4,16 +4,17 @@
     var currentScriptPath = scripts[scripts.length - 1].src;
     angular.module('miprimersponsor.administracion', ['ngRoute'])
 
-        .controller('AdministracionController', AdministracionController);
+        .controller('AdministracionController', AdministracionController)
+        .service('AdministracionService', AdministracionService);
 
 
     AdministracionController.$inject = ['UserService', 'AcUtils', 'ProyectService', '$location', 'UploadService',
-        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService'];
+        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService'];
     function AdministracionController(UserService, AcUtils, ProyectService, $location, UploadService,
-                                      UploadVars, $scope, DonationService, DonationVars, CategoryService) {
+                                      UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService) {
 
         var vm = this;
-        vm.screen = 'administracion/datos.html';
+        vm.screen = AdministracionService.screen;
         vm.usuarios = [];
         vm.user = UserService.getFromToken();
         vm.proyecto = {proyecto_id: -1};
@@ -609,5 +610,9 @@
         }
 
 
+    }
+
+    function AdministracionService(){
+        this.screen = 'administracion/datos.html';
     }
 })();

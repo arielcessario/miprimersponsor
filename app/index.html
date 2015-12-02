@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mi Primer Sponsor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/screen.css">
     <style>
         [ng-cloak] {
@@ -133,14 +137,28 @@
 </head>
 <body ng-cloak ng-controller="AppController as appCtrl">
 <div ng-include="'header/header.html'"></div>
-<ul class="menu">
-    <li><a href="#/main">view1</a></li>
-    <li><a href="#/administracion">view2</a></li>
-    <li><a href="#/nuevo_usuario">nuevo usuario</a></li>
-    <li><a href="#/ingreso">ingreso</a></li>
-</ul>
+
 
 <div ng-view></div>
+
+<div id="footer">
+    <div class="colores">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h1>FOOTER</h1>
+
+    <h2>Quienes Somos</h2>
+
+    <h2>FAQ</h2>
+
+    <h2>Preguntas Frecuentes</h2>
+
+    <h2>Contacto</h2>
+</div>
 
 
 </body>
