@@ -53,6 +53,12 @@ a {
   }
 }
 
+table{
+  max-width: 100%;
+  width: 100%;
+  table-layout: fixed;
+}
+
 // HEADER
 
 #header-mobile {
@@ -82,19 +88,54 @@ a {
   }
 }
 
-#header-desktop{
-
+#header-desktop {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: row;
-  .desktop-link-nav{
-    margin: 5px;
-    a{
-      color: rgb(0, 161, 82);
+  align-items: center;
+  justify-content: center;
+  color: rgb(250, 152, 25);
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+
+  #header-desktop-left,
+  #header-desktop-right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @media (min-width: 1300px) {
+      max-width: 650px;
     }
   }
-  .desktop-link-social{
-    margin: 5px;
-    color: rgb(250, 152, 25);
+
+  #header-desktop-left {
+    justify-content: flex-start;
+  }
+  #header-desktop-right {
+    justify-content: flex-end;
+    .desktop-link-login {
+      margin: 5px 15px 5px 15px;
+      a, span {
+        margin: 5px;
+      }
+    }
+  }
+
+  .desktop-link-nav {
+    margin: 5px 15px 5px 15px;
+    a {
+      color: rgb(0, 161, 82);
+
+    }
+  }
+
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 solid;
+    color: rgb(0, 161, 82);
   }
 }
 
@@ -262,7 +303,7 @@ a {
 #main {
   margin-top: 50px;
   @media (min-width: 800px) {
-    margin-top: 15px;
+    margin-top: 30px;
   }
 }
 
@@ -289,7 +330,7 @@ a {
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 800px)  {
+  @media (min-width: 800px) {
     flex-direction: row;
   }
 
@@ -299,7 +340,7 @@ a {
 
   }
 
-  #main-top-text-panel{
+  #main-top-text-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,11 +525,46 @@ a {
       display: flex;
       flex-direction: column;
       align-items: center;
-      span{
+      span {
         width: 100%;
         text-align: left;
       }
     }
 
   }
+}
+
+// ADMINISTRACION
+#administracion {
+  margin-top: 50px;
+
+  .administracion-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px;
+  }
+
+  td {
+    max-width: 50% !important;
+  }
+
+  #ac-progress-bar {
+    max-width: 100%;
+  }
+}
+
+#administracion-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    border: 1px solid;
+    padding: 5px;
+    margin: 1px;
+    width: 150px;
+    text-align: center;
+  }
+
 }

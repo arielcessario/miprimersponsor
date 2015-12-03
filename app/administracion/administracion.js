@@ -47,8 +47,6 @@
         vm.createCambio = createCambio;
         vm.updateFotoProyecto = updateFotoProyecto;
 
-        vm.logout = logout;
-
         vm.selectCambio = selectCambio;
         vm.confirmarCambio = confirmarCambio;
         vm.negarCambio = negarCambio;
@@ -493,12 +491,6 @@
             })
         }
 
-        function logout() {
-            UserService.logout(function (data) {
-                //console.log(data);
-                $location.path('/ingreso');
-            });
-        }
 
         /**
          * Selecciona un cambio de la tabla

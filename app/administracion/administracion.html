@@ -1,5 +1,5 @@
-<div ng-controller="AdministracionController as administracionCtrl">
-    <div id="administracion-left">
+<div id="administracion" ng-controller="AdministracionController as administracionCtrl">
+    <div id="administracion-nav">
         <div id="administracion-datos" ng-click="administracionCtrl.screen = 'administracion/datos.html'">Datos
             Personales
         </div>
@@ -16,7 +16,7 @@
             Cambios Pendientes
         </div>
         <div id="administracion-donaciones-pendientes" ng-click="administracionCtrl.screen = 'administracion/donaciones_pendientes.html'" ng-if="administracionCtrl.user.data.rol == 0">
-            Donaciones Pendientes
+            Donaciones
         </div>
         <div id="administracion-categorias" ng-click="administracionCtrl.screen = 'administracion/categorias.html'" ng-if="administracionCtrl.user.data.rol == 0">
             Categorias
@@ -26,5 +26,5 @@
 
     </div>
 
-    <button ng-click="administracionCtrl.logout();">SALIR</button>
+    <button ng-click="appCtrl.logout();">SALIR</button>
 </div>

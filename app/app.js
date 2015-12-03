@@ -23,6 +23,8 @@
                     loginUrl: '/ingreso'
                 });
 
+                $routeProvider.otherwise('/main');
+
 
                 $routeProvider.when('/main', {
                     templateUrl: 'main/main.html',
@@ -97,21 +99,73 @@
                     //if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
                     if (!store.get(window.appName)) {
                         e.preventDefault();
-                        $location.path('/view1');
+                        $location.path('/ingreso');
                     }
                 }
             });
 
         })
-        .controller('AppController', AppController);
+        .controller('AppController', AppController)
+        .service('AppService', AppService);
 
-    AppController.$inject = [];
-    function AppController() {
+    AppController.$inject = ['UserService', '$location', 'AppService'];
+    function AppController(UserService, $location, AppService) {
 
         var vm = this;
         vm.menu_mobile_open = false;
+        vm.user = UserService.getFromToken();
+        vm.isLogged = false;
+        vm.welcomeTo = '';
+
+        // FUNCTIONS
+        vm.logout = logout;
+
+        // INIT
+        if (vm.user != false) {
+            vm.isLogged = true;
+            vm.welcomeTo = vm.user.data.nombre;
+        }
 
 
+        /**
+         * @description Recibo el login o logout
+         */
+        AppService.listen(function () {
+            vm.user = UserService.getFromToken();
+            if (vm.user != false) {
+                vm.isLogged = true;
+                vm.welcomeTo = vm.user.data.nombre;
+            } else {
+                $location.path('/ingreso');
+                vm.isLogged = false;
+                vm.welcomeTo = '';
+                vm.user = false;
+            }
+        });
+
+
+        function logout() {
+            UserService.logout(function (data) {
+                //console.log(data);
+                $location.path('/ingreso');
+                vm.isLogged = false;
+                vm.welcomeTo = '';
+                vm.user = false;
+            });
+        }
+
+
+    }
+
+    AppService.$inject = ['$rootScope'];
+    function AppService($rootScope) {
+        this.listen = function (callback) {
+            $rootScope.$on('miprimersponsorradio', callback);
+        };
+
+        this.broadcast = function () {
+            $rootScope.$broadcast('miprimersponsorradio');
+        }
     }
 })();
 

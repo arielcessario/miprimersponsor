@@ -13,8 +13,8 @@
         .controller('IngresoController', IngresoController);
 
 
-    IngresoController.$inject = ['UserService', 'AcUtils', '$location', 'UserVars'];
-    function IngresoController(UserService, AcUtils, $location, UserVars) {
+    IngresoController.$inject = ['UserService', 'AcUtils', '$location', 'UserVars', 'AppService'];
+    function IngresoController(UserService, AcUtils, $location, UserVars, AppService) {
 
         var vm = this;
         vm.login = login;
@@ -62,6 +62,7 @@
                 }else{
                     // usuario existe y se logea
                     $location.path('/administracion');
+                    AppService.broadcast();
                 }
             });
         }
@@ -75,6 +76,7 @@
                 }else{
                     // usuario existe y se logea
                     $location.path('/administracion');
+                    AppService.broadcast();
                 }
             });
         }
@@ -100,8 +102,11 @@
 
             UserService.login(vm.mail, vm.password, 1, function (data) {
                 $location.path('/administracion');
+                AppService.broadcast();
             });
         }
+
+
 
     }
 })();

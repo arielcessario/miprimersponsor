@@ -14,8 +14,8 @@
         .controller('NuevoUsuarioController', NuevoUsuarioController);
 
 
-    NuevoUsuarioController.$inject = ['UserService', 'AcUtils', 'UserVars', '$location'];
-    function NuevoUsuarioController(UserService, AcUtils, UserVars, $location) {
+    NuevoUsuarioController.$inject = ['UserService', 'AcUtils', 'UserVars', '$location', 'AppService'];
+    function NuevoUsuarioController(UserService, AcUtils, UserVars, $location, AppService) {
 
         var vm = this;
 
@@ -95,11 +95,13 @@
                             if(vm.usuario.social_login !==0){
                                 UserService.loginSocial(vm.usuario, UserVars.token_social, function(data){
                                     $location.path('/administracion');
+                                    AppService.broadcast();
                                 });
 
                             }else{
                                 UserService.login(vm.usuario.mail, vm.usuario.password, 1, function (data) {
                                     $location.path('/administracion');
+                                    AppService.broadcast();
                                 });
                             }
 
