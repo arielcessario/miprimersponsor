@@ -678,30 +678,45 @@ table {
 #administracion {
   margin-top: 50px;
 }
-/* line 541, ../sass/screen.scss */
+@media (min-width: 400px) {
+  /* line 542, ../sass/screen.scss */
+  #administracion .administracion-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  /* line 548, ../sass/screen.scss */
+  #administracion .administracion-inputs .administracion-input {
+    max-width: 400px;
+    width: 400px;
+  }
+}
+/* line 555, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px;
 }
-/* line 548, ../sass/screen.scss */
+/* line 562, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 552, ../sass/screen.scss */
+/* line 566, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
 
-/* line 557, ../sass/screen.scss */
+/* line 571, ../sass/screen.scss */
 #administracion-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-/* line 562, ../sass/screen.scss */
+/* line 576, ../sass/screen.scss */
 #administracion-nav div {
   border: 1px solid;
   padding: 5px;

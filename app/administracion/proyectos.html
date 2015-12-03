@@ -10,14 +10,6 @@
 
     <div class="administracion-input">
 
-        <span>Descripción</span>
-
-        <textarea id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
-
-    </div>
-
-    <div class="administracion-input">
-
         <span>Costo Inicial</span>
 
         <input type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
@@ -60,12 +52,21 @@
         </select>
 
     </div>
+    <div class="administracion-input">
+        <span>Categoría</span>
+        <select ng-click=""
+                ng-model="administracionCtrl.proyecto_categoria"
+                ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.categorias"
+                class="">
+        </select>
+    </div>
+    <div class="administracion-input">
 
-    <select ng-click=""
-            ng-model="administracionCtrl.proyecto_categoria"
-            ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.categorias"
-            class="">
-    </select>
+        <span>Descripción</span>
+
+        <textarea id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
+
+    </div>
 
 
 </div>
@@ -133,7 +134,10 @@
         ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
         class="administracion-row">
         <td class="">{{row.nombre}}</td>
-        <td class=""><ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}" hint="false"></ac-progress-bar></td>
+        <td class="">
+            <ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}"
+                             hint="false"></ac-progress-bar>
+        </td>
     </tr>
     </tbody>
 </table>
