@@ -30,6 +30,7 @@
         vm.padres = [];
         vm.categoria = {};
         vm.proyecto_categoria = -1;
+        vm.donaciones = [];
 
 
         // Funciones
@@ -53,6 +54,8 @@
         vm.modificarCategoria = modificarCategoria;
         vm.saveCategoria = saveCategoria;
         vm.removeCategoria = removeCategoria;
+
+        vm.aprobarDonacion = aprobarDonacion;
 
 
         // Init
@@ -142,6 +145,14 @@
 
                     vm.padres = data;
                 })
+            }
+
+            if (newValue == 'administracion/donaciones.html') {
+                DonationService.get(-1, function (data) {
+
+                    vm.donaciones = data;
+                });
+
             }
 
 
@@ -270,7 +281,6 @@
             });
         }
 
-
         function modificarProyecto(proyecto) {
 
             console.log(proyecto);
@@ -297,7 +307,6 @@
                 rol_id: '0'
             };
         }
-
 
         function removeProyecto() {
 
@@ -353,7 +362,6 @@
 
             })
         }
-
 
         function createProyecto() {
             var conErrores = false;
@@ -471,7 +479,6 @@
 
         }
 
-
         function updateFotoProyecto(filelist, id, sub_folder) {
             UploadService.addImages(filelist, id, sub_folder, function (data) {
                 for (var i = 0; i < UploadVars.uploadsList.length; i++) {
@@ -493,7 +500,6 @@
                 //console.log(data);
             })
         }
-
 
         /**
          * Selecciona un cambio de la tabla
@@ -554,7 +560,6 @@
             }
         }
 
-
         function modificarCategoria(categoria) {
             vm.categoria = angular.copy(categoria);
             var elem = angular.element(document.querySelector('#nombre-categoria'));
@@ -604,6 +609,23 @@
 
         }
 
+        function aprobarDonacion(donacion) {
+            if (!vm.user) {
+                $location.path('/ingreso');
+                return;
+            }
+
+            donacion.status = 1;
+            DonationService.update(donacion, function (data) {
+
+                // Enviar los mails
+                DonationService.get(-1, function (data) {
+                    console.log(data);
+                    vm.donaciones = data;
+                })
+
+            })
+        }
 
     }
 
