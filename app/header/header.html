@@ -14,6 +14,7 @@
 <div id="header-desktop" class="menu-type-desktop">
     <div id="header-desktop-left">
         <div class="desktop-link-nav"><a href="#/main">Home</a></div>
+        <div class="desktop-link-nav"><a href="">Categorias</a></div>
         <div class="desktop-link-nav"><a href="#/conozcanos">Conozcanos</a></div>
         <div class="desktop-link-nav"><a href="#/faq">FAQ</a></div>
         <div ng-if="appCtrl.isLogged" class="desktop-link-nav"><a href="#/administracion">Administracion</a></div>
@@ -48,5 +49,17 @@
     <div ng-click="appCtrl.menu_mobile_open=false;"
          ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
          class="menu-desktop-btn"><a href="#/administracion">Administracion</a></div>
+    <div ng-click="appCtrl.menu_mobile_open=false;"
+         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
+         class="menu-desktop-btn"><a href="">Categorias</a></div>
+    <div id="header-categorias-mobile">
 
+        <div ng-repeat="categoria in appCtrl.categorias">{{categoria.nombre}}</div>
+    </div>
+
+</div>
+
+
+<div ng-if="" id="header-categorias-panel">
+    <div ng-repeat="categoria in appCtrl.categorias">{{categoria.nombre}}</div>
 </div>

@@ -346,6 +346,7 @@ table{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  max-height: 20px;
 
   input {
     background-color: rgba(0, 0, 0, 0);
@@ -553,7 +554,7 @@ table{
 
       }
 
-      button{
+      .button-ver{
         width: 54px;
         height: 34px;
         background-color: rgb(0, 161, 72);
@@ -565,13 +566,11 @@ table{
         align-items: center;
         outline: none;
 
-        p {
-          font-size: 18px;
-        }
-        span {
-          font-size: 14px;
-        }
      }
+
+      .button-donacion-rapida{
+
+      }
 
       span{
         font-family: 'Droid Sans', serif;

@@ -9,9 +9,9 @@
 
 
     AdministracionController.$inject = ['UserService', 'AcUtils', 'ProyectService', '$location', 'UploadService',
-        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService'];
+        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService', 'AcUtilsGlobals'];
     function AdministracionController(UserService, AcUtils, ProyectService, $location, UploadService,
-                                      UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService) {
+                                      UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService, AcUtilsGlobals) {
 
         var vm = this;
         vm.screen = AdministracionService.screen;
@@ -30,7 +30,6 @@
         vm.padres = [];
         vm.categoria = {};
         vm.proyecto_categoria = -1;
-
 
 
         // Funciones
@@ -139,7 +138,7 @@
                     vm.categoria.categoria_id = -1;
                 });
 
-                CategoryService.getByParams('parent_id', '-1', 'true', function(data){
+                CategoryService.getByParams('parent_id', '-1', 'true', function (data) {
 
                     vm.padres = data;
                 })
@@ -158,6 +157,8 @@
         }
 
         function resetUsuario() {
+
+
             vm.usuario = {
                 cliente_id: -1,
                 nombre: '',
@@ -169,6 +170,8 @@
                 mail: '',
                 rol_id: '0'
             };
+
+            AcUtilsGlobals.broadcast();
         }
 
         function saveUsuario() {
@@ -332,7 +335,7 @@
             for (var i = 0; i < vm.proyecto.fotos.length; i++) {
                 jsonFotos = jsonFotos + '{"main":"0","nombre":"' + vm.proyecto.fotos[i].nombre + '","folder":"","proyecto_id":"' + vm.proyecto.proyecto_id + '"},';
             }
-            jsonFotos = jsonFotos.substring(0, jsonFotos.length -1);
+            jsonFotos = jsonFotos.substring(0, jsonFotos.length - 1);
             jsonFotos = jsonFotos + "]";
 
             vm.proyecto.fotos = jsonFotos;
@@ -427,7 +430,7 @@
                 }
             ];
 
-            vm.proyecto.categorias = [{categoria_id : vm.proyecto_categoria}];
+            vm.proyecto.categorias = [{categoria_id: vm.proyecto_categoria}];
 
 
             vm.proyecto.fecha_fin = new Date((vm.proyecto.fecha_fin.getMonth() + 1) + '/' + (vm.proyecto.fecha_fin.getDate()) + '/' + vm.proyecto.fecha_fin.getFullYear());
@@ -560,24 +563,24 @@
 
         function saveCategoria() {
             //console.log(vm.categoria);
-            if(vm.categoria.parent_id == undefined){
+            if (vm.categoria.parent_id == undefined) {
                 vm.categoria.parent_id = -1;
             }
 
             if (vm.categoria.categoria_id != -1) {
                 CategoryService.update(vm.categoria, function (data) {
 
-                    if(data == 'true'){
+                    if (data == 'true') {
                         CategoryService.get(function (data) {
 
                             vm.categorias = data;
                         });
 
-                        CategoryService.getByParams('parent_id', '-1', 'true', function(data){
+                        CategoryService.getByParams('parent_id', '-1', 'true', function (data) {
 
                             vm.padres = data;
                         })
-                    }else{
+                    } else {
 
                     }
                 });
@@ -588,7 +591,7 @@
                         vm.categorias = data;
                     });
 
-                    CategoryService.getByParams('parent_id', '-1', 'true', function(data){
+                    CategoryService.getByParams('parent_id', '-1', 'true', function (data) {
 
                         vm.padres = data;
                     })
@@ -604,7 +607,7 @@
 
     }
 
-    function AdministracionService(){
+    function AdministracionService() {
         this.screen = 'administracion/datos.html';
     }
 })();

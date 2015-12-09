@@ -1,10 +1,13 @@
-<div class="administracion-inputs">
+<div class="administracion-inputs" form-id="proyectos">
 
     <div class="administracion-input">
 
         <span>Nombre</span>
 
-        <input type="text" id="nombre" ng-model="administracionCtrl.proyecto.nombre">
+        <input ac-validator
+               min-length="3;El nombre ingresado debe tener al menos 3 letras"
+               max-length="100;El nombre ingresado debe tener menos de 100 caracteres"
+               type="text" id="nombre" ng-model="administracionCtrl.proyecto.nombre">
 
     </div>
 
@@ -12,7 +15,9 @@
 
         <span>Costo Inicial</span>
 
-        <input type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
+        <input ac-validator
+               is-required="El costo inicial es requerido"
+               type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
 
     </div>
 
@@ -20,7 +25,10 @@
 
         <span>Fecha de Finalización</span>
 
-        <input type="date" id="fecha_fin" ng-model="administracionCtrl.proyecto.fecha_fin">
+        <input ac-validator
+               is-required="Debe ingresar una fecha de finalización"
+               min-date="today;La fecha debe ser mayor a hoy"
+               type="date" id="fecha_fin" ng-model="administracionCtrl.proyecto.fecha_fin">
 
     </div>
 
@@ -64,10 +72,18 @@
 
         <span>Descripción</span>
 
-        <textarea id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
+        <textarea ac-validator
+                  min-length="3;El nombre ingresado debe tener al menos 3 letras"
+                  max-length="2000;El nombre ingresado debe tener menos de 2000 caracteres"
+                  id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
 
     </div>
-
+    <div class="administracion-button-bar">
+        <button ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
+        <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
+        </button>
+        <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
+    </div>
 
 </div>
 
@@ -114,12 +130,7 @@
     </div>
 </div>
 
-<div class="administracion-button-bar">
-    <button ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
-    <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
-    </button>
-    <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
-</div>
+
 
 <table id="administracion-proyectos-tabla" class="table table-striped"
        ng-if="administracionCtrl.user.data.rol == 0">

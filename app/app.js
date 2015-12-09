@@ -108,14 +108,15 @@
         .controller('AppController', AppController)
         .service('AppService', AppService);
 
-    AppController.$inject = ['UserService', '$location', 'AppService'];
-    function AppController(UserService, $location, AppService) {
+    AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService'];
+    function AppController(UserService, $location, AppService, CategoryService) {
 
         var vm = this;
         vm.menu_mobile_open = false;
         vm.user = UserService.getFromToken();
         vm.isLogged = false;
         vm.welcomeTo = '';
+        vm.categorias = [];
 
         // FUNCTIONS
         vm.logout = logout;
@@ -125,6 +126,10 @@
             vm.isLogged = true;
             vm.welcomeTo = vm.user.data.nombre;
         }
+
+        CategoryService.get(function(data){
+            vm.categorias = data;
+        });
 
 
         /**

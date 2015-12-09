@@ -63,8 +63,8 @@
                 <h2>{{mainCtrl.proyecto_nuevo_01.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>
-                <button ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER</button>
-                <span>{{mainCtrl.proyecto_nuevo_01.faltan}} días restantes... {{mainCtrl.proyecto_nuevo_01.porc}}%</span>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER</button>
+                <div><span>{{mainCtrl.proyecto_nuevo_01.faltan}}</span> días restantes... <span>{{mainCtrl.proyecto_nuevo_01.porc}}%</span></div>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_01.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_nuevo_01.costo_inicial}}"></ac-progress-bar>
                 <div class="donacion-rapida-details">
@@ -72,9 +72,9 @@
                     <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">
                         OK
                     </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25</button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50</button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
+                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25</button>
+                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50</button>
+                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
                     </button>
                 </div>
             </div>
