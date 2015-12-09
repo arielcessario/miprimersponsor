@@ -2,7 +2,8 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+/* line 5, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,114 +25,142 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../.rvm/gems/ruby-head/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 9, ../sass/screen.scss */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Roboto, sans-serif;
+  font-family: 'Droid Sans', sans-serif;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 .a0-emailPassword {
   visibility: collapse !important;
   display: none !important;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: white;
 }
 
 /* line 25, ../sass/screen.scss */
-.colores div {
-  width: 100%;
-  height: 10px;
+.colores {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 /* line 29, ../sass/screen.scss */
+.colores div {
+  width: 100%;
+  height: 12px;
+}
+/* line 33, ../sass/screen.scss */
 .colores div:nth-child(1) {
   background-color: #a3f3a5;
 }
-/* line 32, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .colores div:nth-child(2) {
   background-color: #d9ef42;
 }
-/* line 35, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 .colores div:nth-child(3) {
   background-color: #fbb330;
 }
-/* line 38, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .colores div:nth-child(4) {
   background-color: #e3001b;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 #ac-progress-bar {
   max-width: 100%;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .donacion-rapida-details {
+  background-color: red;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding: 5px;
+  height: 39px;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
-/* line 51, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .donacion-rapida-details input {
   max-width: 40px;
+  max-height: 18px;
+  margin: 5px;
+}
+/* line 70, ../sass/screen.scss */
+.donacion-rapida-details button {
+  background-color: red;
+}
+/* line 74, ../sass/screen.scss */
+.donacion-rapida-details span {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20;
+  height: 39px;
+  color: white;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 table {
   max-width: 100%;
   width: 100%;
   table-layout: fixed;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 #header-mobile {
   display: flex;
   height: 50px;
@@ -142,7 +171,7 @@ table {
   left: 0;
   right: 0;
 }
-/* line 74, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 #header-mobile .header-separator {
   height: 40px;
   margin-top: 5px;
@@ -150,7 +179,7 @@ table {
   margin-left: 40px;
   background-color: white;
 }
-/* line 82, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #header-mobile .logo {
   flex: 5;
   padding: 5px;
@@ -158,7 +187,7 @@ table {
   text-align: right;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 #header-desktop {
   position: fixed;
   top: 0;
@@ -171,7 +200,7 @@ table {
   background-color: white;
   z-index: 100;
 }
-/* line 103, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #header-desktop #header-desktop-left,
 #header-desktop #header-desktop-right {
   width: 50%;
@@ -180,37 +209,38 @@ table {
   align-items: center;
 }
 @media (min-width: 1300px) {
-  /* line 103, ../sass/screen.scss */
+  /* line 132, ../sass/screen.scss */
   #header-desktop #header-desktop-left,
   #header-desktop #header-desktop-right {
     max-width: 650px;
   }
 }
-/* line 114, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #header-desktop #header-desktop-left {
   justify-content: flex-start;
 }
-/* line 117, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #header-desktop #header-desktop-right {
   justify-content: flex-end;
 }
-/* line 119, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #header-desktop #header-desktop-right .desktop-link-login {
   margin: 5px 15px 5px 15px;
 }
-/* line 121, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 #header-desktop #header-desktop-right .desktop-link-login a, #header-desktop #header-desktop-right .desktop-link-login span {
   margin: 5px;
 }
-/* line 127, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #header-desktop .desktop-link-nav {
   margin: 5px 15px 5px 15px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #header-desktop .desktop-link-nav a {
-  color: #00a152;
+  font-family: 'Droid Sans', sans-serif;
+  color: #00a148;
 }
-/* line 135, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #header-desktop button {
   background-color: transparent;
   border: 0 solid;
@@ -218,7 +248,7 @@ table {
 }
 
 @media (max-width: 799px) {
-  /* line 142, ../sass/screen.scss */
+  /* line 171, ../sass/screen.scss */
   .menu-type-desktop {
     visibility: collapse;
     display: none !important;
@@ -226,14 +256,14 @@ table {
 }
 
 @media (min-width: 800px) {
-  /* line 149, ../sass/screen.scss */
+  /* line 178, ../sass/screen.scss */
   .menu-type-mobile {
     visibility: collapse;
     display: none !important;
   }
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .nav-button {
   flex: 1;
   margin-top: 15px;
@@ -246,7 +276,7 @@ table {
   transform-origin: 13px 13px;
   transform-style: preserve-3D;
 }
-/* line 171, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .nav-button div {
   cursor: pointer;
   width: 25px;
@@ -260,7 +290,7 @@ table {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 185, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 .nav-button .nav-button-top-transformed {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -268,7 +298,7 @@ table {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 192, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .nav-button .nav-button-mid-transformed {
   -webkit-transform: translate(-3px, 0px);
   -moz-transform: translate(-3px, 0px);
@@ -276,7 +306,7 @@ table {
   -o-transform: translate(-3px, 0px);
   transform: translate(-3px, 0px);
 }
-/* line 199, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 .nav-button .nav-button-bot-transformed {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -285,7 +315,7 @@ table {
   transform: rotate(-45deg);
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .nav-button-transformed {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -294,7 +324,7 @@ table {
   transform: rotate(180deg);
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 .menu-mobile-panel {
   width: 70%;
   color: white;
@@ -310,7 +340,7 @@ table {
   -o-transform: translate(-1000px, 0);
   transform: translate(-1000px, 0);
 }
-/* line 227, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .menu-mobile-panel .menu-desktop-btn {
   margin-top: 15px;
   font-family: 'Open Sans', serif;
@@ -319,14 +349,14 @@ table {
   font-variant: all-petite-caps;
 }
 @media (min-width: 800px) {
-  /* line 216, ../sass/screen.scss */
+  /* line 245, ../sass/screen.scss */
   .menu-mobile-panel {
     visibility: collapse;
     display: none;
   }
 }
 
-/* line 247, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 .menu-mobile-panel-show {
   -webkit-transform: translate(0px, 0);
   -moz-transform: translate(0px, 0);
@@ -335,14 +365,14 @@ table {
   transform: translate(0px, 0);
 }
 
-/* line 255, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 .menu-mobile-panel-show-add {
   -webkit-animation: menu-mobile-enter 0.4s;
   -o-animation: menu-mobile-enter 0.4s;
   animation: menu-mobile-enter 0.4s;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .menu-mobile-panel-show-remove {
   -webkit-animation: menu-mobile-leave 0.4s;
   -o-animation: menu-mobile-leave 0.4s;
@@ -381,67 +411,87 @@ table {
     transform: translate(-1000px, 0);
   }
 }
-/* line 303, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 #main {
   margin-top: 50px;
 }
 @media (min-width: 800px) {
-  /* line 303, ../sass/screen.scss */
+  /* line 332, ../sass/screen.scss */
   #main {
     margin-top: 30px;
   }
 }
 
-/* line 310, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 #main-search-bar {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   width: 100%;
   background-color: #fa9819;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-/* line 317, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 #main-search-bar input {
   background-color: transparent;
   color: white;
+  height: 20px;
   width: 100%;
 }
-/* line 323, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 #main-search-bar img {
   background-color: #87ce1d;
+  margin: 10px;
+  width: 34px;
+  height: 34px;
 }
 
-/* line 328, ../sass/screen.scss */
+/* line 364, ../sass/screen.scss */
 #main-top-section {
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
   align-items: center;
+  margin: auto;
+  margin-bottom: 50px;
 }
 @media (min-width: 800px) {
-  /* line 328, ../sass/screen.scss */
+  /* line 364, ../sass/screen.scss */
   #main-top-section {
     flex-direction: row;
   }
 }
-/* line 337, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 #main-top-section h1 {
-  font-size: 26px;
+  margin: 5px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 65px;
   color: #fa9819;
+  font-weight: bold;
 }
-/* line 343, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 #main-top-section #main-top-text-panel {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 50%;
 }
 @media (min-width: 1200px) {
-  /* line 343, ../sass/screen.scss */
+  /* line 384, ../sass/screen.scss */
   #main-top-section #main-top-text-panel {
     max-width: 600px;
   }
 }
-/* line 353, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
+#main-top-section .imagenes-publicitarias img {
+  margin-top: 50px;
+  text-align: center;
+  align-items: center;
+}
+/* line 401, ../sass/screen.scss */
 #main-top-section #main-btn-crear {
   background-color: #00a148;
   -webkit-border-radius: 8px;
@@ -449,19 +499,20 @@ table {
   border-radius: 8px;
   color: white;
   padding: 5px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 364, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 #main-top-section #main-btn-crear p {
-  font-size: 22px;
+  font-size: 18px;
 }
-/* line 367, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 #main-top-section #main-btn-crear span {
-  font-size: 16px;
+  font-size: 14px;
 }
-/* line 372, ../sass/screen.scss */
+/* line 421, ../sass/screen.scss */
 #main-top-section #main-slider {
   width: 100%;
   max-width: 100%;
@@ -470,18 +521,18 @@ table {
   position: relative;
 }
 @media (min-width: 800px) {
-  /* line 372, ../sass/screen.scss */
+  /* line 421, ../sass/screen.scss */
   #main-top-section #main-slider {
     max-width: 50%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 372, ../sass/screen.scss */
+  /* line 421, ../sass/screen.scss */
   #main-top-section #main-slider {
     max-width: 600px;
   }
 }
-/* line 385, ../sass/screen.scss */
+/* line 434, ../sass/screen.scss */
 #main-top-section #main-slider .main-slider-proyecto {
   opacity: 0;
   position: absolute;
@@ -497,12 +548,12 @@ table {
   transition: all 0.4s;
 }
 
-/* line 403, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 #proyectos-nuevos,
 #proyectos-finalizar {
   max-width: 100%;
 }
-/* line 407, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 #proyectos-nuevos h1,
 #proyectos-finalizar h1 {
   width: 100%;
@@ -511,7 +562,7 @@ table {
   font-size: 26px;
   text-align: center;
 }
-/* line 415, ../sass/screen.scss */
+/* line 464, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list,
 #proyectos-nuevos #main-proyectos-finalizar-list,
 #proyectos-finalizar #main-proyectos-nuevos-list,
@@ -523,7 +574,7 @@ table {
   padding: 15px;
 }
 @media (min-width: 800px) and (max-width: 1299px) {
-  /* line 415, ../sass/screen.scss */
+  /* line 464, ../sass/screen.scss */
   #proyectos-nuevos #main-proyectos-nuevos-list,
   #proyectos-nuevos #main-proyectos-finalizar-list,
   #proyectos-finalizar #main-proyectos-nuevos-list,
@@ -533,7 +584,7 @@ table {
   }
 }
 @media (min-width: 1300px) {
-  /* line 415, ../sass/screen.scss */
+  /* line 464, ../sass/screen.scss */
   #proyectos-nuevos #main-proyectos-nuevos-list,
   #proyectos-nuevos #main-proyectos-finalizar-list,
   #proyectos-finalizar #main-proyectos-nuevos-list,
@@ -543,7 +594,7 @@ table {
     max-width: 100%;
   }
 }
-/* line 433, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo,
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar,
 #proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo,
@@ -552,17 +603,38 @@ table {
 #proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar {
-  max-width: 100%;
+  width: 320px;
+  height: 500px;
+  margin-left: 3px;
+  margin-right: 3px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  padding: 15px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
   margin-bottom: 10px;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+}
+/* line 501, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo img,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar img,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo img,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar img,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo img,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar img,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo img,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar img {
+  background-color: red;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  text-align: center;
 }
 @media (min-width: 1200px) {
-  /* line 433, ../sass/screen.scss */
+  /* line 482, ../sass/screen.scss */
   #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo,
   #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar,
   #proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo,
@@ -574,7 +646,64 @@ table {
     max-width: 400px;
   }
 }
-/* line 452, ../sass/screen.scss */
+/* line 513, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo #ac-progress-bar,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar #ac-progress-bar,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo #ac-progress-bar,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar #ac-progress-bar,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo #ac-progress-bar,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar #ac-progress-bar,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo #ac-progress-bar,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar #ac-progress-bar {
+  opacity: .7;
+  margin-bottom: 10px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+}
+/* line 524, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-first,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-second,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-third,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-fourth,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-first,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-second,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-third,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-fourth,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-first,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-second,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-third,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-fourth,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-first,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-second,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-third,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-fourth,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-first,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-second,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-third,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo .ac-progress-fourth,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-first,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-second,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-third,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar .ac-progress-fourth,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-first,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-second,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-third,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo .ac-progress-fourth,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-first,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-second,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-third,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar .ac-progress-fourth {
+  width: 14px;
+  height: 28px;
+  -webkit-border-radius: 4.5px;
+  -moz-border-radius: 4.5px;
+  border-radius: 4.5px;
+}
+/* line 536, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo h2,
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar h2,
 #proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo h2,
@@ -583,49 +712,136 @@ table {
 #proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar h2,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo h2,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar h2 {
-  font-size: 28px;
+  font-family: 'Droid Sans', serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
 }
-/* line 458, ../sass/screen.scss */
+/* line 546, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo p,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar p,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo p,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar p,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo p,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar p,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo p,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar p {
+  height: 320px;
+  font-family: 'Droid Sans', serif;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 30px;
+}
+/* line 555, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo button,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar button,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo button,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar button,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo button,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar button,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo button,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar button {
+  width: 54px;
+  height: 34px;
+  background-color: #00a148;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  color: white;
+  padding: 5px;
+  align-items: center;
+  outline: none;
+}
+/* line 567, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo button p,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar button p,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo button p,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar button p,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo button p,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar button p,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo button p,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar button p {
+  font-size: 18px;
+}
+/* line 570, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo button span,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar button span,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo button span,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar button span,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo button span,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar button span,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo button span,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar button span {
+  font-size: 14px;
+}
+/* line 575, ../sass/screen.scss */
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo span,
+#proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar span,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo span,
+#proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar span,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo span,
+#proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar span,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo span,
+#proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar span {
+  font-family: 'Droid Sans', serif;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 10px;
+}
+/* line 588, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo,
 #proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-nuevo,
 #proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-nuevo,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-nuevo {
-  border: 1px solid #e3001b;
+  border: 2px solid #e3001b;
 }
-/* line 462, ../sass/screen.scss */
+/* line 592, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-finalizar,
 #proyectos-nuevos #main-proyectos-finalizar-list .main-proyecto-finalizar,
 #proyectos-finalizar #main-proyectos-nuevos-list .main-proyecto-finalizar,
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar {
-  border: 1px solid #49b67a;
+  border: 2px solid #49b67a;
 }
 
-/* line 470, ../sass/screen.scss */
+/* line 599, ../sass/screen.scss */
+#btn_donacion {
+  background-color: red;
+}
+
+/* line 604, ../sass/screen.scss */
 #proyectos-nuevos h1 {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   background-color: #e3001b;
 }
 
-/* line 476, ../sass/screen.scss */
+/* line 614, ../sass/screen.scss */
 #proyectos-finalizar h1 {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   background-color: #18e21c;
 }
 
-/* line 481, ../sass/screen.scss */
+/* line 622, ../sass/screen.scss */
 .show-slider-proyecto {
   opacity: 1 !important;
 }
 
-/* line 485, ../sass/screen.scss */
+/* line 626, ../sass/screen.scss */
 #main-nuestras-empresas {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 486, ../sass/screen.scss */
+/* line 627, ../sass/screen.scss */
 #main-nuestras-empresas h1 {
   font-size: 28px;
 }
-/* line 493, ../sass/screen.scss */
+/* line 634, ../sass/screen.scss */
 #main-nuestras-empresas #main-nuestras-empresas-list {
   display: flex;
   flex-direction: row;
@@ -634,7 +850,7 @@ table {
   align-items: center;
   max-width: 800px;
 }
-/* line 500, ../sass/screen.scss */
+/* line 641, ../sass/screen.scss */
 #main-nuestras-empresas #main-nuestras-empresas-list .main-empresa {
   height: 150px;
   width: 150px;
@@ -644,42 +860,42 @@ table {
   margin: 10px;
 }
 
-/* line 512, ../sass/screen.scss */
+/* line 653, ../sass/screen.scss */
 #contacto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 516, ../sass/screen.scss */
+/* line 657, ../sass/screen.scss */
 #contacto-container #contacto-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (min-width: 800px) {
-  /* line 516, ../sass/screen.scss */
+  /* line 657, ../sass/screen.scss */
   #contacto-container #contacto-form {
     flex-direction: row;
   }
 }
-/* line 523, ../sass/screen.scss */
+/* line 664, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 528, ../sass/screen.scss */
+/* line 669, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel span {
   width: 100%;
   text-align: left;
 }
 
-/* line 538, ../sass/screen.scss */
+/* line 679, ../sass/screen.scss */
 #administracion {
   margin-top: 50px;
 }
 @media (min-width: 400px) {
-  /* line 542, ../sass/screen.scss */
+  /* line 683, ../sass/screen.scss */
   #administracion .administracion-inputs {
     display: flex;
     flex-direction: row;
@@ -687,40 +903,61 @@ table {
     justify-content: center;
     width: 100%;
   }
-  /* line 548, ../sass/screen.scss */
+  /* line 689, ../sass/screen.scss */
   #administracion .administracion-inputs .administracion-input {
     max-width: 400px;
     width: 400px;
   }
 }
-/* line 555, ../sass/screen.scss */
+/* line 696, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px;
 }
-/* line 562, ../sass/screen.scss */
+/* line 703, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 566, ../sass/screen.scss */
+/* line 707, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
 
-/* line 571, ../sass/screen.scss */
+/* line 712, ../sass/screen.scss */
 #administracion-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-/* line 576, ../sass/screen.scss */
+/* line 717, ../sass/screen.scss */
 #administracion-nav div {
   border: 1px solid;
   padding: 5px;
   margin: 1px;
   width: 150px;
   text-align: center;
+}
+
+/* line 727, ../sass/screen.scss */
+.institucional-publicidad {
+  margin: auto;
+  max-width: 1100px;
+}
+/* line 731, ../sass/screen.scss */
+.institucional-publicidad h1 {
+  margin: 10px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+/* line 738, ../sass/screen.scss */
+.institucional-publicidad h2 {
+  margin: 10px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: justify;
 }

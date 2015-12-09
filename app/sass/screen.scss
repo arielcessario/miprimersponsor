@@ -3,12 +3,13 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "compass/reset";
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 // GENERALES
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Roboto, sans-serif;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .a0-emailPassword {
@@ -22,9 +23,12 @@ a {
 }
 
 .colores {
+  margin-bottom: 30px;
+  margin-top: 30px;
+
   div {
     width: 100%;
-    height: 10px;
+    height: 12px;
   }
   div:nth-child(1) {
     background-color: rgb(163, 243, 165);
@@ -45,12 +49,37 @@ a {
 }
 
 .donacion-rapida-details {
+  background-color: red;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  input {
+  padding: 5px;
+  height: 39px;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+  box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+   input {
     max-width: 40px;
+    max-height: 18px;
+    margin: 5px;
   }
+
+  button{
+    background-color: red;
+
+  }
+  span{
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20;
+    height: 39px;
+    color: white;
+
+  }
+
 }
 
 table{
@@ -127,8 +156,8 @@ table{
   .desktop-link-nav {
     margin: 5px 15px 5px 15px;
     a {
-      color: rgb(0, 161, 82);
-
+      font-family: 'Droid Sans', sans-serif;
+      color: rgb(0, 161, 72);
     }
   }
 
@@ -308,6 +337,9 @@ table{
 }
 
 #main-search-bar {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
   width: 100%;
   background-color: rgba(250, 152, 25, 1);
   display: flex;
@@ -317,30 +349,40 @@ table{
   input {
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    height: 20px;
     width: 100%;
   }
 
   img {
     background-color: rgb(135, 206, 29);
+    margin: 10px;
+    width:34px;
+    height: 34px;
   }
 }
 
 #main-top-section {
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
   align-items: center;
+  margin: auto;
+  margin-bottom: 50px;
 
   @media (min-width: 800px) {
     flex-direction: row;
   }
 
   h1 {
-    font-size: 26px;
+    margin: 5px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 65px;
     color: rgba(250, 152, 25, 1);
-
+    font-weight: bold;
   }
 
   #main-top-text-panel {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -350,6 +392,12 @@ table{
     }
   }
 
+  .imagenes-publicitarias img{
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+  }
+
   #main-btn-crear {
     background-color: rgb(0, 161, 72);
     -webkit-border-radius: 8px;
@@ -357,15 +405,16 @@ table{
     border-radius: 8px;
     color: white;
     padding: 5px;
+    margin-bottom: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     p {
-      font-size: 22px;
+      font-size: 18px;
     }
     span {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -432,48 +481,140 @@ table{
 
     .main-proyecto-nuevo,
     .main-proyecto-finalizar {
-      max-width: 100%;
+      width: 320px;
+      height: 500px;
+      margin-left: 3px;
+      margin-right: 3px;
       display: flex;
       flex-direction: column;
-      padding: 5px;
+      padding: 15px;
 
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
       margin-bottom: 10px;
+
+      -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+      -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+      box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+
+      img{
+        background-color: red;
+        width: 100%;
+        height: 100px;
+        align-items: center;
+        text-align: center;
+        }
 
       @media (min-width: 1200px) {
         max-width: 400px;
       }
 
       #ac-progress-bar {
+        opacity: .7;
+        margin-bottom: 10px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+        -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+        box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+      }
+
+      .ac-progress-first,
+      .ac-progress-second,
+      .ac-progress-third,
+      .ac-progress-fourth{
+        width: 14px;
+        height: 28px;
+        -webkit-border-radius: 4.5px;
+        -moz-border-radius: 4.5px;
+        border-radius: 4.5px;
+
       }
 
       h2 {
-        font-size: 28px;
+        font-family: 'Droid Sans', serif;
+        font-weight: bold;
+        font-size: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 20px;
 
       }
+
+      p{
+        height: 320px;
+        font-family: 'Droid Sans', serif;
+        font-size: 15px;
+        text-align: left;
+        margin-top: 30px;
+
+      }
+
+      button{
+        width: 54px;
+        height: 34px;
+        background-color: rgb(0, 161, 72);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: white;
+        padding: 5px;
+        align-items: center;
+        outline: none;
+
+        p {
+          font-size: 18px;
+        }
+        span {
+          font-size: 14px;
+        }
+     }
+
+      span{
+        font-family: 'Droid Sans', serif;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 10px;
+
+      }
+
+
     }
 
+
+
     .main-proyecto-nuevo {
-      border: 1px solid rgb(227, 0, 27);
+      border: 2px solid rgb(227, 0, 27);
     }
 
     .main-proyecto-finalizar {
-      border: 1px solid rgb(73, 182, 122);
+      border: 2px solid rgb(73, 182, 122);
     }
   }
 
 }
 
+#btn_donacion{
+  background-color: red;
+}
+
 #proyectos-nuevos {
   h1 {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
     background-color: rgb(227, 0, 27);
   }
 }
 
 #proyectos-finalizar {
+
   h1 {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
     background-color: rgb(24, 226, 28);
   }
 }
@@ -579,6 +720,30 @@ table{
     margin: 1px;
     width: 150px;
     text-align: center;
+  }
+
+}
+
+.institucional-publicidad{
+  margin: auto;
+  max-width: 1100px;
+
+  h1{
+    margin: 10px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+  h2{
+    margin: 10px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: justify;
+
+
+
   }
 
 }
