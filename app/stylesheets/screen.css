@@ -892,11 +892,17 @@ table {
 }
 
 /* line 680, ../sass/screen.scss */
+.administracion-button-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 686, ../sass/screen.scss */
 #administracion {
   margin-top: 50px;
 }
 @media (min-width: 400px) {
-  /* line 684, ../sass/screen.scss */
+  /* line 690, ../sass/screen.scss */
   #administracion .administracion-inputs {
     display: flex;
     flex-direction: row;
@@ -904,36 +910,36 @@ table {
     justify-content: center;
     width: 100%;
   }
-  /* line 690, ../sass/screen.scss */
+  /* line 696, ../sass/screen.scss */
   #administracion .administracion-inputs .administracion-input {
     max-width: 400px;
     width: 400px;
   }
 }
-/* line 697, ../sass/screen.scss */
+/* line 703, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px;
 }
-/* line 704, ../sass/screen.scss */
+/* line 711, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 708, ../sass/screen.scss */
+/* line 715, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
 
-/* line 713, ../sass/screen.scss */
+/* line 720, ../sass/screen.scss */
 #administracion-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-/* line 718, ../sass/screen.scss */
+/* line 725, ../sass/screen.scss */
 #administracion-nav div {
   border: 1px solid;
   padding: 5px;
@@ -942,23 +948,66 @@ table {
   text-align: center;
 }
 
-/* line 728, ../sass/screen.scss */
+/* line 735, ../sass/screen.scss */
 .institucional-publicidad {
   margin: auto;
   max-width: 1100px;
 }
-/* line 732, ../sass/screen.scss */
+/* line 739, ../sass/screen.scss */
 .institucional-publicidad h1 {
   margin: 10px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 45px;
   font-weight: bold;
 }
-/* line 739, ../sass/screen.scss */
+/* line 746, ../sass/screen.scss */
 .institucional-publicidad h2 {
   margin: 10px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
   line-height: 18px;
   text-align: justify;
+}
+
+/* line 759, ../sass/screen.scss */
+.administracion-input input {
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  border-style: none;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+}
+
+/* line 771, ../sass/screen.scss */
+#ingreso-form {
+  margin: auto;
+  padding-top: 100px;
+  align-items: center;
+  max-width: 800px;
+  min-height: 800px;
+}
+/* line 777, ../sass/screen.scss */
+#ingreso-form h1 {
+  margin-bottom: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+/* line 784, ../sass/screen.scss */
+#ingreso-form p {
+  margin-bottom: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: justify;
+}
+/* line 793, ../sass/screen.scss */
+#ingreso-form span {
+  margin: 5px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 }
