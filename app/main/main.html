@@ -22,7 +22,9 @@
                 <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>
 
                 <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id)">
+                    VER
+                </button>
             </div>
             <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 2}" class="main-slider-proyecto">
                 <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">
@@ -30,7 +32,9 @@
                 <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>
 
                 <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id)">
+                    VER
+                </button>
             </div>
             <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
                 <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">
@@ -38,7 +42,9 @@
                 <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>
 
                 <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id)">
+                    VER
+                </button>
             </div>
             <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
                 <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">
@@ -46,7 +52,9 @@
                 <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>
 
                 <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id)">
+                    VER
+                </button>
             </div>
         </div>
 
@@ -56,15 +64,20 @@
     <div id="proyectos-nuevos">
         <h1>Proyectos nuevos</h1>
 
-          <div id="main-proyectos-nuevos-list">
+        <div id="main-proyectos-nuevos-list">
             <div class="main-proyecto-nuevo">
-                <img ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}" alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_nuevo_01.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER</button>
-                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_01.faltan}}</span> días restantes... <span class="porcentaje">{{mainCtrl.proyecto_nuevo_01.porc}}%</span></div>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER
+                </button>
+                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_01.faltan}}</span> días restantes... <span
+                        class="porcentaje">{{mainCtrl.proyecto_nuevo_01.porc}}%</span></div>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_01.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_nuevo_01.costo_inicial}}"></ac-progress-bar>
                 <div class="donacion-rapida-details">
@@ -72,20 +85,29 @@
                     <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">
                         OK
                     </button>
-                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25</button>
-                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50</button>
-                    <button class="button-donacion-rapida" ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
+                    <button class="button-donacion-rapida"
+                            ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25
+                    </button>
+                    <button class="button-donacion-rapida"
+                            ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50
+                    </button>
+                    <button class="button-donacion-rapida"
+                            ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
                     </button>
                 </div>
             </div>
 
             <div class="main-proyecto-nuevo">
-                <img ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}" alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_nuevo_02.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_nuevo_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id)">VER
+                </button>
                 <span>{{mainCtrl.proyecto_nuevo_02.faltan}} días restantes... {{mainCtrl.proyecto_nuevo_02.porc}}%</span>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_02.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_nuevo_02.costo_inicial}}"></ac-progress-bar>
@@ -101,12 +123,16 @@
                 </div>
             </div>
             <div class="main-proyecto-nuevo">
-                <img ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}" alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_nuevo_03.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_nuevo_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id)">VER
+                </button>
                 <span>{{mainCtrl.proyecto_nuevo_03.faltan}} días restantes... {{mainCtrl.proyecto_nuevo_03.porc}}%</span>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_03.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_nuevo_03.costo_inicial}}"></ac-progress-bar>
@@ -170,12 +196,18 @@
 
         <div id="main-proyectos-finalizar-list">
             <div class="main-proyecto-finalizar">
-                <img ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}"
+                     alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_finalizar_01.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_finalizar_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id)">
+                    VER
+                </button>
                 <span>{{mainCtrl.proyecto_finalizar_01.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_01.porc}}%</span>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_01.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_finalizar_01.costo_inicial}}"></ac-progress-bar>
@@ -193,12 +225,18 @@
                 </div>
             </div>
             <div class="main-proyecto-finalizar">
-                <img ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}"
+                     alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_finalizar_02.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_finalizar_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id)">
+                    VER
+                </button>
                 <span>{{mainCtrl.proyecto_finalizar_02.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_02.porc}}%</span>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_02.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_finalizar_02.costo_inicial}}"></ac-progress-bar>
@@ -216,12 +254,18 @@
                 </div>
             </div>
             <div class="main-proyecto-finalizar">
-                <img ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}" alt="">
+                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}"
+                     alt="">
+
+                <img class="main-button-face" src="" alt="" height="30" width="30">
+                <img class="main-button-twitter" src="" alt="" height="30" width="30">
 
                 <h2>{{mainCtrl.proyecto_finalizar_03.nombre}}</h2>
 
                 <p>{{mainCtrl.proyecto_finalizar_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id)">VER</button>
+                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id)">
+                    VER
+                </button>
                 <span>{{mainCtrl.proyecto_finalizar_03.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_03.porc}}%</span>
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_03.total_donado}}"
                                  objetivo="{{mainCtrl.proyecto_finalizar_03.costo_inicial}}"></ac-progress-bar>
@@ -275,7 +319,9 @@
         </h2>
     </div>
 
-    <div class="imagenes-publicitarias"<img  src="images/prueba1.gif" width="1027px" height="530px"></div>
+    <div class="imagenes-publicitarias">
+        <img src="images/prueba1.gif" width="1027px" height="530px">
+    </div>
 
 
     <div class="colores">
