@@ -116,6 +116,7 @@
 
 
         var vm = this;
+        vm.hideLoader = true;
         vm.menu_mobile_open = false;
         vm.user = UserService.getFromToken();
         vm.isLogged = false;

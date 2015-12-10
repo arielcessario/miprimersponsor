@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-
-        [ng-cloak].loader-main {
+        
+        .loader-main {
 
             display: block !important;
             position: fixed;
@@ -19,10 +19,6 @@
             background-color: blue;
         }
 
-
-        .loader-main {
-            display: none !important;
-        }
 
         /* The loader container */
         .loader {
@@ -294,10 +290,10 @@
 
     <title>Mi Primer Sponsor</title>
 
-    <link rel="stylesheet" href="stylesheets/screen.css">
+    <link rel="stylesheet" href="stylesheets/screen.min.css">
 </head>
 <body ng-controller="AppController as appCtrl">
-<div ng-cloak class="loader-main">
+<div ng-if="!appCtrl.hideLoader" class="loader-main">
     <div class="loader">
         <div class="dot"></div>
         <div class="dot"></div>
