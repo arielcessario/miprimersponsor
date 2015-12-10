@@ -12,7 +12,8 @@
         'acUsuarios',
         'acProyectos',
         'acUploads',
-        'acProgressBar'
+        'acProgressBar',
+        'acContacts'
     ]).config(['$routeProvider', 'authProvider',
             function ($routeProvider, authProvider) {
 
