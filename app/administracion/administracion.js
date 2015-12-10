@@ -9,15 +9,18 @@
 
 
     AdministracionController.$inject = ['UserService', 'AcUtils', 'ProyectService', '$location', 'UploadService',
-        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService', 'AcUtilsGlobals'];
+        'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService', 'AcUtilsGlobals',
+        'ContactsService'];
     function AdministracionController(UserService, AcUtils, ProyectService, $location, UploadService,
-                                      UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService, AcUtilsGlobals) {
+                                      UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService, AcUtilsGlobals,
+                                      ContactsService) {
 
         var vm = this;
         vm.screen = AdministracionService.screen;
         vm.usuarios = [];
+        vm.usuario = {};
         vm.user = UserService.getFromToken();
-        vm.proyecto = {proyecto_id: -1};
+        vm.proyecto = {proyecto_id: -1, status: '1', en_slider:'0'};
         vm.proyectos = [];
         vm.showJustificaciones = false;
         vm.foto_01 = '';
@@ -54,6 +57,7 @@
         vm.modificarCategoria = modificarCategoria;
         vm.saveCategoria = saveCategoria;
         vm.removeCategoria = removeCategoria;
+        vm.resetCategoria = resetCategoria;
 
         vm.aprobarDonacion = aprobarDonacion;
 
@@ -71,6 +75,7 @@
                 if (vm.user.data != undefined && vm.user.data.rol == "0") {
                     UserService.get(function (data) {
                         vm.usuarios = data;
+                        vm.usuario.rol_id = '1';
                     });
                 }
             }
@@ -619,12 +624,32 @@
             DonationService.update(donacion, function (data) {
 
                 // Enviar los mails
+                ContactsService.sendMail('arielcessario@gmail.com',
+                    [{mail: 'arielcessario@gmail.com'}, {mail: 'juan.dilello@gmail.com'}],
+                    'Ariel',
+                    'PRUEBA',
+                    'PRUEBA DE CONFIRMACIÓN DE DONACIÓN',
+                    function (data, result) {
+                        console.log(data);
+                        console.log(result);
+
+                    });
+
+
                 DonationService.get(-1, function (data) {
-                    console.log(data);
+
                     vm.donaciones = data;
                 })
 
             })
+        }
+
+        function resetCategoria() {
+            vm.categoria = {
+                categoria_id: -1,
+                nombre: '',
+                parent_id: -1
+            };
         }
 
     }

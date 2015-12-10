@@ -12,7 +12,8 @@
         'acUsuarios',
         'acProyectos',
         'acUploads',
-        'acProgressBar'
+        'acProgressBar',
+        'acContacts'
     ]).config(['$routeProvider', 'authProvider',
             function ($routeProvider, authProvider) {
 
@@ -111,7 +112,11 @@
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService'];
     function AppController(UserService, $location, AppService, CategoryService) {
 
+
+
+
         var vm = this;
+        vm.hideLoader = true;
         vm.menu_mobile_open = false;
         vm.user = UserService.getFromToken();
         vm.isLogged = false;
@@ -127,7 +132,7 @@
             vm.welcomeTo = vm.user.data.nombre;
         }
 
-        CategoryService.get(function(data){
+        CategoryService.get(function (data) {
             vm.categorias = data;
         });
 
@@ -173,5 +178,20 @@
         }
     }
 })();
+
+WebFontConfig = {
+    google: {families: ['Droid+Sans:400,700:latin']}
+};
+(function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+
+
 
 

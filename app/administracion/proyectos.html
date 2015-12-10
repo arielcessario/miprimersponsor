@@ -78,6 +78,50 @@
                   id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
 
     </div>
+    <div class="administracion-foto">
+        <div class="foto">
+            <span>Foto 1</span>
+
+            <div id="slider-01-foto" class="input-foto">
+                <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50" width="50">
+                <input type="file" name="images" id="images"
+                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
+            </div>
+        </div>
+
+        <div class="foto">
+            <span>Foto 2</span>
+
+            <div id="slider-02-foto" class="input-foto">
+                <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50" width="50">
+                <input type="file" name="images" id="images"
+                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
+            </div>
+        </div>
+
+        <div class="foto">
+            <span>Foto 3</span>
+
+            <div id="slider-03-foto" class="input-foto">
+                <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50" width="50">
+                <input type="file" name="images" id="images"
+                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
+            </div>
+        </div>
+
+        <div class="foto">
+            <span>Foto 4</span>
+
+            <div id="slider-04-foto" class="input-foto">
+                <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50" width="50">
+                <input type="file" name="images" id="images"
+                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="administracion-button-bar">
         <button ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
         <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
@@ -88,47 +132,7 @@
 </div>
 
 
-<div class="administracion-foto">
-    <div class="foto">
-        <span>Foto 1</span>
 
-        <div id="slider-01-foto" class="input-foto">
-            <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50" width="50">
-            <input type="file" name="images" id="images"
-                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
-        </div>
-    </div>
-
-    <div class="foto">
-        <span>Foto 2</span>
-
-        <div id="slider-02-foto" class="input-foto">
-            <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50" width="50">
-            <input type="file" name="images" id="images"
-                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
-        </div>
-    </div>
-
-    <div class="foto">
-        <span>Foto 3</span>
-
-        <div id="slider-03-foto" class="input-foto">
-            <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50" width="50">
-            <input type="file" name="images" id="images"
-                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
-        </div>
-    </div>
-
-    <div class="foto">
-        <span>Foto 4</span>
-
-        <div id="slider-04-foto" class="input-foto">
-            <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50" width="50">
-            <input type="file" name="images" id="images"
-                   ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
-        </div>
-    </div>
-</div>
 
 
 
