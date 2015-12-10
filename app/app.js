@@ -112,15 +112,15 @@
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService'];
     function AppController(UserService, $location, AppService, CategoryService) {
 
-        var head = angular.element(document.querySelector('head')); // TO make the code IE < 8 compatible, include jQuery in your page and replace "angular.element(document.querySelector('head'))" by "angular.element('head')"
-
-        if(head.scope().injectedStylesheets === undefined)
-        {
-            head.scope().injectedStylesheets = [];
-            head.append($compile("<link data-ng-repeat='stylesheet in injectedStylesheets' data-ng-href='{{stylesheet.href}}' rel='stylesheet' />")(scope)); // Found here : http://stackoverflow.com/a/11913182/1662766
-        }
-
-        head.scope().injectedStylesheets.push({href: "./stylesheets/screen.css"});
+        //var head = angular.element(document.querySelector('head')); // TO make the code IE < 8 compatible, include jQuery in your page and replace "angular.element(document.querySelector('head'))" by "angular.element('head')"
+        //
+        //if(head.scope().injectedStylesheets === undefined)
+        //{
+        //    head.scope().injectedStylesheets = [];
+        //    head.append($compile("<link data-ng-repeat='stylesheet in injectedStylesheets' data-ng-href='{{stylesheet.href}}' rel='stylesheet' />")(scope)); // Found here : http://stackoverflow.com/a/11913182/1662766
+        //}
+        //
+        //head.scope().injectedStylesheets.push({href: "./stylesheets/screen.css"});
 
 
 
