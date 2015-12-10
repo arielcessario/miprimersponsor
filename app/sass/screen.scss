@@ -62,21 +62,29 @@ a {
   -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
   box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
    input {
+     font-size: 16px;
+     font-weight: bold;
+     background-color: lightgrey;
     max-width: 40px;
     max-height: 18px;
     margin: 5px;
+    border-radius: 4px;
   }
 
   button{
-    background-color: red;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border-style: none;
 
   }
   span{
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
-    font-size: 20;
+    font-size: 22px;
     height: 39px;
     color: white;
+    margin-left: 5px;
 
   }
 
@@ -152,6 +160,11 @@ table{
         margin: 5px;
       }
     }
+  }
+
+  #header-desktop-right img{
+    margin-left: 10px;
+
   }
 
   .desktop-link-nav {
@@ -346,20 +359,24 @@ table{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  max-height: 20px;
+  max-height: 30px;
+  margin-top: 50px;
 
   input {
     background-color: rgba(0, 0, 0, 0);
     color: white;
-    height: 20px;
+    height: 30px;
     width: 100%;
+    border-style: none;
+
   }
 
   img {
     background-color: rgb(135, 206, 29);
-    margin: 10px;
-    width:34px;
-    height: 34px;
+    margin-left: 40px;
+    width:50px;
+    height: 50px;
+    margin-top: -10px;
   }
 }
 
@@ -490,7 +507,6 @@ table{
       display: flex;
       flex-direction: column;
       padding: 15px;
-
       -webkit-border-radius: 12px;
       -moz-border-radius: 12px;
       border-radius: 12px;
@@ -507,6 +523,7 @@ table{
         align-items: center;
         text-align: center;
         }
+
 
       @media (min-width: 1200px) {
         max-width: 400px;
@@ -569,13 +586,10 @@ table{
      }
 
       .button-donacion-rapida{
-
-      }
+              }
 
       span{
         font-family: 'Droid Sans', serif;
-        font-size: 20px;
-        text-align: left;
         margin-top: 10px;
 
       }
@@ -594,10 +608,6 @@ table{
     }
   }
 
-}
-
-#btn_donacion{
-  background-color: red;
 }
 
 #proyectos-nuevos {
@@ -764,6 +774,21 @@ table{
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
+
+}
+
+.dias-restantes{
+  color: black;
+  font-size: 18px;
+  text-align: left;
+}
+
+
+.porcentaje{
+  font-size: 50px;
+  color: black;
+  margin-left: 90px;
+
 
 }
 
