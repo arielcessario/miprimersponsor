@@ -97,6 +97,39 @@ table{
   table-layout: fixed;
 }
 
+// Mensajes
+.ac-error-message{
+  background-color: #e3001b;
+  color: white;
+}
+.ac-success-message{
+  background-color: #e3001b;
+  color: white;
+}
+
+.ac-mensaje-custom-show{
+  -webkit-animation: show-mensaje 3s;
+  -o-animation: show-mensaje 3s;
+  animation: show-mensaje 3s;
+}
+
+@-webkit-keyframes show-mensaje {
+  0%{
+    opacity: 0;
+  }
+  33%{
+    opacity: 1;
+  }
+  66%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+
+}
+
+
 // HEADER
 
 #header-mobile {

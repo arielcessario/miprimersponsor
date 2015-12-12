@@ -166,10 +166,11 @@
 
         // Implementaciones
         function modificarUsuario(usuario) {
+            AcUtilsGlobals.broadcast();
             vm.usuario = angular.copy(usuario);
             vm.usuario.rol_id = '' + vm.usuario.rol_id;
             var elem = angular.element(document.querySelector('#nombre'));
-            elem[0].focus();
+            //elem[0].focus();
         }
 
         function resetUsuario() {
