@@ -288,8 +288,8 @@
         }
 
         function modificarProyecto(proyecto) {
+            AcUtilsGlobals.broadcast();
 
-            console.log(proyecto);
             vm.proyecto = angular.copy(proyecto);
             var elem = angular.element(document.querySelector('#nombre'));
             vm.foto_01 = (vm.proyecto.fotos[0] != undefined) ? vm.proyecto.fotos[0].nombre : 'no_image.png';
