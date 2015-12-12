@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        
+
         .loader-main {
 
             display: block !important;
@@ -18,7 +18,6 @@
             right: 0;
             background-color: blue;
         }
-
 
         /* The loader container */
         .loader {
@@ -290,7 +289,20 @@
 
     <title>Mi Primer Sponsor</title>
 
-    <link rel="stylesheet" href="stylesheets/screen.css">
+    <!--<link rel="stylesheet" href="stylesheets/screen.css">-->
+    <script>
+        var cb = function () {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = 'stylesheets/screen.css';
+            var h = document.getElementsByTagName('head')[0];
+            h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
 </head>
 <body ng-controller="AppController as appCtrl">
 <div ng-if="!appCtrl.hideLoader" class="loader-main">
