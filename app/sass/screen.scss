@@ -752,8 +752,12 @@ table{
 
 }
 
-#administracion {
+#administracion{
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 
   @media (min-width: 400px){
     .administracion-inputs{
@@ -762,6 +766,11 @@ table{
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+      span{
+      margin-bottom: 5px;
+
+      }
+
       .administracion-input {
         max-width: 400px;
         width: 400px;
@@ -779,6 +788,20 @@ table{
 
   td {
     max-width: 50% !important;
+  }
+
+  #administracion-main,
+  #administracion-usuarios-tabla{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    max-width: 1000px;
+
+  }
+
+  #administracion-main th,td{
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
   }
 
   #ac-progress-bar {
@@ -852,9 +875,10 @@ table{
 
 }
 
+
+
 #ingreso-form,
-#nuevo-usuario-form,
-#administracion-main{
+#nuevo-usuario-form{
   margin: auto;
   padding-top: 100px;
   align-items: center;
