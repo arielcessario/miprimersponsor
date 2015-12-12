@@ -1,394 +1,1 @@
-<div id="main" ng-controller="MainController as mainCtrl">
-    <div id="main-search-bar">
-        <img src="images/search.png" alt="" height="57" width="57">
-        <input type="text" ng-model="mainCtrl.filtroProyectos">
-    </div>
-    <div id="main-top-section">
-
-        <div id="main-top-text-panel">
-            <img src="images/logo.png" alt="" height="250" width="370">
-
-            <h1>Bienvenido!</h1>
-
-            <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">
-                <p>CREAR</p>
-                <span>un nuevo proyecto</span>
-            </div>
-        </div>
-        <div id="main-slider">
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
-                <img ng-src="images/{{mainCtrl.proyecto_slider_01.fotos[0].nombre}}" alt="">
-
-                <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>
-
-                <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id)">
-                    VER
-                </button>
-            </div>
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 2}" class="main-slider-proyecto">
-                <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">
-
-                <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>
-
-                <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id)">
-                    VER
-                </button>
-            </div>
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
-                <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">
-
-                <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>
-
-                <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id)">
-                    VER
-                </button>
-            </div>
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
-                <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">
-
-                <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>
-
-                <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id)">
-                    VER
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div id="proyectos-nuevos">
-        <h1>Proyectos nuevos</h1>
-
-        <div id="main-proyectos-nuevos-list">
-            <div class="main-proyecto-nuevo">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}" alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_nuevo_01.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER
-                </button>
-                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_01.faltan}}</span> días restantes... <span
-                        class="porcentaje">{{mainCtrl.proyecto_nuevo_01.porc}}%</span></div>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_01.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_nuevo_01.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">
-                        OK
-                    </button>
-                    <button class="button-donacion-rapida"
-                            ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25
-                    </button>
-                    <button class="button-donacion-rapida"
-                            ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50
-                    </button>
-                    <button class="button-donacion-rapida"
-                            ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-
-            <div class="main-proyecto-nuevo">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}" alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_nuevo_02.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_nuevo_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id)">VER
-                </button>
-                <span>{{mainCtrl.proyecto_nuevo_02.faltan}} días restantes... {{mainCtrl.proyecto_nuevo_02.porc}}%</span>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_02.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_nuevo_02.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_02.proyecto_id);">
-                        OK
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id);">$25</button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id);">$50</button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-            <div class="main-proyecto-nuevo">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}" alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_nuevo_03.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_nuevo_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id)">VER
-                </button>
-                <span>{{mainCtrl.proyecto_nuevo_03.faltan}} días restantes... {{mainCtrl.proyecto_nuevo_03.porc}}%</span>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_03.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_nuevo_03.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_03.proyecto_id);">
-                        OK
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id);">$25</button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id);">$50</button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="institucional-publicidad">
-        <img src="" alt="">
-
-        <h1>INSTITUCIONAL O PUBLICIDAD</h1>
-
-        <h2>Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-        </h2>
-    </div>
-
-    <div class="colores">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <div id="proyectos-finalizar">
-        <h1>Proyectos por finalizar</h1>
-
-        <div id="main-proyectos-finalizar-list">
-            <div class="main-proyecto-finalizar">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}"
-                     alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_finalizar_01.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_finalizar_01.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id)">
-                    VER
-                </button>
-                <span>{{mainCtrl.proyecto_finalizar_01.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_01.porc}}%</span>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_01.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_finalizar_01.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_01.proyecto_id);">
-                        OK
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_01.proyecto_id);">$25
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_01.proyecto_id);">$50
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_01.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-            <div class="main-proyecto-finalizar">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}"
-                     alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_finalizar_02.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_finalizar_02.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id)">
-                    VER
-                </button>
-                <span>{{mainCtrl.proyecto_finalizar_02.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_02.porc}}%</span>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_02.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_finalizar_02.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_02.proyecto_id);">
-                        OK
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_02.proyecto_id);">$25
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_02.proyecto_id);">$50
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_02.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-            <div class="main-proyecto-finalizar">
-                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}"
-                     alt="">
-
-                <img class="main-button-face" src="" alt="" height="30" width="30">
-                <img class="main-button-twitter" src="" alt="" height="30" width="30">
-
-                <h2>{{mainCtrl.proyecto_finalizar_03.nombre}}</h2>
-
-                <p>{{mainCtrl.proyecto_finalizar_03.descripcion}}</p>
-                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id)">
-                    VER
-                </button>
-                <span>{{mainCtrl.proyecto_finalizar_03.faltan}} días restantes... {{mainCtrl.proyecto_finalizar_03.porc}}%</span>
-                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_03.total_donado}}"
-                                 objetivo="{{mainCtrl.proyecto_finalizar_03.costo_inicial}}"></ac-progress-bar>
-                <div class="donacion-rapida-details">
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_03.proyecto_id);">
-                        OK
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_03.proyecto_id);">$25
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_03.proyecto_id);">$50
-                    </button>
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_03.proyecto_id);">$100
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="institucional-publicidad">
-        <img src="" alt="">
-
-        <h1>INSTITUCIONAL O PUBLICIDAD</h1>
-
-        <h2>Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse varius enim in
-            eros elementum tristique. Duis cursus, mi
-            quis viverra ornare, eros dolor interdum
-            nulla, ut commodo diam libero vitae erat.
-            Aenean faucibus nibh et justo cursus id
-            rutrum lorem imperdiet. Nunc ut sem vitae
-            risus tristique posuere.
-        </h2>
-    </div>
-
-    <div class="imagenes-publicitarias">
-        <img src="images/prueba1.gif" width="1027px" height="530px">
-    </div>
-
-
-    <div class="colores">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <div id="main-nuestras-empresas">
-        <h1>NUESTRAS EMPRESAS</h1>
-
-        <div id="main-nuestras-empresas-list">
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-            <div class="main-empresa"></div>
-        </div>
-
-
-    </div>
-
-    <div id="contacto-container">
-
-        <h1>Contacto</h1>
-
-        <div id="contacto-form">
-            <div class="contacto-panel">
-
-                <span>Nombre</span>
-
-                <input ng-model="contactoCtrl.nombre" type="text" id="contacto-nombre">
-
-                <span>Email</span>
-
-                <input ng-model="contactoCtrl.email" type="text" id="contacto-mail">
-
-                <span>Asunto</span>
-
-                <input ng-model="contactoCtrl.asunto" type="text" id="contacto-asunto">
-
-
-            </div>
-
-            <div class="contacto-panel">
-
-                <span>Escriba aqu&iacute su consulta</span>
-
-            <textarea class="textoareaconsulta" ng-model="contactoCtrl.mensaje" name="" id="contacto-consulta"
-                      rows="10"></textarea>
-
-            </div>
-        </div>
-
-
-        <div class="contacto-panel contacto-enviar-mobile">
-
-            <button id="contacto-enviar-mobile" ng-click="contactoCtrl.sendMail();">Enviar</button>
-
-        </div>
-
-
-    </div>
-
-
-</div>
+<div id="main" ng-controller="MainController as mainCtrl">    <div id="main-search-bar">        <img src="images/search.png" alt="" height="57" width="57">        <input type="text" ng-model="mainCtrl.filtroProyectos">    </div>    <div id="main-top-section">        <div id="main-top-text-panel">            <img src="images/logo.png" alt="" height="250" width="370">            <h1>Bienvenido!</h1>            <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">                <p>CREAR</p>                <span>un nuevo proyecto</span>            </div>        </div>        <div id="main-slider">            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">                <img ng-src="images/{{mainCtrl.proyecto_slider_01.fotos[0].nombre}}" alt="">                <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>                <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id)">                    VER                </button>            </div>            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 2}" class="main-slider-proyecto">                <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">                <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>                <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id)">                    VER                </button>            </div>            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">                <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">                <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>                <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id)">                    VER                </button>            </div>            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">                <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">                <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>                <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id)">                    VER                </button>            </div>        </div>    </div>    <div id="proyectos-nuevos">        <h1>Proyectos nuevos</h1>        <div id="main-proyectos-nuevos-list">            <div class="main-proyecto-nuevo">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}" alt="">                <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">                <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_nuevo_01.nombre}}</h2>                <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id)">VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_01.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_nuevo_01.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_01.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_nuevo_01.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">                        OK                    </button>                    <button class="button-donacion-rapida"                            ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25                    </button>                    <button class="button-donacion-rapida"                            ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50                    </button>                    <button class="button-donacion-rapida"                            ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100                    </button>                </div>            </div>            <div class="main-proyecto-nuevo">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}" alt="">                <img class="main-button-face" src="" alt="" height="30" width="30">                <img class="main-button-twitter" src="" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_nuevo_02.nombre}}</h2>                <p>{{mainCtrl.proyecto_nuevo_02.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id)">VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_02.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_nuevo_02.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_02.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_nuevo_02.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_02.proyecto_id);">                        OK                    </button>                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id);">$25</button>                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id);">$50</button>                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id);">$100                    </button>                </div>            </div>            <div class="main-proyecto-nuevo">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}" alt="">                <img class="main-button-face" src="" alt="" height="30" width="30">                <img class="main-button-twitter" src="" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_nuevo_03.nombre}}</h2>                <p>{{mainCtrl.proyecto_nuevo_03.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id)">VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_nuevo_03.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_nuevo_03.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_nuevo_03.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_nuevo_03.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_03.proyecto_id);">                        OK                    </button>                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id);">$25</button>                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id);">$50</button>                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id);">$100                    </button>                </div>            </div>        </div>    </div>    <div class="institucional-publicidad">        <img src="" alt="">        <h1>INSTITUCIONAL O PUBLICIDAD</h1>        <h2>Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.            Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.            Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.        </h2>    </div>    <div class="colores">        <div></div>        <div></div>        <div></div>        <div></div>    </div>    <div id="proyectos-finalizar">        <h1>Proyectos por finalizar</h1>        <div id="main-proyectos-finalizar-list">            <div class="main-proyecto-finalizar">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}"                     alt="">                <img class="main-button-face" src="" alt="" height="30" width="30">                <img class="main-button-twitter" src="" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_finalizar_01.nombre}}</h2>                <p>{{mainCtrl.proyecto_finalizar_01.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id)">                    VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_01.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_finalizar_01.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_01.proyecto_id);">                        OK                    </button>                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_01.proyecto_id);">$25                    </button>                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_01.proyecto_id);">$50                    </button>                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_01.proyecto_id);">$100                    </button>                </div>            </div>            <div class="main-proyecto-finalizar">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}"                     alt="">                <img class="main-button-face" src="" alt="" height="30" width="30">                <img class="main-button-twitter" src="" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_finalizar_02.nombre}}</h2>                <p>{{mainCtrl.proyecto_finalizar_02.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id)">                    VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_02.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_finalizar_02.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_02.proyecto_id);">                        OK                    </button>                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_02.proyecto_id);">$25                    </button>                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_02.proyecto_id);">$50                    </button>                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_02.proyecto_id);">$100                    </button>                </div>            </div>            <div class="main-proyecto-finalizar">                <img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}"                     alt="">                <img class="main-button-face" src="" alt="" height="30" width="30">                <img class="main-button-twitter" src="" alt="" height="30" width="30">                <h2>{{mainCtrl.proyecto_finalizar_03.nombre}}</h2>                <p>{{mainCtrl.proyecto_finalizar_03.descripcion}}</p>                <button class="button-ver" ng-click="mainCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id)">                    VER                </button>                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>                <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_03.total_donado}}"                                 objetivo="{{mainCtrl.proyecto_finalizar_03.costo_inicial}}"></ac-progress-bar>                <div class="donacion-rapida-details">                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_finalizar_03.proyecto_id);">                        OK                    </button>                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_03.proyecto_id);">$25                    </button>                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_03.proyecto_id);">$50                    </button>                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_03.proyecto_id);">$100                    </button>                </div>            </div>        </div>    </div>    <div class="institucional-publicidad">        <img src="" alt="">        <h1>INSTITUCIONAL O PUBLICIDAD</h1>        <h2>Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.            Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.            Lorem ipsum dolor sit amet, consectetur            adipiscing elit. Suspendisse varius enim in            eros elementum tristique. Duis cursus, mi            quis viverra ornare, eros dolor interdum            nulla, ut commodo diam libero vitae erat.            Aenean faucibus nibh et justo cursus id            rutrum lorem imperdiet. Nunc ut sem vitae            risus tristique posuere.        </h2>    </div>    <div class="imagenes-publicitarias">        <img src="images/prueba1.gif" width="1027px" height="530px">    </div>    <div class="colores">        <div></div>        <div></div>        <div></div>        <div></div>    </div>    <div id="main-nuestras-empresas">        <h1>NUESTRAS EMPRESAS</h1>        <div id="main-nuestras-empresas-list">            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>            <div class="main-empresa"></div>        </div>    </div>    <div id="contacto-container">        <h1>Contacto</h1>        <div id="contacto-form">            <div class="contacto-panel">                <span>Nombre</span>                <input ng-model="contactoCtrl.nombre" type="text" id="contacto-nombre">                <span>Email</span>                <input ng-model="contactoCtrl.email" type="text" id="contacto-mail">                <span>Asunto</span>                <input ng-model="contactoCtrl.asunto" type="text" id="contacto-asunto">            </div>            <div class="contacto-panel">                <span>Escriba aqu&iacute su consulta</span>            <textarea class="textoareaconsulta" ng-model="contactoCtrl.mensaje" name="" id="contacto-consulta"                      rows="10"></textarea>            </div>        </div>        <div class="contacto-panel contacto-enviar-mobile">            <button id="contacto-enviar-mobile" ng-click="contactoCtrl.sendMail();">Enviar</button>        </div>    </div></div>
