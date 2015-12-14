@@ -20,7 +20,7 @@
         vm.usuarios = [];
         vm.usuario = {};
         vm.user = UserService.getFromToken();
-        vm.proyecto = {proyecto_id: -1, status: '1', en_slider:'0'};
+        vm.proyecto = {proyecto_id: -1, status: '1', en_slider: '0'};
         vm.proyectos = [];
         vm.showJustificaciones = false;
         vm.foto_01 = '';
@@ -34,6 +34,10 @@
         vm.categoria = {};
         vm.proyecto_categoria = -1;
         vm.donaciones = [];
+        vm.foto_01 = 'no_image.png';
+        vm.foto_02 = 'no_image.png';
+        vm.foto_03 = 'no_image.png';
+        vm.foto_04 = 'no_image.png';
 
 
         // Funciones
@@ -60,6 +64,7 @@
         vm.resetCategoria = resetCategoria;
 
         vm.aprobarDonacion = aprobarDonacion;
+        vm.subirComprobante = subirComprobante;
 
 
         // Init
@@ -77,6 +82,8 @@
                         vm.usuarios = data;
                         vm.usuario.rol_id = '1';
                     });
+                } else {
+                    vm.usuario = UserService.getLogged();
                 }
             }
 
@@ -108,19 +115,37 @@
                 });
 
 
-                ProyectService.get(function (data) {
-                    if (data.length > 0) {
-                        for (var i = 0; i < data.length; i++) {
-                            data[i].costo_inicial = parseFloat(data[i].costo_inicial);
-                            data[i].total_donado = parseFloat(data[i].total_donado);
-                            data[i].fecha_inicio = new Date(data[i].fecha_inicio);
-                            data[i].fecha_fin = new Date(data[i].fecha_fin);
-                            data[i].status = '' + data[i].status;
+                if (vm.user.data.rol == 0) {
+                    ProyectService.get(function (data) {
+                        if (data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
+                                data[i].total_donado = parseFloat(data[i].total_donado);
+                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
+                                data[i].fecha_fin = new Date(data[i].fecha_fin);
+                                data[i].status = '' + data[i].status;
 
+                            }
+                            vm.proyectos = data;
                         }
-                        vm.proyectos = data;
-                    }
-                });
+                    });
+                } else {
+
+                    ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
+                        if (data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
+                                data[i].total_donado = parseFloat(data[i].total_donado);
+                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
+                                data[i].fecha_fin = new Date(data[i].fecha_fin);
+                                data[i].status = '' + data[i].status;
+
+                            }
+                            vm.proyectos = data;
+                        }
+                    });
+                }
+
             }
 
             if (newValue == 'administracion/cambios.html') {
@@ -195,6 +220,7 @@
             UserService.create(vm.usuario, function (data) {
                 UserService.get(function (data) {
                     vm.usuarios = data;
+                    resetUsuario();
                 });
             });
         }
@@ -215,75 +241,35 @@
         }
 
         function updateUsuario() {
-            var conErrores = false;
 
-            //if (vm.usuario.cliente_id == -1) {
-            //    AcUtils.validations('nombre', 'Debe seleccionar un usuario');
-            //    conErrores = true;
-            //    return;
-            //}
-            //
-            //if (vm.usuario.nombre.trim().length == 0) {
-            //    AcUtils.validations('nombre', 'El nombre es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.usuario.apellido.trim().length == 0) {
-            //    AcUtils.validations('apellido', 'El apellido es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.usuario.nro_doc.trim().length == 0) {
-            //    AcUtils.validations('cuit', 'El CUIT es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.usuario.telefono.trim().length == 0) {
-            //    AcUtils.validations('telefono', 'El teléfono es obligatorio');
-            //    conErrores = true;
-            //}
-            ///*if (vm.usuario.password.trim().length == 0) {
-            // //    AcUtilsService.validations('password', 'El password es obligatorio');
-            // //    conErrores = true;
-            // //}*/
-            //if (vm.usuario.direccion.trim().length == 0) {
-            //    AcUtils.validations('direccion', 'La dirección es obligatoria');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.usuario.rol_id == undefined) {
-            //    AcUtils.validations('rol', 'Debe asignar un rol');
-            //    conErrores = true;
-            //}
-            //
-            //if (!AcUtils.validateEmail(vm.usuario.mail)) {
-            //    AcUtils.validations('mail', 'El mail es incorrecto');
-            //    conErrores = true;
-            //}
-            //
-            //if (conErrores) {
-            //    return;
-            //}
+            if (vm.user.data.rol != 0) {
+                vm.usuario.rol_id = vm.user.data.rol;
+            }
 
 
             UserService.update(vm.usuario, function (data) {
-                UserService.get(function (data) {
 
-                    vm.usuarios = data;
-                    vm.usuario = {
-                        cliente_id: -1,
-                        nombre: '',
-                        apellido: '',
-                        nro_doc: '',
-                        telefono: '',
-                        password: '',
-                        direccion: '',
-                        mail: '',
-                        rol_id: '0'
-                    };
+                if (vm.user.data.rol == 0) {
+                    UserService.get(function (data) {
 
+                        vm.usuarios = data;
+                        vm.usuario = {
+                            cliente_id: -1,
+                            nombre: '',
+                            apellido: '',
+                            nro_doc: '',
+                            telefono: '',
+                            password: '',
+                            direccion: '',
+                            mail: '',
+                            rol_id: '0'
+                        };
+                    });
+                } else {
+                    vm.usuario.password = '';
+                    UserService.setLogged(vm.usuario);
+                }
 
-                });
             });
         }
 
@@ -291,6 +277,9 @@
             AcUtilsGlobals.broadcast();
 
             vm.proyecto = angular.copy(proyecto);
+            vm.proyecto.en_slider = '' + vm.proyecto.en_slider;
+            vm.proyecto_categoria = vm.proyecto.categoria_id;
+
             var elem = angular.element(document.querySelector('#nombre'));
             vm.foto_01 = (vm.proyecto.fotos[0] != undefined) ? vm.proyecto.fotos[0].nombre : 'no_image.png';
             vm.foto_02 = (vm.proyecto.fotos[1] != undefined) ? vm.proyecto.fotos[1].nombre : 'no_image.png';
@@ -312,6 +301,13 @@
                 mail: '',
                 rol_id: '0'
             };
+
+            vm.foto_01 = 'no_image.png';
+            vm.foto_02 = 'no_image.png';
+            vm.foto_03 = 'no_image.png';
+            vm.foto_04 = 'no_image.png';
+
+            vm.showJustificaciones = false;
         }
 
         function removeProyecto() {
@@ -360,6 +356,7 @@
 
             vm.proyecto.status_cambio = 1;
             vm.proyecto.usuario_id = vm.user.data.id;
+            vm.proyecto.categorias = vm.proyecto_categoria;
 
             ProyectService.createCambio(vm.proyecto, function (data) {
                 UploadVars.uploadsList = [];
@@ -370,55 +367,6 @@
         }
 
         function createProyecto() {
-            var conErrores = false;
-
-            //if (vm.proyecto.cliente_id == -1) {
-            //    AcUtils.validations('nombre', 'Debe seleccionar un proyecto');
-            //    conErrores = true;
-            //    return;
-            //}
-            //
-            //if (vm.proyecto.nombre.trim().length == 0) {
-            //    AcUtils.validations('nombre', 'El nombre es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.proyecto.apellido.trim().length == 0) {
-            //    AcUtils.validations('apellido', 'El apellido es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.proyecto.nro_doc.trim().length == 0) {
-            //    AcUtils.validations('cuit', 'El CUIT es obligatorio');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.proyecto.telefono.trim().length == 0) {
-            //    AcUtils.validations('telefono', 'El teléfono es obligatorio');
-            //    conErrores = true;
-            //}
-            ///*if (vm.proyecto.password.trim().length == 0) {
-            // //    AcUtilsService.validations('password', 'El password es obligatorio');
-            // //    conErrores = true;
-            // //}*/
-            //if (vm.proyecto.direccion.trim().length == 0) {
-            //    AcUtils.validations('direccion', 'La dirección es obligatoria');
-            //    conErrores = true;
-            //}
-            //
-            //if (vm.proyecto.rol_id == undefined) {
-            //    AcUtils.validations('rol', 'Debe asignar un rol');
-            //    conErrores = true;
-            //}
-            //
-            //if (!AcUtils.validateEmail(vm.proyecto.mail)) {
-            //    AcUtils.validations('mail', 'El mail es incorrecto');
-            //    conErrores = true;
-            //}
-            //
-            //if (conErrores) {
-            //    return;
-            //}
 
             vm.proyecto.fotos = [
                 {
@@ -450,39 +398,37 @@
             vm.proyecto.fecha_fin = new Date((vm.proyecto.fecha_fin.getMonth() + 1) + '/' + (vm.proyecto.fecha_fin.getDate()) + '/' + vm.proyecto.fecha_fin.getFullYear());
             vm.proyecto.usuario_id = vm.user.data.id;
 
-            if (vm.proyecto.proyecto_id == -1) {
-                ProyectService.create(vm.proyecto, function (data) {
+            if (vm.proyecto.proyecto_id != -1) {
+                vm.showJustificaciones = true;
+                return;
+            }
+
+
+            ProyectService.create(vm.proyecto, function (data) {
+                if (vm.user.data.rol == "0") {
                     ProyectService.get(function (data) {
                         vm.proyectos = data;
                         UploadVars.uploadsList = [];
                         vm.proyecto = {proyecto_id: -1};
                     });
-                });
-            } else {
+                } else {
+                    ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
+                        if (data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
+                                data[i].total_donado = parseFloat(data[i].total_donado);
+                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
+                                data[i].fecha_fin = new Date(data[i].fecha_fin);
+                                data[i].status = '' + data[i].status;
 
-                vm.showJustificaciones = true;
-                //ProyectService.update(vm.proyecto, function (data) {
-                //    ProyectService.get(function (data) {
-                //
-                //        vm.proyectos = data;
-                //        vm.proyecto = {
-                //            cliente_id: -1,
-                //            nombre: '',
-                //            apellido: '',
-                //            nro_doc: '',
-                //            telefono: '',
-                //            password: '',
-                //            direccion: '',
-                //            mail: '',
-                //            rol_id: '0'
-                //        };
-                //
-                //
-                //    });
-                //});
-            }
+                            }
+                            vm.proyectos = data;
+                            vm.proyecto = {proyecto_id: -1};
+                        }
+                    });
+                }
 
-
+            });
         }
 
         function updateFotoProyecto(filelist, id, sub_folder) {
@@ -525,6 +471,8 @@
         function confirmarCambio() {
 
             vm.proyecto_modificado.status_cambio = 2;
+            vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
+
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
 
                 if (data != -1) {
@@ -653,9 +601,27 @@
             };
         }
 
+        function subirComprobante(filelist){
+
+            UploadService.uploadImages(filelist.item(0), '', function(data){
+                ProyectService.confirmarDeposito(vm.proyecto.proyecto_id, filelist.item(0).name, function(data){
+                    console.log(data);
+                    ProyectService.get(function(data){
+                        vm.proyectos=data;
+                    })
+                })
+            });
+
+
+        }
+
     }
 
     function AdministracionService() {
         this.screen = 'administracion/datos.html';
     }
+
+
+
+
 })();
