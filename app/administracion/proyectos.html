@@ -121,28 +121,28 @@
     </div>
 
 
-
     <div class="administracion-button-bar">
         <button ac-validator ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
         <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
         </button>
+        <div style="position: relative; min-width: 50px; height: 20px;"> Subir Comprobante
+            <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
+                   ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
+        </div>
+
         <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
     </div>
 
 </div>
 
 
-
-
-
-
-<table id="administracion-proyectos-tabla" class="table table-striped"
-       ng-if="administracionCtrl.user.data.rol == 0">
+<table id="administracion-proyectos-tabla" class="table table-striped">
 
     <tbody>
     <tr>
         <th>Proyecto</th>
         <th>Avance</th>
+        <th>Comprobante</th>
     </tr>
     <tr ng-repeat="row in administracionCtrl.proyectos"
         ng-click="administracionCtrl.modificarProyecto(row);"
@@ -153,6 +153,8 @@
             <ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}"
                              hint="false"></ac-progress-bar>
         </td>
+
+        <td class=""><img ng-src="images/{{row.donaciones[0].comprobante}}" alt="" width="50"></td>
     </tr>
     </tbody>
 </table>
