@@ -5,6 +5,23 @@
 @import "compass/reset";
 //@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
+//animaciones
+@-webkit-keyframes fadeinleft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+  }
+
+  90% {
+    opacity: 0;
+    -webkit-transform: translateX(40%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+  }
+}
 
 // GENERALES
 body, html {
@@ -59,27 +76,27 @@ a {
   flex-wrap: nowrap;
   padding: 5px;
   height: 39px;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-  -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-  box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-   input {
-     font-size: 16px;
-     font-weight: bold;
-     background-color: lightgrey;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+  input {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: lightgrey;
     max-width: 40px;
     max-height: 18px;
     margin: 5px;
     border-radius: 4px;
   }
 
-  button{
+  button {
     font-size: 18px;
     background-color: transparent;
     color: white;
     border-style: none;
 
   }
-  span{
+  span {
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
     font-size: 22px;
@@ -91,44 +108,44 @@ a {
 
 }
 
-table{
+table {
   max-width: 100%;
   width: 100%;
   table-layout: fixed;
 }
 
 // Mensajes
-.ac-error-message{
-  background-color: #e3001b;
-  color: white;
-}
-.ac-success-message{
+.ac-error-message {
   background-color: #e3001b;
   color: white;
 }
 
-.ac-mensaje-custom-show{
+.ac-success-message {
+  background-color: #e3001b;
+  color: white;
+}
+
+.ac-mensaje-custom-show {
   -webkit-animation: show-mensaje 3s;
   -o-animation: show-mensaje 3s;
   animation: show-mensaje 3s;
 }
 
 @-webkit-keyframes show-mensaje {
-  0%{
+  0% {
     opacity: 0;
   }
-  33%{
+  33% {
     opacity: 1;
   }
-  66%{
+  66% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 
 }
-
 
 // HEADER
 
@@ -161,7 +178,7 @@ table{
 
 #header-desktop {
   position: fixed;
-  top: 0;
+  top: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -196,7 +213,7 @@ table{
     }
   }
 
-  #header-desktop-right img{
+  #header-desktop-right img {
     margin-left: 10px;
 
   }
@@ -385,33 +402,46 @@ table{
 }
 
 #main-search-bar {
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   width: 100%;
   background-color: rgba(250, 152, 25, 1);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  max-height: 30px;
+  max-height: 35px;
   margin-top: 50px;
+
+
+  ::-webkit-input-placeholder { color: white; font-size: 18px;height: 22px; border-style: none;} /* WebKit */
+  :-moz-placeholder { color: white; font-size: 18px;height: 22px; border-style: none;} /* Firefox 18- */
+  ::-moz-placeholder { color: white; font-size: 18px;height: 22px;border-style: none;} /* Firefox 19+ */
+  :-ms-input-placeholder { color: white; font-size: 18px;height: 22px; border-style: none;} /* IE 10+ */
 
   input {
     background-color: rgba(0, 0, 0, 0);
     color: white;
-    height: 30px;
+    margin-top: 5px;
+    font-size: 18px;
+    height: 22px;
     width: 100%;
     border-style: none;
 
   }
 
   img {
-    background-color: rgb(135, 206, 29);
     margin-left: 40px;
-    width:50px;
+    width: 50px;
     height: 50px;
+    margin-right: 10px;
     margin-top: -10px;
-  }
+    }
+}
+
+.imagenes-publicitarias{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #main-top-section {
@@ -427,7 +457,7 @@ table{
   }
 
   h1 {
-    margin: 5px;
+    margin-bottom: 20px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 65px;
     color: rgba(250, 152, 25, 1);
@@ -445,10 +475,11 @@ table{
     }
   }
 
-  .imagenes-publicitarias img{
-    margin-top: 50px;
+
+  .imagenes-publicitarias img {
     text-align: center;
-    align-items: center;
+    align-items: center
+
   }
 
   #main-btn-crear {
@@ -457,14 +488,18 @@ table{
     -moz-border-radius: 8px;
     border-radius: 8px;
     color: white;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 20px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     p {
       font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 3px;
     }
     span {
       font-size: 14px;
@@ -474,9 +509,47 @@ table{
   #main-slider {
     width: 100%;
     max-width: 100%;
-    background-color: lightblue;
     min-height: 300px;
     position: relative;
+    h1 {
+      color: black;
+      font-family: 'Droid Sans', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    p {
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 16px;
+      margin-bottom: 20px;
+      max-height: 200px;
+      overflow: auto;
+
+    }
+    img {
+      width: 100%;
+      height: 150px;
+
+    }
+
+    .button-ver {
+      width: 54px;
+      height: 42px;
+      font-family: 'Droid Sans', sans-serif;
+      font-weight: bold;
+      background-color: rgb(0, 161, 72);
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      color: white;
+      padding: 5px;
+      align-items: center;
+      outline: none;
+
+    }
+
     @media (min-width: 800px) {
       max-width: 50%;
     }
@@ -489,7 +562,6 @@ table{
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #00a148;
       width: 100%;
       height: 100%;
 
@@ -547,18 +619,21 @@ table{
       margin-bottom: 10px;
       position: relative;
 
-      -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-      -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-      box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+      -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+      -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+      box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 
-      .main-img-proyecto{
+      .main-img-proyecto {
         background-color: red;
         width: 100%;
         height: 100px;
         align-items: center;
         text-align: center;
-        }
-      p{
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      }
+      p {
         height: 300px;
         line-height: 17px;
         font-family: 'Droid Sans', sans-serif;
@@ -566,7 +641,6 @@ table{
         overflow: auto;
         margin-bottom: 10px;
       }
-
 
       @media (min-width: 1200px) {
         max-width: 400px;
@@ -578,15 +652,15 @@ table{
         -webkit-border-radius: 12px;
         -moz-border-radius: 12px;
         border-radius: 12px;
-        -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-        -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
-        box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.49);
+        -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+        -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
+        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
       }
 
       .ac-progress-first,
       .ac-progress-second,
       .ac-progress-third,
-      .ac-progress-fourth{
+      .ac-progress-fourth {
         width: 14px;
         height: 28px;
         -webkit-border-radius: 4.5px;
@@ -601,22 +675,24 @@ table{
         font-size: 30px;
         text-transform: uppercase;
         text-align: center;
-        margin-top: 70px;
+        margin-top: 10px;
         height: 70px;
       }
 
-      p{
+      p {
         height: 320px;
         font-family: 'Droid Sans', serif;
         font-size: 15px;
         text-align: left;
-        margin-top: 30px;
+        margin-top: 10px;
 
       }
 
-      .button-ver{
+      .button-ver {
+        font-family: 'Droid Sans', sans-serif;
+        font-weight: bold;
         width: 54px;
-        height: 34px;
+        height: 42px;
         background-color: rgb(0, 161, 72);
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -626,38 +702,35 @@ table{
         align-items: center;
         outline: none;
 
-     }
+      }
 
-      .button-donacion-rapida{
-              }
+      .button-donacion-rapida {
+      }
 
-      span{
+      span {
         font-family: 'Droid Sans', serif;
         margin-top: 10px;
 
       }
 
-
     }
 
     .main-button-face,
-    .main-button-twitter
-    {
+    .main-button-twitter {
       position: absolute;
       right: 20px;
       top: 20px;
-      -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-      -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
       border-style: none;
 
     }
 
-    .main-button-twitter{
+    .main-button-twitter {
       top: 55px;
-      
-    }
 
+    }
 
     .main-proyecto-nuevo {
       border: 2px solid rgb(227, 0, 27);
@@ -672,9 +745,9 @@ table{
 
 #proyectos-nuevos {
   h1 {
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     background-color: rgb(227, 0, 27);
   }
 }
@@ -682,9 +755,9 @@ table{
 #proyectos-finalizar {
 
   h1 {
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     background-color: rgb(24, 226, 28);
   }
 }
@@ -746,28 +819,28 @@ table{
 }
 
 // ADMINISTRACION
-.administracion-button-bar{
+.administracion-button-bar {
   margin-top: 10px;
   margin-bottom: 10px;
 
 }
 
-#administracion{
+#administracion {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
 
-  @media (min-width: 400px){
-    .administracion-inputs{
+  @media (min-width: 400px) {
+    .administracion-inputs {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
-      span{
-      margin-bottom: 5px;
+      span {
+        margin-bottom: 5px;
 
       }
 
@@ -791,14 +864,14 @@ table{
   }
 
   #administracion-main,
-  #administracion-usuarios-tabla{
+  #administracion-usuarios-tabla {
     margin-top: 50px;
     margin-bottom: 10px;
     max-width: 1000px;
 
   }
 
-  #administracion-main th,td{
+  #administracion-main th, td {
     text-align: center;
     margin: 5px;
     padding: 5px;
@@ -815,44 +888,51 @@ table{
   flex-wrap: wrap;
   justify-content: center;
   div {
-    border: 1px solid;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
     padding: 5px;
-    margin: 1px;
-    width: 150px;
+    margin: 10px;
+    width: 100px;
     text-align: center;
   }
 
 }
 
-.institucional-publicidad{
+.institucional-publicidad {
   margin: auto;
-  max-width: 1100px;
+  max-width: 1200px;
 
-  h1{
+
+  h1 {
     margin: 10px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 45px;
     font-weight: bold;
   }
 
-  h2{
+  h2 {
     margin: 10px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
     line-height: 18px;
     text-align: justify;
 
-
-
-  }
+   }
 
 }
 
-.administracion-input input{
+//.institucional-publicidad:hover{
+  //    -webkit-animation: fadeinleft 300ms ease-in-out;
+    //-moz-animation: fadeinleft 300ms ease-in-out;
+    //-o-animation: fadeinleft 300ms ease-in-out;
+    //animation: fadeinleft 300ms ease-in-out;
+//}
+
+.administracion-input input {
   margin-bottom: 10px;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.54);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   border-style: none;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
@@ -860,38 +940,34 @@ table{
 
 }
 
-.dias-restantes{
+.dias-restantes {
   color: black;
   font-size: 18px;
   text-align: left;
 }
 
-
-.porcentaje{
+.porcentaje {
   font-size: 50px;
   color: black;
   margin-left: 90px;
 
-
 }
 
-
-
 #ingreso-form,
-#nuevo-usuario-form{
+#nuevo-usuario-form {
   margin: auto;
   padding-top: 100px;
   align-items: center;
   max-width: 800px;
   min-height: 800px;
-  h1{
+  h1 {
     margin-bottom: 20px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 45px;
     font-weight: bold;
 
   }
-  p{
+  p {
     margin-bottom: 20px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
@@ -900,14 +976,12 @@ table{
 
   }
 
-  span{
+  span {
     margin: 5px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
     font-weight: bold;
 
   }
-
-
 
 }
