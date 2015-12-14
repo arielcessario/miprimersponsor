@@ -90,6 +90,8 @@
             //Si ingreso a mis aportes o mis patrocinadores refresco las donaciones en general
             if (newValue == 'administracion/patrocinadores.html' || newValue == 'administracion/aportes.html') {
                 DonationVars.clearCache = true;
+                vm.donaciones_entregadas = [];
+                vm.donaciones_obtenidas = [];
                 DonationService.get(vm.user.data.id, function (data) {
 
 
@@ -601,13 +603,13 @@
             };
         }
 
-        function subirComprobante(filelist){
+        function subirComprobante(filelist) {
 
-            UploadService.uploadImages(filelist.item(0), '', function(data){
-                ProyectService.confirmarDeposito(vm.proyecto.proyecto_id, filelist.item(0).name, function(data){
+            UploadService.uploadImages(filelist.item(0), '', function (data) {
+                ProyectService.confirmarDeposito(vm.proyecto.proyecto_id, filelist.item(0).name, function (data) {
                     console.log(data);
-                    ProyectService.get(function(data){
-                        vm.proyectos=data;
+                    ProyectService.get(function (data) {
+                        vm.proyectos = data;
                     })
                 })
             });
@@ -620,8 +622,6 @@
     function AdministracionService() {
         this.screen = 'administracion/datos.html';
     }
-
-
 
 
 })();
