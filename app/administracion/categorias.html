@@ -1,26 +1,26 @@
-<table id="administracion-categorias-tabla" class="table table-striped" style="width: 100%">
-
-    <input type="text" ng-model="administracionCtrl.categoria.nombre" id="nombre-categoria">
-    <select ng-click=""
-            ng-model="administracionCtrl.categoria.parent_id"
-            ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.padres"
-            class="">
-    </select>
-
-    <button ng-click="administracionCtrl.saveCategoria();">Guardar</button>
-    <button ng-click="administracionCtrl.removeCategoria();">Borrar</button>
-    <button ng-click="administracionCtrl.resetCategoria();">Cancelar</button>
-
-    <tbody>
-    <tr>
-        <th>NOMBRE</th>
-        <th>PADRE</th>
-    </tr>
-    <tr ng-repeat="row in administracionCtrl.categorias"
-        class="administracion-row"
-        ng-click="administracionCtrl.modificarCategoria(row);">
-        <td class="">{{row.nombre}}</td>
-        <td class="">{{row.nombrePadre}}</td>
-    </tr>
-    </tbody>
+<table id="administracion-categorias-tabla" class="table table-striped" style="width: 100%">
+
+    <input type="text" ng-model="administracionCtrl.categoria.nombre" id="nombre-categoria">
+    <select ng-click=""
+            ng-model="administracionCtrl.categoria.parent_id"
+            ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.padres"
+            class="">
+    </select>
+
+    <button ng-click="administracionCtrl.saveCategoria();">Guardar</button>
+    <button ng-click="administracionCtrl.removeCategoria();">Borrar</button>
+    <button ng-click="administracionCtrl.resetCategoria();">Cancelar</button>
+
+    <tbody>
+    <tr>
+        <th>NOMBRE</th>
+        <th>PADRE</th>
+    </tr>
+    <tr ng-repeat="row in administracionCtrl.categorias"
+        class="administracion-row"
+        ng-click="administracionCtrl.modificarCategoria(row);">
+        <td class="">{{row.nombre}}</td>
+        <td class="">{{row.nombrePadre}}</td>
+    </tr>
+    </tbody>
 </table>
