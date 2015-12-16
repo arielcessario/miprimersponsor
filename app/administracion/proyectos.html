@@ -1,4 +1,4 @@
-<div class="administracion-inputs" form-id="proyectos">
+<div class="administracion-inputs" form-id="proyectos" ng-if="administracionCtrl.validation">
 
     <div class="administracion-input">
 
@@ -40,8 +40,9 @@
         <select id="rol" ng-model="administracionCtrl.proyecto.status">
 
             <option value="0">Cancelado</option>
-
             <option value="1">Activo</option>
+            <option value="2">Terminado</option>
+            <option value="3">Dinero Transferido</option>
 
         </select>
 
@@ -119,18 +120,22 @@
             </div>
         </div>
     </div>
-
+    <div ng-if="administracionCtrl.showJustificaciones">
+        <span>Justificación de cambios</span>
+        <textarea name="justificacion" id="" cols="30" rows="10"
+                  ng-model="administracionCtrl.proyecto.justificacion"></textarea>
+        <button ng-click="administracionCtrl.createCambio();">ENVIAR</button>
+    </div>
 
     <div class="administracion-button-bar">
         <button ac-validator ng-click="administracionCtrl.createProyecto();">GUARDAR</button>
         <button ng-click="administracionCtrl.removeProyecto();" ng-if="administracionCtrl.user.data.rol == 1">BORRAR
         </button>
-        <div style="position: relative; min-width: 50px; height: 20px;"> Subir Comprobante
+        <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
+        <button style="position: relative;"> Subir Comprobante
             <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
                    ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
-        </div>
-
-        <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
+        </button>
     </div>
 
 </div>
@@ -159,9 +164,3 @@
     </tbody>
 </table>
 
-<div ng-if="administracionCtrl.showJustificaciones">
-    <span>Justificación de cambios</span>
-        <textarea name="justificacion" id="" cols="30" rows="10"
-                  ng-model="administracionCtrl.proyecto.justificacion"></textarea>
-    <button ng-click="administracionCtrl.createCambio();">ENVIAR</button>
-</div>

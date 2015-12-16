@@ -10,15 +10,15 @@
 
     AdministracionController.$inject = ['UserService', 'AcUtils', 'ProyectService', '$location', 'UploadService',
         'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService', 'AcUtilsGlobals',
-        'ContactsService'];
+        'ContactsService', '$timeout'];
     function AdministracionController(UserService, AcUtils, ProyectService, $location, UploadService,
                                       UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService, AcUtilsGlobals,
-                                      ContactsService) {
+                                      ContactsService, $timeout) {
 
         var vm = this;
         vm.screen = AdministracionService.screen;
         vm.usuarios = [];
-        vm.usuario = {};
+        vm.usuario = {usuario_id:-1};
         vm.user = UserService.getFromToken();
         vm.proyecto = {proyecto_id: -1, status: '1', en_slider: '0'};
         vm.proyectos = [];
@@ -38,6 +38,7 @@
         vm.foto_02 = 'no_image.png';
         vm.foto_03 = 'no_image.png';
         vm.foto_04 = 'no_image.png';
+        vm.validation = true;
 
 
         // Funciones
@@ -190,8 +191,17 @@
 
         });
 
-
         // Implementaciones
+        /**
+         * Esta función es una auxiliar para resetear las validaciones y que funcionen después del guardar
+         */
+        function validate(){
+            vm.validation = false;
+            $timeout(function(){
+                vm.validation = true;
+            },1);
+        }
+
         function modificarUsuario(usuario) {
             AcUtilsGlobals.broadcast();
             vm.usuario = angular.copy(usuario);
@@ -219,12 +229,16 @@
         }
 
         function saveUsuario() {
-            UserService.create(vm.usuario, function (data) {
-                UserService.get(function (data) {
-                    vm.usuarios = data;
-                    resetUsuario();
-                });
-            });
+
+            //UserService.create(vm.usuario, function (data) {
+            //
+            //    UserService.get(function (data) {
+            //        vm.usuarios = data;
+            //        resetUsuario();
+            //        validate();
+            //    });
+            //
+            //});
         }
 
         function removeUsuario() {
@@ -243,9 +257,12 @@
         }
 
         function updateUsuario() {
-
             if (vm.user.data.rol != 0) {
                 vm.usuario.rol_id = vm.user.data.rol;
+            }
+
+            if(vm.usuario.usuario_id == -1){
+                return;
             }
 
 
@@ -255,22 +272,14 @@
                     UserService.get(function (data) {
 
                         vm.usuarios = data;
-                        vm.usuario = {
-                            cliente_id: -1,
-                            nombre: '',
-                            apellido: '',
-                            nro_doc: '',
-                            telefono: '',
-                            password: '',
-                            direccion: '',
-                            mail: '',
-                            rol_id: '0'
-                        };
+                        resetUsuario();
+                        validate();
                     });
                 } else {
                     vm.usuario.password = '';
                     UserService.setLogged(vm.usuario);
                 }
+
 
             });
         }
@@ -364,6 +373,7 @@
                 UploadVars.uploadsList = [];
                 vm.proyecto = {proyecto_id: -1};
                 vm.showJustificaciones = false;
+                validate();
 
             })
         }
@@ -412,6 +422,7 @@
                         vm.proyectos = data;
                         UploadVars.uploadsList = [];
                         vm.proyecto = {proyecto_id: -1};
+                        validate();
                     });
                 } else {
                     ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
@@ -427,6 +438,7 @@
                             vm.proyectos = data;
                             vm.proyecto = {proyecto_id: -1};
                         }
+                        validate();
                     });
                 }
 
@@ -463,6 +475,7 @@
             vm.proyecto_modificado = cambio;
 
             ProyectService.getByParams('proyecto_id', '' + cambio.proyecto_id, '' + true, function (data) {
+
                 vm.proyecto_original = data[0];
             })
         }
@@ -483,6 +496,7 @@
                             vm.cambios = data;
                             vm.proyecto_original = {};
                             vm.proyecto_modificado = {};
+                            validate();
                         })
                     })
                 }
@@ -501,6 +515,7 @@
                     vm.cambios = data;
                     vm.proyecto_original = {};
                     vm.proyecto_modificado = {};
+                    validate();
                 })
             })
         }
@@ -533,14 +548,15 @@
 
                     if (data == 'true') {
                         CategoryService.get(function (data) {
-
                             vm.categorias = data;
+                            validate();
                         });
 
                         CategoryService.getByParams('parent_id', '-1', 'true', function (data) {
-
                             vm.padres = data;
-                        })
+                            validate();
+                        });
+
                     } else {
 
                     }
@@ -548,15 +564,14 @@
             } else {
                 CategoryService.create(vm.categoria, function (data) {
                     CategoryService.get(function (data) {
-
                         vm.categorias = data;
+                        validate();
                     });
 
                     CategoryService.getByParams('parent_id', '-1', 'true', function (data) {
-
                         vm.padres = data;
-                    })
-
+                        validate();
+                    });
                 });
             }
 
