@@ -342,7 +342,6 @@
         function createCambio() {
 
 
-
             //var jsonFotos = '';
             //if (UploadVars.uploadsList.length == 0) {
             //
@@ -377,6 +376,16 @@
                 vm.proyecto = {proyecto_id: -1};
                 vm.showJustificaciones = false;
                 validate();
+                ContactsService.sendMail(vm.user.data.mail,
+                    [
+                        {mail: 'arielcessario@gmail.com'},
+                        {mail: 'juan.dilello@gmail.com'}
+                    ],
+                    'MPE', 'CREACIÓN DE CAMBIO - Proyecto ' + vm.proyecto.nombre,
+                    'Existe un nuevo cambio para aprobar', function (data) {
+                        console.log(data);
+                    });
+
 
             })
         }
@@ -480,6 +489,7 @@
             ProyectService.getByParams('proyecto_id', '' + cambio.proyecto_id, '' + true, function (data) {
 
                 vm.proyecto_original = data[0];
+                console.log(vm.user.data.mail);
             })
         }
 
@@ -491,15 +501,28 @@
             vm.proyecto_modificado.status_cambio = 2;
             vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
 
+
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
 
                 if (data != -1) {
                     ProyectService.update(vm.proyecto_modificado, function (data) {
                         ProyectService.getCambios(function (data) {
+                            ContactsService.sendMail(vm.user.data.mail,
+                                [
+                                    {mail: vm.proyecto_original.mail}
+                                ],
+                                'MPE', 'CONFIRMACIÓN DE CAMBIO - Proyecto ' + vm.proyecto.nombre,
+                                'Su cambio ha sido aprobado', function (data) {
+                                    console.log(data);
+                                });
+
+
                             vm.cambios = data;
                             vm.proyecto_original = {};
                             vm.proyecto_modificado = {};
                             validate();
+
+
                         })
                     })
                 }
@@ -515,10 +538,19 @@
             vm.proyecto_modificado.status_cambio = 0;
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
                 ProyectService.getCambios(function (data) {
+                    ContactsService.sendMail(vm.user.data.mail,
+                        [
+                            {mail: vm.proyecto_original.mail}
+                        ],
+                        'MPE', 'CANCELACIÓN DE CAMBIO - Proyecto ' + vm.proyecto.nombre,
+                        'Su cambio ha sido cancelado', function (data) {
+                            console.log(data);
+                        });
                     vm.cambios = data;
                     vm.proyecto_original = {};
                     vm.proyecto_modificado = {};
                     validate();
+
                 })
             })
         }
