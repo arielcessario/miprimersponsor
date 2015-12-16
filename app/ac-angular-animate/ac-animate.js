@@ -76,7 +76,10 @@
                     console.log(val);
 
 
-                    if(val){
+                    if(val) {
+
+                        //if($element.hasClass($scope.))
+                        //$element.addClass($scope.animationIn);
 
                     }
 
