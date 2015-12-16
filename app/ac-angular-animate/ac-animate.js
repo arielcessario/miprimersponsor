@@ -72,17 +72,22 @@
 
                     var inOnce = false;
 
-
-                    console.log(val);
-
-
-                    if(val) {
-
-                        //if($element.hasClass($scope.))
-                        //$element.addClass($scope.animationIn);
-
+                    console.log(rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom));
+                    if (rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom)) {
+                        if (!$element.hasClass($scope.animationIn)) {
+                            $element.addClass($scope.animationIn);
+                        }
+                    }else{
+                        $element.removeClass($scope.animationIn);
                     }
 
+                    //if (rect.top >= (0 - $scope.correctionTop)) {
+                    //    if (!$element.hasClass($scope.animationOut)) {
+                    //        $element.addClass($scope.animationOut);
+                    //    }
+                    //}else{
+                    //    $element.removeClass($scope.animationOut);
+                    //}
 
                 }
 
