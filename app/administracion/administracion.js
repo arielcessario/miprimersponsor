@@ -18,7 +18,7 @@
         var vm = this;
         vm.screen = AdministracionService.screen;
         vm.usuarios = [];
-        vm.usuario = {usuario_id:-1};
+        vm.usuario = {usuario_id: -1};
         vm.user = UserService.getFromToken();
         vm.proyecto = {proyecto_id: -1, status: '1', en_slider: '0'};
         vm.proyectos = [];
@@ -79,7 +79,7 @@
             // Si ingreso a mis datos refresco
             if (newValue == 'administracion/datos.html') {
                 if (vm.user.data != undefined && vm.user.data.rol == "0") {
-                    UserService.get(function (data) {
+                    UserService.getByParams('marcado', '0', 'true', function (data) {
                         vm.usuarios = data;
                         vm.usuario.rol_id = '1';
                     });
@@ -195,11 +195,11 @@
         /**
          * Esta función es una auxiliar para resetear las validaciones y que funcionen después del guardar
          */
-        function validate(){
+        function validate() {
             vm.validation = false;
-            $timeout(function(){
+            $timeout(function () {
                 vm.validation = true;
-            },1);
+            }, 1);
         }
 
         function modificarUsuario(usuario) {
@@ -243,15 +243,18 @@
 
         function removeUsuario() {
 
-            var r = confirm('Realmente desea eliminar el usuario?');
+            var r = confirm('Realmente desea eliminar el usuario? Esta operación no se puede deshacer');
 
             if (!r) {
                 return;
             }
 
-            UserService.removeUsuario(vm.usuario.cliente_id, function (data) {
-                UserService.get(function (data) {
+            vm.usuario.marcado = 1;
+            UserService.update(vm.usuario, function (data) {
+                UserService.getByParams('marcado', '0', 'true', function (data) {
                     vm.usuarios = data;
+                    resetUsuario();
+                    validate();
                 });
             });
         }
@@ -261,7 +264,7 @@
                 vm.usuario.rol_id = vm.user.data.rol;
             }
 
-            if(vm.usuario.usuario_id == -1){
+            if (vm.usuario.usuario_id == -1) {
                 return;
             }
 
@@ -269,7 +272,7 @@
             UserService.update(vm.usuario, function (data) {
 
                 if (vm.user.data.rol == 0) {
-                    UserService.get(function (data) {
+                    UserService.getByParams('marcado', '0', 'true', function (data) {
 
                         vm.usuarios = data;
                         resetUsuario();
