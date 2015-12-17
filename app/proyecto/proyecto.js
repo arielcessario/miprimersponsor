@@ -19,7 +19,7 @@
         vm.comentarios = [];
 
         // Funciones
-        vm.donar = donar;
+        vm.donacionRapida = donacionRapida;
         vm.comentar = comentar;
 
         // Init
@@ -35,11 +35,17 @@
 
         // Implementaciones
 
-        function donar() {
+        function donacionRapida(cantidad, proyecto_id){
+            if(!vm.user){
+                $location.path('/ingreso');
+                return;
+            }
+
+
             var donacion = {
-                'proyecto_id': vm.id,
+                'proyecto_id': proyecto_id,
                 'donador_id': vm.user.data.id,
-                'valor': vm.donacion_cantidad,
+                'valor': cantidad,
                 'status': 0
             };
             DonationService.create(donacion, function (data) {
@@ -47,6 +53,7 @@
                 // Enviar los mails
                 console.log(data);
             })
+
         }
 
         function comentar() {

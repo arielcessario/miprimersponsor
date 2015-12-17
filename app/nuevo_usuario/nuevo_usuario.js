@@ -50,8 +50,8 @@
 
 
             UserService.userExist(vm.usuario.mail, function (data) {
-                if (data == 'true') {
-
+                if (data > 0) {
+                    AcUtils.showMessage('error', 'El usuario ya existe');
                 } else {
                     UserService.create(vm.usuario, function (data) {
 
