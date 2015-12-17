@@ -206,6 +206,7 @@
             AcUtilsGlobals.broadcast();
             vm.usuario = angular.copy(usuario);
             vm.usuario.rol_id = '' + vm.usuario.rol_id;
+            vm.usuario.calle = '' + vm.usuario.direcciones[0].calle;
             var elem = angular.element(document.querySelector('#nombre'));
             //elem[0].focus();
         }
@@ -267,6 +268,7 @@
             if (vm.usuario.usuario_id == -1) {
                 return;
             }
+
 
 
             UserService.update(vm.usuario, function (data) {

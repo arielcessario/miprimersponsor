@@ -30,7 +30,7 @@
                     vm.hint = $scope.recaudado + '/' + $scope.objetivo;
                     vm.porcentaje = (parseFloat($scope.recaudado) * 100) / parseFloat($scope.objetivo);
                     vm.toShow = parseInt((vm.porcentaje * 16) / 100);
-                }, 1);
+                }, 1000);
 
 
             },
