@@ -72,7 +72,7 @@
 
                     var inOnce = false;
 
-                    console.log(rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom));
+
                     if (rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom)) {
                         if (!$element.hasClass($scope.animationIn)) {
                             $element.addClass($scope.animationIn);
