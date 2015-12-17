@@ -279,10 +279,12 @@
                         vm.usuarios = data;
                         resetUsuario();
                         validate();
+                        AcUtils.showMessage('success', 'Datos Guardados con Éxito');
                     });
                 } else {
                     vm.usuario.password = '';
                     UserService.setLogged(vm.usuario);
+                    AcUtils.showMessage('success', 'Datos Guardados con Éxito');
                 }
 
 
