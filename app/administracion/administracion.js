@@ -154,7 +154,7 @@
             if (newValue == 'administracion/cambios.html') {
                 ProyectService.getCambios(function (data) {
 
-                    //console.log(data);
+                    console.log(data);
 
                     for (var i = 0; i < data.length; i++) {
 
@@ -376,6 +376,7 @@
             vm.proyecto.categorias = vm.proyecto_categoria;
 
             ProyectService.createCambio(vm.proyecto, function (data) {
+                console.log(data);
                 UploadVars.uploadsList = [];
                 vm.proyecto = {proyecto_id: -1};
                 vm.showJustificaciones = false;
@@ -503,7 +504,7 @@
         function confirmarCambio() {
 
             vm.proyecto_modificado.status_cambio = 2;
-            vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
+            //vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
 
 
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
