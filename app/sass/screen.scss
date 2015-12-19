@@ -40,6 +40,11 @@ a {
   color: white;
 }
 
+button{
+  border-style: none;
+
+}
+
 .colores {
   margin-bottom: 30px;
   margin-top: 30px;
@@ -210,6 +215,13 @@ table {
   }
   #header-desktop-right {
     justify-content: flex-end;
+    button{
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 16px;
+      color: #00a148;
+      text-decoration: underline;
+
+    }
     .desktop-link-login {
       margin: 5px 15px 5px 15px;
       a, span {
@@ -909,6 +921,8 @@ table {
     border-radius: 5px;
     text-align: center;
     padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 
   }
 
@@ -1012,6 +1026,15 @@ table {
     }
   }
 
+  #rol{
+    margin: 5px;
+    height: 30px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+
+
+  }
+
   .administracion-foto {
 
     display: flex;
@@ -1050,6 +1073,12 @@ table {
     flex-direction: column;
     justify-content: flex-start;
     padding: 5px;
+    select{
+      margin: 5px;
+      height: 30px;
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 16px;
+    }
 
   }
 
@@ -1067,10 +1096,14 @@ table {
   }
 
 
+
+
+
   #administracion-usuarios-tabla,
   #administracion-aportes-tabla,
   #administracion-proyectos-tabla,
   #administracion-categorias-tabla {
+    margin-top: 20px;
     background: rgb(255,168,76);
     background: -moz-linear-gradient(45deg, rgb(255,168,76) 0%, rgb(255,123,13) 100%);
     background: -webkit-linear-gradient(45deg, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
@@ -1102,6 +1135,10 @@ table {
     background-color: white;
     color: #b84e11;
     font-weight: bolder;
+    input{
+      margin-bottom: 10px;
+
+    }
 
   }
 
@@ -1199,6 +1236,11 @@ table {
     -moz-border-radius: 5px;
     border-radius: 5px;
     border-style: none;
+    margin-bottom: 10px;
+    color: black;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+    padding: 5px;
   }
   #cambios-comparacion {
     display: flex;
@@ -1475,7 +1517,6 @@ margin-bottom: 20px;
   background-color: white;
   height: 270px;
   width: 100%;
-  padding-top: 50px;
 
   h1 {
     font-family: 'Droid Sans', sans-serif;
