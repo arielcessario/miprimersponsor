@@ -843,7 +843,7 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #6d6a11;
+  background-color: rgba(250, 152, 25, 1);
   margin-top: 20px;
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -871,6 +871,7 @@ table {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    border-style: none;
 
   }
 
@@ -891,17 +892,18 @@ table {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    border-style: none;
 
   }
 
   #contacto-enviar-mobile {
     font-family: 'Droid Sans', sans-serif;
     font-size: 18px;
-    background-color: #6d6a11;
+    background-color: white;
     width: 70px;
     height: 40px;
-    color: white;
-    border-color: white;
+    color: black;
+    border-color: black;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -1090,7 +1092,7 @@ table {
 
     #administracion-main th, td {
     text-align: center;
-      color: white;
+      color: black;
     margin: 5px;
       padding: 10px;
 
@@ -1111,11 +1113,10 @@ table {
   .administracion-row:hover,
   .tr-selected {
     background-color: white;
-    color: green;
     cursor: pointer;
 
-
   }
+
 
 }
 
@@ -1220,6 +1221,8 @@ table {
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
+
+
       @media (min-width: 800px) {
         width: calc(50% - 45px);
         min-width: calc(50% - 45px);
@@ -1232,9 +1235,24 @@ table {
       }
 
       p {
-        font-weight: 400;
-        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: 'Droid Sans', sans-serif;
+
       }
+
+      span{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-family: 'Droid Sans', sans-serif;
+        color: #ff9900;
+      }
+
+
+
     }
   }
 }
@@ -1314,8 +1332,84 @@ table {
 
 }
 
-#ingreso-form,
+#ingreso,
+#nuevo-usuario{
+  background: rgb(255,168,76);
+  background: -moz-linear-gradient(top, rgb(255,168,76) 0%, rgb(255,123,13) 100%);
+  background: -webkit-linear-gradient(top, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
+  background: linear-gradient(to bottom, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );  -webkit-border-radius: 8px;
+
+}
+
 #nuevo-usuario-form {
+  margin: auto;
+  padding-top: 100px;
+  align-items: center;
+  max-width: 800px;
+  min-height: 800px;
+
+  h1 {
+    margin-bottom: 20px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+
+  }
+  span {
+    margin-left: 5px;
+    color: white;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+  button{
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    align-items: center;
+    outline: none;
+
+  }
+  p {
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: justify;
+
+  }
+
+  input {
+    width: 350px;
+    height: 20px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    border-style: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+
+  }
+
+}
+
+.nuevo-usuario-input,
+.administracion-input{
+margin-bottom: 20px;
+}
+
+#ingreso-form{
   margin: auto;
   padding-top: 100px;
   align-items: center;
@@ -1326,10 +1420,12 @@ table {
     font-family: 'Droid Sans', sans-serif;
     font-size: 45px;
     font-weight: bold;
+    color: white;
 
   }
   p {
     margin-bottom: 20px;
+    color: white;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
     line-height: 18px;
@@ -1338,10 +1434,38 @@ table {
   }
 
   span {
-    margin: 5px;
+    margin-left: 5px;
+    color: white;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
     font-weight: bold;
+
+  }
+  button{
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    align-items: center;
+    outline: none;
+
+  }
+
+  input {
+    width: 350px;
+    height: 20px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+    border-style: none;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
 
   }
 
