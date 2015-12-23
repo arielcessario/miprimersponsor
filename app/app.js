@@ -27,7 +27,6 @@
 
                 $routeProvider.otherwise('/main');
 
-
                 $routeProvider.when('/main', {
                     templateUrl: 'main/main.html',
                     controller: 'MainController',

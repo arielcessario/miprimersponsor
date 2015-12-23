@@ -17,7 +17,7 @@ function sendMail($mail_origen, $mails_destino, $nombre, $mensaje, $asunto){
     $mail->Password = 'ventas';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;
-
+    $mail->CharSet = 'UTF-8';
     $mail->From = $mail_origen;
     $mail->FromName = $nombre;
 //    $mail->addAddress('uiglp@uiglp.org.ar');     // Add a recipient

@@ -53,6 +53,9 @@
                 if (data > 0) {
                     AcUtils.showMessage('error', 'El usuario ya existe');
                 } else {
+
+
+
                     UserService.create(vm.usuario, function (data) {
 
                         if (data > -1) {

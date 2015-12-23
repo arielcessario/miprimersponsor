@@ -504,9 +504,10 @@
         function confirmarCambio() {
 
             vm.proyecto_modificado.status_cambio = 2;
-            //vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
+            vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
 
 
+            console.log(vm.proyecto_modificado);
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
 
                 if (data != -1) {

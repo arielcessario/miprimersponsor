@@ -41,6 +41,7 @@
         // Obtengo los proyectos
         ProyectService.get(function (data) {
 
+
             ProyectService.getByParams('en_slider', '1', 'true', function (data) {
                 vm.proyecto_slider_01 = data[0];
                 vm.proyecto_slider_02 = data[0];
