@@ -17,6 +17,7 @@
 
         <input ac-validator
                is-required="El costo inicial es requerido"
+               min-number="1;El valor debe ser mayor a 0"
                type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
 
     </div>
