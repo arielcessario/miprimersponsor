@@ -93,8 +93,10 @@
         }
 
         function comentar() {
-            if (vm.user.data.id == undefined) {
-                alert('Debe estar registrado para poder realizar comentarios');
+
+
+            if (!vm.user || vm.user.data.id == undefined) {
+                AcUtils.showMessage('erro','Debe estar registrado para poder realizar comentarios');
                 return;
             }
 
