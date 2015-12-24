@@ -127,6 +127,7 @@ table {
 
 // View
 .view {
+
   position: relative;
   /*  position: absolute;
     left: 0;
@@ -135,31 +136,47 @@ table {
     right: 0;*/
 }
 
-.view.ng-enter {
-  -webkit-animation: view-in 0.7s;
-  -o-animation: view-in 0.7s;
-  animation: view-in 0.7s;
+.view.ng-enter,
+.vista {
+  @media(min-width: 800px) {
+    background-position: 100% 50% !important;
+    -webkit-animation: view-in 10s;
+    -o-animation: view-in 10s;
+    animation: view-in 10s;
+  }
 }
 
 .view.ng-leave {
-  -webkit-animation: view-out 0.7s;
-  -o-animation: view-out 0.7s;
-  animation: view-out 0.7s;
+  @media(min-width: 800px) {
+    -webkit-animation: view-out 0.7s;
+    -o-animation: view-out 0.7s;
+    animation: view-out 0.7s;
+  }
 }
 
 @keyframes view-in {
   0% {
+    background-position: 0% 50%
+  }
+  100% {
+    background-position: 100% 50%
+  }
+}
+
+/*
+@keyframes view-in {
+  0% {
     //opacity: 0;
     //-webkit-clip-path: circle(0% at 0% 0%);
-    -webkit-clip-path: inset(0px 100% 0px 0px);
-    clip-path: inset(0px 100% 0px 0px);
-    @include background-image(linear-gradient(to right, white, white));
+    //-webkit-clip-path: inset(0px 100% 0px 0px);
+    //clip-path: inset(0px 100% 0px 0px);
+    @include background-image(linear-gradient(to right, white 0%, rgb(251, 179, 48) 1%));
 
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    //position: absolute;
+    //left: 0;
+    //top: 0;
+    //bottom: 0;
+    //right: 0;
 
     //-webkit-transform: translate(-10000px, 0);
     //-moz-transform: translate(-10000px, 0);
@@ -169,18 +186,18 @@ table {
   }
   100% {
     //opacity: 1;
-    position: relative;
+    //position: relative;
     //-webkit-clip-path: circle(200% at 0% 0%);
-    -webkit-clip-path: inset(0px 0px 0px 0);
-    clip-path: inset(0px 0px 0px 0);
-    @include background-image(linear-gradient(to right, white, rgb(251, 179, 48)));
+    //-webkit-clip-path: inset(0px 0px 0px 0);
+    //clip-path: inset(0px 0px 0px 0);
+    @include background-image(linear-gradient(to right, white 0%, rgb(251, 179, 48) 100%));
     //-webkit-transform: translate(0, 0);
     //-moz-transform: translate(0, 0);
     //-ms-transform: translate(0, 0);
     //-o-transform: translate(0, 0);
     //transform: translate(0, 0);
   }
-}
+}*/
 
 @keyframes view-out {
   0% {
@@ -1470,8 +1487,10 @@ table {
 
 #ingreso,
 #nuevo-usuario {
-  background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
-  background-size: 400% 400%;
+  background: -webkit-linear-gradient(left, white 0%, orange 100%);
+  background-size: 600% 600%;
+  //background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
+  //background-size: 400% 400%;
   height: 100vw;
 }
 
