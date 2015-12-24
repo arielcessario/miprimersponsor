@@ -23,23 +23,6 @@
   }
 }
 
-//animacion degradado back
-@-webkit-keyframes AnimationName {
-  0%{background-position:51% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:51% 0%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:51% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:51% 0%}
-}
-@keyframes AnimationName {
-  0%{background-position:51% 0%}
-  50%{background-position:50% 100%}
-  100%{background-position:51% 0%}
-}
-
 // GENERALES
 body, html {
   margin: 0;
@@ -57,7 +40,7 @@ a {
   color: white;
 }
 
-button{
+button {
   border-style: none;
 
 }
@@ -141,6 +124,88 @@ table {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
+// View
+.view {
+  position: relative;
+  /*  position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;*/
+}
+
+.view.ng-enter {
+  -webkit-animation: view-in 0.7s;
+  -o-animation: view-in 0.7s;
+  animation: view-in 0.7s;
+}
+
+.view.ng-leave {
+  -webkit-animation: view-out 0.7s;
+  -o-animation: view-out 0.7s;
+  animation: view-out 0.7s;
+}
+
+@keyframes view-in {
+  0% {
+    //opacity: 0;
+    //-webkit-clip-path: circle(0% at 0% 0%);
+    -webkit-clip-path: inset(0px 100% 0px 0px);
+    clip-path: inset(0px 100% 0px 0px);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    //-webkit-transform: translate(-10000px, 0);
+    //-moz-transform: translate(-10000px, 0);
+    //-ms-transform: translate(-10000px, 0);
+    //-o-transform: translate(-10000px, 0);
+    //transform: translate(-10000px, 0);
+  }
+  100% {
+    //opacity: 1;
+    position: relative;
+    //-webkit-clip-path: circle(200% at 0% 0%);
+    -webkit-clip-path: inset(0px 0px 0px 0);
+    clip-path: inset(0px 0px 0px 0);
+    //-webkit-transform: translate(0, 0);
+    //-moz-transform: translate(0, 0);
+    //-ms-transform: translate(0, 0);
+    //-o-transform: translate(0, 0);
+    //transform: translate(0, 0);
+  }
+}
+
+@keyframes view-out {
+  0% {
+    opacity: 1;
+    position: relative;
+    //-webkit-clip-path: circle(200% at 0% 0%);
+    //-webkit-transform: translate(0, 0);
+    //-moz-transform: translate(0, 0);
+    //-ms-transform: translate(0, 0);
+    //-o-transform: translate(0, 0);
+    //transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    //-webkit-clip-path: circle(0% at 0% 0%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    //-webkit-transform: translate(-10000px, 0);
+    //-moz-transform: translate(-10000px, 0);
+    //-ms-transform: translate(-10000px, 0);
+    //-o-transform: translate(-10000px, 0);
+    //transform: translate(-10000px, 0);
+  }
+}
+
 // Mensajes
 .ac-error-message {
   background-color: #e3001b;
@@ -213,10 +278,10 @@ table {
   color: #fa9819;
   width: 100%;
   background: #e2e2e2;
-  background: -moz-linear-gradient(top,  #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
-  background: -webkit-linear-gradient(top,  #e2e2e2 0%,#ffffff 50%,#eaeaea 100%);
-  background: linear-gradient(to bottom,  #e2e2e2 0%,#ffffff 50%,#eaeaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#eaeaea',GradientType=0 );
+  background: -moz-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  background: -webkit-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  background: linear-gradient(to bottom, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#eaeaea', GradientType=0);
   z-index: 100;
   padding: 10px;
 
@@ -233,11 +298,11 @@ table {
 
   #header-desktop-left {
     justify-content: flex-start;
-      }
+  }
 
   #header-desktop-right {
     justify-content: flex-end;
-    button{
+    button {
       font-family: 'Droid Sans', sans-serif;
       font-size: 16px;
       color: #00a148;
@@ -437,10 +502,10 @@ table {
 #main {
   margin-top: 50px;
   background: #ffffff;
-  background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-  background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  background: radial-gradient(ellipse at center,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 );
+  background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: radial-gradient(ellipse at center, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
 
   @media (min-width: 800px) {
     margin-top: 30px;
@@ -458,7 +523,7 @@ table {
   flex-wrap: nowrap;
   max-height: 35px;
   margin-top: 60px;
-  @media(max-width: 400px){
+  @media(max-width: 400px) {
     margin-top: 80px;
 
   }
@@ -509,7 +574,7 @@ table {
     height: 60px;
     margin-right: 10px;
     margin-top: -10px;
-    @media(max-width: 400px){
+    @media(max-width: 400px) {
       margin-left: 5px;
 
     }
@@ -535,7 +600,6 @@ table {
     flex-direction: row;
 
   }
-
 
   h1 {
     margin-bottom: 20px;
@@ -987,8 +1051,6 @@ table {
 
 }
 
-
-
 #administracion {
   display: flex;
   flex-direction: column;
@@ -996,23 +1058,19 @@ table {
   align-items: center;
   background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
   background-size: 400% 400%;
-  -webkit-animation: AnimationName 23s ease infinite;
-  -moz-animation: AnimationName 23s ease infinite;
-  animation: AnimationName 23s ease infinite;
   padding-bottom: 20px;
   padding-left: 5px;
   padding-right: 5px;
-  input{
+  input {
     height: 30px;
-     }
+  }
   span {
     margin-bottom: 5px;
     color: white;
 
-
   }
   button,
-  .boton-admin button{
+  .boton-admin button {
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
     background-color: white;
@@ -1036,7 +1094,6 @@ table {
     background-color: white;
   }
 
-
   @media (min-width: 400px) {
     .administracion-inputs {
       display: flex;
@@ -1044,7 +1101,6 @@ table {
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
-
 
       .administracion-input {
         max-width: 400px;
@@ -1054,12 +1110,11 @@ table {
     }
   }
 
-  #rol{
+  #rol {
     margin: 5px;
     height: 30px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
-
 
   }
 
@@ -1101,7 +1156,7 @@ table {
     flex-direction: column;
     justify-content: flex-start;
     padding: 5px;
-    select{
+    select {
       margin: 5px;
       height: 30px;
       font-family: 'Droid Sans', sans-serif;
@@ -1120,58 +1175,51 @@ table {
     margin-bottom: 10px;
     max-width: 850px;
 
-
   }
-
-
-
-
 
   #administracion-usuarios-tabla,
   #administracion-aportes-tabla,
   #administracion-proyectos-tabla,
   #administracion-categorias-tabla {
     margin-top: 20px;
-    background: rgb(255,168,76);
-    background: -moz-linear-gradient(45deg, rgb(255,168,76) 0%, rgb(255,123,13) 100%);
-    background: -webkit-linear-gradient(45deg, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
-    background: linear-gradient(45deg, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=1 );    font-family: 'Droid Sans', sans-serif;
+    background: rgb(255, 168, 76);
+    background: -moz-linear-gradient(45deg, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+    background: -webkit-linear-gradient(45deg, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+    background: linear-gradient(45deg, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa84c', endColorstr='#ff7b0d', GradientType=1);
+    font-family: 'Droid Sans', sans-serif;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 
-
-    @media(max-width: 400px){
+    @media(max-width: 400px) {
       margin: 20px;
 
     }
   }
 
-
-    #administracion-main th, td {
+  #administracion-main th, td {
     text-align: center;
-      color: black;
+    color: black;
     margin: 5px;
-      padding: 10px;
+    padding: 10px;
 
-    }
+  }
 
-  #administracion-main th{
+  #administracion-main th {
     background-color: white;
     color: #b84e11;
     font-weight: bolder;
-    input{
+    input {
       margin-bottom: 10px;
 
     }
 
   }
 
-
-    #ac-progress-bar {
+  #ac-progress-bar {
     max-width: 100%;
   }
 
@@ -1182,7 +1230,6 @@ table {
 
   }
 
-
 }
 
 #administracion-nav {
@@ -1191,24 +1238,22 @@ table {
   flex-wrap: wrap;
   margin-top: 40px;
   justify-content: center;
-  background: rgb(255,168,76);
-  background: -moz-linear-gradient(top, rgb(255,168,76) 0%, rgb(255,123,13) 100%);
-  background: -webkit-linear-gradient(top, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
-  background: linear-gradient(to bottom, rgb(255,168,76) 0%,rgb(255,123,13) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );  -webkit-border-radius: 8px;
+  background: rgb(255, 168, 76);
+  background: -moz-linear-gradient(top, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+  background: -webkit-linear-gradient(top, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+  background: linear-gradient(to bottom, rgb(255, 168, 76) 0%, rgb(255, 123, 13) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa84c', endColorstr='#ff7b0d', GradientType=0);
+  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 
-
-  @media(max-width: 400px){
+  @media(max-width: 400px) {
     margin-top: 50px;
 
   }
-
-
 
   div {
     font-family: 'Droid Sans', sans-serif;
@@ -1221,7 +1266,7 @@ table {
     width: 100px;
     text-align: center;
     cursor: pointer;
-    @media(max-width: 400px){
+    @media(max-width: 400px) {
       width: 100%;
       margin-top: 10px;
       font-size: 20px;
@@ -1230,8 +1275,6 @@ table {
   }
 
 }
-
-
 
 .institucional-publicidad {
   margin: auto;
@@ -1257,7 +1300,7 @@ table {
 
 #adminitracion-cambios {
   text-align: center;
-  input{
+  input {
     height: 30px;
     width: 320px;
     -webkit-border-radius: 5px;
@@ -1277,7 +1320,6 @@ table {
     max-width: 1000px;
     margin: 10px;
 
-
     #cambios-original,
     #cambios-modificado {
       margin: 5px;
@@ -1291,7 +1333,6 @@ table {
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
-
 
       @media (min-width: 800px) {
         width: calc(50% - 45px);
@@ -1313,15 +1354,13 @@ table {
 
       }
 
-      span{
+      span {
         margin-top: 5px;
         margin-bottom: 5px;
         font-size: 16px;
         font-family: 'Droid Sans', sans-serif;
         color: #ff9900;
       }
-
-
 
     }
   }
@@ -1403,7 +1442,7 @@ table {
 }
 
 .contenedor-ingreso,
-.contenedor-nuevo-usuario{
+.contenedor-nuevo-usuario {
   min-width: 350px;
   max-width: 600px;
   width: 350px;
@@ -1415,25 +1454,22 @@ table {
   border-radius: 5px;
   border: 4px solid rgb(73, 182, 122);
   background: #596a72;
-  background: -moz-linear-gradient(top,  #596a72 0%, #a0acb2 100%);
-  background: -webkit-linear-gradient(top,  #596a72 0%,#a0acb2 100%);
-  background: linear-gradient(to bottom,  #596a72 0%,#a0acb2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#a0acb2',GradientType=0 );
+  background: -moz-linear-gradient(top, #596a72 0%, #a0acb2 100%);
+  background: -webkit-linear-gradient(top, #596a72 0%, #a0acb2 100%);
+  background: linear-gradient(to bottom, #596a72 0%, #a0acb2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#596a72', endColorstr='#a0acb2', GradientType=0);
 
 }
 
-.contenedor-nuevo-usuario{
+.contenedor-nuevo-usuario {
   height: 820px;
 }
 
 #ingreso,
-#nuevo-usuario{
+#nuevo-usuario {
   background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
   background-size: 400% 400%;
   height: 100vw;
-  -webkit-animation: AnimationName 23s ease infinite;
-  -moz-animation: AnimationName 23s ease infinite;
-  animation: AnimationName 23s ease infinite;
 }
 
 #nuevo-usuario-form {
@@ -1459,7 +1495,7 @@ table {
     font-weight: bold;
 
   }
-  button{
+  button {
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
     background-color: white;
@@ -1499,11 +1535,11 @@ table {
 }
 
 .nuevo-usuario-input,
-.administracion-input{
-margin-bottom: 20px;
+.administracion-input {
+  margin-bottom: 20px;
 }
 
-#ingreso-form{
+#ingreso-form {
   margin: auto;
   padding-top: 50px;
   align-items: center;
@@ -1536,7 +1572,7 @@ margin-bottom: 20px;
     margin-bottom: 5px;
 
   }
-  button{
+  button {
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
     background-color: white;

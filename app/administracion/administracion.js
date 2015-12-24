@@ -329,6 +329,10 @@
         }
 
         function removeProyecto() {
+            if(vm.proyecto.proyecto_id == -1){
+                AcUtils.showMessage('error','Debe seleccionar un proyecto');
+                return;
+            }
 
             var r = confirm('Realmente desea eliminar el proyecto?');
 
