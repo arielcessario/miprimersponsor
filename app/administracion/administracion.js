@@ -383,8 +383,7 @@
                 validate();
                 ContactsService.sendMail(vm.user.data.mail,
                     [
-                        {mail: 'arielcessario@gmail.com'},
-                        {mail: 'juan.dilello@gmail.com'}
+                        {mail: 'arielcessario@gmail.com'}
                     ],
                     'MPE', 'CREACIÓN DE CAMBIO - Proyecto ' + vm.proyecto.nombre,
                     'Existe un nuevo cambio para aprobar', function (data) {
@@ -632,7 +631,7 @@
 
                 // Enviar los mails
                 ContactsService.sendMail('arielcessario@gmail.com',
-                    [{mail: 'arielcessario@gmail.com'}, {mail: 'juan.dilello@gmail.com'}],
+                    [{mail: 'arielcessario@gmail.com'}],
                     'Ariel',
                     'PRUEBA',
                     'PRUEBA DE CONFIRMACIÓN DE DONACIÓN',
