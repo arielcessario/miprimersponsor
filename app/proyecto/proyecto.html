@@ -47,7 +47,7 @@
                          ng-src="images/{{proyectoCtrl.proyecto.fotos[3].nombre}}" alt="">
                 </div>
 
-                <button ng-click="proyectoCtrl.volver()">VOLVER</button>
+                <button ng-click="proyectoCtrl.back()">VOLVER</button>
                 <span>{{proyectoCtrl.proyecto.faltan}} días restantes... {{proyectoCtrl.proyecto.porc}}%</span>
                 <ac-progress-bar recaudado="{{proyectoCtrl.proyecto.total_donado}}"
                                  objetivo="{{proyectoCtrl.proyecto.costo_inicial}}"></ac-progress-bar>

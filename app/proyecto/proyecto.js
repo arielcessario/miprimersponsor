@@ -6,8 +6,10 @@
         .controller('ProyectoController', ProyectoController);
 
 
-    ProyectoController.$inject = ['UserService', 'DonationService', 'ProyectService', '$routeParams', 'CommentService', 'AcUtils'];
-    function ProyectoController(UserService, DonationService, ProyectService, $routeParams, CommentService, AcUtils) {
+    ProyectoController.$inject = ['UserService', 'DonationService', 'ProyectService', '$routeParams', 'CommentService',
+        'AcUtils', '$location'];
+    function ProyectoController(UserService, DonationService, ProyectService, $routeParams, CommentService,
+                                AcUtils, $location) {
 
         var vm = this;
         vm.proyectos = [];
@@ -21,6 +23,7 @@
         // Funciones
         vm.donacionRapida = donacionRapida;
         vm.comentar = comentar;
+        vm.back = back;
 
         // Init
         ProyectService.getByParams('proyecto_id', '' + vm.id, 'true', function (data) {
@@ -83,6 +86,9 @@
             });
         }
 
+        function back(){
+            $location.path('/main');
+        }
 
     }
 })();

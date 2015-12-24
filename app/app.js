@@ -7,6 +7,7 @@
         'ngAnimate',
         'angular-storage',
         'angular-jwt',
+        'duScroll',
         'auth0',
         'acUtils',
         'acUsuarios',
@@ -109,8 +110,8 @@
         .controller('AppController', AppController)
         .service('AppService', AppService);
 
-    AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService'];
-    function AppController(UserService, $location, AppService, CategoryService) {
+    AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document'];
+    function AppController(UserService, $location, AppService, CategoryService, $timeout, $document) {
 
 
 
@@ -125,6 +126,7 @@
 
         // FUNCTIONS
         vm.logout = logout;
+        vm.goToAnchor = goToAnchor;
 
         // INIT
         if (vm.user != false) {
@@ -153,6 +155,20 @@
             }
         });
 
+        function goToAnchor(id) {
+            $location.path('/main');
+
+            $timeout(function () {
+                var duration = 1000;
+                var offset = 50; //pixels; adjust for floating menu, context etc
+                //Scroll to #some-id with 30 px "padding"
+                //Note: Use this in a directive, not with document.getElementById
+                var someElement = angular.element(document.getElementById(id));
+                $document.scrollToElement(someElement, offset, duration);
+            }, 20);
+
+
+        }
 
         function logout() {
             UserService.logout(function (data) {

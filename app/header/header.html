@@ -28,7 +28,7 @@
         <div ng-if="!appCtrl.isLogged" class="desktop-link-login"><a href="#/ingreso">Ingresá</a></div>
         <div ng-if="appCtrl.isLogged" ><span>Bienvenido {{appCtrl.welcomeTo}} </span><button ng-click="appCtrl.logout();">Salir</button></div>
         Contacto:
-        <img src="images/mail.png" alt="" height="25" width="25">
+        <img src="images/mail.png" ng-click="appCtrl.goToAnchor('contacto-container')" alt="" height="25" width="25">
         <img src="images/facebook.png" alt="" height="25" width="25">
     </div>
 

@@ -265,6 +265,7 @@
                         '//cdn.auth0.com/js/lock-7.9.min.js',
                         '//cdn.auth0.com/w2/auth0-angular-4.min.js',
                         'bower_components/angular-jwt/dist/angular-jwt.min.js',
+                        'bower_components/angular-scroll/angular-scroll.min.js',
                         'bower_components/ac-angular-utils/ac-utils.js',
                         'bower_components/ac-angular-usuarios/ac-usuarios.min.js',
                         'bower_components/ac-angular-proyectos/ac-proyectos.min.js',
@@ -317,7 +318,7 @@
 <div ng-include="'header/header.html'"></div>
 
 
-<div ng-view></div>
+<div ng-view autoscroll="true"></div>
 
 <div id="footer">
 

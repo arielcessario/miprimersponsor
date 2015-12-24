@@ -86,9 +86,7 @@
 
 
             UserService.login(vm.mail, vm.password, 1, function (data) {
-                console.log(data);
                 if(data == -1){
-
                     AcUtils.showMessage('error', 'Mail o Contraseña erroneos');
                 }else{
                     $location.path('/administracion');
