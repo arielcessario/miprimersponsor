@@ -19,6 +19,7 @@
         vm.user = UserService.getFromToken();
         vm.comentario = {};
         vm.comentarios = [];
+        vm.donacion_rapida_valor =0;
 
         // Funciones
         vm.donacionRapida = donacionRapida;
@@ -41,6 +42,12 @@
         function donacionRapida(cantidad, proyecto_id){
             if(!vm.user){
                 $location.path('/ingreso');
+                return;
+            }
+
+            if(cantidad < 0){
+                AcUtils.showMessage('error', 'La donación debe ser mayor a 0');
+                vm.donacion_rapida_valor = 0;
                 return;
             }
 
