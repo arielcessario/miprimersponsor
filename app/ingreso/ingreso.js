@@ -84,25 +84,16 @@
 
         function login() {
 
-            var conErrores = false;
-
-            if (vm.password.trim().length == 0) {
-                AcUtils.validations('password', 'El password es obligatorio');
-                conErrores = true;
-            }
-
-            if (!AcUtils.validateEmail(vm.mail)) {
-                AcUtils.validations('mail', 'El mail es incorrecto');
-                conErrores = true;
-            }
-
-            if (conErrores) {
-                return;
-            }
 
             UserService.login(vm.mail, vm.password, 1, function (data) {
-                $location.path('/administracion');
-                AppService.broadcast();
+                console.log(data);
+                if(data == -1){
+
+                    AcUtils.showMessage('error', 'Mail o Contraseña erroneos');
+                }else{
+                    $location.path('/administracion');
+                    AppService.broadcast();
+                }
             });
         }
 

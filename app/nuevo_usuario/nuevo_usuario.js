@@ -44,6 +44,37 @@
         }
 
         vm.saveUsuario = saveUsuario;
+        vm.loginFacebook = loginFacebook;
+        vm.loginGoogle = loginGoogle;
+
+
+        function loginFacebook(){
+
+            UserService.loginFacebook(function(data){
+                if(data == -1){
+                    // debe crear el usuario
+                    $location.path('/nuevo_usuario');
+                }else{
+                    // usuario existe y se logea
+                    $location.path('/administracion');
+                    AppService.broadcast();
+                }
+            });
+        }
+
+        function loginGoogle(){
+
+            UserService.loginGoogle(function(data){
+                if(data == -1){
+                    // debe crear el usuario
+                    $location.path('/nuevo_usuario');
+                }else{
+                    // usuario existe y se logea
+                    $location.path('/administracion');
+                    AppService.broadcast();
+                }
+            });
+        }
 
 
         function saveUsuario() {
