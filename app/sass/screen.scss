@@ -23,6 +23,10 @@
     -webkit-transform: translateX(0%);
   }
 }
+//animaciones
+
+
+
 
 // GENERALES
 body, html {
@@ -330,13 +334,14 @@ table {
 
     }
     .desktop-link-login {
-      margin: 5px 15px 5px 15px;
       a, span {
         color: rgb(250, 152, 25);
-        margin: 5px;
+        padding: 10px;
       }
     }
   }
+
+
 
   #header-desktop-right img {
     margin-left: 10px;
@@ -344,10 +349,10 @@ table {
   }
 
   .desktop-link-nav {
-    margin: 5px 15px 5px 15px;
     a {
+      padding: 10px;
       font-family: 'Droid Sans', sans-serif;
-      color: rgb(0, 161, 72);
+      color: black;
     }
   }
 
@@ -356,6 +361,16 @@ table {
     border: 0 solid;
     color: rgb(0, 161, 82);
   }
+}
+
+.desktop-link-nav a:hover,
+.desktop-link-login a:hover {
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .menu-type-desktop {
@@ -1472,7 +1487,7 @@ table {
   padding: 20px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 4px solid rgb(73, 182, 122);
+  border: 4px solid white;
   background: #596a72;
   background: -moz-linear-gradient(top, #596a72 0%, #a0acb2 100%);
   background: -webkit-linear-gradient(top, #596a72 0%, #a0acb2 100%);
