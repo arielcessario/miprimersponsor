@@ -683,6 +683,14 @@ table {
     span {
       font-size: 14px;
     }
+       }
+
+  #main-btn-crear:hover {
+    cursor: pointer;
+    background-color: orange;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
   }
 
   #main-slider {
@@ -726,8 +734,18 @@ table {
       padding: 5px;
       align-items: center;
       outline: none;
-
     }
+
+    .button-ver:hover{
+      cursor: pointer;
+      background-color: orange;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+    }
+
 
     @media (min-width: 800px) {
       max-width: 50%;
@@ -803,9 +821,10 @@ table {
       box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 
       .main-img-proyecto {
-        background-color: red;
+        overflow: hidden;
+        background-color: green;
         width: 100%;
-        height: 100px;
+        height: 100%;
         align-items: center;
         text-align: center;
         -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -880,6 +899,16 @@ table {
         padding: 5px;
         align-items: center;
         outline: none;
+      }
+
+        .button-ver:hover{
+          cursor: pointer;
+          background-color: orange;
+          -webkit-transition: all .3s;
+          -moz-transition: all .3s;
+          -ms-transition: all .3s;
+          -o-transition: all .3s;
+
 
       }
 
@@ -1284,6 +1313,17 @@ table {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  :hover{
+    cursor: pointer;
+    color: darkorange;
+    background-color: white;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+  }
 
   @media(max-width: 400px) {
     margin-top: 50px;
@@ -1293,14 +1333,16 @@ table {
   div {
     font-family: 'Droid Sans', sans-serif;
     color: white;
-    padding: 5px;
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100px;
     text-align: center;
     cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
     @media(max-width: 400px) {
       width: 100%;
       margin-top: 10px;
