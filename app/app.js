@@ -123,9 +123,9 @@
         .service('AppService', AppService);
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-    'DonationService', 'AcUtils'];
+    'DonationService', 'AcUtils', 'ContactsService', 'ProyectService'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
-                           DonationService, AcUtils) {
+                           DonationService, AcUtils, ContactsService, ProyectService) {
 
 
         var vm = this;
@@ -136,6 +136,7 @@
         vm.welcomeTo = '';
         vm.categorias = [];
         vm.textProyecto = '';
+        vm.proyecto = {};
 
         // FUNCTIONS
         vm.logout = logout;
@@ -220,14 +221,14 @@
         }
 
         function donacionRapida(cantidad, proyecto_id){
-
-            if(isNaN(cantidad)){
-                AcUtils.showMessage('error','El valor debe ser numérico');
+            if(!vm.user){
+                $location.path('/ingreso');
                 return;
             }
 
-            if(!vm.user){
-                $location.path('/ingreso');
+            if(cantidad < 0 || isNaN(cantidad)){
+                AcUtils.showMessage('error', 'La donación debe ser mayor a 0');
+                cantidad = 0;
                 return;
             }
 
@@ -235,12 +236,45 @@
             var donacion = {
                 'proyecto_id': proyecto_id,
                 'donador_id': vm.user.data.id,
-                'valor': cantidad
+                'valor': cantidad,
+                'status': 0
             };
             DonationService.create(donacion, function (data) {
 
                 // Enviar los mails
-                console.log(data);
+                if(data>0){
+                    AcUtils.showMessage('success','Donación realizada con éxito, por favor aguarde la confirmación de la misma.');
+
+                    ProyectService.getByParams('proyecto_id', ''+ proyecto_id, 'true',function(data){
+                        console.log(data);
+                        vm.proyecto = data[0];
+                        // Mail a administrador
+                        ContactsService.sendMail(vm.user.data.mail,
+                            [
+                                {mail: 'arielcessario@gmail.com'},
+                                {mail: 'mmaneff@gmail.com'}
+                            ],
+                            'MPE', 'Existe un nuevo cambio para aprobar',
+                            'NUEVA DONACIÓN - Proyecto ' + vm.proyecto.nombre, function (data) {
+                                console.log(data);
+                            });
+
+                        // Mail a cliente
+                        ContactsService.sendMail(vm.user.data.mail,
+                            [
+                                {mail: vm.user.data.mail}
+                            ],
+                            'MPE', 'Su donación ha sido realizada, por favor realice la transferencia correspondiente y espere a su aprobación.',
+                            'NUEVA DONACIÓN - Proyecto ' + vm.proyecto.nombre, function (data) {
+                                console.log(data);
+                            });
+                    });
+
+
+                }else{
+                    AcUtils.showMessage('error','Hubo un problema con la donación, por favor contacte al administrador');
+
+                }
             })
 
         }
