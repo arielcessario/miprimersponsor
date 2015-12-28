@@ -123,9 +123,9 @@
         .service('AppService', AppService);
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-    'DonationService'];
+    'DonationService', 'AcUtils'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
-                           DonationService) {
+                           DonationService, AcUtils) {
 
 
         var vm = this;
@@ -220,6 +220,12 @@
         }
 
         function donacionRapida(cantidad, proyecto_id){
+
+            if(isNaN(cantidad)){
+                AcUtils.showMessage('error','El valor debe ser numérico');
+                return;
+            }
+
             if(!vm.user){
                 $location.path('/ingreso');
                 return;
