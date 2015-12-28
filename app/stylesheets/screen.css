@@ -949,8 +949,8 @@ table {
 #proyectos-finalizar #main-proyectos-finalizar-list .main-proyecto-finalizar {
   width: 320px;
   height: 500px;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   padding: 15px;
