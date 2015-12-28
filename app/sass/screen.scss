@@ -858,6 +858,7 @@ table {
     .main-proyecto-finalizar {
       width: 320px;
       height: 500px;
+      background-color: white;
       margin-left: 10px;
       margin-right: 10px;
       display: flex;
@@ -1923,10 +1924,26 @@ table {
 #proyecto-bottom p {
   font-family: 'Droid Sans', sans-serif;
   color: black;
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 50px;
   margin-top: 50px;
 
+}
+
+#resultados{
+  background: rgb(180,227,145);
+  background: -moz-linear-gradient(top,  rgb(180,227,145) 0%, rgb(97,196,25) 50%, rgb(180,227,145) 100%);
+  background: -webkit-linear-gradient(top,  rgb(180,227,145) 0%,rgb(97,196,25) 50%,rgb(180,227,145) 100%);
+  background: linear-gradient(to bottom,  rgb(180,227,145) 0%,rgb(97,196,25) 50%,rgb(180,227,145) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 );
+
+}
+
+#resultados h1{
+  font-family: 'Droid Sans', sans-serif;
+  color: white;
+  font-size: 40px;
+  margin: 20px;
 }
 
 
