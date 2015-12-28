@@ -382,8 +382,7 @@ table {
 .desktop-link-nav a:hover,
 .desktop-link-login a:hover {
   color: white;
-  background-color: rgb(0, 161, 72);
-   border-radius: 5px;
+  background-color: #18e21c;   border-radius: 5px;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -1866,7 +1865,8 @@ table {
 
 #proyecto-rigth {
   width: 40%;
-  margin-left: 10px;
+  margin:auto;
+  padding: 10px;
 
   button {
     width: 67px;
