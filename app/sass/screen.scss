@@ -366,7 +366,7 @@ table {
 }
 
 .Contenedor-menu-sub {
-  background-color: orange;
+  background-color: white;
   position: absolute;
   opacity: 0;
   display: none;
@@ -381,9 +381,9 @@ table {
 
 .desktop-link-nav a:hover,
 .desktop-link-login a:hover {
-  background-color: white;
   color: white;
-  border-radius: 5px;
+  background-color: rgb(0, 161, 72);
+   border-radius: 5px;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
