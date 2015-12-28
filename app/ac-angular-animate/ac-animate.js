@@ -18,13 +18,13 @@
         return {
             restrict: 'AE',
             scope: {
-                animationIn: '@', // Animación de entrada
-                animationOut: '@', // Animación de salida
-                correctionTop: '@', // Margen de corrección cuando llega al máximo
-                correctionBottom: '@', // Margen de corrección desde abajo
-                timing: '@' // Timing para la animación
+                animationIn: '@', /*// Animación de entrada*/
+                animationOut: '@', /*// Animación de salida*/
+                correctionIn: '@', /*// Margen de corrección salida*/
+                correctionOut: '@', /*// Margen de corrección de entrada*/
+                timing: '@' /*// Timing para la animación*/
             },
-            controller: function ($scope, $element, $attrs) {
+            controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
                 var vm = this;
 
                 $document.bind('scroll', onScroll);
@@ -61,27 +61,51 @@
                     var currentScrollY = latestKnownScrollY;
                     var rect = $element[0].getBoundingClientRect();
 
-                    $scope.correctionBottom = ($scope.correctionBottom == undefined) ? 0 : $scope.correctionBottom;
-                    $scope.correctionTop = ($scope.correctionTop == undefined) ? 0 : $scope.correctionTop;
+                    var top_adentro = false;
+                    var bottom_adentro = false;
 
-                    var val = rect.top >= (0 - $scope.correctionTop) &&
+
+                    $scope.correctionOut = ($scope.correctionOut == undefined) ? 0 : $scope.correctionOut;
+                    $scope.correctionIn = ($scope.correctionIn == undefined) ? 0 : $scope.correctionIn;
+
+                    var val = rect.top >= (0 - $scope.correctionIn) &&
                         rect.left >= 0 &&
-                        rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom) && /*or $(window).height() */
+                        rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionOut) && /*or $(window).height() */
                         rect.right <= (window.innerWidth || document.documentElement.clientWidth);
                     /*or $(window).width() */
 
                     var inOnce = false;
 
 
-                    if (rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionBottom)) {
+                    //Me fijo si la parte de arriba es visible
+                    top_adentro = rect.top <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionOut)
+                        && rect.top > 0;
+
+                    //Me fijo si la parte de abajo es visible
+                    bottom_adentro = (rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionIn)
+                        && rect.bottom > 0) || (rect.top < 0 && rect.bottom > 0);
+
+
+                    if (top_adentro || bottom_adentro) {
                         if (!$element.hasClass($scope.animationIn)) {
                             $element.addClass($scope.animationIn);
                         }
-                    }else{
+                    }
+
+                    if (!top_adentro && !bottom_adentro) {
                         $element.removeClass($scope.animationIn);
                     }
 
-                    //if (rect.top >= (0 - $scope.correctionTop)) {
+
+                    //if (rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - $scope.correctionOut)) {
+                    //    if (!$element.hasClass($scope.animationIn)) {
+                    //        $element.addClass($scope.animationIn);
+                    //    }
+                    //} else {
+                    //    $element.removeClass($scope.animationIn);
+                    //}
+
+                    //if (rect.top >= (0 - $scope.correctionIn)) {
                     //    if (!$element.hasClass($scope.animationOut)) {
                     //        $element.addClass($scope.animationOut);
                     //    }
@@ -92,7 +116,7 @@
                 }
 
 
-            },
+            }],
             link: function (scope, element, attr) {
 
             },
