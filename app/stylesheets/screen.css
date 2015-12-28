@@ -105,11 +105,6 @@ button {
   border-style: none;
 }
 
-/* line 51, ../sass/screen.scss */
-.colores {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
 /* line 55, ../sass/screen.scss */
 .colores div {
   width: 100%;
@@ -717,8 +712,7 @@ table {
 /* line 652, ../sass/screen.scss */
 .imagenes-publicitarias {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* line 658, ../sass/screen.scss */
@@ -1403,7 +1397,28 @@ table {
   border: 2px solid #49b67a;
 }
 
-/* line 1014, ../sass/screen.scss */
+/* line 1013, ../sass/screen.scss */
+#proyectos-finalizar {
+  margin-top: 30px;
+}
+
+/* line 1017, ../sass/screen.scss */
+#main-proyectos-nuevos-list {
+  background: -moz-linear-gradient(top, #ffa0a0 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, #ffa0a0 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, #ffa0a0 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa0a0', endColorstr='#00ffffff',GradientType=0 );
+}
+
+/* line 1025, ../sass/screen.scss */
+#main-proyectos-finalizar-list {
+  background: -moz-linear-gradient(top, #91ff9c 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, #91ff9c 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, #91ff9c 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91ff9c', endColorstr='#00ffffff',GradientType=0 );
+}
+
+/* line 1037, ../sass/screen.scss */
 #proyectos-nuevos h1 {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -1411,7 +1426,7 @@ table {
   background-color: #e3001b;
 }
 
-/* line 1024, ../sass/screen.scss */
+/* line 1047, ../sass/screen.scss */
 #proyectos-finalizar h1 {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -1419,25 +1434,27 @@ table {
   background-color: #18e21c;
 }
 
-/* line 1032, ../sass/screen.scss */
+/* line 1055, ../sass/screen.scss */
 .show-slider-proyecto {
   opacity: 1 !important;
 }
 
-/* line 1036, ../sass/screen.scss */
+/* line 1059, ../sass/screen.scss */
 #main-nuestras-empresas {
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 1037, ../sass/screen.scss */
+/* line 1063, ../sass/screen.scss */
 #main-nuestras-empresas h1 {
   margin-bottom: 20px;
   font-size: 45px;
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
 }
-/* line 1047, ../sass/screen.scss */
+/* line 1073, ../sass/screen.scss */
 #main-nuestras-empresas #main-nuestras-empresas-list {
   display: flex;
   flex-direction: row;
@@ -1446,7 +1463,7 @@ table {
   align-items: center;
   max-width: 900px;
 }
-/* line 1054, ../sass/screen.scss */
+/* line 1080, ../sass/screen.scss */
 #main-nuestras-empresas #main-nuestras-empresas-list .main-empresa {
   height: 120px;
   width: 120px;
@@ -1459,7 +1476,7 @@ table {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
-/* line 1069, ../sass/screen.scss */
+/* line 1095, ../sass/screen.scss */
 #contacto-container {
   display: flex;
   flex-direction: column;
@@ -1471,7 +1488,7 @@ table {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
-/* line 1079, ../sass/screen.scss */
+/* line 1105, ../sass/screen.scss */
 #contacto-container h1 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1481,7 +1498,7 @@ table {
   text-transform: uppercase;
   color: white;
 }
-/* line 1090, ../sass/screen.scss */
+/* line 1116, ../sass/screen.scss */
 #contacto-container input {
   margin-bottom: 10px;
   margin-top: 10px;
@@ -1495,13 +1512,13 @@ table {
   border-radius: 3px;
   border-style: none;
 }
-/* line 1105, ../sass/screen.scss */
+/* line 1131, ../sass/screen.scss */
 #contacto-container span {
   font-family: "Droid Sans";
   font-size: 18px;
   color: white;
 }
-/* line 1112, ../sass/screen.scss */
+/* line 1138, ../sass/screen.scss */
 #contacto-container textarea {
   margin-top: 10px;
   width: 257px;
@@ -1514,7 +1531,7 @@ table {
   border-radius: 3px;
   border-style: none;
 }
-/* line 1126, ../sass/screen.scss */
+/* line 1152, ../sass/screen.scss */
 #contacto-container #contacto-enviar-mobile {
   font-family: 'Droid Sans', sans-serif;
   font-size: 18px;
@@ -1531,7 +1548,7 @@ table {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 1143, ../sass/screen.scss */
+/* line 1169, ../sass/screen.scss */
 #contacto-container #contacto-enviar-mobile:hover {
   color: white;
   border: 1px solid white;
@@ -1547,32 +1564,32 @@ table {
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
-/* line 1161, ../sass/screen.scss */
+/* line 1187, ../sass/screen.scss */
 #contacto-container #contacto-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (min-width: 800px) {
-  /* line 1161, ../sass/screen.scss */
+  /* line 1187, ../sass/screen.scss */
   #contacto-container #contacto-form {
     flex-direction: row;
   }
 }
-/* line 1168, ../sass/screen.scss */
+/* line 1194, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel {
   margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 1173, ../sass/screen.scss */
+/* line 1199, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel span {
   width: 100%;
   text-align: left;
 }
 
-/* line 1184, ../sass/screen.scss */
+/* line 1210, ../sass/screen.scss */
 .administracion-button-bar {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -1582,7 +1599,7 @@ table {
   justify-content: center;
 }
 
-/* line 1194, ../sass/screen.scss */
+/* line 1220, ../sass/screen.scss */
 #administracion {
   display: flex;
   flex-direction: column;
@@ -1594,16 +1611,16 @@ table {
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 1204, ../sass/screen.scss */
+/* line 1230, ../sass/screen.scss */
 #administracion input {
   height: 30px;
 }
-/* line 1207, ../sass/screen.scss */
+/* line 1233, ../sass/screen.scss */
 #administracion span {
   margin-bottom: 5px;
   color: white;
 }
-/* line 1212, ../sass/screen.scss */
+/* line 1238, ../sass/screen.scss */
 #administracion button,
 #administracion .boton-admin button {
   font-family: 'Droid Sans', sans-serif;
@@ -1617,7 +1634,7 @@ table {
   align-items: center;
   outline: none;
 }
-/* line 1226, ../sass/screen.scss */
+/* line 1252, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   margin-bottom: 10px;
   -webkit-border-radius: 12px;
@@ -1629,7 +1646,7 @@ table {
   background-color: white;
 }
 @media (min-width: 400px) {
-  /* line 1238, ../sass/screen.scss */
+  /* line 1264, ../sass/screen.scss */
   #administracion .administracion-inputs {
     display: flex;
     flex-direction: row;
@@ -1637,20 +1654,20 @@ table {
     justify-content: center;
     width: 100%;
   }
-  /* line 1245, ../sass/screen.scss */
+  /* line 1271, ../sass/screen.scss */
   #administracion .administracion-inputs .administracion-input {
     max-width: 400px;
     width: 400px;
   }
 }
-/* line 1253, ../sass/screen.scss */
+/* line 1279, ../sass/screen.scss */
 #administracion #rol {
   margin: 5px;
   height: 30px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
 }
-/* line 1261, ../sass/screen.scss */
+/* line 1287, ../sass/screen.scss */
 #administracion .administracion-foto {
   display: flex;
   flex-direction: row;
@@ -1658,24 +1675,24 @@ table {
   min-width: 100%;
 }
 @media (min-width: 400px) {
-  /* line 1261, ../sass/screen.scss */
+  /* line 1287, ../sass/screen.scss */
   #administracion .administracion-foto {
     max-width: 400px;
     min-width: 400px;
   }
 }
-/* line 1272, ../sass/screen.scss */
+/* line 1298, ../sass/screen.scss */
 #administracion .administracion-foto .foto {
   position: relative;
 }
-/* line 1275, ../sass/screen.scss */
+/* line 1301, ../sass/screen.scss */
 #administracion .administracion-foto .foto .input-foto {
   width: 50px;
   height: 50px;
   top: 0;
   left: 0;
 }
-/* line 1282, ../sass/screen.scss */
+/* line 1308, ../sass/screen.scss */
 #administracion .administracion-foto .foto input {
   position: absolute;
   width: 50px;
@@ -1684,32 +1701,32 @@ table {
   top: 0;
   left: 0;
 }
-/* line 1294, ../sass/screen.scss */
+/* line 1320, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px;
 }
-/* line 1299, ../sass/screen.scss */
+/* line 1325, ../sass/screen.scss */
 #administracion .administracion-input select {
   margin: 5px;
   height: 30px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
 }
-/* line 1308, ../sass/screen.scss */
+/* line 1334, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 1312, ../sass/screen.scss */
+/* line 1338, ../sass/screen.scss */
 #administracion #administracion-main,
 #administracion #administracion-usuarios-tabla {
   margin-top: 50px;
   margin-bottom: 10px;
   max-width: 850px;
 }
-/* line 1320, ../sass/screen.scss */
+/* line 1346, ../sass/screen.scss */
 #administracion #administracion-usuarios-tabla,
 #administracion #administracion-aportes-tabla,
 #administracion #administracion-proyectos-tabla,
@@ -1728,7 +1745,7 @@ table {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
 @media (max-width: 400px) {
-  /* line 1320, ../sass/screen.scss */
+  /* line 1346, ../sass/screen.scss */
   #administracion #administracion-usuarios-tabla,
   #administracion #administracion-aportes-tabla,
   #administracion #administracion-proyectos-tabla,
@@ -1736,35 +1753,35 @@ table {
     margin: 20px;
   }
 }
-/* line 1343, ../sass/screen.scss */
+/* line 1369, ../sass/screen.scss */
 #administracion #administracion-main th, #administracion td {
   text-align: center;
   color: black;
   margin: 5px;
   padding: 10px;
 }
-/* line 1351, ../sass/screen.scss */
+/* line 1377, ../sass/screen.scss */
 #administracion #administracion-main th {
   background-color: white;
   color: #b84e11;
   font-weight: bolder;
 }
-/* line 1355, ../sass/screen.scss */
+/* line 1381, ../sass/screen.scss */
 #administracion #administracion-main th input {
   margin-bottom: 10px;
 }
-/* line 1362, ../sass/screen.scss */
+/* line 1388, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
-/* line 1366, ../sass/screen.scss */
+/* line 1392, ../sass/screen.scss */
 #administracion .administracion-row:hover,
 #administracion .tr-selected {
   background-color: white;
   cursor: pointer;
 }
 
-/* line 1375, ../sass/screen.scss */
+/* line 1401, ../sass/screen.scss */
 #administracion-nav {
   display: flex;
   flex-direction: row;
@@ -1783,7 +1800,7 @@ table {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
-/* line 1392, ../sass/screen.scss */
+/* line 1418, ../sass/screen.scss */
 #administracion-nav :hover {
   cursor: pointer;
   color: darkorange;
@@ -1795,12 +1812,12 @@ table {
   transition: all .3s;
 }
 @media (max-width: 400px) {
-  /* line 1375, ../sass/screen.scss */
+  /* line 1401, ../sass/screen.scss */
   #administracion-nav {
     margin-top: 50px;
   }
 }
-/* line 1409, ../sass/screen.scss */
+/* line 1435, ../sass/screen.scss */
 #administracion-nav div {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -1816,7 +1833,7 @@ table {
   border-radius: 8px;
 }
 @media (max-width: 400px) {
-  /* line 1409, ../sass/screen.scss */
+  /* line 1435, ../sass/screen.scss */
   #administracion-nav div {
     width: 100%;
     margin-top: 10px;
@@ -1824,19 +1841,20 @@ table {
   }
 }
 
-/* line 1432, ../sass/screen.scss */
+/* line 1458, ../sass/screen.scss */
 .institucional-publicidad {
   margin: auto;
   max-width: 1200px;
+  padding: 30px;
 }
-/* line 1436, ../sass/screen.scss */
+/* line 1463, ../sass/screen.scss */
 .institucional-publicidad h1 {
   margin: 10px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 45px;
   font-weight: bold;
 }
-/* line 1443, ../sass/screen.scss */
+/* line 1470, ../sass/screen.scss */
 .institucional-publicidad h2 {
   margin: 10px;
   font-family: 'Droid Sans', sans-serif;
@@ -1845,11 +1863,11 @@ table {
   text-align: justify;
 }
 
-/* line 1454, ../sass/screen.scss */
+/* line 1481, ../sass/screen.scss */
 #adminitracion-cambios {
   text-align: center;
 }
-/* line 1456, ../sass/screen.scss */
+/* line 1483, ../sass/screen.scss */
 #adminitracion-cambios input {
   height: 30px;
   width: 320px;
@@ -1863,7 +1881,7 @@ table {
   font-size: 16px;
   padding: 5px;
 }
-/* line 1469, ../sass/screen.scss */
+/* line 1496, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion {
   display: flex;
   flex-direction: row;
@@ -1871,7 +1889,7 @@ table {
   max-width: 1000px;
   margin: 10px;
 }
-/* line 1476, ../sass/screen.scss */
+/* line 1503, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado {
   margin: 5px;
@@ -1887,20 +1905,20 @@ table {
   border-radius: 5px;
 }
 @media (min-width: 800px) {
-  /* line 1476, ../sass/screen.scss */
+  /* line 1503, ../sass/screen.scss */
   #adminitracion-cambios #cambios-comparacion #cambios-original,
   #adminitracion-cambios #cambios-comparacion #cambios-modificado {
     width: calc(50% - 45px);
     min-width: calc(50% - 45px);
   }
 }
-/* line 1496, ../sass/screen.scss */
+/* line 1523, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original h2,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado h2 {
   font-weight: 700;
   font-size: 28px;
 }
-/* line 1501, ../sass/screen.scss */
+/* line 1528, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original p,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado p {
   margin-top: 5px;
@@ -1909,7 +1927,7 @@ table {
   font-size: 20px;
   font-family: 'Droid Sans', sans-serif;
 }
-/* line 1510, ../sass/screen.scss */
+/* line 1537, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original span,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado span {
   margin-top: 5px;
@@ -1919,7 +1937,7 @@ table {
   color: #ff9900;
 }
 
-/* line 1529, ../sass/screen.scss */
+/* line 1556, ../sass/screen.scss */
 .parrafo-movido {
   -webkit-transform: translate(-1000px, 0);
   -moz-transform: translate(-1000px, 0);
@@ -1928,7 +1946,7 @@ table {
   transform: translate(-1000px, 0);
 }
 
-/* line 1537, ../sass/screen.scss */
+/* line 1564, ../sass/screen.scss */
 .parrafo-in {
   -webkit-animation: parrafo-in 1s ease;
   -o-animation: parrafo-in 1s ease;
@@ -1956,12 +1974,12 @@ table {
     transform: translate(0px, 0);
   }
 }
-/* line 1568, ../sass/screen.scss */
+/* line 1595, ../sass/screen.scss */
 .parrafo-out {
   background-color: blue !important;
 }
 
-/* line 1572, ../sass/screen.scss */
+/* line 1599, ../sass/screen.scss */
 .administracion-input input {
   margin-bottom: 10px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -1973,21 +1991,21 @@ table {
   border-radius: 12px;
 }
 
-/* line 1584, ../sass/screen.scss */
+/* line 1611, ../sass/screen.scss */
 .dias-restantes {
   color: black;
   font-size: 18px;
   text-align: left;
 }
 
-/* line 1590, ../sass/screen.scss */
+/* line 1617, ../sass/screen.scss */
 .porcentaje {
   font-size: 50px;
   color: black;
   align-items: flex-end;
 }
 
-/* line 1597, ../sass/screen.scss */
+/* line 1624, ../sass/screen.scss */
 .contenedor-ingreso,
 .contenedor-nuevo-usuario {
   min-width: 350px;
@@ -2007,12 +2025,12 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#596a72', endColorstr='#a0acb2', GradientType=0);
 }
 
-/* line 1617, ../sass/screen.scss */
+/* line 1644, ../sass/screen.scss */
 .contenedor-nuevo-usuario {
   height: 820px;
 }
 
-/* line 1621, ../sass/screen.scss */
+/* line 1648, ../sass/screen.scss */
 #ingreso,
 #nuevo-usuario {
   background: -webkit-linear-gradient(left, white 0%, orange 100%);
@@ -2020,7 +2038,7 @@ table {
   height: 100vw;
 }
 
-/* line 1630, ../sass/screen.scss */
+/* line 1657, ../sass/screen.scss */
 #nuevo-usuario-form {
   margin: auto;
   padding-top: 50px;
@@ -2028,7 +2046,7 @@ table {
   max-width: 800px;
   min-height: 800px;
 }
-/* line 1637, ../sass/screen.scss */
+/* line 1664, ../sass/screen.scss */
 #nuevo-usuario-form h1 {
   margin-bottom: 20px;
   font-family: 'Droid Sans', sans-serif;
@@ -2036,7 +2054,7 @@ table {
   font-weight: bold;
   color: white;
 }
-/* line 1645, ../sass/screen.scss */
+/* line 1672, ../sass/screen.scss */
 #nuevo-usuario-form span {
   margin-left: 5px;
   color: white;
@@ -2044,7 +2062,7 @@ table {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 1653, ../sass/screen.scss */
+/* line 1680, ../sass/screen.scss */
 #nuevo-usuario-form button {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
@@ -2057,7 +2075,7 @@ table {
   align-items: center;
   outline: none;
 }
-/* line 1666, ../sass/screen.scss */
+/* line 1693, ../sass/screen.scss */
 #nuevo-usuario-form p {
   margin-bottom: 20px;
   color: white;
@@ -2066,7 +2084,7 @@ table {
   line-height: 18px;
   text-align: justify;
 }
-/* line 1676, ../sass/screen.scss */
+/* line 1703, ../sass/screen.scss */
 #nuevo-usuario-form input {
   width: 350px;
   height: 20px;
@@ -2080,13 +2098,13 @@ table {
   border-radius: 12px;
 }
 
-/* line 1692, ../sass/screen.scss */
+/* line 1719, ../sass/screen.scss */
 .nuevo-usuario-input,
 .administracion-input {
   margin-bottom: 20px;
 }
 
-/* line 1697, ../sass/screen.scss */
+/* line 1724, ../sass/screen.scss */
 #ingreso-form {
   margin: auto;
   padding-top: 50px;
@@ -2094,7 +2112,7 @@ table {
   max-width: 800px;
   min-height: 800px;
 }
-/* line 1703, ../sass/screen.scss */
+/* line 1730, ../sass/screen.scss */
 #ingreso-form h1 {
   margin-bottom: 20px;
   font-family: 'Droid Sans', sans-serif;
@@ -2102,7 +2120,7 @@ table {
   font-weight: bold;
   color: white;
 }
-/* line 1711, ../sass/screen.scss */
+/* line 1738, ../sass/screen.scss */
 #ingreso-form p {
   margin-bottom: 30px;
   color: white;
@@ -2111,7 +2129,7 @@ table {
   line-height: 20px;
   text-align: justify;
 }
-/* line 1721, ../sass/screen.scss */
+/* line 1748, ../sass/screen.scss */
 #ingreso-form span {
   margin-left: 5px;
   color: white;
@@ -2120,7 +2138,7 @@ table {
   font-weight: bold;
   margin-bottom: 5px;
 }
-/* line 1730, ../sass/screen.scss */
+/* line 1757, ../sass/screen.scss */
 #ingreso-form button {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
@@ -2133,7 +2151,7 @@ table {
   align-items: center;
   outline: none;
 }
-/* line 1744, ../sass/screen.scss */
+/* line 1771, ../sass/screen.scss */
 #ingreso-form input {
   width: 350px;
   height: 20px;
@@ -2147,13 +2165,13 @@ table {
   border-radius: 12px;
 }
 
-/* line 1760, ../sass/screen.scss */
+/* line 1787, ../sass/screen.scss */
 #footer {
   background-color: white;
   height: 270px;
   width: 100%;
 }
-/* line 1765, ../sass/screen.scss */
+/* line 1792, ../sass/screen.scss */
 #footer h1 {
   font-family: 'Droid Sans', sans-serif;
   font-size: 45px;
@@ -2163,7 +2181,7 @@ table {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 1776, ../sass/screen.scss */
+/* line 1803, ../sass/screen.scss */
 #footer h2 {
   text-align: center;
   font-family: "Droid Sans";
@@ -2173,7 +2191,7 @@ table {
   margin-bottom: 20px;
 }
 
-/* line 1788, ../sass/screen.scss */
+/* line 1815, ../sass/screen.scss */
 #proyecto {
   justify-content: center;
   align-items: center;
@@ -2185,7 +2203,7 @@ table {
   padding: 10px;
   margin: auto;
 }
-/* line 1799, ../sass/screen.scss */
+/* line 1826, ../sass/screen.scss */
 #proyecto #ac-progress-bar {
   opacity: .7;
   margin-bottom: 10px;
@@ -2196,7 +2214,7 @@ table {
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
-/* line 1810, ../sass/screen.scss */
+/* line 1837, ../sass/screen.scss */
 #proyecto span {
   font-family: "Droid Sans";
   font-size: 21px;
@@ -2204,7 +2222,7 @@ table {
   width: 100%;
 }
 
-/* line 1821, ../sass/screen.scss */
+/* line 1848, ../sass/screen.scss */
 .contenedor-proyecto-foto {
   text-align: center;
   overflow: hidden;
@@ -2217,19 +2235,19 @@ table {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
-/* line 1834, ../sass/screen.scss */
+/* line 1861, ../sass/screen.scss */
 .foto-principal-seleccionada {
   height: 100%;
   vertical-align: middle;
 }
 
-/* line 1840, ../sass/screen.scss */
+/* line 1867, ../sass/screen.scss */
 #proyecto-container {
   text-align: center;
   margin: auto;
 }
 
-/* line 1845, ../sass/screen.scss */
+/* line 1872, ../sass/screen.scss */
 .titulo_proyecto_seleccionado {
   margin-top: 100px;
   background-color: red;
@@ -2241,24 +2259,24 @@ table {
   margin-bottom: 50px;
 }
 
-/* line 1856, ../sass/screen.scss */
+/* line 1883, ../sass/screen.scss */
 .thumb {
   width: 18%;
   margin: 8px;
 }
 
-/* line 1862, ../sass/screen.scss */
+/* line 1889, ../sass/screen.scss */
 #proyecto-left {
   width: 60%;
 }
 
-/* line 1867, ../sass/screen.scss */
+/* line 1894, ../sass/screen.scss */
 #proyecto-rigth {
   width: 40%;
   margin: auto;
   padding: 10px;
 }
-/* line 1872, ../sass/screen.scss */
+/* line 1899, ../sass/screen.scss */
 #proyecto-rigth button {
   width: 67px;
   height: 42px;
@@ -2274,29 +2292,29 @@ table {
   outline: none;
 }
 
-/* line 1890, ../sass/screen.scss */
+/* line 1917, ../sass/screen.scss */
 #proyecto-upper {
   width: 100%;
   display: flex;
 }
 @media (max-width: 600px) {
-  /* line 1890, ../sass/screen.scss */
+  /* line 1917, ../sass/screen.scss */
   #proyecto-upper {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  /* line 1898, ../sass/screen.scss */
+  /* line 1925, ../sass/screen.scss */
   #proyecto-upper #proyecto-thums {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  /* line 1903, ../sass/screen.scss */
+  /* line 1930, ../sass/screen.scss */
   #proyecto-upper #proyecto-left {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  /* line 1909, ../sass/screen.scss */
+  /* line 1936, ../sass/screen.scss */
   #proyecto-upper #proyecto-rigth {
     width: 100%;
     margin-top: 20px;
@@ -2304,12 +2322,12 @@ table {
   }
 }
 
-/* line 1919, ../sass/screen.scss */
+/* line 1946, ../sass/screen.scss */
 #proyecto-comentarios textarea {
   width: 99%;
 }
 
-/* line 1924, ../sass/screen.scss */
+/* line 1951, ../sass/screen.scss */
 #proyecto-bottom p {
   font-family: 'Droid Sans', sans-serif;
   color: black;
@@ -2318,7 +2336,7 @@ table {
   margin-top: 50px;
 }
 
-/* line 1933, ../sass/screen.scss */
+/* line 1960, ../sass/screen.scss */
 #resultados {
   background: #b4e391;
   background: -moz-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
@@ -2327,7 +2345,7 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 );
 }
 
-/* line 1942, ../sass/screen.scss */
+/* line 1969, ../sass/screen.scss */
 #resultados h1 {
   font-family: 'Droid Sans', sans-serif;
   color: white;
