@@ -576,6 +576,7 @@ table {
 // MAIN
 #main {
   margin-top: 50px;
+  overflow: hidden;
   background: #ffffff;
   background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
   background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
