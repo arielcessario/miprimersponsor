@@ -34,7 +34,6 @@
         // FUNCTIONS
         vm.goToDetalle = goToDetalle;
         vm.goToCrear = goToCrear;
-        vm.donacionRapida = donacionRapida;
 
         // INIT
 
@@ -109,26 +108,7 @@
             $location.path('/proyecto/' + id);
         }
 
-        function donacionRapida(cantidad, proyecto_id){
-            if(!vm.user){
-                $location.path('/ingreso');
-                return;
-            }
 
-
-            var donacion = {
-                'proyecto_id': proyecto_id,
-                'donador_id': vm.user.data.id,
-                'valor': cantidad,
-                'status': 0
-            };
-            DonationService.create(donacion, function (data) {
-
-                // Enviar los mails
-                console.log(data);
-            })
-
-        }
 
 
     }

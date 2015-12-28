@@ -4,12 +4,12 @@
 
         <img src="images/lupa.png" alt="" height="80" width="80">
 
-        <input placeholder="Encuentra un proyecto..." type="text" ng-model="mainCtrl.filtroProyectos">
+        <input placeholder="Encuentra un proyecto..." type="text" ng-model="appCtrl.textProyecto"
+               ng-model-options="{ debounce: 1000 }">
 
     </div>
 
     <div id="main-top-section">
-
 
 
         <div id="main-top-text-panel">
@@ -17,9 +17,7 @@
             <img src="images/logo.png" alt="" height="250" width="370">
 
 
-
             <h1>Bienvenido!</h1>
-
 
 
             <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">
@@ -39,9 +37,7 @@
                 <img ng-src="images/{{mainCtrl.proyecto_slider_01.fotos[0].nombre}}" alt="">
 
 
-
                 <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>
-
 
 
                 <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>
@@ -59,9 +55,7 @@
                 <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">
 
 
-
                 <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>
-
 
 
                 <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>
@@ -79,9 +73,7 @@
                 <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">
 
 
-
                 <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>
-
 
 
                 <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>
@@ -99,9 +91,7 @@
                 <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">
 
 
-
                 <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>
-
 
 
                 <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>
@@ -117,11 +107,7 @@
         </div>
 
 
-
     </div>
-
-
-
 
 
     <div id="proyectos-nuevos">
@@ -129,13 +115,13 @@
         <h1>Proyectos nuevos</h1>
 
 
-
         <div id="main-proyectos-nuevos-list">
 
             <div class="main-proyecto-nuevo">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}" alt=""></div>
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -143,9 +129,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_nuevo_01.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>
@@ -166,7 +150,7 @@
 
                     <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
 
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_01.proyecto_id);">
 
                         OK
 
@@ -174,19 +158,19 @@
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25
+                            ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id);">$25
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50
+                            ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id);">$50
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
+                            ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id);">$100
 
                     </button>
 
@@ -195,11 +179,11 @@
             </div>
 
 
-
             <div class="main-proyecto-nuevo">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}" alt=""></div>
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -207,9 +191,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_nuevo_02.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_nuevo_02.descripcion}}</p>
@@ -228,19 +210,19 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
+                    <span>Dona:</span><input ng-model="appCtrl.donacion_rapida_valor" type="text">
 
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_02.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_02.proyecto_id);">
 
                         OK
 
                     </button>
 
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id);">$25</button>
 
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id);">$50</button>
 
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id);">$100
 
                     </button>
 
@@ -250,8 +232,9 @@
 
             <div class="main-proyecto-nuevo">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}" alt=""></div>
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -259,9 +242,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_nuevo_03.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_nuevo_03.descripcion}}</p>
@@ -282,17 +263,17 @@
 
                     <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor" type="text">
 
-                    <button ng-click="mainCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_03.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor, mainCtrl.proyecto_nuevo_03.proyecto_id);">
 
                         OK
 
                     </button>
 
-                    <button ng-click="mainCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id);">$25</button>
 
-                    <button ng-click="mainCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id);">$50</button>
 
-                    <button ng-click="mainCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id);">$100
 
                     </button>
 
@@ -301,9 +282,7 @@
             </div>
 
 
-
         </div>
-
 
 
     </div>
@@ -315,15 +294,13 @@
     </div>
 
 
-
-    <div class="institucional-publicidad parrafo-movido" ac-animate correction-bottom="5" correction-top="50" animation-in="parrafo-in" animation-out="parrafo-out">
+    <div class="institucional-publicidad parrafo-movido" ac-animate correction-bottom="5" correction-top="50"
+         animation-in="parrafo-in" animation-out="parrafo-out">
 
         <img src="" alt="">
 
 
-
         <h1>INSTITUCIONAL O PUBLICIDAD</h1>
-
 
 
         <h2>Lorem ipsum dolor sit amet, consectetur
@@ -379,9 +356,6 @@
     </div>
 
 
-
-
-
     <div class="colores">
 
         <div></div>
@@ -395,19 +369,18 @@
     </div>
 
 
-
     <div id="proyectos-finalizar">
 
         <h1>Proyectos por finalizar</h1>
-
 
 
         <div id="main-proyectos-finalizar-list">
 
             <div class="main-proyecto-finalizar">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}" alt=""></div>
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -415,9 +388,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_finalizar_01.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_finalizar_01.descripcion}}</p>
@@ -429,10 +400,10 @@
                 </button>
 
 
-                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span
+                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días
+                    restantes... <span
 
-                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
-
+                            class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
 
 
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_01.total_donado}}"
@@ -467,10 +438,9 @@
 
             <div class="main-proyecto-finalizar">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}" alt=""></div>
-
-
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -478,9 +448,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_finalizar_02.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_finalizar_02.descripcion}}</p>
@@ -491,9 +459,10 @@
 
                 </button>
 
-                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span
+                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días
+                    restantes... <span
 
-                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
+                            class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
 
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_02.total_donado}}"
 
@@ -527,8 +496,9 @@
 
             <div class="main-proyecto-finalizar">
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto" ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}" alt=""></div>
-
+                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                           ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}"
+                                                           alt=""></div>
 
 
                 <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
@@ -536,9 +506,7 @@
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
-
                 <h2>{{mainCtrl.proyecto_finalizar_03.nombre}}</h2>
-
 
 
                 <p>{{mainCtrl.proyecto_finalizar_03.descripcion}}</p>
@@ -549,9 +517,10 @@
 
                 </button>
 
-                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días restantes... <span
+                <div class="dias-restantes"><span>{{mainCtrl.proyecto_finalizar_01.faltan}}</span> días
+                    restantes... <span
 
-                        class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
+                            class="porcentaje">{{mainCtrl.proyecto_finalizar_01.porc}}%</span></div>
 
                 <ac-progress-bar recaudado="{{mainCtrl.proyecto_finalizar_03.total_donado}}"
 
@@ -584,9 +553,7 @@
             </div>
 
 
-
         </div>
-
 
 
     </div>
@@ -598,15 +565,12 @@
     </div>
 
 
-
     <div class="institucional-publicidad">
 
         <img src="" alt="">
 
 
-
         <h1>INSTITUCIONAL O PUBLICIDAD</h1>
-
 
 
         <h2>Lorem ipsum dolor sit amet, consectetur
@@ -662,13 +626,6 @@
     </div>
 
 
-
-
-
-
-
-
-
     <div class="colores">
 
         <div></div>
@@ -682,11 +639,9 @@
     </div>
 
 
-
     <div id="main-nuestras-empresas">
 
         <h1>NUESTRAS EMPRESAS</h1>
-
 
 
         <div id="main-nuestras-empresas-list">
@@ -714,18 +669,13 @@
         </div>
 
 
-
-
-
     </div>
 
 
     <div id="contacto-container">
 
 
-
         <h1>Contacto</h1>
-
 
 
         <div id="contacto-form">
@@ -733,39 +683,28 @@
             <div class="contacto-panel">
 
 
-
                 <span>Nombre</span>
-
 
 
                 <input ng-model="contactoCtrl.nombre" type="text" id="contacto-nombre">
 
 
-
                 <span>Email</span>
-
 
 
                 <input ng-model="contactoCtrl.email" type="text" id="contacto-mail">
 
 
-
                 <span>Asunto</span>
-
 
 
                 <input ng-model="contactoCtrl.asunto" type="text" id="contacto-asunto">
 
 
-
-
-
             </div>
 
 
-
             <div class="contacto-panel">
-
 
 
                 <span>Escriba aqu&iacute su consulta</span>
@@ -777,33 +716,21 @@
                       rows="10"></textarea>
 
 
-
             </div>
 
         </div>
 
 
-
-
-
         <div class="contacto-panel contacto-enviar-mobile">
-
 
 
             <button id="contacto-enviar-mobile" ng-click="contactoCtrl.sendMail();">Enviar</button>
 
 
-
         </div>
 
 
-
-
-
     </div>
-
-
-
 
 
 </div>

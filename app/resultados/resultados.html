@@ -1,0 +1,76 @@
+<div id="resultados" ng-controller="ResultadoController as resultadoCtrl">
+
+    <div id="main-search-bar">
+
+        <img src="images/lupa.png" alt="" height="80" width="80">
+
+        <input placeholder="Encuentra un proyecto..." type="text" ng-model="appCtrl.textProyecto"
+               ng-model-options="{ debounce: 1000 }">
+
+    </div>
+
+    <div id="lista-resultados">
+        <div class="main-proyecto-nuevo" ng-repeat="proyecto in resultadoCtrl.proyectos">
+
+            <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                       ng-src="images/{{proyecto.fotos[0].nombre}}"
+                                                       alt=""></div>
+
+
+            <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
+
+            <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
+
+
+            <h2>{{proyecto.nombre}}</h2>
+
+
+            <p>{{proyecto.descripcion}}</p>
+
+            <button class="button-ver" ng-click="mainCtrl.goToDetalle(proyecto.proyecto_id)">VER
+
+            </button>
+
+            <div class="dias-restantes"><span>{{proyecto.faltan}}</span> días restantes... <span
+
+                    class="porcentaje">{{proyecto.porc}}%</span></div>
+
+            <ac-progress-bar recaudado="{{proyecto.total_donado}}"
+
+                             objetivo="{{proyecto.costo_inicial}}"></ac-progress-bar>
+
+            <div class="donacion-rapida-details">
+
+                <span>Dona:</span><input ng-model="appCtrl.donacion_rapida_valor" type="text">
+
+                <button ng-click="appCtrl.donacionRapida(appCtrl.donacion_rapida_valor, proyecto.proyecto_id);">
+
+                    OK
+
+                </button>
+
+                <button class="button-donacion-rapida"
+
+                        ng-click="appCtrl.donacionRapida(25, proyecto.proyecto_id);">$25
+
+                </button>
+
+                <button class="button-donacion-rapida"
+
+                        ng-click="appCtrl.donacionRapida(50, proyecto.proyecto_id);">$50
+
+                </button>
+
+                <button class="button-donacion-rapida"
+
+                        ng-click="appCtrl.donacionRapida(100, proyecto.proyecto_id);">$100
+
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

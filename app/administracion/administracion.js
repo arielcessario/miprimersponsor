@@ -10,10 +10,10 @@
 
     AdministracionController.$inject = ['UserService', 'AcUtils', 'ProyectService', '$location', 'UploadService',
         'UploadVars', '$scope', 'DonationService', 'DonationVars', 'CategoryService', 'AdministracionService', 'AcUtilsGlobals',
-        'ContactsService', '$timeout'];
+        'ContactsService', '$timeout', 'ProyectVars'];
     function AdministracionController(UserService, AcUtils, ProyectService, $location, UploadService,
                                       UploadVars, $scope, DonationService, DonationVars, CategoryService, AdministracionService, AcUtilsGlobals,
-                                      ContactsService, $timeout) {
+                                      ContactsService, $timeout, ProyectVars) {
 
         var vm = this;
         vm.screen = AdministracionService.screen;
@@ -633,6 +633,7 @@
             donacion.status = 1;
             DonationService.update(donacion, function (data) {
 
+
                 // Enviar los mails
                 ContactsService.sendMail('arielcessario@gmail.com',
                     [{mail: 'arielcessario@gmail.com'}],
@@ -649,6 +650,11 @@
                 DonationService.get(-1, function (data) {
 
                     vm.donaciones = data;
+
+                    ProyectVars.clearCache = true;
+                    ProyectService.get(function(data){
+                    });
+
                 })
 
             })

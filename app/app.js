@@ -88,6 +88,18 @@
                     }
                 });
 
+                $routeProvider.when('/resultados/:type/:value', {
+                    templateUrl: 'resultados/resultados.html',
+                    controller: 'ResultadoController',
+                    data: {requiresLogin: false},
+                    resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                        loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            // you can lazy load files for an existing module
+                            return $ocLazyLoad.load('resultados/resultados.js');
+                        }]
+                    }
+                });
+
 
             }])
         .run(function ($rootScope, store, jwtHelper, $location, auth) {
@@ -110,10 +122,10 @@
         .controller('AppController', AppController)
         .service('AppService', AppService);
 
-    AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document'];
-    function AppController(UserService, $location, AppService, CategoryService, $timeout, $document) {
-
-
+    AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
+    'DonationService'];
+    function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
+                           DonationService) {
 
 
         var vm = this;
@@ -123,10 +135,14 @@
         vm.isLogged = false;
         vm.welcomeTo = '';
         vm.categorias = [];
+        vm.textProyecto = '';
 
         // FUNCTIONS
         vm.logout = logout;
         vm.goToAnchor = goToAnchor;
+        vm.filterByCategory = filterByCategory;
+        vm.filterByText = filterByText;
+        vm.donacionRapida = donacionRapida;
 
         // INIT
         if (vm.user != false) {
@@ -170,6 +186,29 @@
 
         }
 
+        $scope.$watch('appCtrl.textProyecto', function (newVal, oldVal) {
+            if (newVal != oldVal && newVal != undefined && !AppService.vieneDeCat) {
+                filterByText();
+            }
+            if(newVal == '' && !AppService.vieneDeCat){
+                $location.path('/main');
+            }else{
+                AppService.vieneDeCat = false;
+            }
+        });
+
+        function filterByText() {
+            $location.path('/resultados/t/' + vm.textProyecto);
+
+        }
+
+        function filterByCategory(id) {
+            AppService.vieneDeCat = true;
+            vm.textProyecto = '';
+            $location.path('/resultados/c/' + id);
+
+        }
+
         function logout() {
             UserService.logout(function (data) {
                 //console.log(data);
@@ -180,11 +219,32 @@
             });
         }
 
+        function donacionRapida(cantidad, proyecto_id){
+            if(!vm.user){
+                $location.path('/ingreso');
+                return;
+            }
+
+
+            var donacion = {
+                'proyecto_id': proyecto_id,
+                'donador_id': vm.user.data.id,
+                'valor': cantidad
+            };
+            DonationService.create(donacion, function (data) {
+
+                // Enviar los mails
+                console.log(data);
+            })
+
+        }
+
 
     }
 
     AppService.$inject = ['$rootScope'];
     function AppService($rootScope) {
+        this.vieneDeCat = false;
         this.listen = function (callback) {
             $rootScope.$on('miprimersponsorradio', callback);
         };
