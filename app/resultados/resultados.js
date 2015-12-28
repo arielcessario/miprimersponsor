@@ -6,20 +6,21 @@
         .controller('ResultadoController', ResultadoController);
 
 
-    ResultadoController.$inject = ['UserService', 'DonationService', 'ProyectService', '$location', 'AdministracionService',
+    ResultadoController.$inject = ['AppService', 'DonationService', 'ProyectService', '$location', 'AdministracionService',
         '$interval', '$routeParams'];
-    function ResultadoController(UserService, DonationService, ProyectService, $location, AdministracionService,
+    function ResultadoController(AppService, DonationService, ProyectService, $location, AdministracionService,
                                  $interval, $routeParams) {
 
 
         var vm = this;
         vm.proyectos = [];
-        vm.type = $routeParams.type;
-        vm.value = $routeParams.value;
+        vm.type = AppService.type;
+        vm.value = AppService.search;
 
-
+        document.getElementById('resultados-search-box').focus();
 
         // FUNCTIONS
+        vm.filtrar = filtrar;
 
         // INIT
 
@@ -37,6 +38,18 @@
             ProyectService.get(function (data) {
                 ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
 
+                    vm.proyectos = data;
+                });
+
+
+            });
+        }
+
+        function filtrar(){
+            ProyectService.get(function (data) {
+                ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
+
+                    console.log(data);
                     vm.proyectos = data;
                 });
 

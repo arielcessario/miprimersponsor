@@ -4,15 +4,15 @@
 
         <img src="images/lupa.png" alt="" height="80" width="80">
 
-        <input placeholder="Encuentra un proyecto..." type="text" ng-model="appCtrl.textProyecto"
-               ng-model-options="{ debounce: 1000 }">
+        <input placeholder="Encuentra un proyecto..." type="text" ng-model="resultadoCtrl.value" ng-keyup="resultadoCtrl.filtrar();"
+                id="resultados-search-box">
 
     </div>
 
     <h1>Resultados de su búsqueda...</h1>
 
     <div id="lista-resultados">
-        <div class="main-proyecto-nuevo" ng-repeat="proyecto in resultadoCtrl.proyectos">
+        <div class="proyecto-resultados-animate main-proyecto-nuevo " ng-repeat="proyecto in resultadoCtrl.proyectos">
 
             <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                        ng-src="images/{{proyecto.fotos[0].nombre}}"
@@ -25,7 +25,6 @@
 
 
             <h2>{{proyecto.nombre}}</h2>
-
 
             <p>{{proyecto.descripcion}}</p>
 

@@ -88,7 +88,7 @@
                     }
                 });
 
-                $routeProvider.when('/resultados/:type/:value', {
+                $routeProvider.when('/resultados', {
                     templateUrl: 'resultados/resultados.html',
                     controller: 'ResultadoController',
                     data: {requiresLogin: false},
@@ -123,7 +123,7 @@
         .service('AppService', AppService);
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-    'DonationService', 'AcUtils', 'ContactsService', 'ProyectService'];
+        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
                            DonationService, AcUtils, ContactsService, ProyectService) {
 
@@ -191,22 +191,27 @@
             if (newVal != oldVal && newVal != undefined && !AppService.vieneDeCat) {
                 filterByText();
             }
-            if(newVal == '' && !AppService.vieneDeCat){
+            if (newVal == '' && !AppService.vieneDeCat) {
                 $location.path('/main');
-            }else{
+            } else {
                 AppService.vieneDeCat = false;
             }
         });
 
         function filterByText() {
-            $location.path('/resultados/t/' + vm.textProyecto);
+            AppService.search = vm.textProyecto;
+            AppService.type = 't';
+            AppService.search =  vm.textProyecto;
+            $location.path('/resultados');
 
         }
 
         function filterByCategory(id) {
             AppService.vieneDeCat = true;
+            AppService.type = 'c';
+            AppService.search = id;
             vm.textProyecto = '';
-            $location.path('/resultados/c/' + id);
+            $location.path('/resultados');
 
         }
 
@@ -220,13 +225,13 @@
             });
         }
 
-        function donacionRapida(cantidad, proyecto_id){
-            if(!vm.user){
+        function donacionRapida(cantidad, proyecto_id) {
+            if (!vm.user) {
                 $location.path('/ingreso');
                 return;
             }
 
-            if(cantidad < 0 || isNaN(cantidad)){
+            if (cantidad < 0 || isNaN(cantidad)) {
                 AcUtils.showMessage('error', 'La donación debe ser mayor a 0');
                 cantidad = 0;
                 return;
@@ -242,10 +247,10 @@
             DonationService.create(donacion, function (data) {
 
                 // Enviar los mails
-                if(data>0){
-                    AcUtils.showMessage('success','Donación realizada con éxito, por favor aguarde la confirmación de la misma.');
+                if (data > 0) {
+                    AcUtils.showMessage('success', 'Donación realizada con éxito, por favor aguarde la confirmación de la misma.');
 
-                    ProyectService.getByParams('proyecto_id', ''+ proyecto_id, 'true',function(data){
+                    ProyectService.getByParams('proyecto_id', '' + proyecto_id, 'true', function (data) {
                         // Mail a administrador
                         ContactsService.sendMail(vm.user.data.mail,
                             [
@@ -269,8 +274,8 @@
                     });
 
 
-                }else{
-                    AcUtils.showMessage('error','Hubo un problema con la donación, por favor contacte al administrador');
+                } else {
+                    AcUtils.showMessage('error', 'Hubo un problema con la donación, por favor contacte al administrador');
 
                 }
             })
@@ -283,6 +288,8 @@
     AppService.$inject = ['$rootScope'];
     function AppService($rootScope) {
         this.vieneDeCat = false;
+        this.search = '';
+        this.type = 'c';
         this.listen = function (callback) {
             $rootScope.$on('miprimersponsorradio', callback);
         };
