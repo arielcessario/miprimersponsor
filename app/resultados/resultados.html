@@ -41,9 +41,9 @@
 
             <div class="donacion-rapida-details">
 
-                <span>Dona:</span><input ng-model="appCtrl.donacion_rapida_valor" type="text">
+                <span>Dona:</span><input ng-model="$index" ng-init="$index = 0" type="number">
 
-                <button ng-click="appCtrl.donacionRapida(appCtrl.donacion_rapida_valor, proyecto.proyecto_id);">
+                <button ng-click="appCtrl.donacionRapida($index, proyecto.proyecto_id);">
 
                     OK
 

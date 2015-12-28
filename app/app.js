@@ -246,8 +246,6 @@
                     AcUtils.showMessage('success','Donación realizada con éxito, por favor aguarde la confirmación de la misma.');
 
                     ProyectService.getByParams('proyecto_id', ''+ proyecto_id, 'true',function(data){
-                        console.log(data);
-                        vm.proyecto = data[0];
                         // Mail a administrador
                         ContactsService.sendMail(vm.user.data.mail,
                             [
