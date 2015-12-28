@@ -267,7 +267,7 @@ table {
 #header-mobile {
   display: flex;
   height: 50px;
-  background: white;
+  background: darkorange;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -289,6 +289,13 @@ table {
     text-align: right;
     //background-color: green;
   }
+}
+
+#header-categorias-mobile{
+  margin: 10px;
+  font-size: 18px;
+  color: lightgray;
+
 }
 
 #header-desktop {
@@ -366,6 +373,7 @@ table {
   background-color: orange;
   position:absolute;
   opacity:0;
+  display: none;
   border-radius: 5px;
 }
 
@@ -390,6 +398,7 @@ table {
 .desktop-link-nav:hover {
   .Contenedor-menu-sub {
     opacity: 1;
+    display: inline;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out; -webkit-transition: all .3s ease-in-out;
@@ -476,9 +485,11 @@ table {
 }
 
 .menu-mobile-panel {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 24px;
   width: 70%;
   color: white;
-  background-color: #17384B;
+  background: rgb(255, 168, 76);
   position: fixed;
   bottom: 0px;
   top: 50px;
@@ -488,8 +499,9 @@ table {
 
   .menu-desktop-btn {
     margin-top: 15px;
-    font-family: 'Open Sans', serif;
-    line-height: 18px;
+    color: white;
+    font-family: 'Droid Sans', serif;
+    line-height: 24px;
     padding: 5px;
     font-variant: all-petite-caps;
   }
