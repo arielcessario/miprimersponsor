@@ -7,9 +7,9 @@
 
 
     ProyectoController.$inject = ['UserService', 'DonationService', 'ProyectService', '$routeParams', 'CommentService',
-        'AcUtils', '$location', 'ContactsService', 'AppService'];
+        'AcUtils', '$location', 'ContactsService', 'AppService', 'ProyectVars'];
     function ProyectoController(UserService, DonationService, ProyectService, $routeParams, CommentService,
-                                AcUtils, $location, ContactsService, AppService) {
+                                AcUtils, $location, ContactsService, AppService, ProyectVars) {
 
         var vm = this;
         vm.proyectos = [];
@@ -19,13 +19,17 @@
         vm.user = UserService.getFromToken();
         vm.comentario = {};
         vm.comentarios = [];
-        vm.donacion_rapida_valor =0;
+        vm.donacion_rapida_valor = 0;
+        vm.proyecto_similar_01 = {};
+        vm.proyecto_similar_02 = {};
+        vm.proyecto_similar_03 = {};
 
         // Funciones
         vm.comentar = comentar;
         vm.back = back;
 
         // Init
+        ProyectVars.activos = true;
         ProyectService.getByParams('proyecto_id', '' + vm.id, 'true', function (data) {
             vm.proyecto = data[0];
             vm.proyecto = angular.copy(data[0]);
@@ -33,18 +37,38 @@
             vm.proyecto.faltan = (new Date(new Date(vm.proyecto.fecha_fin) - new Date())).getDate();
             CommentService.get(vm.proyecto.proyecto_id, function (data) {
                 vm.comentarios = data;
-            })
+            });
+
+            ProyectService.getByParams('categoria_id', '' + vm.proyecto.categoria_id, 'true', function (data) {
+
+                vm.proyecto_similar_01 = data[0];
+                vm.proyecto_similar_02 = data[1];
+                vm.proyecto_similar_03 = data[2];
+
+                vm.proyecto_similar_01 = angular.copy(data[0]);
+                vm.proyecto_similar_01.porc = Math.round(vm.proyecto_similar_01.total_donado * 100 / vm.proyecto_similar_01.costo_inicial);
+                vm.proyecto_similar_01.faltan = (new Date(new Date(vm.proyecto_similar_01.fecha_fin) - new Date())).getDate();
+
+                vm.proyecto_similar_02 = data[1];
+                vm.proyecto_similar_02.porc = Math.round(vm.proyecto_similar_02.total_donado * 100 / vm.proyecto_similar_02.costo_inicial);
+                vm.proyecto_similar_02.faltan = (new Date(new Date(vm.proyecto_similar_02.fecha_fin) - new Date())).getDate();
+
+                vm.proyecto_similar_03 = data[2];
+                vm.proyecto_similar_03.porc = Math.round(vm.proyecto_similar_03.total_donado * 100 / vm.proyecto_similar_03.costo_inicial);
+                vm.proyecto_similar_03.faltan = (new Date(new Date(vm.proyecto_similar_03.fecha_fin) - new Date())).getDate();
+
+            });
         });
 
-        // Implementaciones
 
+        // Implementaciones
 
 
         function comentar() {
 
 
             if (!vm.user || vm.user.data.id == undefined) {
-                AcUtils.showMessage('erro','Debe estar registrado para poder realizar comentarios');
+                AcUtils.showMessage('erro', 'Debe estar registrado para poder realizar comentarios');
                 return;
             }
 
@@ -69,7 +93,7 @@
             });
         }
 
-        function back(){
+        function back() {
             $location.path(AppService.origen);
         }
 
