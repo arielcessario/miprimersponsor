@@ -506,6 +506,8 @@
 
             ProyectService.create(vm.proyecto, function (data) {
 
+                AcUtils.showMessage("success", "El proyecto ha sido creado, por favor aguarde la aprobación del administrador. Gracias.");
+
                 ContactsService.sendMail(vm.user.data.mail,
                     [
                         {mail: 'arielcessario@gmail.com'}
