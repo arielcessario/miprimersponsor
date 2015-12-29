@@ -43,10 +43,11 @@
 
 
             ProyectService.getByParams('en_slider', '1', 'true', function (data) {
+                console.log(data);
                 vm.proyecto_slider_01 = data[0];
-                vm.proyecto_slider_02 = data[0];
-                vm.proyecto_slider_03 = data[0];
-                vm.proyecto_slider_04 = data[0];
+                vm.proyecto_slider_02 = data[1];
+                vm.proyecto_slider_03 = data[2];
+                vm.proyecto_slider_04 = data[3];
             });
 
             // obtengo los proyectos mas nuevos
