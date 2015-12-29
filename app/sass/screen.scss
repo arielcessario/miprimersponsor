@@ -1901,7 +1901,16 @@ table {
 
 }
 
+#fondo-detalle-proyecto {
+  background: -webkit-linear-gradient(bottom, black 20%, #18e21c 100%);
+  background-size: 100% 100%;  width: 100%;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+  height: 100%;
+}
+
 #proyecto {
+  background-color: white;
   justify-content: center;
   align-items: center;
   max-width: 1000px;
@@ -1911,8 +1920,7 @@ table {
   border-radius: 12px;
   padding: 10px;
   margin: auto;
-
-  #ac-progress-bar {
+   #ac-progress-bar {
     opacity: .7;
     margin-bottom: 10px;
     -webkit-border-radius: 12px;
