@@ -379,6 +379,13 @@ input{
     display: flex;
     flex-direction: row;
     align-items: center;
+    img:hover{
+      cursor: pointer;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+
+    }
     @media (min-width: 1300px) {
       max-width: 650px;
     }
@@ -396,13 +403,19 @@ input{
       color: #00a148;
       text-decoration: underline;
 
-    }
+        }
     .desktop-link-login {
       a, span {
         color: rgb(250, 152, 25);
         padding: 10px;
       }
     }
+  }
+
+  #header-desktop-right button:hover{
+      color: red;
+      cursor:pointer;
+
   }
 
   #header-desktop-right img {
