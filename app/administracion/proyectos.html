@@ -130,7 +130,8 @@
 
     <div class="administracion-button-bar">
         <button ac-validator ng-click="administracionCtrl.createProyecto();"
-                ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">GUARDAR
+                ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">
+            GUARDAR
         </button>
         <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
                 ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">CONFIRMAR
@@ -140,7 +141,9 @@
                 ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">BORRAR
         </button>
         <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
-        <button style="position: relative;" ng-if="administracionCtrl.user.data.rol == '0'"> Subir Comprobante
+        <button style="position: relative;"
+                ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1"> Subir
+            Comprobante
             <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
                    ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
         </button>
