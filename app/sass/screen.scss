@@ -274,14 +274,27 @@ table {
 }
 
 .ac-mensaje-custom-show {
-  -webkit-animation: show-mensaje 3s;
-  -o-animation: show-mensaje 3s;
-  animation: show-mensaje 3s;
+  background-color: white;
+  padding: 10px;
+  color: darkgray;
+  width: 100%;
+  height: 30px;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 20px;
+  font-style: bolder;
+  text-align: center;
+  -webkit-animation: show-mensaje 1s ease;
+  -o-animation: show-mensaje 1s ease;
+  animation: show-mensaje 1s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 @-webkit-keyframes show-mensaje {
   0% {
     opacity: 0;
+
   }
   33% {
     opacity: 1;
@@ -291,6 +304,7 @@ table {
   }
   100% {
     opacity: 0;
+
   }
 
 }
