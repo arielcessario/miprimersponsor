@@ -130,7 +130,7 @@
 
     <div class="administracion-button-bar">
         <button ac-validator ng-click="administracionCtrl.createProyecto();"
-                ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">GUARDAR
+                ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">GUARDAR
         </button>
         <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
                 ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">CONFIRMAR
