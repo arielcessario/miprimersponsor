@@ -7,9 +7,9 @@
 
 
     MainController.$inject = ['UserService', 'DonationService', 'ProyectService', '$location', 'AdministracionService',
-        '$interval'];
+        '$interval', 'ProyectVars'];
     function MainController(UserService, DonationService, ProyectService, $location, AdministracionService,
-                            $interval) {
+                            $interval, ProyectVars) {
 
         var vm = this;
         vm.proyectos = [];
@@ -37,6 +37,8 @@
         // INIT
 
         // Obtengo los proyectos
+        ProyectVars.activos = true;
+        ProyectVars.clearCache = true;
         ProyectService.get(function (data) {
 
 
