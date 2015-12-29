@@ -1313,9 +1313,11 @@ input{
 
   }
   button,
-  .boton-admin button {
+  .boton-admin button,
+  .boton-datos {
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
+    font-size: 14px;
     background-color: white;
     -moz-border-radius: 5px;
     border-radius: 5px;
