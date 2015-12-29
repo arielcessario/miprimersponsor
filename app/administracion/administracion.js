@@ -50,6 +50,7 @@
 
         vm.modificarProyecto = modificarProyecto;
         vm.resetProyecto = resetProyecto;
+        vm.confirmarProyecto = confirmarProyecto;
         vm.removeProyecto = removeProyecto;
         vm.createProyecto = createProyecto;
         vm.createCambio = createCambio;
@@ -119,32 +120,20 @@
 
 
                 if (vm.user.data.rol == 0) {
+
+                    ProyectVars.activos = false;
+                    ProyectVars.clearCache = true;
                     ProyectService.get(function (data) {
                         if (data.length > 0) {
-                            for (var i = 0; i < data.length; i++) {
-                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
-                                data[i].total_donado = parseFloat(data[i].total_donado);
-                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
-                                data[i].fecha_fin = new Date(data[i].fecha_fin);
-                                data[i].status = '' + data[i].status;
 
-                            }
-                            vm.proyectos = data;
+                            formatProyectos(data);
                         }
                     });
                 } else {
 
                     ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
                         if (data.length > 0) {
-                            for (var i = 0; i < data.length; i++) {
-                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
-                                data[i].total_donado = parseFloat(data[i].total_donado);
-                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
-                                data[i].fecha_fin = new Date(data[i].fecha_fin);
-                                data[i].status = '' + data[i].status;
-
-                            }
-                            vm.proyectos = data;
+                            formatProyectos(data);
                         }
                     });
                 }
@@ -200,6 +189,40 @@
             $timeout(function () {
                 vm.validation = true;
             }, 1);
+        }
+
+        /**
+         * Función auxiliar para mostar bien el proyecto
+         * @param data
+         */
+        function formatProyectos(data) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
+                data[i].total_donado = parseFloat(data[i].total_donado);
+                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
+                data[i].fecha_fin = new Date(data[i].fecha_fin);
+
+                if (data[i].status == 1) {
+                    data[i].statusTexto = 'Activo';
+                }
+                if (data[i].status == 0) {
+                    data[i].statusTexto = 'Baja';
+                }
+                if (data[i].status == 2) {
+                    data[i].statusTexto = 'Terminado';
+                }
+                if (data[i].status == 3) {
+                    data[i].statusTexto = 'Dinero Transferido';
+                }
+                if (data[i].status == 4) {
+                    data[i].statusTexto = 'Pendiente de Aprobación';
+                }
+
+
+                data[i].status = '' + data[i].status;
+
+            }
+            vm.proyectos = data;
         }
 
         function modificarUsuario(usuario) {
@@ -270,7 +293,6 @@
             }
 
 
-
             UserService.update(vm.usuario, function (data) {
 
                 if (vm.user.data.rol == 0) {
@@ -309,15 +331,11 @@
 
         function resetProyecto() {
             vm.proyecto = {
-                cliente_id: -1,
+                proyecto_id: -1,
+                descripcion: '',
                 nombre: '',
-                apellido: '',
-                nro_doc: '',
-                telefono: '',
-                password: '',
-                direccion: '',
-                mail: '',
-                rol_id: '0'
+                categoria_id: '1',
+                status: -1
             };
 
             vm.foto_01 = 'no_image.png';
@@ -329,21 +347,62 @@
         }
 
         function removeProyecto() {
-            if(vm.proyecto.proyecto_id == -1){
-                AcUtils.showMessage('error','Debe seleccionar un proyecto');
+            if (vm.proyecto.proyecto_id == -1) {
+                AcUtils.showMessage('error', 'Debe seleccionar un proyecto');
                 return;
             }
 
-            var r = confirm('Realmente desea eliminar el proyecto?');
+            var r = confirm('La eleminación de un proyecto debe ser aprobada por un administrador. Desea continuar?');
 
             if (!r) {
                 return;
             }
 
-            ProyectService.removeProyecto(vm.proyecto.cliente_id, function (data) {
+            if (vm.proyecto.proyecto_id != -1) {
+                vm.showJustificaciones = true;
+                vm.proyecto.status = 0;
+                return;
+            }
+
+            //if (vm.proyecto.proyecto_id == -1) {
+            //    AcUtils.showMessage('error', 'Debe seleccionar un proyecto');
+            //    return;
+            //}
+            //
+            //var r = confirm('Realmente desea eliminar el proyecto?');
+            //
+            //if (!r) {
+            //    return;
+            //}
+            //
+            //vm.proyecto.status = 0;
+            //ProyectService.update(vm.proyecto, function (data) {
+            //    ProyectService.get(function (data) {
+            //        formatProyectos(data);
+            //        resetProyecto();
+            //    });
+            //});
+
+        }
+
+        function confirmarProyecto() {
+
+            if (vm.proyecto.proyecto_id == -1) {
+                return;
+            }
+
+            vm.proyecto.status = 1;
+            vm.proyecto.categorias = [{categoria_id: vm.proyecto_categoria}];
+
+            ProyectService.update(vm.proyecto, function (data) {
+                ProyectVars.clearCache = true;
                 ProyectService.get(function (data) {
-                    vm.proyectos = data;
-                });
+                    if (data.length > 0) {
+                        formatProyectos(data);
+                        resetProyecto();
+                    }
+                })
+
             });
         }
 
@@ -380,7 +439,6 @@
             vm.proyecto.categorias = vm.proyecto_categoria;
 
             ProyectService.createCambio(vm.proyecto, function (data) {
-                console.log(data);
                 UploadVars.uploadsList = [];
                 vm.proyecto = {proyecto_id: -1};
                 vm.showJustificaciones = false;
@@ -435,11 +493,23 @@
                 return;
             }
 
+            vm.proyecto.status = 4;
+
 
             ProyectService.create(vm.proyecto, function (data) {
+
+                ContactsService.sendMail(vm.user.data.mail,
+                    [
+                        {mail: 'arielcessario@gmail.com'}
+                    ],
+                    'MPE', 'CREACIÓN DE NUEVO PROYECTO - Proyecto ' + vm.proyecto.nombre,
+                    'Existe un nuevo proyecto para aprobar', function (data) {
+                        console.log(data);
+                    });
+
                 if (vm.user.data.rol == "0") {
                     ProyectService.get(function (data) {
-                        vm.proyectos = data;
+                        formatProyectos(data);
                         UploadVars.uploadsList = [];
                         vm.proyecto = {proyecto_id: -1};
                         validate();
@@ -447,16 +517,8 @@
                 } else {
                     ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
                         if (data.length > 0) {
-                            for (var i = 0; i < data.length; i++) {
-                                data[i].costo_inicial = parseFloat(data[i].costo_inicial);
-                                data[i].total_donado = parseFloat(data[i].total_donado);
-                                data[i].fecha_inicio = new Date(data[i].fecha_inicio);
-                                data[i].fecha_fin = new Date(data[i].fecha_fin);
-                                data[i].status = '' + data[i].status;
-
-                            }
-                            vm.proyectos = data;
-                            vm.proyecto = {proyecto_id: -1};
+                            formatProyectos(data);
+                            resetProyecto()
                         }
                         validate();
                     });
@@ -497,7 +559,6 @@
             ProyectService.getByParams('proyecto_id', '' + cambio.proyecto_id, '' + true, function (data) {
 
                 vm.proyecto_original = data[0];
-                console.log(vm.user.data.mail);
             })
         }
 
@@ -652,7 +713,7 @@
                     vm.donaciones = data;
 
                     ProyectVars.clearCache = true;
-                    ProyectService.get(function(data){
+                    ProyectService.get(function (data) {
                     });
 
                 })
