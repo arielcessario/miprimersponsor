@@ -309,6 +309,14 @@ table {
 
 }
 
+input{
+  padding: 3px;
+  font-family: 'Droid Sans', serif;
+  font-size: 14px;
+  font-weight: lighten;
+  border-style: none;
+}
+
 // HEADER
 
 #header-mobile {
@@ -1736,8 +1744,13 @@ table {
   //background-size: 400% 400%;
   height: 130vw;
   .administracion-button-bar button{
-    margin: 1px;
-     }
+    margin: 3px;
+  }
+  @media(max-width: 400px) {
+    .administracion-button-bar button {
+      margin: 1px;
+    }
+  }
   @media(max-width: 360px){
     height: 280vw;
   }
@@ -1800,6 +1813,7 @@ table {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
+    padding: 2px;
 
   }
 
@@ -1807,6 +1821,15 @@ table {
 
 .nuevo-usuario-input,
 .administracion-input {
+  margin-bottom: 20px;
+}
+
+.titulo-nuevos-proyectos{
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: white;
+  padding: 10px;
   margin-bottom: 20px;
 }
 
