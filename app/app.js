@@ -198,18 +198,20 @@
             if (newVal != oldVal && newVal != undefined && !AppService.vieneDeCat) {
                 filterByText();
             }
-            if (newVal == '' && !AppService.vieneDeCat) {
-                $location.path('/main');
-            } else {
-                AppService.vieneDeCat = false;
-            }
+            //if (newVal == '' && !AppService.vieneDeCat) {
+            //    $location.path('/main');
+            //} else {
+            //    AppService.vieneDeCat = false;
+            //}
         });
 
         function filterByText() {
-            AppService.search = vm.textProyecto;
             AppService.type = 't';
             AppService.search =  vm.textProyecto;
             $location.path('/resultados');
+
+            $timeout(function(){vm.textProyecto = '';}, 1000);
+
 
         }
 
