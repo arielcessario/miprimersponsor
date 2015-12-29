@@ -32,7 +32,6 @@
 
 
         // FUNCTIONS
-        vm.goToDetalle = goToDetalle;
         vm.goToCrear = goToCrear;
 
         // INIT
@@ -103,10 +102,7 @@
             $location.path('/administracion')
         }
 
-        function goToDetalle(id) {
 
-            $location.path('/proyecto/' + id);
-        }
 
 
 

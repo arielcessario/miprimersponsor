@@ -7,9 +7,9 @@
 
 
     ProyectoController.$inject = ['UserService', 'DonationService', 'ProyectService', '$routeParams', 'CommentService',
-        'AcUtils', '$location', 'ContactsService'];
+        'AcUtils', '$location', 'ContactsService', 'AppService'];
     function ProyectoController(UserService, DonationService, ProyectService, $routeParams, CommentService,
-                                AcUtils, $location, ContactsService) {
+                                AcUtils, $location, ContactsService, AppService) {
 
         var vm = this;
         vm.proyectos = [];
@@ -70,7 +70,7 @@
         }
 
         function back(){
-            $location.path('/main');
+            $location.path(AppService.origen);
         }
 
     }

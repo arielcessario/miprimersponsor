@@ -144,6 +144,7 @@
         vm.filterByCategory = filterByCategory;
         vm.filterByText = filterByText;
         vm.donacionRapida = donacionRapida;
+        vm.goToDetalle = goToDetalle;
 
         // INIT
         if (vm.user != false) {
@@ -155,6 +156,11 @@
             vm.categorias = data;
         });
 
+        function goToDetalle(id, origen) {
+
+            AppService.origen = origen;
+            $location.path('/proyecto/' + id);
+        }
 
         /**
          * @description Recibo el login o logout
@@ -291,6 +297,7 @@
         this.vieneDeCat = false;
         this.search = '';
         this.type = 'c';
+        this.origen = '/main';
         this.listen = function (callback) {
             $rootScope.$on('miprimersponsorradio', callback);
         };
