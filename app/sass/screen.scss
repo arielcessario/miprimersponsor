@@ -1339,6 +1339,19 @@ input{
     margin: 5px;
     align-items: center;
     outline: none;
+      }
+
+  .boton-admin button:hover,
+  .boton-datos:hover,
+  button:hover{
+      background-color: darkorange;
+      color: white;
+      cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 
   }
   #ac-progress-bar {
@@ -1770,6 +1783,7 @@ input{
     height: 280vw;
   }
 }
+
 
 #nuevo-usuario-form {
   margin: auto;
