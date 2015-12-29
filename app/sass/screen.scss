@@ -319,11 +319,11 @@ table {
   justify-content: center;
   color: #fa9819;
   width: 100%;
-  background: #e2e2e2;
-  background: -moz-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
-  background: -webkit-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
-  background: linear-gradient(to bottom, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#eaeaea', GradientType=0);
+  background: white;
+  //background: -moz-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  //background: -webkit-linear-gradient(top, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  //background: linear-gradient(to bottom, #e2e2e2 0%, #ffffff 50%, #eaeaea 100%);
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#eaeaea', GradientType=0);
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
