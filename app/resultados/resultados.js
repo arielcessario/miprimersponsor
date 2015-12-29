@@ -26,7 +26,7 @@
 
         // Obtengo los proyectos
 
-        AppService.listen(function(){
+        AppService.listenCategoria(function(){
             ProyectService.getByParams('categoria_id', '' + AppService.search, 'true', function (data) {
 
                 vm.proyectos = data;
@@ -56,6 +56,7 @@
             ProyectService.get(function (data) {
                 ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
 
+                    AppService.search = vm.value;
                     vm.proyectos = data;
                 });
 

@@ -153,6 +153,7 @@
         }
 
         CategoryService.get(function (data) {
+
             vm.categorias = data;
         });
 
@@ -218,7 +219,7 @@
             AppService.search = id;
             vm.textProyecto = '';
             $location.path('/resultados');
-            AppService.broadcast();
+            AppService.broadcastCategoria();
 
         }
 
@@ -304,6 +305,13 @@
 
         this.broadcast = function () {
             $rootScope.$broadcast('miprimersponsorradio');
+        }
+        this.listenCategoria = function (callback) {
+            $rootScope.$on('miprimersponsorradiocategoria', callback);
+        };
+
+        this.broadcastCategoria = function () {
+            $rootScope.$broadcast('miprimersponsorradiocategoria');
         }
     }
 })();
