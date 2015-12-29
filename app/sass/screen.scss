@@ -29,12 +29,28 @@
     -webkit-transform: translateY(0px);
   }
 
-  50%{
+  50% {
     -webkit-transform: translateY(-5px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: translateY(-500px);
+    -ms-transform: scale(.5); /* IE 9 */
+    transform: scale(.5);
+    opacity: 0;
   }
 
    100% {
     -webkit-transform: translateY(0px);
+     -ms-transform: scale(1); /* IE 9 */
+     transform: scale(1);
+     opacity: 1;
   }
 }
 
@@ -1676,6 +1692,14 @@ table {
   background: -webkit-linear-gradient(top, #596a72 0%, #a0acb2 100%);
   background: linear-gradient(to bottom, #596a72 0%, #a0acb2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#596a72', endColorstr='#a0acb2', GradientType=0);
+  -webkit-animation: scale 1s; /* Safari 4+ */
+  -moz-animation: scale 1s; /* Fx 5+ */
+  -o-animation: scale 1s;/* Opera 12+ */
+  animation: scale 1s; /* IE 10+, Fx 29+ */
+  -webkit-transition: all 1s cubic-bezier(.98,0,1,.28);
+  -moz-transition: all 1s cubic-bezier(.98,0,1,.28);
+  -o-transition: all 1s cubic-bezier(.98,0,1,.28);
+  transition: all 1s cubic-bezier(.98,0,1,.28);
 
 }
 
@@ -1765,6 +1789,7 @@ table {
   align-items: center;
   max-width: 800px;
   min-height: 800px;
+
   h1 {
     margin-bottom: 20px;
     font-family: 'Droid Sans', sans-serif;
