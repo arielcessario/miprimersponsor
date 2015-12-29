@@ -153,7 +153,9 @@ table {
 }
 
 .error-input {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: orangered;
+  border: dotted 2px white;
+
 }
 
 // View
@@ -258,13 +260,16 @@ table {
 }
 
 // Mensajes
-.ac-error-message {
-  background-color: #e3001b;
+.error-message {
   color: white;
+  font-family: 'Droid Sans', sans-serif;
+  div{
+    color: white;
+  }
 }
 
-.ac-success-message {
-  background-color: #e3001b;
+.success-message {
+  background-color: greenyellow;
   color: white;
 }
 
