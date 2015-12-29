@@ -400,6 +400,14 @@
                     if (data.length > 0) {
                         formatProyectos(data);
                         resetProyecto();
+                        ContactsService.sendMail('arielcessario@gmail.com',
+                            [
+                                {mail: vm.user.data.mail}
+                            ],
+                            'MPE', 'CONFIRMACIÓN DE PROYECTO - Proyecto ' + vm.proyecto.nombre,
+                            'Se aprobó el proyecto', function (data) {
+                                console.log(data);
+                            });
                     }
                 })
 
