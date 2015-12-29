@@ -267,6 +267,10 @@
 
         function removeUsuario() {
 
+            if(vm.usuario.usuario_id == -1){
+                return;
+            }
+
             var r = confirm('Realmente desea eliminar el usuario? Esta operación no se puede deshacer');
 
             if (!r) {
