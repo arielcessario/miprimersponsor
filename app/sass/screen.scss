@@ -1265,8 +1265,7 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-}
+ }
 
 #administracion {
   display: flex;
@@ -1717,6 +1716,9 @@ table {
   //background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
   //background-size: 400% 400%;
   height: 130vw;
+  .administracion-button-bar button{
+    margin: 1px;
+     }
   @media(max-width: 360px){
     height: 280vw;
   }
