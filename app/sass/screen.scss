@@ -24,6 +24,20 @@
   }
 }
 
+@-webkit-keyframes up {
+  0% {
+    -webkit-transform: translateY(0px);
+  }
+
+  50%{
+    -webkit-transform: translateY(-5px);
+  }
+
+   100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
 //animaciones
 
 // GENERALES
@@ -227,32 +241,6 @@ table {
   }
 }
 
-// resultados de búsqueda
-
-.proyecto-resultados-animate{
-  opacity: 1;
-  -webkit-transition: 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -moz-transition: 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -ms-transition: 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -o-transition: 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  transition: 0.4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-}
-
-.proyecto-resultados-animate.ng-enter,
-.proyecto-resultados-animate.ng-leave {
-  opacity: 0;
-}
-
-.proyecto-resultados-animate .ng-enter .ng-enter-active {
-  opacity: 1;
-}
-
-
-.proyecto-resultados-animate .ng-leave .ng-leave-active {
-  opacity: 1;
-}
-
-
 // Mensajes
 .ac-error-message {
   background-color: #e3001b;
@@ -411,8 +399,7 @@ table {
 .desktop-link-nav a:hover,
 .desktop-link-login a:hover {
   color: white;
-  background-color: #18e21c;
-  border-radius: 5px;
+  background-color: #18e21c;   border-radius: 5px;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -881,6 +868,7 @@ table {
       justify-content: center;
       max-width: 100%;
 
+
     }
 
     .main-proyecto-nuevo,
@@ -1039,25 +1027,28 @@ table {
 
 }
 
-#proyectos-finalizar {
+#proyectos-finalizar{
   margin-top: 30px;
 }
 
-#main-proyectos-nuevos-list {
-  background: -moz-linear-gradient(top, rgba(255, 160, 160, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-linear-gradient(top, rgba(255, 160, 160, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(to bottom, rgba(255, 160, 160, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa0a0', endColorstr='#00ffffff', GradientType=0);
+#main-proyectos-nuevos-list{
+  background: -moz-linear-gradient(top,  rgba(255,160,160,1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top,  rgba(255,160,160,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom,  rgba(255,160,160,1) 0%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa0a0', endColorstr='#00ffffff',GradientType=0 );
 
 }
 
-#main-proyectos-finalizar-list {
-  background: -moz-linear-gradient(top, rgba(145, 255, 156, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-linear-gradient(top, rgba(145, 255, 156, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(to bottom, rgba(145, 255, 156, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#91ff9c', endColorstr='#00ffffff', GradientType=0);
+#main-proyectos-finalizar-list{
+  background: -moz-linear-gradient(top,  rgba(145,255,156,1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top,  rgba(145,255,156,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom,  rgba(145,255,156,1) 0%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91ff9c', endColorstr='#00ffffff',GradientType=0 );
+
+
 
 }
+
 
 #proyectos-nuevos {
   h1 {
@@ -1077,6 +1068,24 @@ table {
     background-color: rgb(24, 226, 28);
   }
 }
+
+
+.main-proyecto-nuevo:hover,
+.main-proyecto-finalizar:hover {
+
+   -webkit-animation: up 1s; /* Safari 4+ */
+   -moz-animation:    up 1s; /* Fx 5+ */
+   -o-animation:      up 1s;/* Opera 12+ */
+   animation: up 1s; /* IE 10+, Fx 29+ */
+   -webkit-transition: all 1s cubic-bezier(.98,0,1,.28);
+   -moz-transition: all 1s cubic-bezier(.98,0,1,.28);
+   -o-transition: all 1s cubic-bezier(.98,0,1,.28);
+   transition: all 1s cubic-bezier(.98,0,1,.28);
+                         }
+
+
+
+
 
 .show-slider-proyecto {
   opacity: 1 !important;
@@ -1190,9 +1199,9 @@ table {
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 10px;
-  }
+    }
 
-  #contacto-enviar-mobile:hover {
+  #contacto-enviar-mobile:hover{
     color: white;
     border: 1px solid white;
     background-color: darkorange;
@@ -1206,6 +1215,7 @@ table {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+
 
   }
 
@@ -1872,17 +1882,19 @@ table {
 
 }
 
-.contenedor-proyecto-foto {
+
+.contenedor-proyecto-foto{
   text-align: center;
   overflow: hidden;
   width: 100%;
   height: 300px;
-  margin-bottom: 20px;
+  margin-bottom:20px;
   vertical-align: middle;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
+
 
 .foto-principal-seleccionada {
   height: 100%;
@@ -1919,7 +1931,7 @@ table {
 
 #proyecto-rigth {
   width: 40%;
-  margin: auto;
+  margin:auto;
   padding: 10px;
 
   button {
@@ -1951,22 +1963,22 @@ table {
   width: 100%;
   display: flex;
 
-  @media(max-width: 600px) {
+  @media(max-width: 600px){
     flex-wrap: wrap;
     flex-direction: column;
 
-    #proyecto-thums {
+    #proyecto-thums{
       margin-top: 10px;
       margin-bottom: 10px;
     }
 
-    #proyecto-left {
+    #proyecto-left{
       width: 100%;
       margin-top: 20px;
       margin-bottom: 20px;
     }
 
-    #proyecto-rigth {
+    #proyecto-rigth{
       width: 100%;
       margin-top: 20px;
       margin-bottom: 20px;
@@ -1990,17 +2002,17 @@ table {
 
 }
 
-#resultados {
+#resultados{
   margin-top: 60px;
-  background: rgb(180, 227, 145);
-  background: -moz-linear-gradient(top, rgb(180, 227, 145) 0%, rgb(97, 196, 25) 50%, rgb(180, 227, 145) 100%);
-  background: -webkit-linear-gradient(top, rgb(180, 227, 145) 0%, rgb(97, 196, 25) 50%, rgb(180, 227, 145) 100%);
-  background: linear-gradient(to bottom, rgb(180, 227, 145) 0%, rgb(97, 196, 25) 50%, rgb(180, 227, 145) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b4e391', endColorstr='#b4e391', GradientType=0);
+  background: rgb(180,227,145);
+  background: -moz-linear-gradient(top,  rgb(180,227,145) 0%, rgb(97,196,25) 50%, rgb(180,227,145) 100%);
+  background: -webkit-linear-gradient(top,  rgb(180,227,145) 0%,rgb(97,196,25) 50%,rgb(180,227,145) 100%);
+  background: linear-gradient(to bottom,  rgb(180,227,145) 0%,rgb(97,196,25) 50%,rgb(180,227,145) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 );
 
 }
 
-#resultados h1 {
+#resultados h1{
   font-family: 'Droid Sans', sans-serif;
   color: white;
   font-size: 40px;
