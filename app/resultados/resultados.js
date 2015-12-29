@@ -15,8 +15,7 @@
         var vm = this;
         vm.proyectos = [];
         vm.type = AppService.type;
-        vm.value = AppService.search;
-
+        vm.value = '';
         document.getElementById('resultados-search-box').focus();
 
         // FUNCTIONS
@@ -24,32 +23,39 @@
 
         // INIT
 
+
         // Obtengo los proyectos
+
+        AppService.listen(function(){
+            ProyectService.getByParams('categoria_id', '' + AppService.search, 'true', function (data) {
+
+                vm.proyectos = data;
+            });
+        });
+
+
         if (vm.type == 'c') {
-            ProyectService.get(function (data) {
-                ProyectService.getByParams('categoria_id', vm.value, 'true', function (data) {
+            ProyectService.getByParams('categoria_id', '' + AppService.search, 'true', function (data) {
 
-                    vm.proyectos = data;
-                });
-
-
+                vm.proyectos = data;
             });
+
+
         } else {
-            ProyectService.get(function (data) {
-                ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
 
-                    vm.proyectos = data;
-                });
+            vm.value = AppService.search;
+            ProyectService.getByParams('nombre', '' + vm.value, 'false', function (data) {
 
-
+                vm.proyectos = data;
             });
+
+
         }
 
-        function filtrar(){
+        function filtrar() {
             ProyectService.get(function (data) {
                 ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
 
-                    console.log(data);
                     vm.proyectos = data;
                 });
 

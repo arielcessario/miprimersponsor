@@ -212,6 +212,7 @@
             AppService.search = id;
             vm.textProyecto = '';
             $location.path('/resultados');
+            AppService.broadcast();
 
         }
 
