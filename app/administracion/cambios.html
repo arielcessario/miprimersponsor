@@ -1,77 +1,1 @@
-<div id="adminitracion-cambios">
-    <input type="text" ng-model="administracionCtrl.filter">
-    <table id="administracion-aportes-tabla" class="table table-striped" style="width: 100%">
-
-        <tbody>
-        <tr>
-            <th>NOMBRE</th>
-            <th>JUSTIFICACIÓN</th>
-        </tr>
-        <tr ng-repeat="row in administracionCtrl.cambios | filter:administracionCtrl.filter"
-            class="administracion-row"
-            ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
-            ng-click="administracionCtrl.selectCambio(row);">
-            <td class="">{{row.nombre}}</td>
-            <td class="">{{row.justificacion}}</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <div id="cambios-comparacion">
-        <div id="cambios-original">
-            <h2>Original</h2><br>
-            <p>Nombre</p>
-            <span>{{administracionCtrl.proyecto_original.nombre}}</span>
-            <p>Descripción</p>
-            <span>{{administracionCtrl.proyecto_original.descripcion}}</span>
-            <p>Costo Inicial</p>
-            <span>{{administracionCtrl.proyecto_original.costo_inicial}}</span>
-            <p>Fecha de Finalización</p>
-            <span>{{administracionCtrl.proyecto_original.fecha_fin}}</span>
-            <p>Estado</p>
-            <span>{{administracionCtrl.proyecto_original.status}}</span>
-
-            <p>Fotos</p>
-            <div class="cambios-fotos">
-                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[0].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[1].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[2].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[3].nombre}}" height="50" width="50"
-                     alt="">
-            </div>
-        </div>
-        <div id="cambios-modificado">
-            <h2>Modificado</h2><br>
-            <p>Nombre</p>
-            <span>{{administracionCtrl.proyecto_modificado.nombre}}</span>
-            <p>Descripción</p>
-            <span>{{administracionCtrl.proyecto_modificado.descripcion}}</span>
-            <p>Costo Inicial</p>
-            <span>{{administracionCtrl.proyecto_modificado.costo_inicial}}</span>
-            <p>Fecha de Finalización</p>
-            <span>{{administracionCtrl.proyecto_modificado.fecha_fin}}</span>
-            <p>Estado</p>
-            <span>{{administracionCtrl.proyecto_modificado.status}}</span>
-
-            <p>Fotos</p>
-            <div class="cambios-fotos">
-                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[0].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[1].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[2].nombre}}" height="50" width="50"
-                     alt="">
-                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[3].nombre}}" height="50" width="50"
-                     alt="">
-            </div>
-        </div>
-    </div>
-
-    <input type="text" id="cambios-respuesta" ng-model="administracionCtrl.proyecto_modificado.respuesta">
-    <input type="text" id="cambios-justificacion" ng-model="administracionCtrl.proyecto_modificado.justificacion">
-    <button ng-click="administracionCtrl.confirmarCambio();">Confirmar</button>
-    <button ng-click="administracionCtrl.negarCambio();">Negar</button>
-</div>
+<div id="adminitracion-cambios">    <input type="text" ng-model="administracionCtrl.cambioFilter">    <table id="administracion-aportes-tabla" class="table table-striped" style="width: 100%">        <tbody>        <tr>            <th>NOMBRE</th>            <th>JUSTIFICACIÓN</th>        </tr>        <tr ng-repeat="row in administracionCtrl.cambios | filter: administracionCtrl.cambiosFilter"            class="administracion-row"            ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"            ng-click="administracionCtrl.selectCambio(row);">            <td class="">{{row.nombre}}</td>            <td class="">{{row.justificacion}}</td>        </tr>        </tbody>    </table>    <div id="cambios-comparacion">        <div id="cambios-original">            <h2>Original</h2><br>            <p>Nombre</p>            <span>{{administracionCtrl.proyecto_original.nombre}}</span>            <p>Descripción</p>            <span>{{administracionCtrl.proyecto_original.descripcion}}</span>            <p>Costo Inicial</p>            <span>{{administracionCtrl.proyecto_original.costo_inicial}}</span>            <p>Fecha de Finalización</p>            <span>{{administracionCtrl.proyecto_original.fecha_fin}}</span>            <p>Estado</p>            <span>{{administracionCtrl.proyecto_original.status}}</span>            <p>Fotos</p>            <div class="cambios-fotos">                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[0].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[1].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[2].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_original.fotos[3].nombre}}" height="50" width="50"                     alt="">            </div>        </div>        <div id="cambios-modificado">            <h2>Modificado</h2><br>            <p>Nombre</p>            <span>{{administracionCtrl.proyecto_modificado.nombre}}</span>            <p>Descripción</p>            <span>{{administracionCtrl.proyecto_modificado.descripcion}}</span>            <p>Costo Inicial</p>            <span>{{administracionCtrl.proyecto_modificado.costo_inicial}}</span>            <p>Fecha de Finalización</p>            <span>{{administracionCtrl.proyecto_modificado.fecha_fin}}</span>            <p>Estado</p>            <span>{{administracionCtrl.proyecto_modificado.status}}</span>            <p>Fotos</p>            <div class="cambios-fotos">                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[0].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[1].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[2].nombre}}" height="50" width="50"                     alt="">                <img ng-src="images/{{administracionCtrl.proyecto_modificado.fotos[3].nombre}}" height="50" width="50"                     alt="">            </div>        </div>    </div>    <input type="text" id="cambios-respuesta" ng-model="administracionCtrl.proyecto_modificado.respuesta">    <input type="text" id="cambios-justificacion" ng-model="administracionCtrl.proyecto_modificado.justificacion">    <button ng-click="administracionCtrl.confirmarCambio();">Confirmar</button>    <button ng-click="administracionCtrl.negarCambio();">Negar</button></div>

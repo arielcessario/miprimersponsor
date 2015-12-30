@@ -641,12 +641,23 @@
 
         function removeCategoria() {
 
+            console.log(vm.categoria);
+            if(vm.categoria.categoria_id == -1){
+                AcUtils.showMessage('error', 'No ha seleccionado una categoría.')
+                return;
+            }
+
+
             var r = confirm("Realmente desea eliminar la categoria? Esta operación no tiene deshacer.");
             if (r) {
 
-                CategoryService.remove(vm.id, function (data) {
+                categoria
+                CategoryService.update(vm.categoria, function(data){
 
                 });
+                //CategoryService.remove(vm.categoria.categoria_id, function (data) {
+                //
+                //});
             }
         }
 

@@ -1,16 +1,18 @@
 <span>Buscar proyecto:</span>
 
-<input type="text" ng-model="administracionCtrl.filter">
+<input type="text" ng-model="administracionCtrl.filterDonaciones">
 
 <table id="administracion-aportes-tabla" class="table table-striped" style="width: 100%">
 
     <tbody>
     <tr>
+        <th>FECHA</th>
         <th>NOMBRE</th>
-        <th>APELLIDO</th>
-        <th>CUIT</th>
+        <th>IMPORTE</th>
+        <th>COMPROBANTE</th>
+        <th>ACCIÓN</th>
     </tr>
-    <tr ng-repeat="row in administracionCtrl.donaciones"
+    <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones"
         class="administracion-row">
         <td class="">{{row.fecha}}</td>
         <td class="">{{row.nombreProyecto}}</td>
