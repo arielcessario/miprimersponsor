@@ -940,8 +940,9 @@ input{
     max-width: 100%;
     padding: 15px;
     @media (min-width: 800px) and (max-width: 1299px) {
-      flex-direction: row;
-      max-width: 30%;
+      justify-content: center;
+      max-width: 100%;
+      flex-wrap: wrap;
     }
 
     @media (min-width: 1300px) {
