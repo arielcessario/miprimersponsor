@@ -101,7 +101,7 @@ button {
 }
 
 #ac-progress-bar {
-  max-width: 100%;
+  max-width: 95%;
 }
 
 .donacion-rapida-details {
@@ -328,12 +328,18 @@ input{
   top: 0;
   left: 0;
   right: 0;
+  span{
+    color: white;
+    padding-top: 25px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 
   .header-separator {
     height: 40px;
     margin-top: 5px;
     width: 2px;
-    margin-left: 40px;
+    margin-left: 20px;
     background-color: white;
   }
 
@@ -342,7 +348,7 @@ input{
     padding: 5px;
     margin-right: 15px;
     text-align: right;
-    //background-color: green;
+    background-color: green;
   }
 }
 
@@ -444,12 +450,15 @@ input{
   opacity: 0;
   display: none;
   border-radius: 5px;
+  //-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  //-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
 .desktop-link-nav div {
-  margin-top: 5px;
+  margin-top: 12px;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 4px;
 }
 
 .desktop-link-nav a:hover,
@@ -468,7 +477,7 @@ input{
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
+   -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
   }
@@ -491,8 +500,9 @@ input{
 .nav-button {
   flex: 1;
 
-  margin-top: 15px;
-  margin-left: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
 
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -747,6 +757,9 @@ input{
     font-size: 65px;
     color: rgba(250, 152, 25, 1);
     font-weight: bold;
+    @media (max-width: 380px) {
+      font-size: 60px;
+    }
   }
 
   #main-top-text-panel {
@@ -758,6 +771,7 @@ input{
     @media (min-width: 1200px) {
       max-width: 600px;
     }
+
   }
 
   .imagenes-publicitarias img {
@@ -803,6 +817,7 @@ input{
     max-width: 100%;
     min-height: 300px;
     position: relative;
+
     h1 {
       color: black;
       font-family: 'Droid Sans', sans-serif;
@@ -816,25 +831,27 @@ input{
       font-family: 'Droid Sans', sans-serif;
       font-size: 16px;
       margin-bottom: 20px;
-      max-height: 200px;
-      overflow: auto;
+      max-height: 16px;
+      overflow: hidden;
 
     }
     img {
       width: 100%;
+      border: 2px solid white;
       height: 150px;
 
     }
 
     .button-ver {
       width: 54px;
-      height: 42px;
+      height: 32px;
       font-family: 'Droid Sans', sans-serif;
       font-weight: bold;
       background-color: rgb(0, 161, 72);
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;
+      margin-bottom:10px;
       color: white;
       padding: 5px;
       align-items: center;
@@ -865,8 +882,13 @@ input{
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: white;
+      background-color: #97f49d;
       z-index: 0;
+      padding: 10px;
+      border: 2px solid white;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
 
       -webkit-transition: all 0.4s;
       -moz-transition: all 0.4s;
@@ -1012,7 +1034,7 @@ input{
         font-family: 'Droid Sans', sans-serif;
         font-weight: bold;
         width: 54px;
-        height: 42px;
+        height: 32px;
         background-color: rgb(0, 161, 72);
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -1565,7 +1587,7 @@ input{
 
 .institucional-publicidad {
   margin: auto;
-  max-width: 1200px;
+  max-width: 2400px;
   padding: 30px;
 
   h1 {
@@ -1737,13 +1759,11 @@ input{
 
 .contenedor-ingreso,
 .contenedor-nuevo-usuario {
-  min-width: 300px;
+  min-width: 328px;
   max-width: 600px;
-  width: 300px;
+  width: 328px;
   margin: auto;
-  min-height: 530px;
-  max-height: 850px;
-  padding: 20px;
+  padding: 10px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border: 4px solid white;
@@ -1763,8 +1783,13 @@ input{
 
 }
 
+.contenedor-ingreso{
+  min-height: 400px;
+  max-height: 520px;
+}
+
 .contenedor-nuevo-usuario {
-  height: 820px;
+  height: 838px;
 }
 
 #ingreso,
@@ -1773,18 +1798,13 @@ input{
   background-size: 600% 600%;
   //background: linear-gradient(185deg, #6c0e0e, #0f7f0e);
   //background-size: 400% 400%;
-  height: 130vw;
+  height: 100%;
+  padding-bottom: 50px;
   .administracion-button-bar button{
-    margin: 3px;
+    margin-bottom: 20px;
   }
-  @media(max-width: 400px) {
-    .administracion-button-bar button {
-      margin: 1px;
-    }
-  }
-  @media(max-width: 360px){
-    height: 280vw;
-  }
+
+
 }
 
 
@@ -1793,6 +1813,8 @@ input{
   padding-top: 50px;
   align-items: center;
   max-width: 800px;
+  padding-bottom: 30px;
+
 
 
   h1 {
@@ -1819,9 +1841,12 @@ input{
     border-radius: 5px;
     color: black;
     padding: 5px;
-    margin: 5px;
+    margin: .1px;
     align-items: center;
     outline: none;
+    @media(max-width: 380px){
+      margin: .1px;
+    }
 
   }
   p {
@@ -1983,9 +2008,9 @@ input{
   border-radius: 12px;
   padding: 10px;
   margin: auto;
+  margin-bottom: 50px;
    #ac-progress-bar {
     opacity: .7;
-    margin-bottom: 10px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
@@ -2069,17 +2094,17 @@ input{
     padding: 5px;
     align-items: center;
     outline: none;
+    margin-bottom: 27px;
+    margin-right: 20px;
+    margin-top: 20px;
 
   }
 
 }
 
 .resultados-clase{
-
-
-
-
 }
+
 
 #proyecto-upper {
   width: 100%;
@@ -2092,7 +2117,7 @@ input{
     #proyecto-thums{
       margin-top: 10px;
       margin-bottom: 10px;
-    }
+         }
 
     #proyecto-left{
       width: 100%;
