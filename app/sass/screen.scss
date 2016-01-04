@@ -817,6 +817,9 @@ input{
     overflow: hidden;
     width: 100%;
     height: 150px;
+    border: 2px solid white;
+
+
   }
 
   #main-slider {
@@ -843,9 +846,8 @@ input{
 
     }
     img {
-      height: 100%;
+      height: 150px;
       vertical-align: middle;
-      border: 2px solid white;
 
     }
 
