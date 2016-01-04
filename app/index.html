@@ -8,45 +8,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
-        .loader-main {
-
-            display: block !important;
+        #ac-loader {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
             position: fixed;
             top: 0;
-            bottom: 0;
             left: 0;
-            right: 0;
+            width: 100%;
+            z-index: 1000;
+            font-family: Verdana, sans-serif;
             background-color: white;
         }
 
-        #loader-container {
+        /* line 22, ../sass/screen.scss */
+        #ac-loader #loader-loading {
+            margin-bottom: 40px;
+            -webkit-animation: loader-loading-anim 3s ease-in-out infinite;
+            -o-animation: loader-loading-anim 3s ease-in-out infinite;
+            animation: loader-loading-anim 3s ease-in-out infinite;
+        }
+
+        /* line 31, ../sass/screen.scss */
+        #ac-loader #border-rad {
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 54px;
+            width: 304px;
+            -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            -webkit-animation: loader-shadow-anim 5s ease-in-out infinite;
+            -o-animation: loader-shadow-anim 5s ease-in-out infinite;
+            animation: loader-shadow-anim 5s ease-in-out infinite;
+            border: 4px solid #133648;
+            background-color: #133648;
+            position: relative;
+        }
+
+        /* line 49, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container {
             background-color: gray;
             height: 50px;
             width: 300px;
             position: absolute;
+            left: 0;
+            top: 0;
             overflow: hidden;
+            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
             -webkit-border-radius: 30px;
             -moz-border-radius: 30px;
             border-radius: 30px;
-            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-            border: 4px solid #3f6175;
-            top: 50%;
-            left: calc(50% - 150px);
+            border: 2px solid beige;
         }
-        /* line 23, ../sass/screen.scss */
-        #loader-container #bubble {
+
+        /* line 63, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #bubble {
             position: absolute;
-            top: 15px;
+            top: 5px;
             background-color: rgba(255, 255, 255, 0.8);
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             border-radius: 10px;
             width: 10px;
-            right: 5px;
+            right: 15px;
             height: 10px;
         }
-        /* line 35, ../sass/screen.scss */
-        #loader-container #reflex {
+
+        /* line 75, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #reflex {
             position: absolute;
             top: 5px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -54,11 +88,12 @@
             -moz-border-radius: 10px;
             border-radius: 10px;
             width: 250px;
-            left: 25px;
+            left: 20px;
             height: 10px;
         }
-        /* line 47, ../sass/screen.scss */
-        #loader-container #loader-zero {
+
+        /* line 87, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero {
             -webkit-transform: translateX(0px) !important;
             -moz-transform: translateX(0px) !important;
             -ms-transform: translateX(0px) !important;
@@ -68,14 +103,15 @@
             -o-animation: move-loader-zero 10s linear infinite !important;
             animation: move-loader-zero 10s linear infinite !important;
         }
-        /* line 61, ../sass/screen.scss */
-        #loader-container #loader-zero,
-        #loader-container #loader-first,
-        #loader-container #loader-second,
-        #loader-container #loader-third,
-        #loader-container #loader-fourth,
-        #loader-container #loader-fifth,
-        #loader-container #loader-sixth {
+
+        /* line 99, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero,
+        #ac-loader #border-rad #loader-container #loader-first,
+        #ac-loader #border-rad #loader-container #loader-second,
+        #ac-loader #border-rad #loader-container #loader-third,
+        #ac-loader #border-rad #loader-container #loader-fourth,
+        #ac-loader #border-rad #loader-container #loader-fifth,
+        #ac-loader #border-rad #loader-container #loader-sixth {
             position: absolute;
             height: 100px;
             width: 400px;
@@ -91,71 +127,81 @@
             -o-animation: move-loader 10s linear infinite;
             animation: move-loader 10s linear infinite;
         }
-        /* line 85, ../sass/screen.scss */
-        #loader-container #loader-zero div,
-        #loader-container #loader-first div,
-        #loader-container #loader-second div,
-        #loader-container #loader-third div,
-        #loader-container #loader-fourth div,
-        #loader-container #loader-fifth div,
-        #loader-container #loader-sixth div {
+
+        /* line 123, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero div,
+        #ac-loader #border-rad #loader-container #loader-first div,
+        #ac-loader #border-rad #loader-container #loader-second div,
+        #ac-loader #border-rad #loader-container #loader-third div,
+        #ac-loader #border-rad #loader-container #loader-fourth div,
+        #ac-loader #border-rad #loader-container #loader-fifth div,
+        #ac-loader #border-rad #loader-container #loader-sixth div {
             width: 50px;
             height: 100%;
         }
-        /* line 91, ../sass/screen.scss */
-        #loader-container #loader-second {
+
+        /* line 129, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-second {
             -webkit-animation-delay: 2s;
             -moz-animation-delay: 2s;
             -ms-animation-delay: 2s;
             -o-animation-delay: 2s;
             animation-delay: 2s;
         }
-        /* line 99, ../sass/screen.scss */
-        #loader-container #loader-third {
+
+        /* line 137, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-third {
             -webkit-animation-delay: 4s;
             -moz-animation-delay: 4s;
             -ms-animation-delay: 4s;
             -o-animation-delay: 4s;
             animation-delay: 4s;
         }
-        /* line 107, ../sass/screen.scss */
-        #loader-container #loader-fourth {
+
+        /* line 145, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-fourth {
             -webkit-animation-delay: 6s;
             -moz-animation-delay: 6s;
             -ms-animation-delay: 6s;
             -o-animation-delay: 6s;
             animation-delay: 6s;
         }
-        /* line 115, ../sass/screen.scss */
-        #loader-container #loader-fifth {
+
+        /* line 153, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-fifth {
             -webkit-animation-delay: 8s;
             -moz-animation-delay: 8s;
             -ms-animation-delay: 8s;
             -o-animation-delay: 8s;
             animation-delay: 8s;
         }
-        /* line 123, ../sass/screen.scss */
-        #loader-container #loader-sixth {
+
+        /* line 161, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-sixth {
             -webkit-animation-delay: 10s;
             -moz-animation-delay: 10s;
             -ms-animation-delay: 10s;
             -o-animation-delay: 10s;
             animation-delay: 10s;
         }
-        /* line 131, ../sass/screen.scss */
-        #loader-container .rojo {
+
+        /* line 169, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .rojo {
             background-color: red;
         }
-        /* line 135, ../sass/screen.scss */
-        #loader-container .azul {
+
+        /* line 173, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .azul {
             background-color: blue;
         }
-        /* line 139, ../sass/screen.scss */
-        #loader-container .amarillo {
+
+        /* line 177, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .amarillo {
             background-color: yellow;
         }
-        /* line 143, ../sass/screen.scss */
-        #loader-container .naranja {
+
+        /* line 181, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .naranja {
             background-color: orange;
         }
 
@@ -187,6 +233,7 @@
                 opacity: 0;
             }
         }
+
         @-webkit-keyframes move-loader-zero {
             0% {
                 -webkit-transform: translateX(0);
@@ -213,6 +260,39 @@
                 -o-transform: translateX(0px);
                 transform: translateX(0px);
                 opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes loader-loading-anim {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes loader-shadow-anim {
+            0% {
+                -moz-box-shadow: 0px 0px 40px 5px transparent;
+                -webkit-box-shadow: 0px 0px 40px 5px transparent;
+                box-shadow: 0px 0px 40px 5px transparent;
+            }
+            50% {
+                -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+                -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+                box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            }
+            100% {
+                -moz-box-shadow: 0px 0px 40px 5px transparent;
+                -webkit-box-shadow: 0px 0px 40px 5px transparent;
+                box-shadow: 0px 0px 40px 5px transparent;
             }
         }
 
@@ -361,56 +441,60 @@
     </script>
 </head>
 <body ng-controller="AppController as appCtrl">
-<div ng-if="!appCtrl.hideLoader" class="loader-main">
-    <div id="loader-container">
-        <div id="loader-zero">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
+<div ng-if="!appCtrl.hideLoader" id="ac-loader">
+    <img src="images/logo-loader.png" alt="" height="100">
+    <span id="loader-loading">Loading...</span>
+    <div id="border-rad">
+        <div id="loader-container">
+            <div id="loader-zero">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-first">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-second">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-third">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-fourth">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-fifth">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="loader-sixth">
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="amarillo"></div>
+                <div class="naranja"></div>
+            </div>
+            <div id="reflex"></div>
+            <div id="bubble"></div>
         </div>
-        <div id="loader-first">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="loader-second">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="loader-third">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="loader-fourth">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="loader-fifth">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="loader-sixth">
-            <div class="azul"></div>
-            <div class="rojo"></div>
-            <div class="amarillo"></div>
-            <div class="naranja"></div>
-        </div>
-        <div id="reflex"></div>
-        <div id="bubble"></div>
     </div>
 </div>
 
@@ -432,7 +516,8 @@
 
     <h2 ng-click="appCtrl.goToAnchor('contacto-container')">Contacto</h2>
 </div>
-<div style="width: 100%; font-size: 18px;" class="acdesarrollos">Powered by <A style="color: white; text-decoration: none;" HREF="http://www.ac-desarrollos.com"> AC Desarrollos</A></div>
+<div style="width: 100%; font-size: 18px;" class="acdesarrollos">Powered by <A
+        style="color: white; text-decoration: none;" HREF="http://www.ac-desarrollos.com"> AC Desarrollos</A></div>
 
 
 </body>
