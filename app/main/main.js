@@ -7,9 +7,9 @@
 
 
     MainController.$inject = ['UserService', 'DonationService', 'ProyectService', '$location', 'AdministracionService',
-        '$interval', 'ProyectVars'];
+        '$interval', 'ProyectVars', 'ContactsService'];
     function MainController(UserService, DonationService, ProyectService, $location, AdministracionService,
-                            $interval, ProyectVars) {
+                            $interval, ProyectVars, ContactsService) {
 
         var vm = this;
         vm.proyectos = [];
@@ -30,9 +30,17 @@
         vm.proyecto_finalizar_02 = {};
         vm.proyecto_finalizar_03 = {};
 
+        vm.email = '';
+        vm.nombre = '';
+        vm.mensaje = '';
+        vm.asunto = '';
+        vm.enviado = false;
+        vm.enviando = false;
+
 
         // FUNCTIONS
         vm.goToCrear = goToCrear;
+        vm.sendMail = sendMail;
 
         // INIT
 
@@ -105,9 +113,29 @@
             $location.path('/administracion')
         }
 
+        function sendMail() {
+            if(vm.enviando){
+                return;
+            }
+            vm.enviando = true;
 
+            ContactsService.sendMail(vm.email,
+                [{mail: 'arielcessario@gmail.com'}],
+                vm.nombre,
+                vm.mensaje,
+                vm.asunto,
+                function (data, result) {
+                    vm.enviando = false;
+                    console.log(data);
+                    console.log(result);
 
+                    vm.email = '';
+                    vm.nombre = '';
+                    vm.asunto = '';
+                    vm.mensaje = '';
 
+                });
+        }
 
 
     }

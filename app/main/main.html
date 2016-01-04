@@ -702,7 +702,7 @@
     </div>
 
 
-    <div id="contacto-container">
+    <div id="contacto-container" form-id="contacto">
 
 
         <h1>Contacto</h1>
@@ -716,19 +716,19 @@
                 <span>Nombre</span>
 
 
-                <input ng-model="contactoCtrl.nombre" type="text" id="contacto-nombre">
+                <input ac-validator is-required="Debe ingresar un nombre" ng-model="mainCtrl.nombre" type="text" id="contacto-nombre">
 
 
                 <span>Email</span>
 
 
-                <input ng-model="contactoCtrl.email" type="text" id="contacto-mail">
+                <input ac-validator is-mail="El mail es incorrecto" ng-model="mainCtrl.email" type="text" id="contacto-mail">
 
 
                 <span>Asunto</span>
 
 
-                <input ng-model="contactoCtrl.asunto" type="text" id="contacto-asunto">
+                <input ac-validator is-required="Debe ingresar un tema de consulta" ng-model="mainCtrl.asunto" type="text" id="contacto-asunto">
 
 
             </div>
@@ -741,7 +741,7 @@
 
 
 
-            <textarea class="textoareaconsulta" ng-model="contactoCtrl.mensaje" name="" id="contacto-consulta"
+            <textarea ac-validator is-required="Debe ingresar una consulta" class="textoareaconsulta" ng-model="mainCtrl.mensaje" name="" id="contacto-consulta"
 
                       rows="10"></textarea>
 
@@ -751,13 +751,13 @@
         </div>
 
 
-        <div class="contacto-panel contacto-enviar-mobile">
+        <fieldset ng-disabled="vm.enviando" class="contacto-panel contacto-enviar-mobile">
 
 
-            <button id="contacto-enviar-mobile" ng-click="contactoCtrl.sendMail();">Enviar</button>
+            <button id="contacto-enviar-mobile" ac-validator ng-click="mainCtrl.sendMail();">Enviar</button>
 
 
-        </div>
+        </fieldset>
 
 
     </div>
