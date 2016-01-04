@@ -16,149 +16,162 @@
             bottom: 0;
             left: 0;
             right: 0;
+            background-color: white;
+        }
+
+        #loader-container {
+            background-color: gray;
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            overflow: hidden;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+            border: 4px solid #3f6175;
+            top: 50%;
+            left: calc(50% - 150px);
+        }
+        /* line 23, ../sass/screen.scss */
+        #loader-container #bubble {
+            position: absolute;
+            top: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            width: 10px;
+            right: 5px;
+            height: 10px;
+        }
+        /* line 35, ../sass/screen.scss */
+        #loader-container #reflex {
+            position: absolute;
+            top: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            width: 250px;
+            left: 25px;
+            height: 10px;
+        }
+        /* line 47, ../sass/screen.scss */
+        #loader-container #loader-first,
+        #loader-container #loader-second,
+        #loader-container #loader-third,
+        #loader-container #loader-fourth,
+        #loader-container #loader-fifth,
+        #loader-container #loader-sixth {
+            position: absolute;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            -webkit-transform: translateX(-200px);
+            -moz-transform: translateX(-200px);
+            -ms-transform: translateX(-200px);
+            -o-transform: translateX(-200px);
+            transform: translateX(-200px);
+            -webkit-animation: move-loader 10s linear infinite;
+            -o-animation: move-loader 10s linear infinite;
+            animation: move-loader 10s linear infinite;
+        }
+        /* line 70, ../sass/screen.scss */
+        #loader-container #loader-first div,
+        #loader-container #loader-second div,
+        #loader-container #loader-third div,
+        #loader-container #loader-fourth div,
+        #loader-container #loader-fifth div,
+        #loader-container #loader-sixth div {
+            width: 50px;
+            height: 100%;
+        }
+        /* line 76, ../sass/screen.scss */
+        #loader-container #loader-second {
+            -webkit-animation-delay: 2s;
+            -moz-animation-delay: 2s;
+            -ms-animation-delay: 2s;
+            -o-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+        /* line 84, ../sass/screen.scss */
+        #loader-container #loader-third {
+            -webkit-animation-delay: 4s;
+            -moz-animation-delay: 4s;
+            -ms-animation-delay: 4s;
+            -o-animation-delay: 4s;
+            animation-delay: 4s;
+        }
+        /* line 92, ../sass/screen.scss */
+        #loader-container #loader-fourth {
+            -webkit-animation-delay: 6s;
+            -moz-animation-delay: 6s;
+            -ms-animation-delay: 6s;
+            -o-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+        /* line 100, ../sass/screen.scss */
+        #loader-container #loader-fifth {
+            -webkit-animation-delay: 8s;
+            -moz-animation-delay: 8s;
+            -ms-animation-delay: 8s;
+            -o-animation-delay: 8s;
+            animation-delay: 8s;
+        }
+        /* line 108, ../sass/screen.scss */
+        #loader-container #loader-sixth {
+            -webkit-animation-delay: 10s;
+            -moz-animation-delay: 10s;
+            -ms-animation-delay: 10s;
+            -o-animation-delay: 10s;
+            animation-delay: 10s;
+        }
+        /* line 116, ../sass/screen.scss */
+        #loader-container .rojo {
+            background-color: red;
+        }
+        /* line 120, ../sass/screen.scss */
+        #loader-container .azul {
             background-color: blue;
         }
-
-        /* The loader container */
-        .loader {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            width: 200px;
-            height: 200px;
-
-            margin-top: -100px;
-            margin-left: -100px;
+        /* line 124, ../sass/screen.scss */
+        #loader-container .amarillo {
+            background-color: yellow;
+        }
+        /* line 128, ../sass/screen.scss */
+        #loader-container .naranja {
+            background-color: orange;
         }
 
-        /* The dot */
-        .dot {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 10;
-
-            width: 160px;
-            height: 100px;
-
-            margin-top: -50px;
-            margin-left: -80px;
-
-            border-radius: 5px;
-
-            background-color: #1e3f57;
-
-            transform-type: preserve-3d;
-
-            animation: dot1 3s cubic-bezier(.55, .3, .24, .99) infinite;
-        }
-
-        .dot:nth-child(2) {
-            z-index: 11;
-
-            width: 150px;
-            height: 90px;
-
-            margin-top: -45px;
-            margin-left: -75px;
-
-            border-radius: 3px;
-
-            background-color: #3c617d;
-
-            animation-name: dot2;
-        }
-
-        .dot:nth-child(3) {
-            z-index: 12;
-
-            width: 40px;
-            height: 20px;
-
-            margin-top: 50px;
-            margin-left: -20px;
-
-            border-radius: 0 0 5px 5px;
-
-            background-color: #6bb2cd;
-
-            animation-name: dot3;
-        }
-
-        @keyframes dot1 {
-            3%, 97% {
-                width: 160px;
-                height: 100px;
-
-                margin-top: -50px;
-                margin-left: -80px;
+        @-webkit-keyframes move-loader {
+            0% {
+                -webkit-transform: translateX(-200);
+                -moz-transform: translateX(-200);
+                -ms-transform: translateX(-200);
+                -o-transform: translateX(-200);
+                transform: translateX(-200);
             }
-            30%, 36% {
-                width: 80px;
-                height: 120px;
-
-                margin-top: -60px;
-                margin-left: -40px;
+            50% {
+                -webkit-transform: translateX(300px);
+                -moz-transform: translateX(300px);
+                -ms-transform: translateX(300px);
+                -o-transform: translateX(300px);
+                transform: translateX(300px);
+                opacity: 1;
             }
-            63%, 69% {
-                width: 40px;
-                height: 80px;
-
-                margin-top: -40px;
-                margin-left: -20px;
+            51% {
+                opacity: 0;
             }
-        }
-
-        @keyframes dot2 {
-            3%, 97% {
-                width: 150px;
-                height: 90px;
-
-                margin-top: -45px;
-                margin-left: -75px;
-            }
-            30%, 36% {
-                width: 70px;
-                height: 96px;
-
-                margin-top: -48px;
-                margin-left: -35px;
-            }
-            63%, 69% {
-                width: 32px;
-                height: 60px;
-
-                margin-top: -30px;
-                margin-left: -16px;
-            }
-        }
-
-        @keyframes dot3 {
-            3%, 97% {
-                width: 40px;
-                height: 20px;
-
-                margin-top: 50px;
-                margin-left: -20px;
-            }
-            30%, 36% {
-                width: 8px;
-                height: 8px;
-
-                margin-top: 49px;
-                margin-left: -5px;
-
-                border-radius: 8px;
-            }
-            63%, 69% {
-                width: 16px;
-                height: 4px;
-
-                margin-top: -37px;
-                margin-left: -8px;
-
-                border-radius: 10px;
+            100% {
+                -webkit-transform: translateX(-200px);
+                -moz-transform: translateX(-200px);
+                -ms-transform: translateX(-200px);
+                -o-transform: translateX(-200px);
+                transform: translateX(-200px);
+                opacity: 0;
             }
         }
 
@@ -308,10 +321,45 @@
 </head>
 <body ng-controller="AppController as appCtrl">
 <div ng-if="!appCtrl.hideLoader" class="loader-main">
-    <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <div id="loader-container">
+        <div id="loader-first">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="loader-second">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="loader-third">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="loader-fourth">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="loader-fifth">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="loader-sixth">
+            <div class="azul"></div>
+            <div class="rojo"></div>
+            <div class="amarillo"></div>
+            <div class="naranja"></div>
+        </div>
+        <div id="reflex"></div>
+        <div id="bubble"></div>
     </div>
 </div>
 
