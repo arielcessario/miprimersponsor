@@ -867,16 +867,17 @@ input{
       padding: 5px;
       align-items: center;
       outline: none;
-    }
-
-    .button-ver:hover {
-      cursor: pointer;
-      background-color: orange;
       -webkit-transition: all .3s;
       -moz-transition: all .3s;
       -ms-transition: all .3s;
       -o-transition: all .3s;
       transition: all .3s;
+
+    }
+
+    .button-ver:hover {
+      cursor: pointer;
+      background-color: orange;
     }
 
     @media (min-width: 800px) {
@@ -1060,15 +1061,15 @@ input{
         padding: 5px;
         align-items: center;
         outline: none;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
       }
 
       .button-ver:hover {
         cursor: pointer;
         background-color: orange;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        -ms-transition: all .3s;
-        -o-transition: all .3s;
 
       }
 
