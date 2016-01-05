@@ -66,6 +66,7 @@
         vm.resetCategoria = resetCategoria;
 
         vm.aprobarDonacion = aprobarDonacion;
+        vm.cancelarDonacion = cancelarDonacion;
         vm.subirComprobante = subirComprobante;
 
 
@@ -726,6 +727,42 @@
                     'Ariel',
                     'PRUEBA',
                     'PRUEBA DE CONFIRMACIÓN DE DONACIÓN',
+                    function (data, result) {
+                        console.log(data);
+                        console.log(result);
+
+                    });
+
+
+                DonationService.get(-1, function (data) {
+
+                    vm.donaciones = data;
+
+                    ProyectVars.clearCache = true;
+                    ProyectService.get(function (data) {
+                    });
+
+                })
+
+            })
+        }
+
+        function cancelarDonacion(donacion) {
+            if (!vm.user) {
+                $location.path('/ingreso');
+                return;
+            }
+
+            donacion.status = 2;
+            DonationService.update(donacion, function (data) {
+
+
+                // Enviar los mails
+                ContactsService.sendMail('arielcessario@gmail.com',
+                    [{mail: 'arielcessario@gmail.com'}],
+                    'Ariel',
+                    'PRUEBA',
+                    'PRUEBA DE CANCELACIÓN DE DONACIÓN',
                     function (data, result) {
                         console.log(data);
                         console.log(result);

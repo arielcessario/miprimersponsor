@@ -2565,3 +2565,8 @@ input {
   font-size: 40px;
   margin: 20px;
 }
+
+/* line 2197, ../sass/screen.scss */
+.administracion-donacion-cancelada {
+  background-color: red;
+}
