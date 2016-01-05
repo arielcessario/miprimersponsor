@@ -165,7 +165,7 @@
         ng-click="administracionCtrl.modificarProyecto(row);"
         ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
         class="administracion-row">
-        <td class="">{{row.nombre}}</td>
+        <td class=""><a ng-href="#/proyecto/{{row.proyecto_id}}">{{row.nombre}}</a></td>
         <td class="">
             <ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}"
                              hint="false"></ac-progress-bar>
