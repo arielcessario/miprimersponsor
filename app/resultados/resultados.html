@@ -4,8 +4,9 @@
 
         <img src="images/lupa.png" alt="" height="80" width="80">
 
-        <input placeholder="Encuentra un proyecto..." type="text" ng-model="resultadoCtrl.value" ng-keyup="resultadoCtrl.filtrar();"
-                id="resultados-search-box">
+        <input placeholder="Encuentra un proyecto..." type="text" ng-model="resultadoCtrl.value"
+               ng-keyup="resultadoCtrl.filtrar();"
+               id="resultados-search-box">
 
     </div>
 
@@ -42,9 +43,9 @@
 
             <div class="donacion-rapida-details">
 
-                <span>Dona:</span><input ng-model="$index" ng-init="$index = 0" type="number">
+                <span>Dona:</span><input id="searchDon{{$index}}" type="number">
 
-                <button ng-click="appCtrl.donacionRapida($index, proyecto.proyecto_id);">
+                <button ng-click="appCtrl.donacionRapida('searchDon'+$index, proyecto.proyecto_id);">
 
                     OK
 

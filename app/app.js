@@ -236,9 +236,14 @@
         }
 
         function donacionRapida(cantidad, proyecto_id) {
+
             if (!vm.user) {
                 $location.path('/ingreso');
                 return;
+            }
+
+            if(cantidad.indexOf('searchDon') > -1){
+                cantidad = parseFloat(document.getElementById(cantidad).value);
             }
 
             if (cantidad < 0 || isNaN(cantidad)) {

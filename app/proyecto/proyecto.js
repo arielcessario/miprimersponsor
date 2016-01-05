@@ -45,18 +45,23 @@
                 vm.proyecto_similar_02 = data[1];
                 vm.proyecto_similar_03 = data[2];
 
-                vm.proyecto_similar_01 = angular.copy(data[0]);
-                vm.proyecto_similar_01.porc = Math.round(vm.proyecto_similar_01.total_donado * 100 / vm.proyecto_similar_01.costo_inicial);
-                vm.proyecto_similar_01.faltan = (new Date(new Date(vm.proyecto_similar_01.fecha_fin) - new Date())).getDate();
+                if (vm.proyecto_similar_01 != undefined) {
+                    vm.proyecto_similar_01 = angular.copy(data[0]);
+                    vm.proyecto_similar_01.porc = Math.round(vm.proyecto_similar_01.total_donado * 100 / vm.proyecto_similar_01.costo_inicial);
+                    vm.proyecto_similar_01.faltan = (new Date(new Date(vm.proyecto_similar_01.fecha_fin) - new Date())).getDate();
+                }
 
-                vm.proyecto_similar_02 = data[1];
-                vm.proyecto_similar_02.porc = Math.round(vm.proyecto_similar_02.total_donado * 100 / vm.proyecto_similar_02.costo_inicial);
-                vm.proyecto_similar_02.faltan = (new Date(new Date(vm.proyecto_similar_02.fecha_fin) - new Date())).getDate();
+                if (vm.proyecto_similar_02 != undefined) {
+                    vm.proyecto_similar_02 = data[1];
+                    vm.proyecto_similar_02.porc = Math.round(vm.proyecto_similar_02.total_donado * 100 / vm.proyecto_similar_02.costo_inicial);
+                    vm.proyecto_similar_02.faltan = (new Date(new Date(vm.proyecto_similar_02.fecha_fin) - new Date())).getDate();
+                }
 
-                vm.proyecto_similar_03 = data[2];
-                vm.proyecto_similar_03.porc = Math.round(vm.proyecto_similar_03.total_donado * 100 / vm.proyecto_similar_03.costo_inicial);
-                vm.proyecto_similar_03.faltan = (new Date(new Date(vm.proyecto_similar_03.fecha_fin) - new Date())).getDate();
-
+                if (vm.proyecto_similar_03 != undefined) {
+                    vm.proyecto_similar_03 = data[2];
+                    vm.proyecto_similar_03.porc = Math.round(vm.proyecto_similar_03.total_donado * 100 / vm.proyecto_similar_03.costo_inicial);
+                    vm.proyecto_similar_03.faltan = (new Date(new Date(vm.proyecto_similar_03.fecha_fin) - new Date())).getDate();
+                }
             });
         });
 

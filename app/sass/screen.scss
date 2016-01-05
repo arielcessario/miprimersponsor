@@ -902,6 +902,7 @@ input{
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
+      pointer-events: none;
 
       -webkit-transition: all 0.4s;
       -moz-transition: all 0.4s;
@@ -1188,6 +1189,7 @@ input{
 .show-slider-proyecto {
   opacity: 1 !important;
   z-index: 0;
+  pointer-events: all !important;
 }
 
 #main-nuestras-empresas {
