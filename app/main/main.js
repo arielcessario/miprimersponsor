@@ -97,6 +97,7 @@
             vm.proyecto_finalizar_03.porc = Math.round(vm.proyecto_finalizar_03.total_donado * 100 / vm.proyecto_finalizar_03.costo_inicial);
             vm.proyecto_finalizar_03.faltan = (new Date(new Date(vm.proyecto_finalizar_03.fecha_fin) - new Date())).getDate();
 
+
         });
 
         // Inicia Slider
