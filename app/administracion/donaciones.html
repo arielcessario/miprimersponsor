@@ -1,24 +1,27 @@
 <span>Buscar proyecto:</span>
 
 <input type="text" ng-model="administracionCtrl.filterDonaciones">
+<div style="min-width: 100%; overflow-x: auto; max-width: 100%;">
+    <table id="administracion-aportes-tabla" class="table table-striped" style="width: 100%; min-width: 800px; ">
 
-<table id="administracion-aportes-tabla" class="table table-striped" style="width: 100%">
-
-    <tbody>
-    <tr>
-        <th>FECHA</th>
-        <th>NOMBRE</th>
-        <th>IMPORTE</th>
-        <th>COMPROBANTE</th>
-        <th>ACCIÓN</th>
-    </tr>
-    <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones"
-        class="administracion-row">
-        <td class="">{{row.fecha}}</td>
-        <td class="">{{row.nombreProyecto}}</td>
-        <td class="">{{row.valor}}</td>
-        <td class=""><img ng-src="images/{{row.comprobante}}" alt=""></td>
-        <td class=""><button ng-if="row.status == 0" ng-click="administracionCtrl.aprobarDonacion(row)">Aprobar</button></td>
-    </tr>
-    </tbody>
-</table>
+        <tbody>
+        <tr>
+            <th>FECHA</th>
+            <th>NOMBRE</th>
+            <th>IMPORTE</th>
+            <th>COMPROBANTE</th>
+            <th>ACCIÓN</th>
+        </tr>
+        <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones"
+            class="administracion-row">
+            <td class="">{{row.fecha}}</td>
+            <td class="">{{row.nombreProyecto}}</td>
+            <td class="">{{row.valor}}</td>
+            <td class=""><img ng-src="images/{{row.comprobante}}" alt=""></td>
+            <td class="">
+                <button ng-if="row.status == 0" ng-click="administracionCtrl.aprobarDonacion(row)">Aprobar</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

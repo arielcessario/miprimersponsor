@@ -1490,6 +1490,10 @@ input{
     margin-top: 50px;
     margin-bottom: 10px;
     max-width: 850px;
+    @media (max-width: 850px){
+      max-width: 100%;
+      min-width: 100%;
+    }
 
   }
 
