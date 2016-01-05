@@ -235,14 +235,15 @@
             });
         }
 
-        function donacionRapida(cantidad, proyecto_id) {
+        function donacionRapida(cantidad, proyecto_id, proyecto_nombre) {
 
             if (!vm.user) {
+                AcUtils.showMessage('error', 'Debe estar registrado e ingresado para poder realizar una donación.');
                 $location.path('/ingreso');
                 return;
             }
 
-            if(cantidad.indexOf('searchDon') > -1){
+            if(isNaN(cantidad) && cantidad.indexOf('searchDon') > -1){
                 cantidad = parseFloat(document.getElementById(cantidad).value);
             }
 
@@ -273,7 +274,7 @@
                                 {mail: 'mmaneff@gmail.com'}
                             ],
                             'MPE', 'Existe un nuevo cambio para aprobar',
-                            'NUEVA DONACIÓN - Proyecto ' + vm.proyecto.nombre, function (data) {
+                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined)?proyecto_nombre:vm.proyecto.nombre), function (data) {
                                 console.log(data);
                             });
 
@@ -283,7 +284,7 @@
                                 {mail: vm.user.data.mail}
                             ],
                             'MPE', 'Su donación ha sido realizada, por favor realice la transferencia correspondiente y espere a su aprobación.',
-                            'NUEVA DONACIÓN - Proyecto ' + vm.proyecto.nombre, function (data) {
+                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined)?proyecto_nombre:vm.proyecto.nombre), function (data) {
                                 console.log(data);
                             });
                     });
