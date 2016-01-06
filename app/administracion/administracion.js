@@ -583,6 +583,7 @@
         function confirmarCambio() {
 
             vm.proyecto_modificado.status_cambio = 2;
+            vm.proyecto_modificado.aprobador_id = vm.user.data.id;
             vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
 
 
@@ -621,6 +622,7 @@
          */
         function negarCambio() {
             vm.proyecto_modificado.status_cambio = 0;
+            vm.proyecto_modificado.aprobador_id = vm.user.data.id;
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
                 ProyectService.getCambios(function (data) {
                     ContactsService.sendMail(vm.user.data.mail,
