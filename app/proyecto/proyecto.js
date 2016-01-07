@@ -36,7 +36,11 @@
             vm.proyecto.porc = Math.round(vm.proyecto.total_donado * 100 / vm.proyecto.costo_inicial);
             vm.proyecto.faltan = (new Date(new Date(vm.proyecto.fecha_fin) - new Date())).getDate();
             CommentService.get(vm.proyecto.proyecto_id, function (data) {
-                vm.comentarios = data;
+
+                console.log(data);
+                if(data.length>0){
+                    vm.comentarios = data;
+                }
             });
 
             ProyectService.getByParams('categoria_id', '' + vm.proyecto.categoria_id, 'true', function (data) {

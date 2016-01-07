@@ -20,17 +20,17 @@
 
                     <div class="donacion-rapida-details">
                         <span>Dona:</span><input ng-model="appCtrl.donacion_rapida_valor" type="text">
-                        <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor, proyectoCtrl.proyecto.proyecto_id);">
+                        <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
                             OK
                         </button>
-                        <button ng-click="appCtrl.donacionRapida(10, proyectoCtrl.proyecto.proyecto_id);">$10</button>
-                        <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto.proyecto_id);">$25</button>
-                        <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto.proyecto_id);">$50</button>
-                        <button ng-click="appCtrl.donacionRapida(75, proyectoCtrl.proyecto.proyecto_id);">$75</button>
-                        <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto.proyecto_id);">$100</button>
-                        <button ng-click="appCtrl.donacionRapida(200, proyectoCtrl.proyecto.proyecto_id);">$200</button>
-                        <button ng-click="appCtrl.donacionRapida(300, proyectoCtrl.proyecto.proyecto_id);">$300</button>
-                        <button ng-click="appCtrl.donacionRapida(400, proyectoCtrl.proyecto.proyecto_id);">$400</button>
+                        <button ng-click="appCtrl.donacionRapida(10, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$10</button>
+                        <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$25</button>
+                        <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$50</button>
+                        <button ng-click="appCtrl.donacionRapida(75, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$75</button>
+                        <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$100</button>
+                        <button ng-click="appCtrl.donacionRapida(200, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$200</button>
+                        <button ng-click="appCtrl.donacionRapida(300, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$300</button>
+                        <button ng-click="appCtrl.donacionRapida(400, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">$400</button>
                         </button>
                     </div>
 
@@ -115,7 +115,7 @@
 
                     <span>Dona:</span><input ng-model="proyectoCtrl.donacion_rapida_valor1" type="text">
 
-                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor1, proyectoCtrl.proyecto_similar_01.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor1, proyectoCtrl.proyecto_similar_01.proyecto_id, proyectoCtrl.proyecto_similar_01.nombre);">
 
                         OK
 
@@ -123,19 +123,19 @@
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_01.proyecto_id);">$25
+                            ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_01.proyecto_id, proyectoCtrl.proyecto_similar_01.nombre);">$25
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_01.proyecto_id);">$50
+                            ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_01.proyecto_id, proyectoCtrl.proyecto_similar_01.nombre);">$50
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_01.proyecto_id);">$100
+                            ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_01.proyecto_id, proyectoCtrl.proyecto_similar_01.nombre);">$100
 
                     </button>
 
@@ -178,17 +178,17 @@
 
                     <span>Dona:</span><input ng-model="appCtrl.donacion_rapida_valor2" type="text">
 
-                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor2, proyectoCtrl.proyecto_similar_02.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor2, proyectoCtrl.proyecto_similar_02.proyecto_id, proyectoCtrl.proyecto_similar_02.nombre);">
 
                         OK
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_02.proyecto_id);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_02.proyecto_id, proyectoCtrl.proyecto_similar_02.nombre);">$25</button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_02.proyecto_id);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_02.proyecto_id, proyectoCtrl.proyecto_similar_02.nombre);">$50</button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_02.proyecto_id);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_02.proyecto_id, proyectoCtrl.proyecto_similar_02.nombre);">$100
 
                     </button>
 
@@ -230,17 +230,17 @@
 
                     <span>Dona:</span><input ng-model="proyectoCtrl.donacion_rapida_valor3" type="text">
 
-                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor3, proyectoCtrl.proyecto_similar_03.proyecto_id);">
+                    <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor3, proyectoCtrl.proyecto_similar_03.proyecto_id, proyectoCtrl.proyecto_similar_03.nombre);">
 
                         OK
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_03.proyecto_id);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto_similar_03.proyecto_id, proyectoCtrl.proyecto_similar_03.nombre);">$25</button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_03.proyecto_id);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto_similar_03.proyecto_id, proyectoCtrl.proyecto_similar_03.nombre);">$50</button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_03.proyecto_id);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto_similar_03.proyecto_id, proyectoCtrl.proyecto_similar_03.nombre);">$100
 
                     </button>
 
