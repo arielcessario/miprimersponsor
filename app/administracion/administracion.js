@@ -268,7 +268,7 @@
 
         function removeUsuario() {
 
-            if(vm.usuario.usuario_id == -1){
+            if (vm.usuario.usuario_id == -1) {
                 return;
             }
 
@@ -406,7 +406,7 @@
                     if (data.length > 0) {
                         formatProyectos(data);
                         resetProyecto();
-                        ContactsService.sendMail('arielcessario@gmail.com',
+                        ContactsService.sendMail(window.mailAdmin,
                             [
                                 {mail: vm.user.data.mail}
                             ],
@@ -454,17 +454,17 @@
 
             ProyectService.createCambio(vm.proyecto, function (data) {
                 UploadVars.uploadsList = [];
-                vm.proyecto = {proyecto_id: -1};
                 vm.showJustificaciones = false;
                 validate();
                 ContactsService.sendMail(vm.user.data.mail,
-                    [
-                        {mail: 'arielcessario@gmail.com'}
-                    ],
+                    window.mailAdmins,
                     'MPE', 'CREACIÓN DE CAMBIO - Proyecto ' + vm.proyecto.nombre,
                     'Existe un nuevo cambio para aprobar', function (data) {
                         console.log(data);
                     });
+
+
+                vm.proyecto = {proyecto_id: -1};
 
 
             })
@@ -515,9 +515,7 @@
                 AcUtils.showMessage("success", "El proyecto ha sido creado, por favor aguarde la aprobación del administrador. Gracias.");
 
                 ContactsService.sendMail(vm.user.data.mail,
-                    [
-                        {mail: 'arielcessario@gmail.com'}
-                    ],
+                    window.mailAdmins,
                     'MPE', 'CREACIÓN DE NUEVO PROYECTO - Proyecto ' + vm.proyecto.nombre,
                     'Existe un nuevo proyecto para aprobar', function (data) {
                         console.log(data);
@@ -584,6 +582,13 @@
          */
         function confirmarCambio() {
 
+
+            if(vm.proyecto_modificado.respuesta || vm.proyecto_modificado.respuesta.trim().length == 0){
+                AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
+                return;
+            }
+
+
             vm.proyecto_modificado.status_cambio = 2;
             vm.proyecto_modificado.aprobador_id = vm.user.data.id;
             vm.proyecto_modificado.categorias = [{categoria_id: vm.proyecto_modificado.categorias}];
@@ -647,7 +652,7 @@
         function removeCategoria() {
 
             console.log(vm.categoria);
-            if(vm.categoria.categoria_id == -1){
+            if (vm.categoria.categoria_id == -1) {
                 AcUtils.showMessage('error', 'No ha seleccionado una categoría.')
                 return;
             }
@@ -657,7 +662,7 @@
             if (r) {
 
                 categoria
-                CategoryService.update(vm.categoria, function(data){
+                CategoryService.update(vm.categoria, function (data) {
 
                 });
                 //CategoryService.remove(vm.categoria.categoria_id, function (data) {
@@ -726,16 +731,18 @@
 
 
                 // Enviar los mails
-                ContactsService.sendMail('arielcessario@gmail.com',
-                    [{mail: 'arielcessario@gmail.com'}],
-                    'Ariel',
-                    'PRUEBA',
-                    'PRUEBA DE CONFIRMACIÓN DE DONACIÓN',
-                    function (data, result) {
-                        console.log(data);
-                        console.log(result);
+                UserService.getByParams('usuario_id', '' + donacion.donador_id, 'true', function (data) {
+                    ContactsService.sendMail(window.mailAdmin,
+                        [{mail: data[0].mail}],
+                        'Ariel',
+                        'PRUEBA',
+                        'PRUEBA DE CONFIRMACIÓN DE DONACIÓN',
+                        function (data, result) {
+                            console.log(data);
+                            console.log(result);
 
-                    });
+                        });
+                });
 
 
                 DonationService.get(-1, function (data) {
@@ -762,17 +769,18 @@
 
 
                 // Enviar los mails
-                ContactsService.sendMail('arielcessario@gmail.com',
-                    [{mail: 'arielcessario@gmail.com'}],
-                    'Ariel',
-                    'PRUEBA',
-                    'PRUEBA DE CANCELACIÓN DE DONACIÓN',
-                    function (data, result) {
-                        console.log(data);
-                        console.log(result);
+                UserService.getByParams('usuario_id', '' + donacion.donador_id, 'true', function (data) {
+                    ContactsService.sendMail(window.mailAdmin,
+                        [{mail: data[0].mail}],
+                        'Ariel',
+                        'PRUEBA',
+                        'PRUEBA DE CANCELACIÓN DE DONACIÓN',
+                        function (data, result) {
+                            console.log(data);
+                            console.log(result);
 
-                    });
-
+                        });
+                });
 
                 DonationService.get(-1, function (data) {
 

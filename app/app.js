@@ -256,7 +256,7 @@
                 cantidad = parseFloat(document.getElementById(cantidad).value);
             }
 
-            if (cantidad < 0 || isNaN(cantidad)) {
+            if (cantidad < 1 || isNaN(cantidad)) {
                 AcUtils.showMessage('error', 'La donación debe ser mayor a 0');
                 cantidad = 0;
                 return;
@@ -278,17 +278,14 @@
                     ProyectService.getByParams('proyecto_id', '' + proyecto_id, 'true', function (data) {
                         // Mail a administrador
                         ContactsService.sendMail(vm.user.data.mail,
-                            [
-                                {mail: 'arielcessario@gmail.com'},
-                                {mail: 'mmaneff@gmail.com'}
-                            ],
+                            window.mailAdmins,
                             'MPE', 'Existe un nuevo cambio para aprobar',
                             'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? proyecto_nombre : vm.proyecto.nombre), function (data) {
                                 console.log(data);
                             });
 
                         // Mail a cliente
-                        ContactsService.sendMail(vm.user.data.mail,
+                        ContactsService.sendMail(window.mailAdmin,
                             [
                                 {mail: vm.user.data.mail}
                             ],
