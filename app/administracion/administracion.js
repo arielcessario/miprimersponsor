@@ -239,7 +239,7 @@
 
 
             vm.usuario = {
-                cliente_id: -1,
+                usuario_id: -1,
                 nombre: '',
                 apellido: '',
                 nro_doc: '',
