@@ -207,10 +207,12 @@
 
         function filterByText() {
             AppService.type = 't';
-            AppService.search =  vm.textProyecto;
+            AppService.search = vm.textProyecto;
             $location.path('/resultados');
 
-            $timeout(function(){vm.textProyecto = '';}, 1000);
+            $timeout(function () {
+                vm.textProyecto = '';
+            }, 1000);
 
 
         }
@@ -243,7 +245,7 @@
                 return;
             }
 
-            if(isNaN(cantidad) && cantidad.indexOf('searchDon') > -1){
+            if (isNaN(cantidad) && cantidad.indexOf('searchDon') > -1) {
                 cantidad = parseFloat(document.getElementById(cantidad).value);
             }
 
@@ -274,7 +276,7 @@
                                 {mail: 'mmaneff@gmail.com'}
                             ],
                             'MPE', 'Existe un nuevo cambio para aprobar',
-                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined)?proyecto_nombre:vm.proyecto.nombre), function (data) {
+                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? proyecto_nombre : vm.proyecto.nombre), function (data) {
                                 console.log(data);
                             });
 
@@ -284,7 +286,7 @@
                                 {mail: vm.user.data.mail}
                             ],
                             'MPE', 'Su donación ha sido realizada, por favor realice la transferencia correspondiente y espere a su aprobación.',
-                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined)?proyecto_nombre:vm.proyecto.nombre), function (data) {
+                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? proyecto_nombre : vm.proyecto.nombre), function (data) {
                                 console.log(data);
                             });
                     });
@@ -313,7 +315,7 @@
 
         this.broadcast = function () {
             $rootScope.$broadcast('miprimersponsorradio');
-        }
+        };
         this.listenCategoria = function (callback) {
             $rootScope.$on('miprimersponsorradiocategoria', callback);
         };
