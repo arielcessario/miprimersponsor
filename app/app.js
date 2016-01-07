@@ -252,7 +252,7 @@
                 return;
             }
 
-            if (isNaN(cantidad) && cantidad.indexOf('searchDon') > -1) {
+            if (cantidad != undefined && isNaN(cantidad) && cantidad.indexOf('searchDon') > -1) {
                 cantidad = parseFloat(document.getElementById(cantidad).value);
             }
 
