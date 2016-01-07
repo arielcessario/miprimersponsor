@@ -32,7 +32,7 @@
         ProyectVars.activos = true;
         ProyectService.getByParams('proyecto_id', '' + vm.id, 'true', function (data) {
             vm.proyecto = data[0];
-            vm.foto_selected = vm.proyecto.fotos[0].nombre;
+            vm.foto_selected = (vm.proyecto.fotos[0] == undefined)?'no_image.png':vm.proyecto.fotos[0].nombre ;
             vm.proyecto = angular.copy(data[0]);
             vm.proyecto.porc = Math.round(vm.proyecto.total_donado * 100 / vm.proyecto.costo_inicial);
             vm.proyecto.faltan = (new Date(new Date(vm.proyecto.fecha_fin) - new Date())).getDate();
