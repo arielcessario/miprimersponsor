@@ -348,6 +348,7 @@
             vm.foto_03 = 'no_image.png';
             vm.foto_04 = 'no_image.png';
 
+
             vm.showJustificaciones = false;
         }
 
@@ -526,15 +527,16 @@
                     ProyectService.get(function (data) {
                         formatProyectos(data);
                         UploadVars.uploadsList = [];
-                        vm.proyecto = {proyecto_id: -1};
+                        //vm.proyecto = {proyecto_id: -1};
+                        resetProyecto();
                         validate();
                     });
                 } else {
                     ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
                         if (data.length > 0) {
                             formatProyectos(data);
-                            resetProyecto()
                         }
+                        resetProyecto();
                         validate();
                     });
                 }
