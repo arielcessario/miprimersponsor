@@ -583,7 +583,7 @@
         function confirmarCambio() {
 
 
-            if(vm.proyecto_modificado.respuesta || vm.proyecto_modificado.respuesta.trim().length == 0){
+            if(vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0){
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
                 return;
             }
@@ -628,6 +628,12 @@
          * @descriptio Modifica el cambio a negado, no guarda cambios en el proyecto
          */
         function negarCambio() {
+
+            if(vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0){
+                AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
+                return;
+            }
+
             vm.proyecto_modificado.status_cambio = 0;
             vm.proyecto_modificado.aprobador_id = vm.user.data.id;
             ProyectService.updateCambio(vm.proyecto_modificado, function (data) {
