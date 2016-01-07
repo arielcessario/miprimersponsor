@@ -123,9 +123,9 @@
         .service('AppService', AppService);
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService'];
+        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService', '$window'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
-                           DonationService, AcUtils, ContactsService, ProyectService) {
+                           DonationService, AcUtils, ContactsService, ProyectService, $window) {
 
 
         var vm = this;
@@ -137,6 +137,7 @@
         vm.categorias = [];
         vm.textProyecto = '';
         vm.proyecto = {};
+        vm.moved = false;
 
         // FUNCTIONS
         vm.logout = logout;
@@ -155,6 +156,12 @@
         CategoryService.get(function (data) {
 
             vm.categorias = data;
+        });
+
+
+        angular.element($window).bind("scroll", function () {
+            vm.moved = window.pageYOffset != 0;
+            $scope.$apply();
         });
 
         function goToDetalle(id, origen) {
