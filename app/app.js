@@ -245,6 +245,7 @@
         }
 
         function donacionRapida(cantidad, proyecto_id, proyecto_nombre) {
+            console.log(cantidad);
 
             if (!vm.user) {
                 AcUtils.showMessage('error', 'Debe estar registrado e ingresado para poder realizar una donación.');
