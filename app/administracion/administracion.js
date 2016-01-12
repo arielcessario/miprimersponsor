@@ -422,6 +422,11 @@
 
         function createCambio() {
 
+            if (vm.proyecto.justificacion == undefined || vm.proyecto.justificacion.replace(' ', '').length == '') {
+
+                AcUtils.showMessage('error', 'Debe ingresar una justificación para el cambio');
+                return;
+            }
 
             //var jsonFotos = '';
             //if (UploadVars.uploadsList.length == 0) {
@@ -583,7 +588,7 @@
         function confirmarCambio() {
 
 
-            if(vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0){
+            if (vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0) {
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
                 return;
             }
@@ -629,7 +634,7 @@
          */
         function negarCambio() {
 
-            if(vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0){
+            if (vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0) {
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
                 return;
             }
