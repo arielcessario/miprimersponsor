@@ -41,6 +41,10 @@
         vm.validation = true;
 
 
+        vm.proyecto_original = {'proyecto_id': -1};
+        vm.proyecto_modificado = {'proyecto_id': -1};
+
+
         // Funciones
         vm.modificarUsuario = modificarUsuario;
         vm.resetUsuario = resetUsuario;
@@ -587,6 +591,13 @@
          */
         function confirmarCambio() {
 
+            if (
+                vm.proyecto_original.proyecto_id == -1 ||
+                vm.proyecto_modificado.proyecto_id == -1) {
+                AcUtils.showMessage('error','Debe seleccionar un cambio');
+                return;
+            }
+
 
             if (vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0) {
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
@@ -616,8 +627,7 @@
 
 
                             vm.cambios = data;
-                            vm.proyecto_original = {};
-                            vm.proyecto_modificado = {};
+                            resetCambio();
                             validate();
 
 
@@ -634,10 +644,19 @@
          */
         function negarCambio() {
 
+            if (
+                vm.proyecto_original.proyecto_id == -1 ||
+                vm.proyecto_modificado.proyecto_id == -1) {
+                AcUtils.showMessage('error','Debe seleccionar un cambio');
+                return;
+            }
+
             if (vm.proyecto_modificado.respuesta == undefined || vm.proyecto_modificado.respuesta.trim().length == 0) {
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
                 return;
             }
+
+
 
             vm.proyecto_modificado.status_cambio = 0;
             vm.proyecto_modificado.aprobador_id = vm.user.data.id;
@@ -652,8 +671,7 @@
                             console.log(data);
                         });
                     vm.cambios = data;
-                    vm.proyecto_original = {};
-                    vm.proyecto_modificado = {};
+                    resetCambio();
                     validate();
 
                 })
@@ -672,7 +690,7 @@
             var r = confirm("Realmente desea eliminar la categoria? Esta operación no tiene deshacer.");
             if (r) {
 
-                categoria
+                //categoria
                 CategoryService.update(vm.categoria, function (data) {
 
                 });
@@ -680,6 +698,39 @@
                 //
                 //});
             }
+        }
+
+        function resetCambio(){
+
+            vm.proyecto_original = {
+                proyecto_id: -1,
+                descripcion: '',
+                nombre: '',
+                categoria_id: '',
+                status: '',
+                fotos: []
+            };
+            vm.proyecto_modificado = {
+                proyecto_id: -1,
+                descripcion: '',
+                nombre: '',
+                categoria_id: '',
+                status: '',
+                fotos: []
+            };
+
+
+
+
+            vm.proyecto_original.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_original.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_original.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_original.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_modificado.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_modificado.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_modificado.fotos.push({nombre: 'no_image.png'});
+            vm.proyecto_modificado.fotos.push({nombre: 'no_image.png'});
+
         }
 
         function modificarCategoria(categoria) {
@@ -695,11 +746,10 @@
             }
 
 
-            if(vm.categoria.nombre == undefined || vm.categoria.nombre.replace(' ', '').length == 0 ){
-                AcUtils.showMessage('error','El nombre no puede ser vacío');
+            if (vm.categoria.nombre == undefined || vm.categoria.nombre.replace(' ', '').length == 0) {
+                AcUtils.showMessage('error', 'El nombre no puede ser vacío');
                 return;
             }
-
 
 
             if (vm.categoria.categoria_id != -1) {
