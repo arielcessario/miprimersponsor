@@ -694,6 +694,14 @@
                 vm.categoria.parent_id = -1;
             }
 
+
+            if(vm.categoria.nombre == undefined || vm.categoria.nombre.replace(' ', '').length == 0 ){
+                AcUtils.showMessage('error','El nombre no puede ser vacío');
+                return;
+            }
+
+
+
             if (vm.categoria.categoria_id != -1) {
                 CategoryService.update(vm.categoria, function (data) {
 
