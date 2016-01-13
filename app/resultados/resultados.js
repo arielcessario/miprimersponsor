@@ -7,9 +7,9 @@
 
 
     ResultadoController.$inject = ['AppService', 'DonationService', 'ProyectService', '$location', 'AdministracionService',
-        '$interval', '$routeParams'];
+        '$interval', '$routeParams', '$timeout'];
     function ResultadoController(AppService, DonationService, ProyectService, $location, AdministracionService,
-                                 $interval, $routeParams) {
+                                 $interval, $routeParams, $timeout) {
 
 
         var vm = this;
@@ -24,12 +24,14 @@
         // INIT
 
 
+
         // Obtengo los proyectos
 
         AppService.listenCategoria(function(){
             ProyectService.getByParams('categoria_id', '' + AppService.search, 'true', function (data) {
 
-                vm.proyectos = data;
+                //vm.proyectos = data;
+                procesarData(data);
             });
         });
 
@@ -37,7 +39,8 @@
         if (vm.type == 'c') {
             ProyectService.getByParams('categoria_id', '' + AppService.search, 'true', function (data) {
 
-                vm.proyectos = data;
+                //vm.proyectos = data;
+                procesarData(data);
             });
 
 
@@ -46,7 +49,8 @@
             vm.value = AppService.search;
             ProyectService.getByParams('nombre', '' + vm.value, 'false', function (data) {
 
-                vm.proyectos = data;
+                //vm.proyectos = data;
+                procesarData(data);
             });
 
 
@@ -57,11 +61,23 @@
                 ProyectService.getByParams('nombre', vm.value, 'false', function (data) {
 
                     AppService.search = vm.value;
-                    vm.proyectos = data;
+                    //vm.proyectos = data;
+                    procesarData(data);
                 });
 
 
             });
+        }
+
+
+        function procesarData(data){
+            for(var i = 0; i<data.length; i++){
+                data[i].porc = Math.round(data[i].total_donado * 100 / data[i].costo_inicial);
+                data[i].faltan = (new Date(new Date(data[i].fecha_fin) - new Date())).getDate();
+            }
+
+            vm.proyectos = data;
+
         }
 
     }
