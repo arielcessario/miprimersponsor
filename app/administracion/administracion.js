@@ -569,7 +569,7 @@
                 }
             }
 
-            if (cantEnSlider > 3) {
+            if (cantEnSlider > 3 && valor == 1) {
                 AcUtils.showMessage('error', 'Solo se pueden asignar hasta 4 proyectos en el slider.');
                 return;
             }
