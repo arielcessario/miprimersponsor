@@ -57,6 +57,7 @@
         vm.confirmarProyecto = confirmarProyecto;
         vm.removeProyecto = removeProyecto;
         vm.createProyecto = createProyecto;
+        vm.updateEnSlider = updateEnSlider;
         vm.createCambio = createCambio;
         vm.updateFotoProyecto = updateFotoProyecto;
 
@@ -517,6 +518,7 @@
             }
 
             vm.proyecto.status = 4;
+            vm.proyecto.en_slider = 0;
 
 
             ProyectService.create(vm.proyecto, function (data) {
@@ -549,6 +551,39 @@
                 }
 
             });
+        }
+
+
+        /**
+         * @description Agrega o Quita el proyecto del slider
+         * @param valor
+         */
+        function updateEnSlider(valor, proyecto) {
+
+            proyecto.en_slider = valor;
+
+            ProyectService.update(proyecto, function (data) {
+
+                if (vm.user.data.rol == "0") {
+                    ProyectService.get(function (data) {
+                        formatProyectos(data);
+                        UploadVars.uploadsList = [];
+                        //vm.proyecto = {proyecto_id: -1};
+                        resetProyecto();
+                        validate();
+                    });
+                } else {
+                    ProyectService.getByParams('usuario_id', '' + vm.user.data.id, 'true', function (data) {
+                        if (data.length > 0) {
+                            formatProyectos(data);
+                        }
+                        resetProyecto();
+                        validate();
+                    });
+                }
+            })
+
+
         }
 
         function updateFotoProyecto(filelist, id, sub_folder) {
@@ -595,8 +630,8 @@
                 vm.proyecto_modificado.status_texto = 'Pendiente de Aprobación';
             }
 
-            vm.proyecto_modificado.fecha_fin_texto = vm.proyecto_modificado.fecha_fin.substr(8,2) + '-' +
-                vm.proyecto_modificado.fecha_fin.substr(5,2) + '-' + vm.proyecto_modificado.fecha_fin.substr(0,4);
+            vm.proyecto_modificado.fecha_fin_texto = vm.proyecto_modificado.fecha_fin.substr(8, 2) + '-' +
+                vm.proyecto_modificado.fecha_fin.substr(5, 2) + '-' + vm.proyecto_modificado.fecha_fin.substr(0, 4);
 
 
             ProyectService.getByParams('proyecto_id', '' + cambio.proyecto_id, '' + true, function (data) {
@@ -617,8 +652,8 @@
                     vm.proyecto_original.status_texto = 'Pendiente de Aprobación';
                 }
 
-                vm.proyecto_original.fecha_fin_texto = vm.proyecto_original.fecha_fin.substr(8,2) + '-' +
-                    vm.proyecto_original.fecha_fin.substr(5,2) + '-' + vm.proyecto_original.fecha_fin.substr(0,4);
+                vm.proyecto_original.fecha_fin_texto = vm.proyecto_original.fecha_fin.substr(8, 2) + '-' +
+                    vm.proyecto_original.fecha_fin.substr(5, 2) + '-' + vm.proyecto_original.fecha_fin.substr(0, 4);
             })
         }
 
