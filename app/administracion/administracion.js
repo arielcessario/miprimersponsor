@@ -560,7 +560,23 @@
          */
         function updateEnSlider(valor, proyecto) {
 
+
+            var cantEnSlider = 0;
+            for (var i = 0; i < vm.proyectos.length; i++) {
+
+                if (vm.proyectos[i].en_slider == 1 && vm.proyectos[i].statusTexto == 'Activo') {
+                    cantEnSlider = cantEnSlider + 1;
+                }
+            }
+
+            if (cantEnSlider > 3) {
+                AcUtils.showMessage('error', 'Solo se pueden asignar hasta 4 proyectos en el slider.');
+                return;
+            }
+
+
             proyecto.en_slider = valor;
+
 
             ProyectService.update(proyecto, function (data) {
 
