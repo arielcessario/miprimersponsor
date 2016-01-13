@@ -445,7 +445,7 @@ input {
   }
 }
 
-.logo-middle-header{
+.logo-middle-header {
 
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
@@ -453,18 +453,17 @@ input {
   -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 
-
-  -webkit-transform: scale(0,0);
-  -moz-transform: scale(0,0);
-  -ms-transform: scale(0,0);
-  -o-transform: scale(0,0);
-  transform: scale(0,0);
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
 }
 
-.logo-middle-header-shown{
-  -webkit-animation: show-logo-middle-header .4s cubic-bezier(0,.68,1,.8);
-  -o-animation: show-logo-middle-header .4s cubic-bezier(0,.68,1,.8);
-  animation: show-logo-middle-header .4s cubic-bezier(0,.68,1,.8);
+.logo-middle-header-shown {
+  -webkit-animation: show-logo-middle-header .4s cubic-bezier(0, .68, 1, .8);
+  -o-animation: show-logo-middle-header .4s cubic-bezier(0, .68, 1, .8);
+  animation: show-logo-middle-header .4s cubic-bezier(0, .68, 1, .8);
 
   -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
@@ -483,11 +482,11 @@ input {
   }
 
   80% {
-    -webkit-transform: scale(1.5,1.5);
-    -moz-transform: scale(1.5,1.5);
-    -ms-transform: scale(1.5,1.5);
-    -o-transform: scale(1.5,1.5);
-    transform: scale(1.5,1.5);
+    -webkit-transform: scale(1.5, 1.5);
+    -moz-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    -o-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
   }
   100% {
     -webkit-transform: scale(1, 1);
@@ -2232,5 +2231,38 @@ input {
 
 .administracion-donacion-cancelada {
   background-color: red;
+}
+
+// Estados
+
+.first-status {
+  border: 2px solid #e3001b !important;
+  .donacion-rapida-details {
+    background-color: #e3001b !important;
+  }
+}
+
+.second-status {
+  border: 2px solid rgb(250, 152, 25) !important;
+
+  .donacion-rapida-details {
+    background-color: rgb(250, 152, 25) !important;
+  }
+}
+
+.third-status {
+  border: 2px solid rgb(254, 237, 1) !important;
+
+  .donacion-rapida-details {
+    background-color: rgb(254, 237, 1) !important;
+  }
+}
+
+.fourth-status {
+  border: 2px solid rgb(0, 161, 72) !important;
+
+  .donacion-rapida-details {
+    background-color: rgb(0, 161, 72) !important;
+  }
 }
 
