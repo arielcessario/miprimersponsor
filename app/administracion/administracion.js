@@ -578,11 +578,47 @@
          * @param cambio
          */
         function selectCambio(cambio) {
+
+
+            //'0 - Baja, 1 - Activo, 2 - Terminado, 3 - Dinero Transferido'
             vm.proyecto_modificado = cambio;
+
+            if (cambio.status == 0) {
+                vm.proyecto_modificado.status_texto = 'Baja';
+            } else if (cambio.status == 1) {
+                vm.proyecto_modificado.status_texto = 'Activo';
+            } else if (cambio.status == 2) {
+                vm.proyecto_modificado.status_texto = 'Terminado';
+            } else if (cambio.status == 3) {
+                vm.proyecto_modificado.status_texto = 'Dinero Transferido';
+            } else if (cambio.status == 4) {
+                vm.proyecto_modificado.status_texto = 'Pendiente de Aprobación';
+            }
+
+            vm.proyecto_modificado.fecha_fin_texto = vm.proyecto_modificado.fecha_fin.substr(8,2) + '-' +
+                vm.proyecto_modificado.fecha_fin.substr(5,2) + '-' + vm.proyecto_modificado.fecha_fin.substr(0,4);
+
 
             ProyectService.getByParams('proyecto_id', '' + cambio.proyecto_id, '' + true, function (data) {
 
                 vm.proyecto_original = data[0];
+
+                console.log(vm.proyecto_original);
+
+                if (vm.proyecto_original.status == 0) {
+                    vm.proyecto_original.status_texto = 'Baja';
+                } else if (vm.proyecto_original.status == 1) {
+                    vm.proyecto_original.status_texto = 'Activo';
+                } else if (vm.proyecto_original.status == 2) {
+                    vm.proyecto_original.status_texto = 'Terminado';
+                } else if (vm.proyecto_original.status == 3) {
+                    vm.proyecto_original.status_texto = 'Dinero Transferido';
+                } else if (vm.proyecto_original.status == 4) {
+                    vm.proyecto_original.status_texto = 'Pendiente de Aprobación';
+                }
+
+                vm.proyecto_original.fecha_fin_texto = vm.proyecto_original.fecha_fin.substr(8,2) + '-' +
+                    vm.proyecto_original.fecha_fin.substr(5,2) + '-' + vm.proyecto_original.fecha_fin.substr(0,4);
             })
         }
 
@@ -594,7 +630,7 @@
             if (
                 vm.proyecto_original.proyecto_id == -1 ||
                 vm.proyecto_modificado.proyecto_id == -1) {
-                AcUtils.showMessage('error','Debe seleccionar un cambio');
+                AcUtils.showMessage('error', 'Debe seleccionar un cambio');
                 return;
             }
 
@@ -647,7 +683,7 @@
             if (
                 vm.proyecto_original.proyecto_id == -1 ||
                 vm.proyecto_modificado.proyecto_id == -1) {
-                AcUtils.showMessage('error','Debe seleccionar un cambio');
+                AcUtils.showMessage('error', 'Debe seleccionar un cambio');
                 return;
             }
 
@@ -655,7 +691,6 @@
                 AcUtils.showMessage('error', 'Debe ingregar una respuesta para el usuario');
                 return;
             }
-
 
 
             vm.proyecto_modificado.status_cambio = 0;
@@ -700,7 +735,7 @@
             }
         }
 
-        function resetCambio(){
+        function resetCambio() {
 
             vm.proyecto_original = {
                 proyecto_id: -1,
@@ -718,8 +753,6 @@
                 status: '',
                 fotos: []
             };
-
-
 
 
             vm.proyecto_original.fotos.push({nombre: 'no_image.png'});
