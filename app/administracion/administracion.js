@@ -578,6 +578,7 @@
             proyecto.en_slider = valor;
 
 
+
             ProyectService.update(proyecto, function (data) {
 
                 if (vm.user.data.rol == "0") {
