@@ -2744,7 +2744,8 @@ input {
 
 .contenedor-enconstruccion{
   text-align: center;
-  padding: 100px;
+  //padding: 100px;
+  padding-top: 100px;
   flex-direction: column;
   min-height: 700px;
   width:100%;
@@ -2768,8 +2769,13 @@ input {
     -o-animation: fadein 2s ease-in-out;
     animation: fadein 2s ease-in-out;
 
+    @media(max-width: 500px){
+      font-size: 40px;
+    }
   }
-}
+
+  }
+
 
 .contenedor-enconstruccion-img{
   width: 100%;
