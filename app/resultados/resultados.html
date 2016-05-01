@@ -13,12 +13,7 @@
     <h1>Resultados de su búsqueda...</h1>
 
     <div id="lista-resultados">
-        <div class="proyecto-resultados-animate main-proyecto-nuevo " ng-repeat="proyecto in resultadoCtrl.proyectos"
-
-             ng-class="{'first-status':proyecto.porc <= 25,
-                 'second-status':proyecto.porc > 25 && proyecto.porc <= 50,
-                 'third-status':proyecto.porc > 50 && proyecto.porc <= 75,
-                 'fourth-status':proyecto.porc > 75}">
+        <div class="proyecto-resultados-animate main-proyecto-nuevo " ng-repeat="proyecto in resultadoCtrl.proyectos">
 
             <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                        ng-src="images/{{proyecto.fotos[0].nombre}}"

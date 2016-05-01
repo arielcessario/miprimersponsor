@@ -4,8 +4,8 @@
     </div>
     <div class="contenedor-nuevo-usuario">
         <div id="nuevo-usuario-form" form-id="nuevo_usuario">
-            <h1>Completa tus datos!</h1> <br>
-            <p>Por favor rellena con tu información para poder utilizar toda la funcionalidad de la página</p>
+            <h1>Primera vez?</h1> <br>
+            <p>Completá los campos solicitados para poder hacerte usuario de nuestra página y acceder a todas nuestras secciones!</p>
             <div class="nuevo-usuario-inputs">
                 <div class="nuevo-usuario-input"><span>Nombre</span>
                     <input ac-validator min-length="3;El nombre debe tener al menos 3 letras"
@@ -45,7 +45,7 @@
                 <!--</select>-->                <!--</div>-->            </div>
             <div class="nuevo-usuario-button-bar">
                 <button ac-validator ng-click="nuevoUsuarioCtrl.saveUsuario();">Guardar</button>
-                <button><a style="color: #000;" href="#/ingreso">Ya tengo usuario</a></button>
+                <button><a href="#/ingreso">Ya tengo usuario</a></button>
                 <button ng-click="nuevoUsuarioCtrl.loginFacebook();">Usar Facebook</button>
                 <button ng-click="nuevoUsuarioCtrl.loginGoogle();">Usar Google</button>
             </div>

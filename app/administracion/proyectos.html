@@ -1,4 +1,8 @@
+<h1 class="titulos-administracion">Desde aquí puedes controlar los proyectos de tus donadores  <br>
+    O crear un proyecto nuevo!</h1>
+
 <div class="administracion-inputs" form-id="proyectos" ng-if="administracionCtrl.validation">
+    <div class="administracion-input-contenedor">
 
     <div class="administracion-input">
 
@@ -49,19 +53,19 @@
 
     <!--</div>-->
 
-    <!--<div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">-->
+    <div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">
 
-        <!--<span>En Slider</span>-->
+        <span>En Slider</span>
 
-        <!--<select id="en_slider" ng-model="administracionCtrl.proyecto.en_slider">-->
+        <select id="en_slider" ng-model="administracionCtrl.proyecto.en_slider">
 
-            <!--<option value="0">No</option>-->
+            <option value="0">No</option>
 
-            <!--<option value="1">Si</option>-->
+            <option value="1">Si</option>
 
-        <!--</select>-->
+        </select>
 
-    <!--</div>-->
+    </div>
     <div class="administracion-input">
         <span>Categoría</span>
         <select ng-click=""
@@ -121,6 +125,8 @@
             </div>
         </div>
     </div>
+    </div>
+
     <div ng-if="administracionCtrl.showJustificaciones">
         <span>Justificación de cambios</span>
         <textarea name="justificacion" id="" cols="30" rows="10"
@@ -160,8 +166,6 @@
         <th>Avance</th>
         <th>Comprobante</th>
         <th>Estado</th>
-        <th ng-if="administracionCtrl.user.data.rol == '0'">En Slider</th>
-
     </tr>
     <tr ng-repeat="row in administracionCtrl.proyectos"
         ng-click="administracionCtrl.modificarProyecto(row);"
@@ -175,10 +179,6 @@
 
         <td class=""><img ng-src="images/{{row.donaciones[0].comprobante}}" alt="" width="50"></td>
         <td class="">{{row.statusTexto}}</td>
-        <td ng-if="administracionCtrl.user.data.rol == '0'">
-            <button ng-if="row.en_slider == 0  && row.statusTexto == 'Activo'" ng-click="administracionCtrl.updateEnSlider(1, row)">Agregar</button>
-            <button ng-if="row.en_slider == 1  && row.statusTexto == 'Activo'" ng-click="administracionCtrl.updateEnSlider(0, row)">Quitar</button>
-        </td>
     </tr>
     </tbody>
 

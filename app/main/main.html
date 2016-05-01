@@ -1,4 +1,4 @@
-<div id="main" ng-controller="MainController as mainCtrl">
+<div id="main" ng-controller="MainController as mainCtrl" xmlns="http://www.w3.org/1999/html">
 
     <div id="main-search-bar">
 
@@ -120,15 +120,12 @@
     <div id="proyectos-nuevos">
 
         <h1>Proyectos nuevos</h1>
+        <div class="separador"></div>
 
 
         <div id="main-proyectos-nuevos-list">
 
-            <div class="main-proyecto-nuevo"
-                 ng-class="{'first-status':mainCtrl.proyecto_nuevo_01.porc <= 25,
-                 'second-status':mainCtrl.proyecto_nuevo_01.porc > 25 && mainCtrl.proyecto_nuevo_01.porc <= 50,
-                 'third-status':mainCtrl.proyecto_nuevo_01.porc > 50 && mainCtrl.proyecto_nuevo_01.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_nuevo_01.porc > 75}">
+            <div class="main-proyecto-nuevo">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_nuevo_01.fotos[0].nombre}}"
@@ -190,11 +187,7 @@
             </div>
 
 
-            <div class="main-proyecto-nuevo"
-                 ng-class="{'first-status':mainCtrl.proyecto_nuevo_02.porc <= 25,
-                 'second-status':mainCtrl.proyecto_nuevo_02.porc > 25 && mainCtrl.proyecto_nuevo_02.porc <= 50,
-                 'third-status':mainCtrl.proyecto_nuevo_02.porc > 50 && mainCtrl.proyecto_nuevo_02.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_nuevo_02.porc > 75}">
+            <div class="main-proyecto-nuevo">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_nuevo_02.fotos[0].nombre}}"
@@ -245,11 +238,7 @@
 
             </div>
 
-            <div class="main-proyecto-nuevo"
-                 ng-class="{'first-status':mainCtrl.proyecto_nuevo_03.porc <= 25,
-                 'second-status':mainCtrl.proyecto_nuevo_03.porc > 25 && mainCtrl.proyecto_nuevo_03.porc <= 50,
-                 'third-status':mainCtrl.proyecto_nuevo_03.porc > 50 && mainCtrl.proyecto_nuevo_03.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_nuevo_03.porc > 75}">
+            <div class="main-proyecto-nuevo">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_nuevo_03.fotos[0].nombre}}"
@@ -312,17 +301,7 @@
 
     </div>
 
-    <div class="colores">
 
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-    </div>
 
 
 
@@ -331,73 +310,18 @@
         <img src="" alt="">
 
 
-        <h1>INSTITUCIONAL O PUBLICIDAD</h1>
+        <h1>Nuestra misión</h1>
 
 
-        <h2>Lorem ipsum dolor sit amet, consectetur
-
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
-
-            Lorem ipsum dolor sit amet, consectetur
-
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
-
-            Lorem ipsum dolor sit amet, consectetur
-
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
+        <h2>Que las ambiciones se conviertan en realidad para que cada grupo y persona tenga la oportunidad de emprender un largo camino explotando su potencial y su pasión. Nosotros queremos ver como con un empujoncito levantan  vuelo los mejores sueños de cada uno. En Mi Primer Sponsor lo más importante es que todos los proyectos puedan cumplirse.
+            Nuestra Mision diaria es buscar todo el recurso necesario para que nuestro buscador de sueños tenga lo que necesite.
 
         </h2>
 
     </div>
 
 
-    <div class="colores">
 
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-    </div>
 
 
     <div id="proyectos-finalizar">
@@ -407,11 +331,7 @@
 
         <div id="main-proyectos-finalizar-list">
 
-            <div class="main-proyecto-finalizar"
-                 ng-class="{'first-status':mainCtrl.proyecto_finalizar_01.porc <= 25,
-                 'second-status':mainCtrl.proyecto_finalizar_01.porc > 25 && mainCtrl.proyecto_finalizar_01.porc <= 50,
-                 'third-status':mainCtrl.proyecto_finalizar_01.porc > 50 && mainCtrl.proyecto_finalizar_01.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_finalizar_01.porc > 75}">
+            <div class="main-proyecto-finalizar">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_finalizar_01.fotos[0].nombre}}"
@@ -471,11 +391,7 @@
 
             </div>
 
-            <div class="main-proyecto-finalizar"
-                 ng-class="{'first-status':mainCtrl.proyecto_finalizar_02.porc <= 25,
-                 'second-status':mainCtrl.proyecto_finalizar_02.porc > 25 && mainCtrl.proyecto_finalizar_02.porc <= 50,
-                 'third-status':mainCtrl.proyecto_finalizar_02.porc > 50 && mainCtrl.proyecto_finalizar_02.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_finalizar_02.porc > 75}">
+            <div class="main-proyecto-finalizar">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_finalizar_02.fotos[0].nombre}}"
@@ -533,11 +449,7 @@
 
             </div>
 
-            <div class="main-proyecto-finalizar"
-                 ng-class="{'first-status':mainCtrl.proyecto_finalizar_03.porc <= 25,
-                 'second-status':mainCtrl.proyecto_finalizar_03.porc > 25 && mainCtrl.proyecto_finalizar_03.porc <= 50,
-                 'third-status':mainCtrl.proyecto_finalizar_03.porc > 50 && mainCtrl.proyecto_finalizar_03.porc <= 75,
-                 'fourth-status':mainCtrl.proyecto_finalizar_03.porc > 75}">
+            <div class="main-proyecto-finalizar">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{mainCtrl.proyecto_finalizar_03.fotos[0].nombre}}"
@@ -607,95 +519,31 @@
 
     </div>
 
-    <div class="colores">
 
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-    </div>
 
     <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
 
         <img src="" alt="">
 
 
-        <h1>INSTITUCIONAL O PUBLICIDAD</h1>
+        <h1>Que buscamos</h1>
 
 
-        <h2>Lorem ipsum dolor sit amet, consectetur
+        <h2>Fomentar la unión y creación de vínculos entre personas o grupos que tengan grandes ambiciones con otras que tengan ganas de aportar capital a cada uno de los proyectos de interés.
+            Deseamos que esta aventura que es ayudar, esté al alcance de todos. Hoy en dia hace falta informar a mucha gente la cantidad de talento sin explotar en muchísima gente  por falta de recursos. Hoy en dia son muchas las asociaciones amateurs o semi profesionales que requieren de ayuda monetaria  para poder lograr sus metas extracurriculares, deportivas o sociodeportivas.
+            Estamos hablando de torneos, Indumentaria, accesorios de entrenamiento,  viaticos, cursos de idioma, exámenes internacionales, cuotas mensuales de actividades, etc.
 
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
-
-            Lorem ipsum dolor sit amet, consectetur
-
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
-
-            Lorem ipsum dolor sit amet, consectetur
-
-            adipiscing elit. Suspendisse varius enim in
-
-            eros elementum tristique. Duis cursus, mi
-
-            quis viverra ornare, eros dolor interdum
-
-            nulla, ut commodo diam libero vitae erat.
-
-            Aenean faucibus nibh et justo cursus id
-
-            rutrum lorem imperdiet. Nunc ut sem vitae
-
-            risus tristique posuere.
 
         </h2>
 
     </div>
 
 
-    <div class="colores">
-
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-        <div></div>
-
-    </div>
 
 
     <div id="main-nuestras-empresas">
 
-        <h1>NUESTRAS EMPRESAS</h1>
+        <h1>Nuestras Empresas</h1>
 
 
         <div id="main-nuestras-empresas-list">
@@ -775,7 +623,7 @@
         </div>
 
 
-        <fieldset ng-disabled="mainCtrl.enviando" class="contacto-panel contacto-enviar-mobile">
+        <fieldset ng-disabled="vm.enviando" class="contacto-panel contacto-enviar-mobile">
 
 
             <button id="contacto-enviar-mobile" ac-validator ng-click="mainCtrl.sendMail();">Enviar</button>
