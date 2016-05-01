@@ -120,12 +120,14 @@
 
         })
         .controller('AppController', AppController)
-        .service('AppService', AppService);
+        .service('AppService', AppService)
+        .factory('MPService', MPService)
+    ;
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService', '$window'];
+        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService', '$window', 'MPService'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
-                           DonationService, AcUtils, ContactsService, ProyectService, $window) {
+                           DonationService, AcUtils, ContactsService, ProyectService, $window, MPService) {
 
 
         var vm = this;
@@ -138,6 +140,8 @@
         vm.textProyecto = '';
         vm.proyecto = {};
         vm.moved = false;
+        vm.link = '';
+        vm.donacion = {};
 
         // FUNCTIONS
         vm.logout = logout;
@@ -264,13 +268,57 @@
             }
 
 
-            var donacion = {
+            vm.donacion = {
                 'proyecto_id': proyecto_id,
                 'donador_id': vm.user.data.id,
                 'valor': cantidad,
                 'status': 0
             };
-            DonationService.create(donacion, function (data) {
+
+            vm.item = {
+                'titulo': proyecto_nombre,
+                'categoria': 'Mi Primer Sponsor',
+                'cantidad': 1,
+                'precio': cantidad,
+                'mail': vm.user.data.mail
+            };
+
+
+            MPService.pay(vm.item, function (data) {
+                console.log(data);
+                vm.link = data.response.sandbox_init_point;
+
+
+                $MPC.openCheckout({
+                    url: vm.link,
+                    mode: "modal",
+                    onreturn: completarDonacion
+                });
+            });
+
+
+        }
+
+        function completarDonacion(json) {
+
+
+            if (json.collection_status == 'approved') {
+                console.log('Pago acreditado');
+            } else if (json.collection_status == 'pending') {
+                AcUtils.showMessage('error', 'El usuario no completó el pago');
+                return;
+            } else if (json.collection_status == 'in_process') {
+                AcUtils.showMessage('error', 'El pago está siendo revisado');
+                return;
+            } else if (json.collection_status == 'rejected') {
+                AcUtils.showMessage('error', 'El pago fué rechazado, el usuario puede intentar nuevamente el pago');
+                return;
+            } else if (json.collection_status == null) {
+                AcUtils.showMessage('error', 'El usuario no completó el proceso de pago, no se ha generado ningún pago');
+                return;
+            }
+
+            DonationService.create(vm.donacion, function (data) {
 
                 // Enviar los mails
                 if (data > 0) {
@@ -302,14 +350,33 @@
 
                 }
             })
-
         }
 
+    }
 
+
+    MPService.$inject = ['$http'];
+    function MPService($http) {
+
+        var service = {};
+        service.pay = pay;
+        return service;
+
+        function pay(item, callback) {
+            return $http.get('ac-mp.php?function=pay&item=' + JSON.stringify(item))
+                .success(function (data) {
+                    callback(data);
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
+        }
     }
 
     AppService.$inject = ['$rootScope'];
     function AppService($rootScope) {
+
+
         this.vieneDeCat = false;
         this.search = '';
         this.type = 'c';

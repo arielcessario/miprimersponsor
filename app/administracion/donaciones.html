@@ -10,7 +10,7 @@
             <th>NOMBRE</th>
             <th>IMPORTE</th>
             <th>COMPROBANTE</th>
-            <th colspan="2">ACCIÓN</th>
+            <!--<th colspan="2">ACCIÓN</th>-->
         </tr>
         <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones"
             class="administracion-row" ng-class="{'administracion-donacion-cancelada':row.status == 2}">
@@ -18,12 +18,12 @@
             <td class="">{{row.nombreProyecto}}</td>
             <td class="">{{row.valor}}</td>
             <td class=""><img ng-src="images/{{row.comprobante}}" alt=""></td>
-            <td class="">
-                <button ng-if="row.status == 0" ng-click="administracionCtrl.aprobarDonacion(row)">Aprobar</button>
-            </td>
-            <td class="">
-                <button ng-if="row.status == 0" ng-click="administracionCtrl.cancelarDonacion(row)">Cancelar</button>
-            </td>
+            <!--<td class="">-->
+                <!--<button ng-if="row.status == 0" ng-click="administracionCtrl.aprobarDonacion(row)">Aprobar</button>-->
+            <!--</td>-->
+            <!--<td class="">-->
+                <!--<button ng-if="row.status == 0" ng-click="administracionCtrl.cancelarDonacion(row)">Cancelar</button>-->
+            <!--</td>-->
         </tr>
         </tbody>
     </table>

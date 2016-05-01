@@ -316,13 +316,38 @@
 
     </style>
 
+    <script type="text/javascript">
+        (function () {
+            console.log('main');
+            function
+            $MPC_load() {
+                console.log('load');
+                window.$MPC_loaded !== true && (function () {
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.async = true;
+//                    s.src = "render.js";
+                    s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js";
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                    window.$MPC_loaded = true;
+                })();
+                console.log(window.$MPC_loaded);
+            }
+
+
+            window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;
+
+        })();
+    </script>
+
     <script>
 
         // Cargo las configuraciones para la app
         window.appName = 'miprimersponsor';
         window.installPath = 'bower_components';
         window.mailAdmin = 'arielcessario@gmail.com';
-        window.mailAdmins = [{mail: 'arielcessario@gmail.com'},{mail: 'mmaneff@gmail.com'},{mail: 'info@misponsor.com'}];
+        window.mailAdmins = [{mail: 'arielcessario@gmail.com'}, {mail: 'mmaneff@gmail.com'}, {mail: 'info@misponsor.com'}];
 
         // include angular loader, which allows the files to load in any order
         //@@NG_LOADER_START@@
