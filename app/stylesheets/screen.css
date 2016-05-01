@@ -3168,3 +3168,40 @@ span {
 .administracion-donacion-cancelada {
   background-color: red;
 }
+
+/* line 2745, ../sass/screen.scss */
+.contenedor-enconstruccion {
+  text-align: center;
+  padding: 100px;
+  flex-direction: column;
+  min-height: 700px;
+  width: 100%;
+  background: #f1e767;
+  background: -moz-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #f1e767), color-stop(100%, #feb645));
+  background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: -o-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: -ms-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0 );
+  margin: auto;
+}
+/* line 2759, ../sass/screen.scss */
+.contenedor-enconstruccion span {
+  color: white;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin: 20px auto;
+  text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.66);
+  -webkit-animation: fadein 2s ease-in-out;
+  -moz-animation: fadein 2s ease-in-out;
+  -o-animation: fadein 2s ease-in-out;
+  animation: fadein 2s ease-in-out;
+}
+
+/* line 2774, ../sass/screen.scss */
+.contenedor-enconstruccion-img {
+  width: 100%;
+  margin: 30px auto;
+}
