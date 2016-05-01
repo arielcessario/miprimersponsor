@@ -100,6 +100,30 @@
                     }
                 });
 
+                $routeProvider.when('/faq', {
+                    templateUrl: 'faq/faq.html',
+                    controller: 'FaqController',
+                    data: {requiresLogin: false},
+                    resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                        loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            // you can lazy load files for an existing module
+                            return $ocLazyLoad.load('faq/faq.js');
+                        }]
+                    }
+                });
+
+                $routeProvider.when('/legales', {
+                    templateUrl: 'legales/legales.html',
+                    controller: 'LegalController',
+                    data: {requiresLogin: false},
+                    resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                        loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            // you can lazy load files for an existing module
+                            return $ocLazyLoad.load('legales/legales.js');
+                        }]
+                    }
+                });
+
 
             }])
         .run(function ($rootScope, store, jwtHelper, $location, auth) {
