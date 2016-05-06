@@ -24,7 +24,7 @@
   }
 }
 
-@-webkit-keyframes up {
+@-webkit-keyframes arriba {
   0% {
     -webkit-transform: translateY(0px);
   }
@@ -400,9 +400,13 @@ input {
 }
 
 #header-categorias-mobile {
+  text-align: center;
+  font-family: "Droid Sans", sans-serif;
+  font-weight: lighter;
   margin: 10px;
-  font-size: 18px;
-  color: lightgray;
+  font-size: 16px;
+  color: yellow;
+  line-height: 36px;
 
 }
 
@@ -680,21 +684,32 @@ input {
 .menu-mobile-panel {
   font-family: 'Droid Sans', sans-serif;
   font-size: 24px;
-  width: 70%;
+  width: 100%;
   color: white;
-  background: rgb(255, 168, 76);
-  position: fixed;
+  background: rgba(96,108,136, .7); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(96,108,136,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */  position: fixed;
   bottom: 0px;
   top: 50px;
+  padding: 10px;
   z-index: 500;
   height: 100%;
   //border: 5px solid white;
 
+  img{
+    text-align: center;
+    margin: auto;
+
+  }
+
   .menu-desktop-btn {
+    text-align: center;
     margin-top: 15px;
     color: white;
     font-family: 'Droid Sans', serif;
-    line-height: 24px;
+    line-height: 17px;
     padding: 5px;
     font-variant: all-petite-caps;
   }
@@ -1392,10 +1407,11 @@ input {
 
 .main-proyecto-nuevo:hover,
 .main-proyecto-finalizar:hover {
-  -webkit-animation: up 1s; /* Safari 4+ */
-  -moz-animation: up 1s; /* Fx 5+ */
-  -o-animation: up 1s; /* Opera 12+ */
-  animation: up 1s; /* IE 10+, Fx 29+ */
+  cursor: pointer;
+  -webkit-animation: arriba 1s; /* Safari 4+ */
+  -moz-animation: arriba 1s; /* Fx 5+ */
+  -o-animation: arriba 1s; /* Opera 12+ */
+  animation: arriba 1s; /* IE 10+, Fx 29+ */
   -webkit-transition: all 1s cubic-bezier(.98, 0, 1, .28);
   -moz-transition: all 1s cubic-bezier(.98, 0, 1, .28);
   -o-transition: all 1s cubic-bezier(.98, 0, 1, .28);
@@ -1608,8 +1624,9 @@ input {
 
   input {
     //height: 18px;
-    margin: 5px;
+    margin: 5px auto;
     padding: 5px;
+    width: 97%;
   }
   input:focus{
     outline: none;
@@ -1643,6 +1660,7 @@ input {
     color: black;
     padding: 5px;
     margin: 5px;
+    width: 112px;
     font-size: 16px;
     //font-weight: bold;
     align-items: center;
@@ -1782,6 +1800,7 @@ input {
     flex-direction: column;
     justify-content: flex-start;
     padding: 5px;
+    width: 85%;
     select {
       margin: 5px;
       padding: 5px;
@@ -2434,10 +2453,10 @@ input {
         white 50%, white 75%,
         rgba(58, 189, 195, .3) 75%);
   background-size:20px 20px;
-  -webkit-animation: fadein 2s ease-in-out;
-  -moz-animation: fadein 2s ease-in-out;
-  -o-animation: fadein 2s ease-in-out;
-  animation: fadein 2s ease-in-out;
+  -webkit-animation: fadein 1s ease-in-out;
+  -moz-animation: fadein 1s ease-in-out;
+  -o-animation: fadein 1s ease-in-out;
+  animation: fadein 1s ease-in-out;
   width: 100%;
   margin-bottom: 30px;
   padding-bottom: 50px;
