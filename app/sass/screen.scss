@@ -369,17 +369,53 @@ input {
 #header-mobile {
   display: flex;
   height: 50px;
-  background: #3C5A6F;
+  background: white;
   z-index: 100;
   position: fixed;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   top: 0;
   left: 0;
   right: 0;
+
   span {
-    color: white;
+    font-family: "Droid Sans", sans-serif;
+    color: black;
+    font-weight: lighter;
     padding-top: 25px;
     padding-right: 5px;
     padding-left: 5px;
+    margin-top: 10px;
+  }
+
+  button{
+    font-family: 'Droid Sans', sans-serif;
+    //font-weight: bold;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100;Grey+Gloss+%231 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5883a0+0,3c5a6f+100 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+    background: rgb(246,248,249); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: black;
+    //padding: 5px;
+    margin: 13px;
+    width: 50px;
+    font-size: 16px;
+    //font-weight: bold;
+    align-items: center;
+    outline: none;
+    -webkit-box-shadow: 0px 3px 11px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 11px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 11px -2px rgba(0,0,0,0.75);
+
   }
 
   .header-separator {
@@ -641,7 +677,7 @@ input {
     width: 25px;
     height: 4px;
     border-radius: 2px;
-    background-color: #ffffff;
+    background-color: orange;
     margin: 4px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -2807,3 +2843,11 @@ input {
 #MP-Checkout-dialog{
   background-color: red !important;
 }
+
+
+
+.logo-menu-mobile{
+  height: 77%;
+  margin-top: 5px;
+}
+
