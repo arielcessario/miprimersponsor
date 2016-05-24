@@ -43,12 +43,23 @@
                 <!--<select ng-model="nuevoUsuarioCtrl.usuario.rol_id">-->
                 <!--<option value="0">Usuario</option>-->                <!--<option value="1">Administrador</option>-->
                 <!--</select>-->                <!--</div>-->            </div>
+            <div id="legales-link">
+                Al hacer clic en "Abrir una cuenta", aceptas y confirmas que leíste nuestra <a href="" ng-click="nuevoUsuarioCtrl.showLegales = true;">Condiciones</a>.
+            </div>
+
             <div class="nuevo-usuario-button-bar">
-                <button ac-validator ng-click="nuevoUsuarioCtrl.saveUsuario();">Guardar</button>
+                <button ac-validator ng-click="nuevoUsuarioCtrl.saveUsuario();">Abrir Cuenta</button>
                 <button><a href="#/ingreso">Ya tengo usuario</a></button>
                 <button ng-click="nuevoUsuarioCtrl.loginFacebook();">Usar Facebook</button>
                 <button ng-click="nuevoUsuarioCtrl.loginGoogle();">Usar Google</button>
             </div>
         </div>
+    </div>
+    <div id="legales" ng-if="nuevoUsuarioCtrl.showLegales">
+        <div id="legales-inner">
+            Acá va el texto die
+            <button ng-click="nuevoUsuarioCtrl.showLegales = false;">Cerrar</button>
+        </div>
+
     </div>
 </div>
