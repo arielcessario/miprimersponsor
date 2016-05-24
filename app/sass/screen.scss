@@ -2474,8 +2474,10 @@ background-image: url("fondo-mps.png");
 }
 
 #footer {
+  position: absolute;
+  bottom: 0px;
   background-color: white;
-  height: 270px;
+  height: 200px;
   width: 100%;
 
   h1 {
