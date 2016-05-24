@@ -19,6 +19,7 @@
 
         var vm = this;
 
+        vm.showLegales = false;
         vm.usuario = {
             cliente_id: -1,
             nombre: '',
