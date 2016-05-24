@@ -3361,6 +3361,15 @@ span {
 }
 
 /* line 2937, ../sass/screen.scss */
+.contenedor-video {
+  position: absolute;
+  background-image: url("fondo-mps.png");
+  background-position: center !important;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 2946, ../sass/screen.scss */
 #legales {
   position: fixed;
   top: 0;
@@ -3373,10 +3382,21 @@ span {
   align-items: center;
   z-index: 1000;
 }
-/* line 2948, ../sass/screen.scss */
+/* line 2957, ../sass/screen.scss */
 #legales #legales-inner {
   min-width: 800px;
   min-height: 400px;
   overflow: auto;
   background-color: white;
+}
+
+/* line 2965, ../sass/screen.scss */
+.texto-legales {
+  color: white;
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+/* line 2969, ../sass/screen.scss */
+.texto-legales a {
+  color: #3ABDC3;
 }

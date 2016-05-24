@@ -2934,6 +2934,15 @@ background-image: url("fondo-mps.png");
 
 }
 
+.contenedor-video{
+  position: absolute;
+  background-image: url("fondo-mps.png");
+  background-position: center!important;
+  height: 100%;
+  width: 100%;
+
+}
+
 #legales {
   position: fixed;
   top: 0;
