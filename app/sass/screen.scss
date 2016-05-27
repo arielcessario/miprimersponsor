@@ -496,7 +496,6 @@ input {
     button {
       font-family: 'Droid Sans', sans-serif;
       font-size: 16px;
-      color: red;
       text-decoration: underline;
 
     }
@@ -505,10 +504,20 @@ input {
         color: #3C5A6F;
         padding: 10px;
       }
+      a:hover, span:hover{
+        color: white!important;
+      }
     }
   }
 
-  #header-desktop-right button:hover {
+  .desktop-link-login:hover{
+    color: white!important;
+    -moz-transition: all 2s ease-in;
+    transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+  }
+
+  .header-desktop-right a:hover {
     color: white !important;
     cursor: pointer;
     -moz-transition: all 2s ease-in;
@@ -604,7 +613,7 @@ input {
 }
 
 .desktop-link-nav div {
-  color: black;
+  //color: black;
   margin-top: 12px;
   margin-bottom: 10px;
   padding: 4px;
@@ -2235,9 +2244,9 @@ input {
 
 .contenedor-ingreso,
 .contenedor-nuevo-usuario {
-  min-width: 328px;
+  min-width: 350px;
   max-width: 600px;
-  width: 328px;
+  width: 350px;
   margin: auto;
   padding: 30px;
   -moz-border-radius: 5px;
@@ -2474,8 +2483,8 @@ background-image: url("fondo-mps.png");
 }
 
 #footer {
-  position: absolute;
-  bottom: 0px;
+  //position: absolute;
+   //bottom: 0px!important;
   background-color: white;
   height: 200px;
   width: 100%;
@@ -2937,7 +2946,7 @@ background-image: url("fondo-mps.png");
 }
 
 .contenedor-video{
-  position: absolute;
+  text-align: center;
   background-image: url("fondo-mps.png");
   background-position: center!important;
   height: 100%;
@@ -2952,23 +2961,39 @@ background-image: url("fondo-mps.png");
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
+  //display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: auto;
   #legales-inner {
-    min-width: 800px;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 16px;
+    min-width: 350px;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 50px;
     min-height: 400px;
+    line-height: 22px;
     overflow: auto;
     background-color: white;
   }
 }
 
 .texto-legales{
+  padding: 20px;
+  line-height: 20px;
   color: white;
   margin-bottom: 10px;
-  line-height: 18px;
   a{
     color: #3ABDC3;
   }
+}
+
+video{
+  margin-top: 45px;
+  width: 85%;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
