@@ -2085,7 +2085,7 @@ input {
 #administracion input {
   margin: 5px auto;
   padding: 5px;
-  width: 97%;
+  width: 99%;
 }
 /* line 1706, ../sass/screen.scss */
 #administracion input:focus {
@@ -2132,7 +2132,16 @@ input {
   -moz-box-shadow: 0px 3px 11px -2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 11px -2px rgba(0, 0, 0, 0.75);
 }
-/* line 1751, ../sass/screen.scss */
+/* line 1749, ../sass/screen.scss */
+#administracion .buscador {
+  width: 97%;
+  padding: 10px;
+  font-size: 18px;
+  -webkit-box-shadow: 0px 3px 11px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 11px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 11px -2px rgba(0, 0, 0, 0.75);
+}
+/* line 1761, ../sass/screen.scss */
 #administracion .boton-admin button:hover,
 #administracion .boton-datos:hover,
 #administracion button:hover {
@@ -2153,7 +2162,7 @@ input {
   transition: all ease .3s;
   cursor: pointer;
 }
-/* line 1774, ../sass/screen.scss */
+/* line 1784, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   margin-bottom: 10px;
   -webkit-border-radius: 12px;
@@ -2165,7 +2174,7 @@ input {
   background-color: white;
 }
 @media (min-width: 400px) {
-  /* line 1786, ../sass/screen.scss */
+  /* line 1796, ../sass/screen.scss */
   #administracion .administracion-inputs {
     display: flex;
     flex-direction: row;
@@ -2173,15 +2182,15 @@ input {
     justify-content: center;
     width: 100%;
   }
-  /* line 1796, ../sass/screen.scss */
+  /* line 1806, ../sass/screen.scss */
   #administracion .administracion-inputs .administracion-input {
     max-width: 400px;
     width: 400px;
   }
 }
-/* line 1804, ../sass/screen.scss */
+/* line 1814, ../sass/screen.scss */
 #administracion .administracion-input-contenedor {
-  padding-top: 30px;
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -2195,7 +2204,7 @@ input {
   -o-animation: fadein 2s ease-in-out;
   animation: fadein 2s ease-in-out;
 }
-/* line 1821, ../sass/screen.scss */
+/* line 1831, ../sass/screen.scss */
 #administracion .titulos-administracion {
   text-align: center;
   margin-bottom: auto;
@@ -2206,14 +2215,14 @@ input {
   padding-bottom: 50px;
   color: white;
 }
-/* line 1832, ../sass/screen.scss */
+/* line 1842, ../sass/screen.scss */
 #administracion #rol {
   margin: 5px;
   height: 30px;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
 }
-/* line 1840, ../sass/screen.scss */
+/* line 1850, ../sass/screen.scss */
 #administracion .administracion-foto {
   display: flex;
   flex-direction: row;
@@ -2221,24 +2230,24 @@ input {
   min-width: 100%;
 }
 @media (min-width: 400px) {
-  /* line 1840, ../sass/screen.scss */
+  /* line 1850, ../sass/screen.scss */
   #administracion .administracion-foto {
     max-width: 400px;
     min-width: 400px;
   }
 }
-/* line 1851, ../sass/screen.scss */
+/* line 1861, ../sass/screen.scss */
 #administracion .administracion-foto .foto {
   position: relative;
 }
-/* line 1854, ../sass/screen.scss */
+/* line 1864, ../sass/screen.scss */
 #administracion .administracion-foto .foto .input-foto {
   width: 50px;
   height: 50px;
   top: 0;
   left: 0;
 }
-/* line 1861, ../sass/screen.scss */
+/* line 1871, ../sass/screen.scss */
 #administracion .administracion-foto .foto input {
   position: absolute;
   width: 50px;
@@ -2247,15 +2256,15 @@ input {
   top: 0;
   left: 0;
 }
-/* line 1873, ../sass/screen.scss */
+/* line 1883, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px;
-  width: 85%;
+  width: 100%;
 }
-/* line 1879, ../sass/screen.scss */
+/* line 1889, ../sass/screen.scss */
 #administracion .administracion-input select {
   margin: 5px;
   padding: 5px;
@@ -2263,11 +2272,11 @@ input {
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
 }
-/* line 1889, ../sass/screen.scss */
+/* line 1899, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 1893, ../sass/screen.scss */
+/* line 1903, ../sass/screen.scss */
 #administracion #administracion-main,
 #administracion #administracion-usuarios-tabla {
   margin-top: 50px;
@@ -2275,14 +2284,14 @@ input {
   max-width: 850px;
 }
 @media (max-width: 850px) {
-  /* line 1893, ../sass/screen.scss */
+  /* line 1903, ../sass/screen.scss */
   #administracion #administracion-main,
   #administracion #administracion-usuarios-tabla {
     max-width: 100%;
     min-width: 100%;
   }
 }
-/* line 1905, ../sass/screen.scss */
+/* line 1915, ../sass/screen.scss */
 #administracion #administracion-usuarios-tabla,
 #administracion #administracion-aportes-tabla,
 #administracion #administracion-proyectos-tabla,
@@ -2302,7 +2311,7 @@ input {
   animation: fadein 2s ease-in;
 }
 @media (max-width: 400px) {
-  /* line 1905, ../sass/screen.scss */
+  /* line 1915, ../sass/screen.scss */
   #administracion #administracion-usuarios-tabla,
   #administracion #administracion-aportes-tabla,
   #administracion #administracion-proyectos-tabla,
@@ -2310,16 +2319,16 @@ input {
     margin: 20px;
   }
 }
-/* line 1930, ../sass/screen.scss */
+/* line 1940, ../sass/screen.scss */
 #administracion #administracion-proyectos-tabla td:hover a {
   color: white;
 }
-/* line 1936, ../sass/screen.scss */
+/* line 1946, ../sass/screen.scss */
 #administracion #administracion-proyectos-tabla td a:hover {
   color: blue;
   cursor: pointer;
 }
-/* line 1944, ../sass/screen.scss */
+/* line 1954, ../sass/screen.scss */
 #administracion #administracion-main th, #administracion td {
   text-align: center;
   color: white;
@@ -2327,7 +2336,7 @@ input {
   padding: 15px;
   border-bottom: 1px solid #ddd;
 }
-/* line 1954, ../sass/screen.scss */
+/* line 1964, ../sass/screen.scss */
 #administracion #administracion-main th {
   background: #cb60b3;
   background: -moz-linear-gradient(top, #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%);
@@ -2341,16 +2350,16 @@ input {
   font-weight: bolder;
   font-size: 18px;
 }
-/* line 1967, ../sass/screen.scss */
+/* line 1977, ../sass/screen.scss */
 #administracion #administracion-main th input {
   margin-bottom: 10px;
   height: 22px;
 }
-/* line 1976, ../sass/screen.scss */
+/* line 1986, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
-/* line 1980, ../sass/screen.scss */
+/* line 1990, ../sass/screen.scss */
 #administracion .administracion-row:hover,
 #administracion .tr-selected {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#261624+0,3c5a6f+100 */
@@ -2372,7 +2381,7 @@ input {
   transition: all .3s;
 }
 
-/* line 1999, ../sass/screen.scss */
+/* line 2009, ../sass/screen.scss */
 #administracion-nav {
   display: flex;
   flex-direction: row;
@@ -2394,7 +2403,7 @@ input {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
-/* line 2021, ../sass/screen.scss */
+/* line 2031, ../sass/screen.scss */
 #administracion-nav :hover {
   cursor: pointer;
   color: #4f8484;
@@ -2406,12 +2415,12 @@ input {
   transition: all .3s;
 }
 @media (max-width: 400px) {
-  /* line 1999, ../sass/screen.scss */
+  /* line 2009, ../sass/screen.scss */
   #administracion-nav {
     margin-top: 50px;
   }
 }
-/* line 2038, ../sass/screen.scss */
+/* line 2048, ../sass/screen.scss */
 #administracion-nav div {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -2427,7 +2436,7 @@ input {
   border-radius: 8px;
 }
 @media (max-width: 400px) {
-  /* line 2038, ../sass/screen.scss */
+  /* line 2048, ../sass/screen.scss */
   #administracion-nav div {
     width: 100%;
     margin-top: 10px;
@@ -2435,13 +2444,13 @@ input {
   }
 }
 
-/* line 2061, ../sass/screen.scss */
+/* line 2071, ../sass/screen.scss */
 .institucional-publicidad {
   margin: auto;
   max-width: 2400px;
   padding: 30px;
 }
-/* line 2066, ../sass/screen.scss */
+/* line 2076, ../sass/screen.scss */
 .institucional-publicidad h1 {
   color: #F7B35A;
   margin: 10px;
@@ -2452,12 +2461,12 @@ input {
   text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.46);
 }
 @media (max-width: 400px) {
-  /* line 2066, ../sass/screen.scss */
+  /* line 2076, ../sass/screen.scss */
   .institucional-publicidad h1 {
     font-size: 40px;
   }
 }
-/* line 2079, ../sass/screen.scss */
+/* line 2089, ../sass/screen.scss */
 .institucional-publicidad h2 {
   margin: 10px;
   font-family: 'Fjalla One', sans-serif;
@@ -2466,11 +2475,11 @@ input {
   text-align: justify;
 }
 
-/* line 2090, ../sass/screen.scss */
+/* line 2100, ../sass/screen.scss */
 #adminitracion-cambios {
   text-align: left;
 }
-/* line 2092, ../sass/screen.scss */
+/* line 2102, ../sass/screen.scss */
 #adminitracion-cambios input {
   height: 16px;
   -webkit-border-radius: 5px;
@@ -2483,7 +2492,7 @@ input {
   font-size: 16px;
   padding: 5px;
 }
-/* line 2104, ../sass/screen.scss */
+/* line 2114, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion {
   display: flex;
   flex-direction: row;
@@ -2491,7 +2500,7 @@ input {
   max-width: 1000px;
   margin: 10px;
 }
-/* line 2111, ../sass/screen.scss */
+/* line 2121, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado {
   margin: 5px;
@@ -2507,20 +2516,20 @@ input {
   border-radius: 5px;
 }
 @media (min-width: 800px) {
-  /* line 2111, ../sass/screen.scss */
+  /* line 2121, ../sass/screen.scss */
   #adminitracion-cambios #cambios-comparacion #cambios-original,
   #adminitracion-cambios #cambios-comparacion #cambios-modificado {
     width: calc(50% - 45px);
     min-width: calc(50% - 45px);
   }
 }
-/* line 2131, ../sass/screen.scss */
+/* line 2141, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original h2,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado h2 {
   font-weight: 700;
   font-size: 28px;
 }
-/* line 2136, ../sass/screen.scss */
+/* line 2146, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original p,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado p {
   margin-top: 5px;
@@ -2529,7 +2538,7 @@ input {
   font-size: 20px;
   font-family: 'Droid Sans', sans-serif;
 }
-/* line 2145, ../sass/screen.scss */
+/* line 2155, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original span,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado span {
   margin-top: 5px;
@@ -2539,7 +2548,7 @@ input {
   color: #ff9900;
 }
 
-/* line 2165, ../sass/screen.scss */
+/* line 2175, ../sass/screen.scss */
 .parrafo-in {
   -webkit-animation: parrafo-in 1s ease;
   -o-animation: parrafo-in 1s ease;
@@ -2572,12 +2581,12 @@ input {
     transform: translate(0px, 0);
   }
 }
-/* line 2204, ../sass/screen.scss */
+/* line 2214, ../sass/screen.scss */
 .parrafo-out {
   background-color: blue !important;
 }
 
-/* line 2208, ../sass/screen.scss */
+/* line 2218, ../sass/screen.scss */
 .administracion-input input {
   margin-bottom: 10px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -2593,7 +2602,7 @@ input {
   font-size: 16px;
 }
 
-/* line 2224, ../sass/screen.scss */
+/* line 2234, ../sass/screen.scss */
 .dias-restantes {
   color: black;
   font-family: 'Droid Sans', sans-serif;
@@ -2601,20 +2610,20 @@ input {
   text-align: left;
   margin-top: 10px;
 }
-/* line 2231, ../sass/screen.scss */
+/* line 2241, ../sass/screen.scss */
 .dias-restantes span {
   color: black;
   font-size: 45px;
 }
 
-/* line 2238, ../sass/screen.scss */
+/* line 2248, ../sass/screen.scss */
 .porcentaje {
   font-size: 45px;
   color: black;
   align-items: flex-end;
 }
 
-/* line 2245, ../sass/screen.scss */
+/* line 2255, ../sass/screen.scss */
 .contenedor-ingreso,
 .contenedor-nuevo-usuario {
   min-width: 350px;
@@ -2650,13 +2659,13 @@ input {
   transition: all 1s cubic-bezier(0.98, 0, 1, 0.28);
 }
 
-/* line 2272, ../sass/screen.scss */
+/* line 2282, ../sass/screen.scss */
 .contenedor-ingreso {
   min-height: 400px;
   max-height: 542px;
 }
 
-/* line 2281, ../sass/screen.scss */
+/* line 2291, ../sass/screen.scss */
 #ingreso,
 #nuevo-usuario {
   background-image: url("fondo-mps.png");
@@ -2664,13 +2673,13 @@ input {
   height: 100%;
   padding-bottom: 50px;
 }
-/* line 2287, ../sass/screen.scss */
+/* line 2297, ../sass/screen.scss */
 #ingreso .administracion-button-bar button,
 #nuevo-usuario .administracion-button-bar button {
   margin-bottom: 20px;
 }
 
-/* line 2293, ../sass/screen.scss */
+/* line 2303, ../sass/screen.scss */
 #nuevo-usuario-form {
   margin: auto;
   padding-top: 50px;
@@ -2678,7 +2687,7 @@ input {
   max-width: 800px;
   padding-bottom: 30px;
 }
-/* line 2300, ../sass/screen.scss */
+/* line 2310, ../sass/screen.scss */
 #nuevo-usuario-form h1 {
   margin-bottom: 20px;
   font-family: 'Droid Sans', sans-serif;
@@ -2686,7 +2695,7 @@ input {
   font-weight: bold;
   color: white;
 }
-/* line 2308, ../sass/screen.scss */
+/* line 2318, ../sass/screen.scss */
 #nuevo-usuario-form span {
   margin-left: 5px;
   color: white;
@@ -2694,7 +2703,7 @@ input {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 2316, ../sass/screen.scss */
+/* line 2326, ../sass/screen.scss */
 #nuevo-usuario-form button {
   font-family: 'Droid Sans', sans-serif;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+50,ff7c00+51,ff7f04+100;Orange+Gloss */
@@ -2716,7 +2725,7 @@ input {
   align-items: center;
   outline: none;
 }
-/* line 2335, ../sass/screen.scss */
+/* line 2345, ../sass/screen.scss */
 #nuevo-usuario-form button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
   background: #9dd53a;
@@ -2738,7 +2747,7 @@ input {
   transition: all ease .3s;
   cursor: pointer;
 }
-/* line 2353, ../sass/screen.scss */
+/* line 2363, ../sass/screen.scss */
 #nuevo-usuario-form p {
   margin-bottom: 20px;
   color: white;
@@ -2748,7 +2757,7 @@ input {
   line-height: 20px;
   text-align: left;
 }
-/* line 2364, ../sass/screen.scss */
+/* line 2374, ../sass/screen.scss */
 #nuevo-usuario-form input {
   font-family: "Droid Sans", sans-serif;
   width: 300px;
@@ -2765,13 +2774,13 @@ input {
   padding: 5px;
 }
 
-/* line 2383, ../sass/screen.scss */
+/* line 2393, ../sass/screen.scss */
 .nuevo-usuario-input,
 .administracion-input {
   margin-bottom: 20px;
 }
 
-/* line 2388, ../sass/screen.scss */
+/* line 2398, ../sass/screen.scss */
 .titulo-nuevos-proyectos {
   font-family: 'Droid Sans', sans-serif;
   font-size: 24px;
@@ -2781,14 +2790,14 @@ input {
   margin-bottom: 20px;
 }
 
-/* line 2397, ../sass/screen.scss */
+/* line 2407, ../sass/screen.scss */
 #ingreso-form {
   margin: auto;
   padding-top: 50px;
   align-items: left;
   max-width: 800px;
 }
-/* line 2403, ../sass/screen.scss */
+/* line 2413, ../sass/screen.scss */
 #ingreso-form h1 {
   margin-bottom: 15px;
   font-family: 'Droid Sans', sans-serif;
@@ -2796,7 +2805,7 @@ input {
   font-weight: bold;
   color: white;
 }
-/* line 2411, ../sass/screen.scss */
+/* line 2421, ../sass/screen.scss */
 #ingreso-form p {
   margin-bottom: 30px;
   color: white;
@@ -2806,7 +2815,7 @@ input {
   line-height: 24px;
   text-align: left;
 }
-/* line 2422, ../sass/screen.scss */
+/* line 2432, ../sass/screen.scss */
 #ingreso-form span {
   margin-left: 5px;
   color: white;
@@ -2814,7 +2823,7 @@ input {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 2430, ../sass/screen.scss */
+/* line 2440, ../sass/screen.scss */
 #ingreso-form button {
   font-family: 'Droid Sans', sans-serif;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+50,ff7c00+51,ff7f04+100;Orange+Gloss */
@@ -2836,7 +2845,7 @@ input {
   align-items: center;
   outline: none;
 }
-/* line 2449, ../sass/screen.scss */
+/* line 2459, ../sass/screen.scss */
 #ingreso-form button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
   background: #9dd53a;
@@ -2857,7 +2866,7 @@ input {
   -o-transition: all ease .3s;
   transition: all ease .3s;
 }
-/* line 2466, ../sass/screen.scss */
+/* line 2476, ../sass/screen.scss */
 #ingreso-form input {
   font-family: "Droid Sans", sans-serif;
   width: 316px;
@@ -2874,13 +2883,13 @@ input {
   padding: 4px;
 }
 
-/* line 2485, ../sass/screen.scss */
+/* line 2495, ../sass/screen.scss */
 #footer {
   background-color: white;
   height: 200px;
   width: 100%;
 }
-/* line 2492, ../sass/screen.scss */
+/* line 2502, ../sass/screen.scss */
 #footer h1 {
   font-family: 'Droid Sans', sans-serif;
   font-size: 45px;
@@ -2890,7 +2899,7 @@ input {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 2503, ../sass/screen.scss */
+/* line 2513, ../sass/screen.scss */
 #footer h2 {
   text-align: center;
   font-family: "Droid Sans";
@@ -2900,14 +2909,14 @@ input {
   margin-bottom: 20px;
 }
 
-/* line 2514, ../sass/screen.scss */
+/* line 2524, ../sass/screen.scss */
 #footer h2:hover {
   font-weight: bold;
   color: #3ABDC3;
   cursor: pointer;
 }
 
-/* line 2522, ../sass/screen.scss */
+/* line 2532, ../sass/screen.scss */
 #fondo-detalle-proyecto {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
@@ -2924,7 +2933,7 @@ input {
   height: 100%;
 }
 
-/* line 2540, ../sass/screen.scss */
+/* line 2550, ../sass/screen.scss */
 #proyecto {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
   background: white;
@@ -2951,7 +2960,7 @@ input {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 2560, ../sass/screen.scss */
+/* line 2570, ../sass/screen.scss */
 #ac-progress-bar {
   opacity: .7;
   margin: auto;
@@ -2963,7 +2972,7 @@ input {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
 
-/* line 2571, ../sass/screen.scss */
+/* line 2581, ../sass/screen.scss */
 span {
   font-family: "Droid Sans";
   font-size: 16px;
@@ -2974,7 +2983,7 @@ span {
   width: 100%;
 }
 
-/* line 2584, ../sass/screen.scss */
+/* line 2594, ../sass/screen.scss */
 .contenedor-proyecto-foto {
   text-align: center;
   overflow: hidden;
@@ -2988,19 +2997,19 @@ span {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
-/* line 2597, ../sass/screen.scss */
+/* line 2607, ../sass/screen.scss */
 .foto-principal-seleccionada {
   width: 100%;
   vertical-align: middle;
 }
 
-/* line 2603, ../sass/screen.scss */
+/* line 2613, ../sass/screen.scss */
 #proyecto-container {
   text-align: center;
   margin: auto;
 }
 
-/* line 2608, ../sass/screen.scss */
+/* line 2618, ../sass/screen.scss */
 .titulo_proyecto_seleccionado {
   margin-top: 45px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5883a0+0,3c5a6f+100 */
@@ -3023,7 +3032,7 @@ span {
   margin-bottom: 50px;
 }
 
-/* line 2625, ../sass/screen.scss */
+/* line 2635, ../sass/screen.scss */
 .thumb {
   width: 36%;
   margin: 8px;
@@ -3032,12 +3041,12 @@ span {
   border: 1px solid white;
 }
 
-/* line 2634, ../sass/screen.scss */
+/* line 2644, ../sass/screen.scss */
 #proyecto-left {
   width: 60%;
 }
 
-/* line 2639, ../sass/screen.scss */
+/* line 2649, ../sass/screen.scss */
 #proyecto-rigth {
   width: 40%;
   padding: 8px;
@@ -3062,16 +3071,16 @@ span {
   -o-animation: fadein 1s ease-in-out;
   animation: fadein 1s ease-in-out;
 }
-/* line 2658, ../sass/screen.scss */
+/* line 2668, ../sass/screen.scss */
 #proyecto-rigth span {
   color: white;
   font-size: 26px;
 }
-/* line 2662, ../sass/screen.scss */
+/* line 2672, ../sass/screen.scss */
 #proyecto-rigth #ac-progress-bar {
   max-width: 95%;
 }
-/* line 2666, ../sass/screen.scss */
+/* line 2676, ../sass/screen.scss */
 #proyecto-rigth button {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
@@ -3100,12 +3109,12 @@ span {
   -o-transition: all 2s ease-in;
 }
 
-/* line 2694, ../sass/screen.scss */
+/* line 2704, ../sass/screen.scss */
 .nuevo-usuario-button-bar a {
   color: white !important;
 }
 
-/* line 2700, ../sass/screen.scss */
+/* line 2710, ../sass/screen.scss */
 #proyecto-rigth button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
@@ -3126,30 +3135,30 @@ span {
   transition: all ease .3s;
 }
 
-/* line 2721, ../sass/screen.scss */
+/* line 2731, ../sass/screen.scss */
 #proyecto-upper {
   width: 100%;
   display: flex;
 }
 @media (max-width: 600px) {
-  /* line 2721, ../sass/screen.scss */
+  /* line 2731, ../sass/screen.scss */
   #proyecto-upper {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  /* line 2729, ../sass/screen.scss */
+  /* line 2739, ../sass/screen.scss */
   #proyecto-upper #proyecto-thums {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
   }
-  /* line 2737, ../sass/screen.scss */
+  /* line 2747, ../sass/screen.scss */
   #proyecto-upper #proyecto-left {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  /* line 2743, ../sass/screen.scss */
+  /* line 2753, ../sass/screen.scss */
   #proyecto-upper #proyecto-rigth {
     width: 100%;
     margin-top: 20px;
@@ -3157,23 +3166,23 @@ span {
   }
 }
 
-/* line 2754, ../sass/screen.scss */
+/* line 2764, ../sass/screen.scss */
 #proyecto-thums {
   text-align: center;
   align-items: center;
 }
 
-/* line 2760, ../sass/screen.scss */
+/* line 2770, ../sass/screen.scss */
 #proyecto-thums span {
   color: white;
 }
 
-/* line 2765, ../sass/screen.scss */
+/* line 2775, ../sass/screen.scss */
 #proyecto-comentarios textarea {
   width: 99%;
 }
 
-/* line 2771, ../sass/screen.scss */
+/* line 2781, ../sass/screen.scss */
 #proyecto-comentarios button {
   width: 90px;
   height: 32px;
@@ -3206,7 +3215,7 @@ span {
   transition: all .3s;
 }
 
-/* line 2799, ../sass/screen.scss */
+/* line 2809, ../sass/screen.scss */
 #proyecto-comentarios button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
@@ -3222,7 +3231,7 @@ span {
   /* IE6-9 */
 }
 
-/* line 2813, ../sass/screen.scss */
+/* line 2823, ../sass/screen.scss */
 #proyecto-bottom p {
   font-family: 'Droid Sans', sans-serif;
   color: black;
@@ -3231,7 +3240,7 @@ span {
   margin-top: 50px;
 }
 
-/* line 2822, ../sass/screen.scss */
+/* line 2832, ../sass/screen.scss */
 #resultados {
   background: #606c88;
   /* Old browsers */
@@ -3249,7 +3258,7 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 2837, ../sass/screen.scss */
+/* line 2847, ../sass/screen.scss */
 #resultados h1 {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -3257,12 +3266,12 @@ span {
   margin: 20px;
 }
 
-/* line 2844, ../sass/screen.scss */
+/* line 2854, ../sass/screen.scss */
 .administracion-donacion-cancelada {
   background-color: red;
 }
 
-/* line 2848, ../sass/screen.scss */
+/* line 2858, ../sass/screen.scss */
 .contenedor-enconstruccion {
   text-align: center;
   padding-top: 100px;
@@ -3279,7 +3288,7 @@ span {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0 );
   margin: auto;
 }
-/* line 2863, ../sass/screen.scss */
+/* line 2873, ../sass/screen.scss */
 .contenedor-enconstruccion span {
   color: white;
   font-family: "Droid Sans", sans-serif;
@@ -3293,50 +3302,50 @@ span {
   animation: fadein 2s ease-in-out;
 }
 @media (max-width: 500px) {
-  /* line 2863, ../sass/screen.scss */
+  /* line 2873, ../sass/screen.scss */
   .contenedor-enconstruccion span {
     font-size: 40px;
   }
 }
 
-/* line 2883, ../sass/screen.scss */
+/* line 2893, ../sass/screen.scss */
 .contenedor-enconstruccion-img {
   width: 100%;
   margin: 30px auto;
 }
 
-/* line 2888, ../sass/screen.scss */
+/* line 2898, ../sass/screen.scss */
 #MP-Checkout-dialog {
   background-color: red !important;
 }
 
-/* line 2894, ../sass/screen.scss */
+/* line 2904, ../sass/screen.scss */
 .logo-menu-mobile {
   height: 77%;
   margin-top: 5px;
 }
 
-/* line 2900, ../sass/screen.scss */
+/* line 2910, ../sass/screen.scss */
 .first-status {
   border: 2px solid #e3001b !important;
 }
 
-/* line 2904, ../sass/screen.scss */
+/* line 2914, ../sass/screen.scss */
 .second-status {
   border: 2px solid #fa9819 !important;
 }
 
-/* line 2908, ../sass/screen.scss */
+/* line 2918, ../sass/screen.scss */
 .third-status {
   border: 2px solid #feed01 !important;
 }
 
-/* line 2912, ../sass/screen.scss */
+/* line 2922, ../sass/screen.scss */
 .fourth-status {
   border: 2px solid #00a148 !important;
 }
 
-/* line 2916, ../sass/screen.scss */
+/* line 2926, ../sass/screen.scss */
 .fa-lightbulb-o,
 .fa-hourglass-end,
 .fa {
@@ -3351,25 +3360,25 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 2930, ../sass/screen.scss */
+/* line 2940, ../sass/screen.scss */
 #a0-lock.a0-theme-default .a0-panel .a0-header h1 {
   text-align: center !important;
   margin-left: 20px !important;
   font-family: "Droid Sans", sans-serif;
 }
 
-/* line 2938, ../sass/screen.scss */
+/* line 2948, ../sass/screen.scss */
 .a0-lock.a0-theme-default .a0-panel .a0-footer .a0-logo i {
   opacity: 0;
 }
 
-/* line 2942, ../sass/screen.scss */
+/* line 2952, ../sass/screen.scss */
 #contenedor-main {
   background-image: url("fondo-mps.png");
   background-position: center !important;
 }
 
-/* line 2948, ../sass/screen.scss */
+/* line 2958, ../sass/screen.scss */
 .contenedor-video {
   text-align: center;
   background-image: url("fondo-mps.png");
@@ -3378,7 +3387,7 @@ span {
   width: 100%;
 }
 
-/* line 2957, ../sass/screen.scss */
+/* line 2967, ../sass/screen.scss */
 #legales {
   position: fixed;
   top: 0;
@@ -3391,7 +3400,7 @@ span {
   z-index: 1000;
   overflow: auto;
 }
-/* line 2969, ../sass/screen.scss */
+/* line 2979, ../sass/screen.scss */
 #legales #legales-inner {
   font-family: "Droid Sans", sans-serif;
   font-size: 16px;
@@ -3405,19 +3414,19 @@ span {
   background-color: white;
 }
 
-/* line 2983, ../sass/screen.scss */
+/* line 2993, ../sass/screen.scss */
 .texto-legales {
   padding: 20px;
   line-height: 20px;
   color: white;
   margin-bottom: 10px;
 }
-/* line 2988, ../sass/screen.scss */
+/* line 2998, ../sass/screen.scss */
 .texto-legales a {
   color: #3ABDC3;
 }
 
-/* line 2993, ../sass/screen.scss */
+/* line 3003, ../sass/screen.scss */
 video {
   margin-top: 45px;
   width: 85%;
