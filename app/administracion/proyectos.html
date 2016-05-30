@@ -1,5 +1,4 @@
-<h1 class="titulos-administracion">Desde aquí puedes controlar los proyectos de tus donadores  <br>
-    O crear un proyecto nuevo!</h1>
+<h1 class="titulos-administracion">Desde aquí puedes controlar los proyectos de tus donadores o crear un proyecto nuevo!</h1>
 
 <div class="administracion-inputs" form-id="proyectos" ng-if="administracionCtrl.validation">
     <div class="administracion-input-contenedor">
@@ -74,7 +73,7 @@
                 class="">
         </select>
     </div>
-    <div class="administracion-input">
+    <div class="administracion-input-area">
 
         <span>Descripción</span>
 
@@ -89,7 +88,7 @@
             <span>Foto 1</span>
 
             <div id="slider-01-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50" width="50">
+                <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50">
                 <input type="file" name="images" id="images"
                        ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
             </div>
@@ -99,7 +98,7 @@
             <span>Foto 2</span>
 
             <div id="slider-02-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50" width="50">
+                <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50">
                 <input type="file" name="images" id="images"
                        ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
             </div>
@@ -109,7 +108,7 @@
             <span>Foto 3</span>
 
             <div id="slider-03-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50" width="50">
+                <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50">
                 <input type="file" name="images" id="images"
                        ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
             </div>
@@ -119,7 +118,7 @@
             <span>Foto 4</span>
 
             <div id="slider-04-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50" width="50">
+                <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50">
                 <input type="file" name="images" id="images"
                        ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
             </div>
