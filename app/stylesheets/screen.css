@@ -2996,7 +2996,7 @@ input {
 /* line 2610, ../sass/screen.scss */
 #proyecto {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
-  background-color: floralwhite;
+  background-color: white;
   max-width: 1000px;
   border: 2px solid black;
   -webkit-border-radius: 12px;
@@ -3431,14 +3431,23 @@ span {
 
 /* line 3014, ../sass/screen.scss */
 .contenedor-video {
-  text-align: center;
-  background-image: url("fondo-mps.png");
-  background-position: center !important;
-  height: 100%;
-  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  margin-top: 46px;
+  height: 0;
+  overflow: hidden;
 }
 
-/* line 3023, ../sass/screen.scss */
+/* line 3028, ../sass/screen.scss */
+.contenedor-video iframe, .contenedor-video object, .contenedor-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 3037, ../sass/screen.scss */
 #legales {
   position: fixed;
   top: 0;
@@ -3451,7 +3460,7 @@ span {
   z-index: 1000;
   overflow: auto;
 }
-/* line 3035, ../sass/screen.scss */
+/* line 3049, ../sass/screen.scss */
 #legales #legales-inner {
   font-family: "Droid Sans", sans-serif;
   font-size: 16px;
@@ -3465,19 +3474,19 @@ span {
   background-color: white;
 }
 
-/* line 3049, ../sass/screen.scss */
+/* line 3063, ../sass/screen.scss */
 .texto-legales {
   padding: 20px;
   line-height: 20px;
   color: white;
   margin-bottom: 10px;
 }
-/* line 3054, ../sass/screen.scss */
+/* line 3068, ../sass/screen.scss */
 .texto-legales a {
   color: #3ABDC3;
 }
 
-/* line 3059, ../sass/screen.scss */
+/* line 3073, ../sass/screen.scss */
 video {
   margin-top: 45px;
   width: 85%;
