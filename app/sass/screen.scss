@@ -1420,7 +1420,17 @@ input {
       //-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
       //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
       border-style: none;
+      opacity: .5;
+    }
 
+    .main-button-face:hover,
+    .main-button-twitter:hover{
+      opacity: 1!important;
+      cursor: pointer;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
     }
 
     .main-button-twitter {
