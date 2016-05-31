@@ -159,6 +159,7 @@
         .service('AppService', AppService)
         .factory('MPService', MPService)
         .directive('twitter', twitter)
+        .directive('facebook', facebook)
     ;
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
@@ -465,6 +466,41 @@
                 }
             }
         }
+    }
+
+
+    facebook.$inject = ['$window', '$timeout'];
+    function facebook($window, $timeout) {
+        return {
+            restrict: 'A',
+            scope: {
+                proyecto: '='
+            },
+            template: '<div class="fb-share-button main-button-face" style="height: 30px; width: 30px;" data-layout="button_count" data-mobile-iframe="true" ' +
+            'data-href="http://192.185.67.199/~arielces/miprimersponsor/#/proyecto/{{proyecto}}/"></div>',
+            link: function (scope, element, attrs, compile) {
+                scope.$watch(function () {
+                        //console.log(scope.proyecto);
+                        return !!$window.FB;
+                    },
+                    function (fbIsReady) {
+                        if (fbIsReady) {
+                            setFace();
+                        }
+                    });
+
+                function setFace(){
+                    if(scope.proyecto== undefined){
+
+                        $timeout(setFace, 1000)
+                    }else{
+                        $window.FB.XFBML.parse(element.parent()[0]);
+                    }
+
+                }
+
+            }
+        };
     }
 })();
 
