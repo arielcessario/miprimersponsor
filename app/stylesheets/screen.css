@@ -1798,8 +1798,8 @@ input {
 #resultados #main-proyectos-finalizar-list .main-button-face,
 #resultados #main-proyectos-finalizar-list .main-button-twitter {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 300px;
+  top: 10px;
   border-style: none;
 }
 /* line 1426, ../sass/screen.scss */
@@ -1812,7 +1812,7 @@ input {
 #resultados #main-proyectos-nuevos-list .main-button-twitter,
 #resultados #lista-resultados .main-button-twitter,
 #resultados #main-proyectos-finalizar-list .main-button-twitter {
-  top: 55px;
+  top: 45px;
 }
 /* line 1431, ../sass/screen.scss */
 #proyectos-nuevos #main-proyectos-nuevos-list .main-proyecto-nuevo,
@@ -3167,11 +3167,17 @@ span {
   color: white;
   font-size: 24px;
 }
-/* line 2764, ../sass/screen.scss */
+@media (max-width: 500px) {
+  /* line 2760, ../sass/screen.scss */
+  #proyecto-rigth span {
+    font-size: 17px;
+  }
+}
+/* line 2768, ../sass/screen.scss */
 #proyecto-rigth #ac-progress-bar {
   max-width: 95%;
 }
-/* line 2768, ../sass/screen.scss */
+/* line 2772, ../sass/screen.scss */
 #proyecto-rigth button {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
@@ -3200,12 +3206,12 @@ span {
   -o-transition: all 2s ease-in;
 }
 
-/* line 2798, ../sass/screen.scss */
+/* line 2802, ../sass/screen.scss */
 .nuevo-usuario-button-bar a {
   color: white !important;
 }
 
-/* line 2804, ../sass/screen.scss */
+/* line 2808, ../sass/screen.scss */
 #proyecto-rigth button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
@@ -3226,30 +3232,30 @@ span {
   transition: all ease .3s;
 }
 
-/* line 2825, ../sass/screen.scss */
+/* line 2829, ../sass/screen.scss */
 #proyecto-upper {
   width: 100%;
   display: flex;
 }
 @media (max-width: 600px) {
-  /* line 2825, ../sass/screen.scss */
+  /* line 2829, ../sass/screen.scss */
   #proyecto-upper {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  /* line 2833, ../sass/screen.scss */
+  /* line 2837, ../sass/screen.scss */
   #proyecto-upper #proyecto-thums {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
   }
-  /* line 2841, ../sass/screen.scss */
+  /* line 2845, ../sass/screen.scss */
   #proyecto-upper #proyecto-left {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  /* line 2847, ../sass/screen.scss */
+  /* line 2851, ../sass/screen.scss */
   #proyecto-upper #proyecto-rigth {
     width: 93%;
     margin-top: 20px;
@@ -3257,23 +3263,23 @@ span {
   }
 }
 
-/* line 2858, ../sass/screen.scss */
+/* line 2862, ../sass/screen.scss */
 #proyecto-thums {
   text-align: center;
   align-items: center;
 }
 
-/* line 2864, ../sass/screen.scss */
+/* line 2868, ../sass/screen.scss */
 #proyecto-thums span {
   color: white;
 }
 
-/* line 2869, ../sass/screen.scss */
+/* line 2873, ../sass/screen.scss */
 #proyecto-comentarios textarea {
   width: 99%;
 }
 
-/* line 2875, ../sass/screen.scss */
+/* line 2879, ../sass/screen.scss */
 #proyecto-comentarios button {
   width: 90px;
   height: 32px;
@@ -3306,7 +3312,7 @@ span {
   transition: all .3s;
 }
 
-/* line 2903, ../sass/screen.scss */
+/* line 2907, ../sass/screen.scss */
 #proyecto-comentarios button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
@@ -3322,7 +3328,7 @@ span {
   /* IE6-9 */
 }
 
-/* line 2917, ../sass/screen.scss */
+/* line 2921, ../sass/screen.scss */
 #proyecto-bottom p {
   font-family: 'Droid Sans', sans-serif;
   color: black;
@@ -3331,7 +3337,7 @@ span {
   margin-top: 50px;
 }
 
-/* line 2926, ../sass/screen.scss */
+/* line 2930, ../sass/screen.scss */
 #resultados {
   background: #606c88;
   /* Old browsers */
@@ -3349,7 +3355,7 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 2941, ../sass/screen.scss */
+/* line 2945, ../sass/screen.scss */
 #resultados h1 {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -3357,12 +3363,12 @@ span {
   margin: 20px;
 }
 
-/* line 2948, ../sass/screen.scss */
+/* line 2952, ../sass/screen.scss */
 .administracion-donacion-cancelada {
   background-color: red;
 }
 
-/* line 2952, ../sass/screen.scss */
+/* line 2956, ../sass/screen.scss */
 .contenedor-enconstruccion {
   text-align: center;
   padding-top: 100px;
@@ -3379,7 +3385,7 @@ span {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0 );
   margin: auto;
 }
-/* line 2967, ../sass/screen.scss */
+/* line 2971, ../sass/screen.scss */
 .contenedor-enconstruccion span {
   color: white;
   font-family: "Droid Sans", sans-serif;
@@ -3393,50 +3399,50 @@ span {
   animation: fadein 2s ease-in-out;
 }
 @media (max-width: 500px) {
-  /* line 2967, ../sass/screen.scss */
+  /* line 2971, ../sass/screen.scss */
   .contenedor-enconstruccion span {
     font-size: 40px;
   }
 }
 
-/* line 2987, ../sass/screen.scss */
+/* line 2991, ../sass/screen.scss */
 .contenedor-enconstruccion-img {
   width: 100%;
   margin: 30px auto;
 }
 
-/* line 2992, ../sass/screen.scss */
+/* line 2996, ../sass/screen.scss */
 #MP-Checkout-dialog {
   background-color: red !important;
 }
 
-/* line 2998, ../sass/screen.scss */
+/* line 3002, ../sass/screen.scss */
 .logo-menu-mobile {
   height: 77%;
   margin-top: 5px;
 }
 
-/* line 3004, ../sass/screen.scss */
+/* line 3008, ../sass/screen.scss */
 .first-status {
   border: 2px solid #e3001b !important;
 }
 
-/* line 3008, ../sass/screen.scss */
+/* line 3012, ../sass/screen.scss */
 .second-status {
   border: 2px solid #fa9819 !important;
 }
 
-/* line 3012, ../sass/screen.scss */
+/* line 3016, ../sass/screen.scss */
 .third-status {
   border: 2px solid #feed01 !important;
 }
 
-/* line 3016, ../sass/screen.scss */
+/* line 3020, ../sass/screen.scss */
 .fourth-status {
   border: 2px solid #00a148 !important;
 }
 
-/* line 3020, ../sass/screen.scss */
+/* line 3024, ../sass/screen.scss */
 .fa-lightbulb-o,
 .fa-hourglass-end,
 .fa {
@@ -3451,25 +3457,25 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 3034, ../sass/screen.scss */
+/* line 3038, ../sass/screen.scss */
 #a0-lock.a0-theme-default .a0-panel .a0-header h1 {
   text-align: center !important;
   margin-left: 20px !important;
   font-family: "Droid Sans", sans-serif;
 }
 
-/* line 3042, ../sass/screen.scss */
+/* line 3046, ../sass/screen.scss */
 .a0-lock.a0-theme-default .a0-panel .a0-footer .a0-logo i {
   opacity: 0;
 }
 
-/* line 3046, ../sass/screen.scss */
+/* line 3050, ../sass/screen.scss */
 #contenedor-main {
   background-image: url("fondo-mps.png");
   background-position: center !important;
 }
 
-/* line 3052, ../sass/screen.scss */
+/* line 3056, ../sass/screen.scss */
 .contenedor-video {
   position: relative;
   padding-bottom: 56.25%;
@@ -3478,7 +3484,7 @@ span {
   overflow: hidden;
 }
 
-/* line 3066, ../sass/screen.scss */
+/* line 3070, ../sass/screen.scss */
 .contenedor-video iframe, .contenedor-video object, .contenedor-video embed {
   position: absolute;
   top: 0;
@@ -3487,7 +3493,7 @@ span {
   height: 100%;
 }
 
-/* line 3075, ../sass/screen.scss */
+/* line 3079, ../sass/screen.scss */
 #legales {
   position: fixed;
   top: 0;
@@ -3500,7 +3506,7 @@ span {
   z-index: 1000;
   overflow: auto;
 }
-/* line 3087, ../sass/screen.scss */
+/* line 3091, ../sass/screen.scss */
 #legales #legales-inner {
   font-family: "Droid Sans", sans-serif;
   font-size: 16px;
@@ -3514,19 +3520,19 @@ span {
   background-color: white;
 }
 
-/* line 3101, ../sass/screen.scss */
+/* line 3105, ../sass/screen.scss */
 .texto-legales {
   padding: 20px;
   line-height: 20px;
   color: white;
   margin-bottom: 10px;
 }
-/* line 3106, ../sass/screen.scss */
+/* line 3110, ../sass/screen.scss */
 .texto-legales a {
   color: #3ABDC3;
 }
 
-/* line 3111, ../sass/screen.scss */
+/* line 3115, ../sass/screen.scss */
 video {
   margin-top: 45px;
   width: 85%;
@@ -3535,7 +3541,7 @@ video {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
-/* line 3119, ../sass/screen.scss */
+/* line 3123, ../sass/screen.scss */
 .acdesarrollos {
   font-family: "Droid Sans", sans-serif;
   font-size: 22px;
@@ -3555,7 +3561,7 @@ video {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
 }
 
-/* line 3138, ../sass/screen.scss */
+/* line 3142, ../sass/screen.scss */
 .acdesarrollos a {
   color: #A1CCA5 !important;
 }
