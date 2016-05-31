@@ -190,16 +190,6 @@
 
         // INIT
         ContactsService.facebookInit();
-        twitter(document, 'script', 'twitter-wjs');
-        function twitter(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }
 
 
         if (vm.user != false) {
@@ -447,20 +437,32 @@
         }
     }
 
-    function twitter() {
+    twitter.$inject = ['$timeout'];
+    function twitter($timeout) {
         return {
-            link: function (scope, element, attr) {
-                setTimeout(function () {
-                    twttr.widgets.createShareButton(
-                        attr.url,
-                        element[0],
-                        function (el) {
-                        }, {
-                            count: 'none',
-                            text: attr.text
-                        }
-                    );
-                });
+            scope: {
+                'url': '='
+            },
+            controller: function ($scope, $element, $attrs) {
+                var vm = this;
+
+
+                watchUrl();
+                function watchUrl() {
+                    if ($scope.url == undefined) {
+                        $timeout(watchUrl, 1000);
+                    } else {
+                        twttr.widgets.createShareButton(
+                            'http://192.185.67.199/~arielces/miprimersponsor/#/proyecto/' + $scope.url,
+                            $element[0],
+                            function (el) {
+                            }, {
+                                count: 'none',
+                                text: $attrs.text
+                            }
+                        );
+                    }
+                }
             }
         }
     }
