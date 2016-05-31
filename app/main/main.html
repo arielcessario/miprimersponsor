@@ -10,112 +10,116 @@
     </div>
 
     <div id="contenedor-main">
-    <div id="main-top-section">
+        <div id="main-top-section">
 
 
-        <div id="main-top-text-panel">
+            <div id="main-top-text-panel">
 
-            <img src="images/logo.png" alt="" height="250" width="370">
-
-
-            <h1>Bienvenido!</h1>
+                <img src="images/logo.png" alt="" height="250" width="370">
 
 
-            <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">
+                <h1>Bienvenido!</h1>
 
-                <p>CREAR</p>
 
-                <span>un nuevo proyecto</span>
+                <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">
+
+                    <p>CREAR</p>
+
+                    <span>un nuevo proyecto</span>
+
+                </div>
 
             </div>
+
+            <div id="main-slider">
+
+                <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
+
+                    <div class="contenedor-foto">
+                        <img ng-src="images/{{mainCtrl.proyecto_slider_01.fotos[0].nombre}}" alt="">
+                    </div>
+
+                    <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>
+
+
+                    <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>
+
+                    <button class="button-ver"
+                            ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id, '/main')">
+
+                        VER
+
+                    </button>
+
+                </div>
+
+                <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 2}" class="main-slider-proyecto">
+
+                    <div class="contenedor-foto">
+                        <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">
+                    </div>
+
+
+                    <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>
+
+
+                    <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>
+
+                    <button class="button-ver"
+                            ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id, '/main')">
+
+                        VER
+
+                    </button>
+
+                </div>
+
+                <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 3}" class="main-slider-proyecto">
+
+                    <div class="contenedor-foto">
+                        <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">
+                    </div>
+
+
+                    <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>
+
+
+                    <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>
+
+                    <button class="button-ver"
+                            ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id, '/main')">
+
+                        VER
+
+                    </button>
+
+                </div>
+
+                <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 4}" class="main-slider-proyecto">
+
+                    <div class="contenedor-foto">
+                        <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">
+                    </div>
+
+
+                    <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>
+
+
+                    <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>
+
+                    <button class="button-ver"
+                            ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id, '/main')">
+
+                        VER
+
+                    </button>
+
+                </div>
+
+            </div>
+
 
         </div>
-
-        <div id="main-slider">
-
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 1}" class="main-slider-proyecto">
-
-                <div class="contenedor-foto">
-                <img ng-src="images/{{mainCtrl.proyecto_slider_01.fotos[0].nombre}}" alt="">
-                </div>
-
-                <h1>{{mainCtrl.proyecto_slider_01.nombre}}</h1>
-
-
-                <p>{{mainCtrl.proyecto_slider_01.descripcion}}</p>
-
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_01.proyecto_id, '/main')">
-
-                    VER
-
-                </button>
-
-            </div>
-
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 2}" class="main-slider-proyecto">
-
-                <div class="contenedor-foto">
-                    <img ng-src="images/{{mainCtrl.proyecto_slider_02.fotos[0].nombre}}" alt="">
-                </div>
-
-
-                <h1>{{mainCtrl.proyecto_slider_02.nombre}}</h1>
-
-
-                <p>{{mainCtrl.proyecto_slider_02.descripcion}}</p>
-
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_02.proyecto_id, '/main')">
-
-                    VER
-
-                </button>
-
-            </div>
-
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 3}" class="main-slider-proyecto">
-
-                <div class="contenedor-foto">
-                    <img ng-src="images/{{mainCtrl.proyecto_slider_03.fotos[0].nombre}}" alt="">
-                </div>
-
-
-                <h1>{{mainCtrl.proyecto_slider_03.nombre}}</h1>
-
-
-                <p>{{mainCtrl.proyecto_slider_03.descripcion}}</p>
-
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_03.proyecto_id, '/main')">
-
-                    VER
-
-                </button>
-
-            </div>
-
-            <div ng-class="{'show-slider-proyecto':mainCtrl.slider_nro == 4}" class="main-slider-proyecto">
-
-                <div class="contenedor-foto">
-                    <img ng-src="images/{{mainCtrl.proyecto_slider_04.fotos[0].nombre}}" alt="">
-                </div>
-
-
-                <h1>{{mainCtrl.proyecto_slider_04.nombre}}</h1>
-
-
-                <p>{{mainCtrl.proyecto_slider_04.descripcion}}</p>
-
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_slider_04.proyecto_id, '/main')">
-
-                    VER
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
     </div>
 
 
@@ -137,8 +141,10 @@
                                                            alt=""></div>
 
 
-                <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
-
+                <!--<img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">-->
+                <div style="height: 30px; width: 30px;" class="fb-share-button main-button-face"
+                     data-href="/proyecto/{{mainCtrl.proyecto_nuevo_01.proyecto_id}}" data-layout="icon"
+                     data-mobile-iframe="true"></div>
                 <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
 
 
@@ -147,7 +153,8 @@
 
                 <p>{{mainCtrl.proyecto_nuevo_01.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id, '/main')">VER
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_01.proyecto_id, '/main')">VER
 
                 </button>
 
@@ -171,19 +178,22 @@
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">$25
+                            ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">
+                        $25
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">$50
+                            ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">
+                        $50
 
                     </button>
 
                     <button class="button-donacion-rapida"
 
-                            ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">$100
+                            ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">
+                        $100
 
                     </button>
 
@@ -212,7 +222,8 @@
 
                 <p>{{mainCtrl.proyecto_nuevo_02.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id, '/main')">VER
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_02.proyecto_id, '/main')">VER
 
                 </button>
 
@@ -234,11 +245,16 @@
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">
+                        $25
+                    </button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">
+                        $50
+                    </button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">
+                        $100
 
                     </button>
 
@@ -266,7 +282,8 @@
 
                 <p>{{mainCtrl.proyecto_nuevo_03.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id, '/main')">VER
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_nuevo_03.proyecto_id, '/main')">VER
 
                 </button>
 
@@ -288,11 +305,16 @@
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">$25</button>
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">
+                        $25
+                    </button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">$50</button>
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">
+                        $50
+                    </button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">
+                        $100
 
                     </button>
 
@@ -308,12 +330,10 @@
 
     <div class="imagenes-publicitarias">
 
-        <img class="img-publi" src="images/prueba1.gif" width="2300px" style="margin-left: calc(50% - 1150px)!important;">
+        <img class="img-publi" src="images/prueba1.gif" width="2300px"
+             style="margin-left: calc(50% - 1150px)!important;">
 
     </div>
-
-
-
 
 
     <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
@@ -324,16 +344,15 @@
         <h1><b>▣</b> Nuestra misión</h1>
 
 
-        <h2>Buscamos fomentar la unión y creación de vínculos entre  personas o grupos que tengan un proyecto  con otras que tengan ganas de ayudar a cumplir estas metas a través del financiamiento colectivo.
-            Que los proyectos se conviertan en realidad para que cada persona tenga la oportunidad de emprender un camino explotando su potencial y pasión.
+        <h2>Buscamos fomentar la unión y creación de vínculos entre personas o grupos que tengan un proyecto con otras
+            que tengan ganas de ayudar a cumplir estas metas a través del financiamiento colectivo.
+            Que los proyectos se conviertan en realidad para que cada persona tenga la oportunidad de emprender un
+            camino explotando su potencial y pasión.
             Deseamos que esta aventura de ayudar, esté al alcance de todos.
 
         </h2>
 
     </div>
-
-
-
 
 
     <div id="proyectos-finalizar">
@@ -363,7 +382,8 @@
 
                 <p>{{mainCtrl.proyecto_finalizar_01.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id, '/main')">
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_01.proyecto_id, '/main')">
 
                     VER
 
@@ -390,15 +410,18 @@
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">$25
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">
+                        $25
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">$50
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">
+                        $50
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">
+                        $100
 
                     </button>
 
@@ -426,7 +449,8 @@
 
                 <p>{{mainCtrl.proyecto_finalizar_02.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id, '/main')">
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_02.proyecto_id, '/main')">
 
                     VER
 
@@ -451,15 +475,18 @@
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">$25
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">
+                        $25
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">$50
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">
+                        $50
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">
+                        $100
 
                     </button>
 
@@ -487,7 +514,8 @@
 
                 <p>{{mainCtrl.proyecto_finalizar_03.descripcion}}</p>
 
-                <button class="button-ver" ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id, '/main')">
+                <button class="button-ver"
+                        ng-click="appCtrl.goToDetalle(mainCtrl.proyecto_finalizar_03.proyecto_id, '/main')">
 
                     VER
 
@@ -512,15 +540,18 @@
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">$25
+                    <button ng-click="appCtrl.donacionRapida(25, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">
+                        $25
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">$50
+                    <button ng-click="appCtrl.donacionRapida(50, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">
+                        $50
 
                     </button>
 
-                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">$100
+                    <button ng-click="appCtrl.donacionRapida(100, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">
+                        $100
 
                     </button>
 
@@ -541,7 +572,6 @@
     </div>
 
 
-
     <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
 
         <img src="" alt="">
@@ -550,15 +580,17 @@
         <h1><b>▣</b> Que buscamos</h1>
 
 
-        <h2>Mi Primer Sponsor es la plataforma digital de crowfunding dedicada al desarrollo del deporte y actividades recreativas. Nuestro objetivo es que todos los que poseen una meta, puedan alcanzarla mediante las herramientas otorgadas por otras personas dispuestas a ayudar. Apostamos a un vínculo social que permita concretar los sueños de todos los que deseen ir por ellos.
-            Hoy en día son muchas las asociaciones amateurs o semi profesionales que requieren de ayuda económica  para poder lograr sus metas.
+        <h2>Mi Primer Sponsor es la plataforma digital de crowfunding dedicada al desarrollo del deporte y actividades
+            recreativas. Nuestro objetivo es que todos los que poseen una meta, puedan alcanzarla mediante las
+            herramientas otorgadas por otras personas dispuestas a ayudar. Apostamos a un vínculo social que permita
+            concretar los sueños de todos los que deseen ir por ellos.
+            Hoy en día son muchas las asociaciones amateurs o semi profesionales que requieren de ayuda económica para
+            poder lograr sus metas.
 
 
         </h2>
 
     </div>
-
-
 
 
     <div id="main-nuestras-empresas">
@@ -609,19 +641,22 @@
                 <span>Nombre</span>
 
 
-                <input ac-validator is-required="Debe ingresar un nombre" ng-model="mainCtrl.nombre" type="text" id="contacto-nombre">
+                <input ac-validator is-required="Debe ingresar un nombre" ng-model="mainCtrl.nombre" type="text"
+                       id="contacto-nombre">
 
 
                 <span>Email</span>
 
 
-                <input ac-validator is-mail="El mail es incorrecto" ng-model="mainCtrl.email" type="text" id="contacto-mail">
+                <input ac-validator is-mail="El mail es incorrecto" ng-model="mainCtrl.email" type="text"
+                       id="contacto-mail">
 
 
                 <span>Asunto</span>
 
 
-                <input ac-validator is-required="Debe ingresar un tema de consulta" ng-model="mainCtrl.asunto" type="text" id="contacto-asunto">
+                <input ac-validator is-required="Debe ingresar un tema de consulta" ng-model="mainCtrl.asunto"
+                       type="text" id="contacto-asunto">
 
 
             </div>
@@ -634,7 +669,8 @@
 
 
 
-            <textarea ac-validator is-required="Debe ingresar una consulta" class="textoareaconsulta" ng-model="mainCtrl.mensaje" name="" id="contacto-consulta"
+            <textarea ac-validator is-required="Debe ingresar una consulta" class="textoareaconsulta"
+                      ng-model="mainCtrl.mensaje" name="" id="contacto-consulta"
 
                       rows="10"></textarea>
 

@@ -188,6 +188,8 @@
         vm.goToDetalle = goToDetalle;
 
         // INIT
+        ContactsService.facebookInit();
+
         if (vm.user != false) {
             vm.isLogged = true;
             vm.welcomeTo = vm.user.data.nombre;
