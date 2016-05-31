@@ -158,6 +158,7 @@
         .controller('AppController', AppController)
         .service('AppService', AppService)
         .factory('MPService', MPService)
+        .directive('twitter', twitter)
     ;
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
@@ -189,7 +190,7 @@
 
         // INIT
         ContactsService.facebookInit();
-        twitter(document,'script', 'twitter-wjs');
+        twitter(document, 'script', 'twitter-wjs');
         function twitter(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
             if (!d.getElementById(id)) {
@@ -198,7 +199,7 @@
                 js.src = p + '://platform.twitter.com/widgets.js';
                 fjs.parentNode.insertBefore(js, fjs);
             }
-        };
+        }
 
 
         if (vm.user != false) {
@@ -443,6 +444,24 @@
 
         this.broadcastCategoria = function () {
             $rootScope.$broadcast('miprimersponsorradiocategoria');
+        }
+    }
+
+    function twitter() {
+        return {
+            link: function (scope, element, attr) {
+                setTimeout(function () {
+                    twttr.widgets.createShareButton(
+                        attr.url,
+                        element[0],
+                        function (el) {
+                        }, {
+                            count: 'none',
+                            text: attr.text
+                        }
+                    );
+                });
+            }
         }
     }
 })();
