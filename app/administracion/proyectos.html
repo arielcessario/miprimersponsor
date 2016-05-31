@@ -1,129 +1,130 @@
-<h1 class="titulos-administracion">Desde aquí puedes controlar los proyectos de tus donadores o crear un proyecto nuevo!</h1>
+<h1 class="titulos-administracion">Desde aquí puedes controlar los proyectos de tus donadores o crear un proyecto
+    nuevo!</h1>
 
 <div class="administracion-inputs" form-id="proyectos" ng-if="administracionCtrl.validation">
     <div class="administracion-input-contenedor">
 
-    <div class="administracion-input">
+        <div class="administracion-input">
 
-        <span>Nombre</span>
+            <span>Nombre</span>
 
-        <input ac-validator
-               min-length="3;El nombre ingresado debe tener al menos 3 letras"
-               max-length="100;El nombre ingresado debe tener menos de 100 caracteres"
-               type="text" id="nombre" ng-model="administracionCtrl.proyecto.nombre">
+            <input ac-validator
+                   min-length="3;El nombre ingresado debe tener al menos 3 letras"
+                   max-length="100;El nombre ingresado debe tener menos de 100 caracteres"
+                   type="text" id="nombre" ng-model="administracionCtrl.proyecto.nombre">
 
-    </div>
+        </div>
 
-    <div class="administracion-input">
+        <div class="administracion-input">
 
-        <span>Costo Inicial</span>
+            <span>Costo Inicial</span>
 
-        <input ac-validator
-               is-required="El costo inicial es requerido"
-               min-number="1;El valor debe ser mayor a 0"
-               type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
+            <input ac-validator
+                   is-required="El costo inicial es requerido"
+                   min-number="1;El valor debe ser mayor a 0"
+                   type="number" step="1" id="costo_inicial" ng-model="administracionCtrl.proyecto.costo_inicial">
 
-    </div>
+        </div>
 
-    <div class="administracion-input">
+        <div class="administracion-input">
 
-        <span>Fecha de Finalización</span>
+            <span>Fecha de Finalización</span>
 
-        <input ac-validator
-               is-required="Debe ingresar una fecha de finalización"
-               min-date="today;La fecha debe ser mayor a hoy"
-               type="date" id="fecha_fin" ng-model="administracionCtrl.proyecto.fecha_fin">
+            <input ac-validator
+                   is-required="Debe ingresar una fecha de finalización"
+                   min-date="today;La fecha debe ser mayor a hoy"
+                   type="date" id="fecha_fin" ng-model="administracionCtrl.proyecto.fecha_fin">
 
-    </div>
+        </div>
 
 
-    <!--<div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">-->
+        <!--<div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">-->
 
-    <!--<span>Estado</span>-->
+        <!--<span>Estado</span>-->
 
-    <!--<select id="rol" ng-model="administracionCtrl.proyecto.status">-->
+        <!--<select id="rol" ng-model="administracionCtrl.proyecto.status">-->
 
-    <!--<option value="0">Cancelado</option>-->
-    <!--<option value="1">Activo</option>-->
-    <!--<option value="2">Terminado</option>-->
-    <!--<option value="3">Dinero Transferido</option>-->
+        <!--<option value="0">Cancelado</option>-->
+        <!--<option value="1">Activo</option>-->
+        <!--<option value="2">Terminado</option>-->
+        <!--<option value="3">Dinero Transferido</option>-->
 
-    <!--</select>-->
+        <!--</select>-->
 
-    <!--</div>-->
+        <!--</div>-->
 
-    <div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">
+        <!--<div class="administracion-input" ng-if="administracionCtrl.user.data.rol == 0">-->
 
-        <span>En Slider</span>
+        <!--<span>En Slider</span>-->
 
-        <select id="en_slider" ng-model="administracionCtrl.proyecto.en_slider">
+        <!--<select id="en_slider" ng-model="administracionCtrl.proyecto.en_slider">-->
 
-            <option value="0">No</option>
+        <!--<option value="0">No</option>-->
 
-            <option value="1">Si</option>
+        <!--<option value="1">Si</option>-->
 
-        </select>
+        <!--</select>-->
 
-    </div>
-    <div class="administracion-input">
-        <span>Categoría</span>
-        <select ng-click=""
-                ng-model="administracionCtrl.proyecto_categoria"
-                ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.categorias"
-                class="">
-        </select>
-    </div>
-    <div class="administracion-input-area">
+        <!--</div>-->
+        <div class="administracion-input">
+            <span>Categoría</span>
+            <select ng-click=""
+                    ng-model="administracionCtrl.proyecto_categoria"
+                    ng-options="categoria.categoria_id as categoria.nombre for categoria in administracionCtrl.categorias"
+                    class="">
+            </select>
+        </div>
+        <div class="administracion-input-area">
 
-        <span>Descripción</span>
+            <span>Descripción</span>
 
         <textarea ac-validator
                   min-length="3;El nombre ingresado debe tener al menos 3 letras"
                   max-length="2000;El nombre ingresado debe tener menos de 2000 caracteres"
                   id="descripcion" ng-model="administracionCtrl.proyecto.descripcion"></textarea>
 
-    </div>
-    <div class="administracion-foto">
-        <div class="foto">
-            <span>Foto 1</span>
+        </div>
+        <div class="administracion-foto">
+            <div class="foto">
+                <span>Foto 1</span>
 
-            <div id="slider-01-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
+                <div id="slider-01-foto" class="input-foto">
+                    <img ng-src="{{'images/'+administracionCtrl.foto_01}}" alt="" height="50">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,1,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+                <span>Foto 2</span>
+
+                <div id="slider-02-foto" class="input-foto">
+                    <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+                <span>Foto 3</span>
+
+                <div id="slider-03-foto" class="input-foto">
+                    <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+                <span>Foto 4</span>
+
+                <div id="slider-04-foto" class="input-foto">
+                    <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
+                </div>
             </div>
         </div>
-
-        <div class="foto">
-            <span>Foto 2</span>
-
-            <div id="slider-02-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_02}}" alt="" height="50">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,2,'')"/>
-            </div>
-        </div>
-
-        <div class="foto">
-            <span>Foto 3</span>
-
-            <div id="slider-03-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_03}}" alt="" height="50">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,3,'')"/>
-            </div>
-        </div>
-
-        <div class="foto">
-            <span>Foto 4</span>
-
-            <div id="slider-04-foto" class="input-foto">
-                <img ng-src="{{'images/'+administracionCtrl.foto_04}}" alt="" height="50">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
-            </div>
-        </div>
-    </div>
     </div>
 
     <div ng-if="administracionCtrl.showJustificaciones">
@@ -157,28 +158,38 @@
 </div>
 
 <div style="min-width: 100%; overflow-x: auto; max-width: 100%;">
-<table id="administracion-proyectos-tabla" class="table table-striped" style="width: 100%; min-width: 800px; ">
+    <table id="administracion-proyectos-tabla" class="table table-striped" style="width: 100%; min-width: 800px; ">
 
-    <tbody>
-    <tr>
-        <th>Proyecto</th>
-        <th>Avance</th>
-        <th>Comprobante</th>
-        <th>Estado</th>
-    </tr>
-    <tr ng-repeat="row in administracionCtrl.proyectos"
-        ng-click="administracionCtrl.modificarProyecto(row);"
-        ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
-        class="administracion-row">
-        <td class=""><a ng-href="#/proyecto/{{row.proyecto_id}}">{{row.nombre}}</a></td>
-        <td class="">
-            <ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}"
-                             hint="false"></ac-progress-bar>
-        </td>
+        <tbody>
+        <tr>
+            <th>Proyecto</th>
+            <th>Avance</th>
+            <th>Comprobante</th>
+            <th>Estado</th>
+            <th>En Slider</th>
+        </tr>
+        <tr ng-repeat="row in administracionCtrl.proyectos"
+            ng-click="administracionCtrl.modificarProyecto(row);"
+            ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
+            class="administracion-row">
+            <td class=""><a ng-href="#/proyecto/{{row.proyecto_id}}">{{row.nombre}}</a></td>
+            <td class="">
+                <ac-progress-bar recaudado="{{row.total_donado}}" objetivo="{{row.costo_inicial}}"
+                                 hint="false"></ac-progress-bar>
+            </td>
 
-        <td class=""><img ng-src="images/{{row.donaciones[0].comprobante}}" alt="" width="50"></td>
-        <td class="">{{row.statusTexto}}</td>
-    </tr>
-    </tbody>
+            <td class=""><img ng-src="images/{{row.donaciones[0].comprobante}}" alt="" width="50"></td>
+            <td class="">{{row.statusTexto}}</td>
+            <td class="" ng-if="administracionCtrl.user.data.rol == 0">
+                <button ng-if="row.en_slider == 0" ng-click="administracionCtrl.putInSlider(row)">Agregar</button>
+                <button ng-if="row.en_slider == 1" ng-click="administracionCtrl.putInSlider(row)">Quitar</button>
+            </td>
+            <td ng-if="administracionCtrl.user.data.rol != 0">
+                <span ng-if="row.en_slider == 1">En Slider</span>
+                <span ng-if="row.en_slider == 0">--</span>
+            </td>
+        </tr>
+        </tbody>
 
-</table></div>
+    </table>
+</div>

@@ -60,6 +60,7 @@
         vm.updateEnSlider = updateEnSlider;
         vm.createCambio = createCambio;
         vm.updateFotoProyecto = updateFotoProyecto;
+        vm.putInSlider = putInSlider;
 
         vm.selectCambio = selectCambio;
         vm.confirmarCambio = confirmarCambio;
@@ -419,6 +420,32 @@
                             'Se aprobó el proyecto', function (data) {
                                 console.log(data);
                             });
+                    }
+                })
+
+            });
+        }
+
+        function putInSlider(proyecto){
+            if(proyecto.en_slider == 1){
+                proyecto.en_slider = 0;
+            }else{
+                proyecto.en_slider = 1;
+            }
+            ProyectService.update(proyecto, function (data) {
+                ProyectVars.clearCache = true;
+                ProyectService.get(function (data) {
+                    if (data.length > 0) {
+                        formatProyectos(data);
+                        resetProyecto();
+                        //ContactsService.sendMail(window.mailAdmin,
+                        //    [
+                        //        {mail: vm.user.data.mail}
+                        //    ],
+                        //    'MPE', 'CONFIRMACIÓN DE PROYECTO - Proyecto ' + vm.proyecto.nombre,
+                        //    'Se aprobó el proyecto', function (data) {
+                        //        console.log(data);
+                        //    });
                     }
                 })
 
