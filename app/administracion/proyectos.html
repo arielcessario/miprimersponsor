@@ -137,16 +137,15 @@
     <div class="administracion-button-bar">
         <button ac-validator ng-click="administracionCtrl.createProyecto();"
                 ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">
-            GUARDAR
+            Guardar
         </button>
         <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
-                ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">CONFIRMAR
-            PROYECTO
+                ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">Confirmar proyecto
         </button>
         <button ng-click="administracionCtrl.removeProyecto();"
-                ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">BORRAR
+                ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">Borrar
         </button>
-        <button ng-click="administracionCtrl.resetProyecto();">CANCELAR</button>
+        <button ng-click="administracionCtrl.resetProyecto();">Cancelar</button>
         <button style="position: relative;"
                 ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1"> Subir
             Comprobante
