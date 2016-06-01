@@ -23,13 +23,11 @@
                         <select name="" id=""
                                 ng-model="proyectoCtrl.mobileDonation"
                                 ng-change="appCtrl.donacionRapida(proyectoCtrl.mobileDonation.val, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre)"
-                                ng-options="'$'+val.val for val in [{val:10},{val:25},{val:50},{val:75},{val:10},{val:100},{val:200},{val:300},{val:400}]">Elije una opcion</select>
+                                ng-options="'$'+val.val for val in [{val:10},{val:25},{val:50},{val:75},{val:100},{val:200},{val:300},{val:400}]"></select>
 
                         <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
                             OK
                         </button>
-
-
 
                         <button ng-click="appCtrl.donacionRapida(10, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
                             $10
