@@ -167,7 +167,7 @@
             <th>Estado</th>
             <th>En Slider</th>
         </tr>
-        <tr ng-repeat="row in administracionCtrl.proyectos"
+        <tr ng-repeat="row in administracionCtrl.proyectos | filter:administracionCtrl.filtro| paginacion:'proyectos':administracionCtrl.limit | limitTo:administracionCtrl.limit:administracionCtrl.start "
             ng-click="administracionCtrl.modificarProyecto(row);"
             ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
             class="administracion-row">
@@ -191,4 +191,5 @@
         </tbody>
 
     </table>
+    <ac-paginacion obj="'proyectos'" start="administracionCtrl.start"></ac-paginacion>
 </div>

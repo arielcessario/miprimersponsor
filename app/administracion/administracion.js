@@ -39,6 +39,8 @@
         vm.foto_03 = 'no_image.png';
         vm.foto_04 = 'no_image.png';
         vm.validation = true;
+        vm.limit = 10;
+        vm.start = 0;
 
 
         vm.proyecto_original = {'proyecto_id': -1};
