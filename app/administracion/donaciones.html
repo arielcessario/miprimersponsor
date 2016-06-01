@@ -12,7 +12,7 @@
             <th>COMPROBANTE</th>
             <!--<th colspan="2">ACCIÓN</th>-->
         </tr>
-        <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones"
+        <tr ng-repeat="row in administracionCtrl.donaciones | filter: administracionCtrl.filterDonaciones| paginacion:'donaciones':administracionCtrl.limit | limitTo:administracionCtrl.limit:administracionCtrl.start"
             class="administracion-row" ng-class="{'administracion-donacion-cancelada':row.status == 2}">
             <td class="">{{row.fecha}}</td>
             <td class="">{{row.nombreProyecto}}</td>
@@ -27,4 +27,5 @@
         </tr>
         </tbody>
     </table>
+    <ac-paginacion obj="'donaciones'" start="administracionCtrl.start"></ac-paginacion>
 </div>
