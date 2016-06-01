@@ -327,7 +327,8 @@
 
             MPService.pay(vm.item, function (data) {
                 console.log(data);
-                vm.link = data.response.sandbox_init_point;
+                //vm.link = data.response.sandbox_init_point;
+                vm.link = data.response.init_point;
 
 
                 $MPC.openCheckout({

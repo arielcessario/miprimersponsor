@@ -26,7 +26,7 @@ function pay($item)
     $item_decoded = json_decode($item);
 
 
-    $mp = new MP ("8674951501681262", "tiMBB33pUPxmOfwqOQUdLAkIwOUdjQoS");
+    $mp = new MP ("2825512066514146", "2KIKPJLtXNGBlRMLK2h3IY8WI6g8dfrB");
     $preference_data = array(
         "items" => array(
             array(
