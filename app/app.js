@@ -10,7 +10,6 @@
         'duScroll',
         'auth0',
         'acUtils',
-        'acPaginacion',
         'acUsuarios',
         'acProyectos',
         'acUploads',

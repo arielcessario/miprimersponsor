@@ -23,6 +23,15 @@
         vm.proyecto_similar_01 = {};
         vm.proyecto_similar_02 = {};
         vm.proyecto_similar_03 = {};
+        vm.vals = [{val: 'Donar', amount: -1},
+            {val: "$10", amount: 10},
+            {val: "$25", amount: 25},
+            {val: "$50", amount: 50},
+            {val: "$75", amount: 75},
+            {val: "$100", amount: 100},
+            {val: "$200", amount: 200},
+            {val: "$300", amount: 300},
+            {val: "$400", amount: 400}];
 
         // Funciones
         vm.comentar = comentar;
@@ -32,13 +41,13 @@
         ProyectVars.activos = true;
         ProyectService.getByParams('proyecto_id', '' + vm.id, 'true', function (data) {
             vm.proyecto = data[0];
-            vm.foto_selected = (vm.proyecto.fotos[0] == undefined)?'no_image.png':vm.proyecto.fotos[0].nombre ;
+            vm.foto_selected = (vm.proyecto.fotos[0] == undefined) ? 'no_image.png' : vm.proyecto.fotos[0].nombre;
             vm.proyecto = angular.copy(data[0]);
             vm.proyecto.porc = Math.round(vm.proyecto.total_donado * 100 / vm.proyecto.costo_inicial);
             vm.proyecto.faltan = (new Date(new Date(vm.proyecto.fecha_fin) - new Date())).getDate();
             CommentService.get(vm.proyecto.proyecto_id, function (data) {
 
-                if(data.length>0){
+                if (data.length > 0) {
                     vm.comentarios = data;
                 }
             });

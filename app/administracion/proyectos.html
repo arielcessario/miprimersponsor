@@ -155,7 +155,7 @@
     </div>
 
 </div>
-
+<input type="text" class="buscador" placeholder="Buscar aporte..." ng-model="administracionCtrl.filterProyecto">
 <div style="min-width: 100%; overflow-x: auto; max-width: 100%;">
     <table id="administracion-proyectos-tabla" class="table table-striped" style="width: 100%; min-width: 800px; ">
 
@@ -167,7 +167,7 @@
             <th>Estado</th>
             <th>En Slider</th>
         </tr>
-        <tr ng-repeat="row in administracionCtrl.proyectos | filter:administracionCtrl.filtro| paginacion:'proyectos':administracionCtrl.limit | limitTo:administracionCtrl.limit:administracionCtrl.start "
+        <tr ng-repeat="row in administracionCtrl.proyectos | filter:administracionCtrl.filterProyecto| paginacion:'proyectos':administracionCtrl.limit | limitTo:administracionCtrl.limit:administracionCtrl.start "
             ng-click="administracionCtrl.modificarProyecto(row);"
             ng-class="{'tr-selected': row.proyecto_id == administracionCtrl.proyecto.proyecto_id}"
             class="administracion-row">

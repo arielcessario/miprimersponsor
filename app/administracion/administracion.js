@@ -85,6 +85,7 @@
         }
         // Securizar navegacion y refrescar tablas
         $scope.$watch('administracionCtrl.screen', function (newValue, oldValue) {
+            vm.start = 0;
 
             // Si ingreso a mis datos refresco
             if (newValue == 'administracion/datos.html') {
@@ -428,10 +429,10 @@
             });
         }
 
-        function putInSlider(proyecto){
-            if(proyecto.en_slider == 1){
+        function putInSlider(proyecto) {
+            if (proyecto.en_slider == 1) {
                 proyecto.en_slider = 0;
-            }else{
+            } else {
                 proyecto.en_slider = 1;
             }
             ProyectService.update(proyecto, function (data) {
@@ -605,7 +606,6 @@
 
 
             proyecto.en_slider = valor;
-
 
 
             ProyectService.update(proyecto, function (data) {
