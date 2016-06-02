@@ -131,6 +131,7 @@ button {
   flex-wrap: nowrap;
   padding: 5px;
   height: 39px;
+  margin-top: 10px;
   overflow: hidden;
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
@@ -1435,6 +1436,7 @@ input {
       //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
       border-style: none;
       opacity: .7;
+      margin-bottom: 10px;
     }
 
     .main-button-face:hover,
@@ -1925,6 +1927,7 @@ input {
     font-family: 'Droid Sans', sans-serif;
     font-size: 16px;
     border-style: none;
+    background-color: black!important;
 
   }
 
@@ -2131,8 +2134,6 @@ input {
   background: -ms-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 50%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
   background: linear-gradient(to bottom, rgba(203,96,179,1) 0%, rgba(193,70,161,1) 50%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4', GradientType=0 );
-
-
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2140,6 +2141,9 @@ input {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   :hover {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
     cursor: pointer;
     color: rgb(79,132,132);
     background-color: white;
@@ -2630,22 +2634,32 @@ background-image: url("fondo-mps.png");
 
   }
 
-  h2 {
+  h2, .link{
     text-align: center;
     font-family: "Droid Sans";
     font-size: 20px;
     color: black;
     margin-top: 20px;
     margin-bottom: 20px;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
   }
 
 }
 
-#footer h2:hover {
+#footer h2:hover, .link:hover{
 
   font-weight: bold;
-  color: #3ABDC3;
+  color: #3ABDC3!important;
   cursor: pointer;
+  -webkit-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  transition: all ease .3s;
 
 }
 
@@ -3168,5 +3182,33 @@ video{
 
 .acdesarrollos a{
   color: #A1CCA5!important;
+
 }
 
+.paginacion{
+  height: 38px;
+  color: white;
+  display: flex;
+  vertical-align: middle;
+  padding: 10px!important;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+50,a80077+51,db36a4+100;Pink+Gloss */
+  background: rgb(203,96,179); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(203,96,179,1) 0%, rgba(193,70,161,1) 50%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0 ); /* IE6-9 */
+
+}
+
+.paginacion-paginas{
+
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 16px;
+}
+
+.paginacion-go-to{
+  display: flex;
+  margin-right: 20px;
+  margin-right: 20px;
+}

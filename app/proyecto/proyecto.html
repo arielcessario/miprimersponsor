@@ -14,9 +14,12 @@
                                                                ng-init="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[0].nombre"
                                                                alt=""></div>
 
-                    <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
+                    <div style="margin-bottom: 10px;" facebook proyecto="proyectoCtrl.proyecto"></div>
 
-                    <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
+                    <a twitter style="height: 30px; width: 30px; margin-bottom: 10px;"
+                       class="twitter-share-button main-button-twitter" data-text="Your text: "
+                       data-url="proyectoCtrl.proyecto"></a>
+
 
                     <div class="donacion-rapida-details">
                         <span>Dona:</span><input ng-model="proyectoCtrl.donacion_rapida_valor" type="text">
@@ -106,9 +109,11 @@
                                                            alt=""></div>
 
 
-                <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
-
-                <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
+                <div facebook proyecto="proyectoCtrl.proyecto_similar_01.proyecto_id"></div>
+                <!--<img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">-->
+                <a twitter style="height: 30px; width: 30px;"
+                   class="twitter-share-button main-button-twitter" data-text="Your text: "
+                   data-url="proyectoCtrl.proyecto_similar_01.proyecto_id"></a>
 
 
                 <h2>{{proyectoCtrl.proyecto_similar_01.nombre}}</h2>
@@ -173,9 +178,11 @@
                                                            alt=""></div>
 
 
-                <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
-
-                <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
+                <div facebook proyecto="proyectoCtrl.proyecto_similar_02.proyecto_id"></div>
+                <!--<img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">-->
+                <a twitter style="height: 30px; width: 30px;"
+                   class="twitter-share-button main-button-twitter" data-text="Your text: "
+                   data-url="proyectoCtrl.proyecto_similar_02.proyecto_id"></a>
 
 
                 <h2>{{proyectoCtrl.proyecto_similar_02.nombre}}</h2>
@@ -231,9 +238,11 @@
                                                            alt=""></div>
 
 
-                <img class="main-button-face" src="images/facebook.png" alt="" height="30" width="30">
-
-                <img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">
+                <div facebook proyecto="proyectoCtrl.proyecto_similar_03.proyecto_id"></div>
+                <!--<img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">-->
+                <a twitter style="height: 30px; width: 30px;"
+                   class="twitter-share-button main-button-twitter" data-text="Your text: "
+                   data-url="proyectoCtrl.proyecto_similar_03.proyecto_id"></a>
 
 
                 <h2>{{proyectoCtrl.proyecto_similar_03.nombre}}</h2>
