@@ -181,6 +181,8 @@
         vm.moved = false;
         vm.link = '';
         vm.donacion = {};
+        vm.proyecto_id = 0;
+        vm.proyecto_nombre = '';
 
         // FUNCTIONS
         vm.logout = logout;
@@ -328,9 +330,11 @@
 
             MPService.pay(vm.item, function (data) {
                 console.log(data);
-                //vm.link = data.response.sandbox_init_point;
-                vm.link = data.response.init_point;
+                vm.link = data.response.sandbox_init_point;
+                //vm.link = data.response.init_point;
 
+                vm.proyecto_id = proyecto_id;
+                vm.proyecto_nombre = proyecto_nombre;
 
                 $MPC.openCheckout({
                     url: vm.link,
@@ -345,49 +349,52 @@
         function completarDonacion(json) {
 
 
-            if (json.collection_status == 'approved') {
-                console.log('Pago acreditado');
-            } else if (json.collection_status == 'pending') {
-                AcUtils.showMessage('error', 'El usuario no completó el pago');
-                return;
-            } else if (json.collection_status == 'in_process') {
-                AcUtils.showMessage('error', 'El pago está siendo revisado');
-                return;
-            } else if (json.collection_status == 'rejected') {
-                AcUtils.showMessage('error', 'El pago fué rechazado, el usuario puede intentar nuevamente el pago');
-                return;
-            } else if (json.collection_status == null) {
-                AcUtils.showMessage('error', 'El usuario no completó el proceso de pago, no se ha generado ningún pago');
-                return;
-            }
+            // Descomentar en producción
+            //if (json.collection_status == 'approved') {
+            //    console.log('Pago acreditado');
+            //} else if (json.collection_status == 'pending') {
+            //    AcUtils.showMessage('error', 'El usuario no completó el pago');
+            //    return;
+            //} else if (json.collection_status == 'in_process') {
+            //    AcUtils.showMessage('error', 'El pago está siendo revisado');
+            //    return;
+            //} else if (json.collection_status == 'rejected') {
+            //    AcUtils.showMessage('error', 'El pago fué rechazado, el usuario puede intentar nuevamente el pago');
+            //    return;
+            //} else if (json.collection_status == null) {
+            //    AcUtils.showMessage('error', 'El usuario no completó el proceso de pago, no se ha generado ningún pago');
+            //    return;
+            //}
 
             DonationService.create(vm.donacion, function (data) {
 
                 // Enviar los mails
                 if (data > 0) {
-                    AcUtils.showMessage('success', 'Donación realizada con éxito, por favor aguarde la confirmación de la misma.');
+                    vm.donacion.status = 1;
+                    DonationService.update(vm.donacion, function (data) {
+                        AcUtils.showMessage('success', 'Donación realizada con éxito, muchas gracias.');
 
-                    ProyectService.getByParams('proyecto_id', '' + proyecto_id, 'true', function (data) {
-                        // Mail a administrador
-                        ContactsService.sendMail(vm.user.data.mail,
-                            window.mailAdmins,
-                            'MPE', 'Existe un nuevo cambio para aprobar',
-                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? proyecto_nombre : vm.proyecto.nombre), function (data) {
-                                console.log(data);
-                            });
+                        ProyectService.getByParams('proyecto_id', '' + vm.proyecto_id, 'true', function (data) {
+                            // Mail a administrador
+                            ContactsService.sendMail(vm.user.data.mail,
+                                window.mailAdmins,
+                                'MPE', 'Donación Realizada',
+                                'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? vm.proyecto_nombre : vm.proyecto.nombre), function (data) {
+                                    console.log(data);
+                                });
 
-                        // Mail a cliente
-                        ContactsService.sendMail(window.mailAdmin,
-                            [
-                                {mail: vm.user.data.mail}
-                            ],
-                            'MPE', 'Su donación ha sido realizada, por favor realice la transferencia correspondiente y espere a su aprobación.',
-                            'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? proyecto_nombre : vm.proyecto.nombre), function (data) {
-                                console.log(data);
-                            });
-                    });
+                            // Mail a cliente
+                            ContactsService.sendMail(window.mailAdmin,
+                                [
+                                    {mail: vm.user.data.mail}
+                                ],
+                                'MPE', 'Su donación ha sido realizada, por favor realice la transferencia correspondiente y espere a su aprobación.',
+                                'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? vm.proyecto_nombre : vm.proyecto.nombre), function (data) {
+                                    console.log(data);
+                                });
+                        });
 
-
+                    })
                 } else {
                     AcUtils.showMessage('error', 'Hubo un problema con la donación, por favor contacte al administrador');
 
@@ -491,11 +498,11 @@
                         }
                     });
 
-                function setFace(){
-                    if(scope.proyecto== undefined){
+                function setFace() {
+                    if (scope.proyecto == undefined) {
 
                         $timeout(setFace, 1000)
-                    }else{
+                    } else {
                         $window.FB.XFBML.parse(element.parent()[0]);
                     }
 
