@@ -3186,9 +3186,10 @@ video{
 }
 
 .paginacion{
-  height: 38px;
+  //height: 38px;
   color: white;
   display: flex;
+  flex-wrap: wrap;
   vertical-align: middle;
   padding: 10px!important;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+50,a80077+51,db36a4+100;Pink+Gloss */
