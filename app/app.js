@@ -349,6 +349,7 @@
         function completarDonacion(json) {
 
 
+            console.log(vm.donacion);
             // Descomentar en producción
             //if (json.collection_status == 'approved') {
             //    console.log('Pago acreditado');
@@ -370,6 +371,7 @@
 
                 // Enviar los mails
                 if (data > 0) {
+                    vm.donacion.donacion_id = data;
                     vm.donacion.status = 1;
                     DonationService.update(vm.donacion, function (data) {
                         AcUtils.showMessage('success', 'Donación realizada con éxito, muchas gracias.');
