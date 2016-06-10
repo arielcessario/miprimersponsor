@@ -348,8 +348,6 @@
 
         function completarDonacion(json) {
 
-
-            console.log(vm.donacion);
             // Descomentar en producción
             //if (json.collection_status == 'approved') {
             //    console.log('Pago acreditado');
