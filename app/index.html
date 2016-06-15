@@ -43,7 +43,11 @@
 
         /* line 22, ../sass/screen.scss */
         #ac-loader #loader-loading {
-            margin-bottom: 40px;
+            font-family: "Droid Sans", sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fa9819;
             -webkit-animation: loader-loading-anim 3s ease-in-out infinite;
             -o-animation: loader-loading-anim 3s ease-in-out infinite;
             animation: loader-loading-anim 3s ease-in-out infinite;
@@ -51,47 +55,47 @@
 
         /* line 31, ../sass/screen.scss */
         #ac-loader #border-rad {
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
             overflow: hidden;
-            height: 54px;
+            height: 25px;
             width: 304px;
-            -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
-            -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
-            box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            //-moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+            //-webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+            //box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
             -webkit-animation: loader-shadow-anim 5s ease-in-out infinite;
             -o-animation: loader-shadow-anim 5s ease-in-out infinite;
             animation: loader-shadow-anim 5s ease-in-out infinite;
-            border: 4px solid #133648;
-            background-color: #133648;
+           // border: 4px solid #133648;
+           // background-color: #133648;
             position: relative;
         }
 
         /* line 49, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container {
-            background-color: gray;
-            height: 50px;
+            //background-color: gray;
+            height: 25px;
             width: 300px;
             position: absolute;
             left: 0;
             top: 0;
             overflow: hidden;
             -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
-            border: 2px solid beige;
+            -webkit-border-radius: 5px;
+            -moz-border-radius:5px;
+            border-radius: 5px;
+            //border: 1px solid white;
         }
 
         /* line 63, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container #bubble {
             position: absolute;
             top: 5px;
-            background-color: rgba(255, 255, 255, 0.8);
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
+           // background-color: rgba(255, 255, 255, 0.4);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
             width: 10px;
             right: 15px;
             height: 10px;
@@ -102,9 +106,9 @@
             position: absolute;
             top: 5px;
             background-color: rgba(255, 255, 255, 0.8);
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
             width: 250px;
             left: 20px;
             height: 10px;
@@ -131,7 +135,7 @@
         #ac-loader #border-rad #loader-container #loader-fifth,
         #ac-loader #border-rad #loader-container #loader-sixth {
             position: absolute;
-            height: 100px;
+            height: 25px;
             width: 400px;
             display: flex;
             flex-direction: row;
@@ -155,7 +159,7 @@
         #ac-loader #border-rad #loader-container #loader-fifth div,
         #ac-loader #border-rad #loader-container #loader-sixth div {
             width: 50px;
-            height: 100%;
+            height: 25px;
         }
 
         /* line 129, ../sass/screen.scss */
@@ -205,22 +209,22 @@
 
         /* line 169, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container .rojo {
-            background-color: red;
+            background-color: #e3001b;
         }
 
         /* line 173, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container .azul {
-            background-color: blue;
+            background-color: #fa9819;
         }
 
         /* line 177, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container .amarillo {
-            background-color: yellow;
+            background-color: #feed01;
         }
 
         /* line 181, ../sass/screen.scss */
         #ac-loader #border-rad #loader-container .naranja {
-            background-color: orange;
+            background-color: #18e21c;
         }
 
         @-webkit-keyframes move-loader {
@@ -298,19 +302,19 @@
 
         @-webkit-keyframes loader-shadow-anim {
             0% {
-                -moz-box-shadow: 0px 0px 40px 5px transparent;
-                -webkit-box-shadow: 0px 0px 40px 5px transparent;
-                box-shadow: 0px 0px 40px 5px transparent;
+                -moz-box-shadow: 0px 0px 2px 5px transparent;
+                -webkit-box-shadow: 0px 0px 20px 5px transparent;
+                box-shadow: 0px 0px 20px 5px transparent;
             }
             50% {
-                -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
-                -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
-                box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+                -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+                -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+                box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
             }
             100% {
-                -moz-box-shadow: 0px 0px 40px 5px transparent;
-                -webkit-box-shadow: 0px 0px 40px 5px transparent;
-                box-shadow: 0px 0px 40px 5px transparent;
+                -moz-box-shadow: 0px 0px 20px 5px transparent;
+                -webkit-box-shadow: 0px 0px 20px 5px transparent;
+                box-shadow: 0px 0px 20px 5px transparent;
             }
         }
 
@@ -490,7 +494,7 @@
 <body ng-controller="AppController as appCtrl">
 <div ng-if="!appCtrl.hideLoader" id="ac-loader">
     <img src="images/logo-loader.png" alt="" height="250px">
-    <span id="loader-loading">Loading...</span>
+    <span id="loader-loading">Aguarde...</span>
     <div id="border-rad">
         <div id="loader-container">
             <div id="loader-zero">
@@ -553,8 +557,7 @@
 <div id="footer">
 
 
-    <h1>Gracias por visitarnos</h1>
-    <h2><a class="link" href="#/conozcanos">Conozcanos</a></h2>
+     <h2><a class="link" href="#/conozcanos">Conozcanos</a></h2>
     <h2><a class="link" href="#/administracion">Administracion</a></h2>
     <h2><a class="link" href="https://www.facebook.com/miprimersponsor/?fref=ts">Visitanos en facebook</a></h2>
 </div>

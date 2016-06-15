@@ -123,39 +123,45 @@
                     <input type="file" name="images" id="images"
                            ac-upload-files="administracionCtrl.updateFotoProyecto(selectedFileList,4,'')"/>
                 </div>
+
             </div>
+        </div>
+
+
+        <div ng-if="administracionCtrl.showJustificaciones">
+            <span>Justificación de cambios</span>
+        <textarea name="justificacion" id="" cols="30" rows="10"
+                  ng-model="administracionCtrl.proyecto.justificacion"></textarea>
+            <button ng-click="administracionCtrl.createCambio();">ENVIAR</button>
+        </div>
+        <div class="administracion-button-bar">
+            <button ac-validator ng-click="administracionCtrl.createProyecto();"
+                    ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">
+                Guardar
+            </button>
+            <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
+                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">Confirmar proyecto
+            </button>
+            <button ng-click="administracionCtrl.removeProyecto();"
+                    ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">Borrar
+            </button>
+            <button ng-click="administracionCtrl.resetProyecto();">Cancelar</button>
+            <button style="position: relative;"
+                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1"> Subir
+                Comprobante
+                <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
+                       ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
+            </button>
         </div>
     </div>
 
-    <div ng-if="administracionCtrl.showJustificaciones">
-        <span>Justificación de cambios</span>
-        <textarea name="justificacion" id="" cols="30" rows="10"
-                  ng-model="administracionCtrl.proyecto.justificacion"></textarea>
-        <button ng-click="administracionCtrl.createCambio();">ENVIAR</button>
+
+
+
+
     </div>
 
-    <div class="administracion-button-bar">
-        <button ac-validator ng-click="administracionCtrl.createProyecto();"
-                ng-if="(administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id && administracionCtrl.proyecto.proyecto_id != -1) || administracionCtrl.proyecto.proyecto_id == -1">
-            Guardar
-        </button>
-        <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
-                ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">Confirmar proyecto
-        </button>
-        <button ng-click="administracionCtrl.removeProyecto();"
-                ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">Borrar
-        </button>
-        <button ng-click="administracionCtrl.resetProyecto();">Cancelar</button>
-        <button style="position: relative;"
-                ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1"> Subir
-            Comprobante
-            <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
-                   ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
-        </button>
-    </div>
-
-</div>
-<input type="text" class="buscador" placeholder="Buscar aporte..." ng-model="administracionCtrl.filterProyecto">
+<input type="text" class="buscador" placeholder="Buscar proyecto..." ng-model="administracionCtrl.filterProyecto">
 <div style="min-width: 100%; overflow-x: auto; max-width: 100%;">
     <table id="administracion-proyectos-tabla" class="table table-striped" style="width: 100%; min-width: 800px; ">
 
