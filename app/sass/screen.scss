@@ -1347,11 +1347,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       .ac-progress-second,
       .ac-progress-third,
       .ac-progress-fourth {
-        width: 14px;
+        //width: 10px!important;
         height: 28px;
-        -webkit-border-radius: 4.5px;
-        -moz-border-radius: 4.5px;
-        border-radius: 4.5px;
+        //-webkit-border-radius: 4.5px;
+        //-moz-border-radius: 4.5px;
+        //border-radius: 4.5px;
 
       }
 
@@ -1368,7 +1368,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       }
 
       p {
-        height: 74px;
+        height: 94px;
         font-family: 'Fjalla One', sans-serif;
         font-size: 16px;
         line-height: 23px;
