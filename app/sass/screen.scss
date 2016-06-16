@@ -1338,11 +1338,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       }
 
       #ac-progress-bar {
+        overflow: hidden;
+        border: 1px solid white;
         opacity: .7;
         margin-bottom: 10px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+        margin-top: 10px;
         //padding-left: 2px;
         //padding-right: 2px;
         -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
@@ -1563,6 +1566,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
 .main-proyecto-nuevo:hover,
 .main-proyecto-finalizar:hover {
   cursor: pointer;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+  background: rgb(246,248,249); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
   -webkit-animation: arriba 1s; /* Safari 4+ */
   -moz-animation: arriba 1s; /* Fx 5+ */
   -o-animation: arriba 1s; /* Opera 12+ */
@@ -1718,7 +1727,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
   #contacto-enviar-mobile:hover {
     color: white;
     border: 1px solid white;
-    background-color: #3ABDC3;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1e767+0,feb645+100;Yellow+3D */
+    background: rgb(241,231,103); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 ); /* IE6-9 */
     cursor: pointer;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -1904,14 +1918,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
 
 
   #ac-progress-bar {
-     margin-bottom: 10px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid white;
+    opacity: .7;
+    margin-bottom: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    //padding-left: 2px;
+    //padding-right: 2px;
     -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
-    background-color: white;
   }
 
   @media (min-width: 400px) {
@@ -2753,11 +2771,15 @@ background-image: url("fondo-mps.png");
   animation: fadein 2s ease-in-out;
 }
   #ac-progress-bar {
+    overflow: hidden;
+    border: 1px solid white;
     opacity: .7;
-    margin: auto;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    //padding-left: 2px;
+    //padding-right: 2px;
     -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
