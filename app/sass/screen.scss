@@ -250,9 +250,13 @@ table {
 }
 
 .error-input {
-  background-color: orangered;
-  border: dotted 2px white;
-
+  background-color: indianred;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.34);
+  -moz-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
 }
 
 // View
@@ -358,14 +362,15 @@ table {
 
 // Mensajes
 .error-message {
+  position: absolute;
   color: white;
-  font-family: 'Droid Sans', sans-serif;
+font-family: "Droid Sans", sans-serif;
   padding: 5px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: lighter;
-  div {
-    color: white;
-  }
+  margin-top: -25px;
+
+
 }
 
 .success-message {
@@ -1338,11 +1343,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+        //padding-left: 2px;
+        //padding-right: 2px;
         -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
         -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
         box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
       }
-
       .ac-progress-first,
       .ac-progress-second,
       .ac-progress-third,
@@ -1662,14 +1668,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     margin-top: 10px;
     width: 270px;
     height: 21px;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     border-style: none;
-
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
   }
 
   span {
@@ -1738,7 +1743,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       margin: 10px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: left;
       span {
         width: 100%;
         text-align: left;
@@ -3014,6 +3019,10 @@ background-image: url("fondo-mps.png");
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
   }
 
+
+
+
+
 #proyecto-comentarios div:after{
     content: "";
     position: absolute;
@@ -3363,10 +3372,10 @@ video{
   @include background-image(linear-gradient(to right, #FDDC10, #FDFF15));
 }
 .barra-10{
-  @include background-image(linear-gradient(to right, #FDFF15, #CBE90F));
+  @include background-image(linear-gradient(to right, #FDFF15, #FFFF0F));
 }
 .barra-11{
-  @include background-image(linear-gradient(to right, #CBE90F, #9AD40A));
+  @include background-image(linear-gradient(to right, #FFFF0F, #9AD40A));
 }
 .barra-12{
   @include background-image(linear-gradient(to right, #9AD40A, #81C907));
