@@ -90,7 +90,12 @@
                   rows="10"></textarea>
             <button id="proyecto-comentario-comentar" ng-click="proyectoCtrl.comentar()">Comentar</button>
 
-            <div ng-repeat="comentario in proyectoCtrl.comentarios">{{comentario.detalles}}</div>
+            <div ng-repeat="comentario in proyectoCtrl.comentarios">
+                <span>{{comentario.nombre}} {{comentario.apellido}} - {{comentario.fecha.substr(0,10) | date}}</span>
+                <br>
+                <span>{{comentario.detalles}}</span>
+
+            </div>
         </div>
     </div>
 
