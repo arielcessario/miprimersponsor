@@ -61,11 +61,11 @@
                     <div id="proyecto-thums">
                         <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[0].nombre"
                              ng-src="images/{{proyectoCtrl.proyecto.fotos[0].nombre}}" alt="">
-                        <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[1].nombre"
+                        <img ng-if="proyectoCtrl.proyecto.fotos[1].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[1].nombre"
                              ng-src="images/{{proyectoCtrl.proyecto.fotos[1].nombre}}" alt="">
-                        <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[2].nombre"
+                        <img ng-if="proyectoCtrl.proyecto.fotos[2].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[2].nombre"
                              ng-src="images/{{proyectoCtrl.proyecto.fotos[2].nombre}}" alt="">
-                        <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[3].nombre"
+                        <img ng-if="proyectoCtrl.proyecto.fotos[3].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[3].nombre"
                              ng-src="images/{{proyectoCtrl.proyecto.fotos[3].nombre}}" alt="">
                     </div>
 
