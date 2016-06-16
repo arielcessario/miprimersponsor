@@ -137,6 +137,18 @@
                     }
                 });
 
+                $routeProvider.when('/contacto', {
+                    templateUrl: 'contacto/contacto.html',
+                    controller: 'ContactoController',
+                    data: {requiresLogin: false},
+                    resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                        loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            // you can lazy load files for an existing module
+                            return $ocLazyLoad.load('contacto/contacto.js');
+                        }]
+                    }
+                });
+
 
             }])
         .run(function ($rootScope, store, jwtHelper, $location, auth) {

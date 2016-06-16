@@ -1,0 +1,66 @@
+<div class="contenedor-contacto" ng-controller="ContactoController as contactoCtrl">
+    <div id="contacto-container" form-id="contacto">
+
+
+        <h1><i class="fa fa-envelope-o" aria-hidden="true"></i>
+            Contacto</h1>
+
+
+        <div id="contacto-form">
+
+            <div class="contacto-panel">
+
+
+                <span>Nombre</span>
+
+
+                <input ac-validator is-required="Debe ingresar un nombre" ng-model="contactoCtrl.nombre" type="text"
+                       id="contacto-nombre">
+
+
+                <span>Email</span>
+
+
+                <input ac-validator is-mail="El mail es incorrecto" ng-model="contactoCtrl.email" type="text"
+                       id="contacto-mail">
+
+
+                <span>Asunto</span>
+
+
+                <input ac-validator is-required="Debe ingresar un tema de consulta" ng-model="contactoCtrl.asunto"
+                       type="text" id="contacto-asunto">
+
+
+            </div>
+
+
+            <div class="contacto-panel">
+
+
+                <span>Escriba aqu&iacute su consulta</span>
+
+
+
+            <textarea ac-validator is-required="Debe ingresar una consulta" class="textoareaconsulta"
+                      ng-model="contactoCtrl.mensaje" name="" id="contacto-consulta"
+
+                      rows="10"></textarea>
+
+
+            </div>
+
+        </div>
+
+
+        <fieldset ng-disabled="vm.enviando" class="contacto-panel contacto-enviar-mobile">
+
+
+            <button id="contacto-enviar-mobile" ac-validator ng-click="contactoCtrl.sendMail();">Enviar</button>
+
+
+        </fieldset>
+
+
+    </div>
+</div>
