@@ -102,7 +102,12 @@
 
         <div id="main-proyectos-nuevos-list">
 
-            <div class="main-proyecto-nuevo">
+            <div class="main-proyecto-nuevo"
+                 ng-class="{'first-status':proyectoCtrl.proyecto_similar_01.porc <= 25,
+                 'second-status':proyectoCtrl.proyecto_similar_01.porc > 25 && proyectoCtrl.proyecto_similar_01.porc <= 50,
+                 'third-status':proyectoCtrl.proyecto_similar_01.porc > 50 && proyectoCtrl.proyecto_similar_01.porc <= 75,
+                 'fourth-status':proyectoCtrl.proyecto_similar_01.porc > 75}"
+                 ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_01.proyecto_id, '/main')">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{proyectoCtrl.proyecto_similar_01.fotos[0].nombre}}"
@@ -121,10 +126,10 @@
 
                 <p>{{proyectoCtrl.proyecto_similar_01.descripcion}}</p>
 
-                <button class="button-ver"
-                        ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_01.proyecto_id, '/main')">VER
+                <!--<button class="button-ver"-->
+                        <!--ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_01.proyecto_id, '/main')">VER-->
 
-                </button>
+                <!--</button>-->
 
                 <div class="dias-restantes"><span>{{proyectoCtrl.proyecto_similar_01.faltan}}</span> días
                     restantes... <span
@@ -170,8 +175,12 @@
 
             </div>
 
-
-            <div class="main-proyecto-nuevo">
+            <div class="main-proyecto-nuevo"
+                 ng-class="{'first-status':proyectoCtrl.proyecto_similar_02.porc <= 25,
+                 'second-status':proyectoCtrl.proyecto_similar_02.porc > 25 && proyectoCtrl.proyecto_similar_02.porc <= 50,
+                 'third-status':proyectoCtrl.proyecto_similar_02.porc > 50 && proyectoCtrl.proyecto_similar_02.porc <= 75,
+                 'fourth-status':proyectoCtrl.proyecto_similar_02.porc > 75}"
+                 ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_02.proyecto_id, '/main')">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{proyectoCtrl.proyecto_similar_02.fotos[0].nombre}}"
@@ -190,10 +199,10 @@
 
                 <p>{{proyectoCtrl.proyecto_similar_02.descripcion}}</p>
 
-                <button class="button-ver"
-                        ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_02.proyecto_id, '/main')">VER
+                <!--<button class="button-ver"-->
+                        <!--ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_02.proyecto_id, '/main')">VER-->
 
-                </button>
+                <!--</button>-->
 
                 <div class="dias-restantes"><span>{{proyectoCtrl.proyecto_similar_02.faltan}}</span> días
                     restantes... <span
@@ -231,7 +240,12 @@
 
             </div>
 
-            <div class="main-proyecto-nuevo">
+            <div class="main-proyecto-nuevo"
+                 ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_03.proyecto_id, '/main')"
+                 ng-class="{'first-status':proyectoCtrl.proyecto_similar_03.porc <= 25,
+                 'second-status':proyectoCtrl.proyecto_similar_03.porc > 25 && proyectoCtrl.proyecto_similar_03.porc <= 50,
+                 'third-status':proyectoCtrl.proyecto_similar_03.porc > 50 && proyectoCtrl.proyecto_similar_03.porc <= 75,
+                 'fourth-status':proyectoCtrl.proyecto_similar_03.porc > 75}">
 
                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                            ng-src="images/{{proyectoCtrl.proyecto_similar_03.fotos[0].nombre}}"
@@ -250,10 +264,10 @@
 
                 <p>{{proyectoCtrl.proyecto_similar_03.descripcion}}</p>
 
-                <button class="button-ver"
-                        ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_03.proyecto_id, '/main')">VER
+                <!--<button class="button-ver"-->
+                        <!--ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_03.proyecto_id, '/main')">VER-->
 
-                </button>
+                <!--</button>-->
 
                 <div class="dias-restantes"><span>{{proyectoCtrl.proyecto_similar_03.faltan}}</span> días
                     restantes... <span
