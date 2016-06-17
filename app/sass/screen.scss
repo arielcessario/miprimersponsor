@@ -364,11 +364,13 @@ table {
 .error-message {
   position: absolute;
   color: white;
-font-family: "Droid Sans", sans-serif;
+ font-family: "Droid Sans", sans-serif;
   padding: 5px;
   font-size: 13px;
   font-weight: lighter;
   margin-top: -25px;
+  pointer-events: none;
+
 
 
 }
