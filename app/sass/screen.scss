@@ -1777,7 +1777,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
   flex-direction: row;
   justify-content: space-around;
   button{
-    margin: 0px!important;
+    margin: 2px!important;
 
   }
 }
@@ -2081,6 +2081,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     margin-top: 50px;
     margin-bottom: 10px;
     max-width: 850px;
+    padding: 10px;
     @media (max-width: 850px) {
       max-width: 100%;
       min-width: 100%;
