@@ -20,107 +20,110 @@
                        class="twitter-share-button main-button-twitter" data-text="Your text: "
                        data-url="proyectoCtrl.proyecto"></a>
 
+                    <h1 style="margin-top: 20px">Ingresá tu donacion aqui!</h1>
 
                     <div class="donacion-rapida-details">
-                        <span>Dona:</span><input ng-model="proyectoCtrl.donacion_rapida_valor" type="text">
+                        <input ng-model="proyectoCtrl.donacion_rapida_valor" type="text">
+                        <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                            OK
+                        </button>
                         <select name="" id=""
                                 ng-model="proyectoCtrl.mobileDonation"
                                 ng-init="proyectoCtrl.mobileDonation = proyectoCtrl.vals[0]"
                                 ng-change="appCtrl.donacionRapida(proyectoCtrl.mobileDonation.amount, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre)"
                                 ng-options="val.val for val in proyectoCtrl.vals"></select>
 
-                        <button ng-click="appCtrl.donacionRapida(proyectoCtrl.donacion_rapida_valor, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            OK
-                        </button>
-
-                        <button ng-click="appCtrl.donacionRapida(10, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $10
-                        </button>
-                        <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $25
-                        </button>
-                        <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $50
-                        </button>
-                        <button ng-click="appCtrl.donacionRapida(75, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $75
-                        </button>
-                        <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $100
-                        </button>
-                        <button ng-click="appCtrl.donacionRapida(200, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
-                            $200
-                        </button>
-
-                        </button>
-                    </div>
-
-                </div>
-
-                <div id="proyecto-rigth">
-                    <div id="proyecto-thums">
-                        <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[0].nombre"
-                             ng-src="images/{{proyectoCtrl.proyecto.fotos[0].nombre}}" alt="">
-                        <img ng-if="proyectoCtrl.proyecto.fotos[1].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[1].nombre"
-                             ng-src="images/{{proyectoCtrl.proyecto.fotos[1].nombre}}" alt="">
-                        <img ng-if="proyectoCtrl.proyecto.fotos[2].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[2].nombre"
-                             ng-src="images/{{proyectoCtrl.proyecto.fotos[2].nombre}}" alt="">
-                        <img ng-if="proyectoCtrl.proyecto.fotos[3].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[3].nombre"
-                             ng-src="images/{{proyectoCtrl.proyecto.fotos[3].nombre}}" alt="">
-                    </div>
-
-                    <button ng-click="proyectoCtrl.back()">VOLVER</button>
-                    <span>{{proyectoCtrl.proyecto.faltan}} días restantes... {{proyectoCtrl.proyecto.porc}}%</span>
-                    <ac-progress-bar recaudado="{{proyectoCtrl.proyecto.total_donado}}"
-                                     objetivo="{{proyectoCtrl.proyecto.costo_inicial}}"></ac-progress-bar>
 
 
-                </div>
-            </div>
+                        <!--<button ng-click="appCtrl.donacionRapida(10, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $10
+                         </button>
+                         <button ng-click="appCtrl.donacionRapida(25, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $25
+                         </button>
+                         <button ng-click="appCtrl.donacionRapida(50, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $50
+                         </button>
+                         <button ng-click="appCtrl.donacionRapida(75, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $75
+                         </button>
+                         <button ng-click="appCtrl.donacionRapida(100, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $100
+                         </button>
+                         <button ng-click="appCtrl.donacionRapida(200, proyectoCtrl.proyecto.proyecto_id, proyectoCtrl.proyecto.nombre);">
+                             $200
+                         </button>
 
-            <div id="proyecto-bottom">
-                <p>{{proyectoCtrl.proyecto.descripcion}}</p>
-            </div>
+                         </button>-->
 
-        </div>
+                     </div>
 
+                 </div>
 
-        <div id="proyecto-comentarios">
-        <textarea name="" id="proyecto-comentario-nuevo" placeholder="Escribe aqui tu comentario..." ng-model="proyectoCtrl.comentario.detalles" cols="30"
-                  rows="10"></textarea>
-            <button id="proyecto-comentario-comentar" ng-click="proyectoCtrl.comentar()">Comentar</button>
+                 <div id="proyecto-rigth">
+                     <div id="proyecto-thums">
+                         <img class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[0].nombre"
+                              ng-src="images/{{proyectoCtrl.proyecto.fotos[0].nombre}}" alt="">
+                         <img ng-if="proyectoCtrl.proyecto.fotos[1].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[1].nombre"
+                              ng-src="images/{{proyectoCtrl.proyecto.fotos[1].nombre}}" alt="">
+                         <img ng-if="proyectoCtrl.proyecto.fotos[2].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[2].nombre"
+                              ng-src="images/{{proyectoCtrl.proyecto.fotos[2].nombre}}" alt="">
+                         <img ng-if="proyectoCtrl.proyecto.fotos[3].nombre != 'no_image.png'" class="thumb" ng-click="proyectoCtrl.foto_selected = proyectoCtrl.proyecto.fotos[3].nombre"
+                              ng-src="images/{{proyectoCtrl.proyecto.fotos[3].nombre}}" alt="">
+                     </div>
 
-            <div ng-repeat="comentario in proyectoCtrl.comentarios">
-                <span class="usuario-comentario">{{comentario.nombre}} {{comentario.apellido}} - {{comentario.fecha.substr(0,10) | date}}</span>
-                <br>
-                <span>{{comentario.detalles}}</span>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div id="proyectos-nuevos">
-
-        <h1>Proyectos similares</h1>
+                     <button ng-click="proyectoCtrl.back()">VOLVER</button>
+                     <span>{{proyectoCtrl.proyecto.faltan}} días restantes... {{proyectoCtrl.proyecto.porc}}%</span>
+                     <ac-progress-bar recaudado="{{proyectoCtrl.proyecto.total_donado}}"
+                                      objetivo="{{proyectoCtrl.proyecto.costo_inicial}}"></ac-progress-bar>
 
 
-        <div id="main-proyectos-nuevos-list">
+                 </div>
+             </div>
 
-            <div class="main-proyecto-nuevo"
-                 ng-class="{'first-status':proyectoCtrl.proyecto_similar_01.porc <= 25,
-                 'second-status':proyectoCtrl.proyecto_similar_01.porc > 25 && proyectoCtrl.proyecto_similar_01.porc <= 50,
-                 'third-status':proyectoCtrl.proyecto_similar_01.porc > 50 && proyectoCtrl.proyecto_similar_01.porc <= 75,
-                 'fourth-status':proyectoCtrl.proyecto_similar_01.porc > 75}"
-                 ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_01.proyecto_id, '/main')">
+             <div id="proyecto-bottom">
+                 <p>{{proyectoCtrl.proyecto.descripcion}}</p>
+             </div>
 
-                <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
-                                                           ng-src="images/{{proyectoCtrl.proyecto_similar_01.fotos[0].nombre}}"
-                                                           alt=""></div>
+         </div>
 
 
-                <div facebook proyecto="proyectoCtrl.proyecto_similar_01.proyecto_id"></div>
-                <!--<img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">-->
+         <div id="proyecto-comentarios">
+         <textarea name="" id="proyecto-comentario-nuevo" placeholder="Escribe aqui tu comentario..." ng-model="proyectoCtrl.comentario.detalles" cols="30"
+                   rows="10"></textarea>
+             <button id="proyecto-comentario-comentar" ng-click="proyectoCtrl.comentar()">Comentar</button>
+
+             <div ng-repeat="comentario in proyectoCtrl.comentarios">
+                 <span class="usuario-comentario">{{comentario.nombre}} {{comentario.apellido}} - {{comentario.fecha.substr(0,10) | date}}</span>
+                 <br>
+                 <span>{{comentario.detalles}}</span>
+
+             </div>
+         </div>
+     </div>
+
+
+     <div id="proyectos-nuevos">
+
+         <h1>Proyectos similares</h1>
+
+
+         <div id="main-proyectos-nuevos-list">
+
+             <div class="main-proyecto-nuevo"
+                  ng-class="{'first-status':proyectoCtrl.proyecto_similar_01.porc <= 25,
+                  'second-status':proyectoCtrl.proyecto_similar_01.porc > 25 && proyectoCtrl.proyecto_similar_01.porc <= 50,
+                  'third-status':proyectoCtrl.proyecto_similar_01.porc > 50 && proyectoCtrl.proyecto_similar_01.porc <= 75,
+                  'fourth-status':proyectoCtrl.proyecto_similar_01.porc > 75}"
+                  ng-click="appCtrl.goToDetalle(proyectoCtrl.proyecto_similar_01.proyecto_id, '/main')">
+
+                 <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
+                                                            ng-src="images/{{proyectoCtrl.proyecto_similar_01.fotos[0].nombre}}"
+                                                            alt=""></div>
+
+
+                 <div facebook proyecto="proyectoCtrl.proyecto_similar_01.proyecto_id"></div>
+                 <!--<img class="main-button-twitter" src="images/twitter.png" alt="" height="30" width="30">-->
                 <a twitter style="height: 30px; width: 30px;"
                    class="twitter-share-button main-button-twitter" data-text="Your text: "
                    data-url="proyectoCtrl.proyecto_similar_01.proyecto_id"></a>
