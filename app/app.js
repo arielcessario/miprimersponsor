@@ -224,8 +224,11 @@
             $scope.$apply();
         });
 
-        function goToDetalle(id, origen) {
+        function goToDetalle(id, origen, e) {
 
+            if(event.target.tagName.toUpperCase() == 'INPUT' || event.target.tagName.toUpperCase() == 'BUTTON'){
+                return;
+            }
             AppService.origen = origen;
             $location.path('/proyecto/' + id);
         }
