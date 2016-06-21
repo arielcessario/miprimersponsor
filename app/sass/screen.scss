@@ -367,13 +367,10 @@ table {
   position: absolute;
   color: white;
  font-family: "Droid Sans", sans-serif;
-  padding: 5px;
   font-size: 13px;
   font-weight: lighter;
   margin-top: -24px;
   pointer-events: none;
-  background-color: indianred;
-  width: 265px;
 
 
 
@@ -3289,8 +3286,9 @@ background-image: url("fondo-mps.png");
   //height: 100%;
   //width: 100%;
   display: flex;
-  justify-content: center!important;
-  position:relative;
+position:relative;
+ align-items: center;
+  justify-content: center;
   padding-bottom:56.25%;
   margin-top: 46px;
   height:0;
