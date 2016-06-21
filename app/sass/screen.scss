@@ -3280,28 +3280,14 @@ background-image: url("fondo-mps.png");
 }
 
 .contenedor-video{
-  //text-align: center;
-  //background-image: url("fondo-mps.png");
-  //background-position: center!important;
-  //height: 100%;
-  //width: 100%;
   display: flex;
-position:relative;
- align-items: center;
-  justify-content: center;
-  padding-bottom:56.25%;
   margin-top: 46px;
-  height:0;
   overflow:hidden;
 
 }
 
 .contenedor-video iframe, .contenedor-video object, .contenedor-video embed {
-  position:absolute;
-  //top:0;
-  //left:0;
-  width:80%;
-  height:80%;
+max-width: 80%;
 }
 
 
@@ -3422,6 +3408,7 @@ video{
 .paginacion{
   //height: 38px;
   color: white;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
