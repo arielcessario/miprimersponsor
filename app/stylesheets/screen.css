@@ -3738,7 +3738,7 @@ span {
 /* line 3287, ../sass/screen.scss */
 .contenedor-video {
   display: flex;
-  margin-top: 46px;
+  background-color: black;
   overflow: hidden;
 }
 
