@@ -93,7 +93,7 @@
                    rows="10"></textarea>
              <button id="proyecto-comentario-comentar" ng-click="proyectoCtrl.comentar()">Comentar</button>
 
-             <div ng-repeat="comentario in proyectoCtrl.comentarios">
+             <div ng-repeat="comentario in proyectoCtrl.comentarios | orderBy:'-fecha'">
                  <span class="usuario-comentario">{{comentario.nombre}} {{comentario.apellido}} - {{comentario.fecha.substr(0,10) | date}}</span>
                  <br>
                  <span>{{comentario.detalles}}</span>
