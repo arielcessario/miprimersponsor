@@ -17,7 +17,8 @@
              ng-class="{'first-status':proyecto.porc <= 25,
                  'second-status':proyecto.porc > 25 && proyecto.porc <= 50,
                  'third-status':proyecto.porc > 50 && proyecto.porc <= 75,
-                 'fourth-status':proyecto.porc > 75}">
+                 'fourth-status':proyecto.porc > 75}"
+             ng-click="appCtrl.goToDetalle(proyecto.proyecto_id, '/resultados', $event)">
 
             <div class="main-proyecto-nuevo-foto"><img class="main-img-proyecto"
                                                        ng-src="images/{{proyecto.fotos[0].nombre}}"
@@ -35,9 +36,9 @@
 
             <p>{{proyecto.descripcion}}</p>
 
-            <button class="button-ver" ng-click="appCtrl.goToDetalle(proyecto.proyecto_id, '/resultados')">VER
+            <!--<button class="button-ver" ng-click="appCtrl.goToDetalle(proyecto.proyecto_id, '/resultados')">VER-->
 
-            </button>
+            <!--</button>-->
 
             <div class="dias-restantes"><span>{{proyecto.faltan}}</span> días restantes... <span
 
