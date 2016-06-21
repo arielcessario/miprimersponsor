@@ -370,9 +370,10 @@ table {
   padding: 5px;
   font-size: 13px;
   font-weight: lighter;
-  margin-top: -25px;
+  margin-top: -24px;
   pointer-events: none;
   background-color: indianred;
+  width: 265px;
 
 
 
@@ -1707,7 +1708,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
 
   textarea {
     margin-top: 10px;
-    width: 257px;
+    width: 270px;
     min-height: 162px;
     //-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     //-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -3287,6 +3288,8 @@ background-image: url("fondo-mps.png");
   //background-position: center!important;
   //height: 100%;
   //width: 100%;
+  display: flex;
+  justify-content: center!important;
   position:relative;
   padding-bottom:56.25%;
   margin-top: 46px;
