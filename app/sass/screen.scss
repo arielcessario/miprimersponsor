@@ -371,6 +371,7 @@ table {
   font-weight: lighter;
   margin-top: -24px;
   pointer-events: none;
+  padding: 4px;
 
 
 
@@ -2412,7 +2413,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   border-style: none;
-  background-color: white !important;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -3286,8 +3286,11 @@ background-image: url("fondo-mps.png");
 
 }
 
-.contenedor-video iframe, .contenedor-video object, .contenedor-video embed {
-max-width: 80%;
+  .contenedor-video iframe,.contenedor-video object, .contenedor-video embed {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: calc(40% - 30%);
 }
 
 
