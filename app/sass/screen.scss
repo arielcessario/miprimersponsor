@@ -551,7 +551,6 @@ input {
 
   #header-desktop-left,
   #header-desktop-right {
-    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -569,9 +568,11 @@ input {
 
   #header-desktop-left {
     justify-content: flex-start;
+    width: 30%;
   }
 
   #header-desktop-right {
+    width: 65%;
     justify-content: flex-end;
     button {
       font-family: 'Droid Sans', sans-serif;
@@ -656,6 +657,11 @@ input {
   -ms-transform: scale(.8, .8);
   -o-transform: scale(.8, .8);
   transform: scale(.8, .8);
+  @media (max-width: 1300px) {
+    display: none;
+    visibility: collapse;
+    display: none !important;
+  }
 }
 
 @-webkit-keyframes show-logo-middle-header {
@@ -1864,8 +1870,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     border-radius: 3px;
     color: black;
     padding: 5px;
-    margin: 5px;
+    margin: 5px!important;
     //width: 112px;
+    height: 30px;
     font-size: 16px;
     //font-weight: bold;
     align-items: center;
