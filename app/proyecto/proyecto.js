@@ -35,6 +35,7 @@
 
         // Funciones
         vm.comentar = comentar;
+        vm.borrarComentario = borrarComentario;
         vm.back = back;
 
         // Init
@@ -109,6 +110,16 @@
                     vm.comentarios = data;
                 })
             });
+        }
+
+        function borrarComentario(comentario_id) {
+
+            CommentService.remove(comentario_id, function (data) {
+                CommentService.get(vm.proyecto.proyecto_id, function (data) {
+                    vm.comentario.detalles = '';
+                    vm.comentarios = data;
+                })
+            })
         }
 
         function back() {

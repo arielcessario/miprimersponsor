@@ -34,7 +34,7 @@
         }
 
         if (UserService.getFromToken() != false) {
-            $location.path('/administracion');
+            $location.path('/main');
         }
 
 
@@ -61,7 +61,7 @@
                     $location.path('/nuevo_usuario');
                 }else{
                     // usuario existe y se logea
-                    $location.path('/administracion');
+                    $location.path('/main');
                     AppService.broadcast();
                 }
             });
@@ -75,7 +75,7 @@
                     $location.path('/nuevo_usuario');
                 }else{
                     // usuario existe y se logea
-                    $location.path('/administracion');
+                    $location.path('/main');
                     AppService.broadcast();
                 }
             });
@@ -89,7 +89,7 @@
                 if(data == -1){
                     AcUtils.showMessage('error', 'Mail o Contraseña erroneos');
                 }else{
-                    $location.path('/administracion');
+                    $location.path('/main');
                     AppService.broadcast();
                 }
             });

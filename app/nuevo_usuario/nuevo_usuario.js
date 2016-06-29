@@ -57,7 +57,7 @@
                     $location.path('/nuevo_usuario');
                 }else{
                     // usuario existe y se logea
-                    $location.path('/administracion');
+                    $location.path('/main');
                     AppService.broadcast();
                 }
             });
@@ -71,7 +71,7 @@
                     $location.path('/nuevo_usuario');
                 }else{
                     // usuario existe y se logea
-                    $location.path('/administracion');
+                    $location.path('/main');
                     AppService.broadcast();
                 }
             });
@@ -93,13 +93,13 @@
                         if (data > -1) {
                             if(vm.usuario.social_login !==0){
                                 UserService.loginSocial(vm.usuario, UserVars.token_social, function(data){
-                                    $location.path('/administracion');
+                                    $location.path('/main');
                                     AppService.broadcast();
                                 });
 
                             }else{
                                 UserService.login(vm.usuario.mail, vm.usuario.password, 1, function (data) {
-                                    $location.path('/administracion');
+                                    $location.path('/main');
                                     AppService.broadcast();
                                 });
                             }
