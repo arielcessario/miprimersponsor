@@ -1682,14 +1682,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vw;
   //background-color: rgba(250, 152, 25, 1);
   background-color: #596a72;
   padding-bottom: 20px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-  h1 {
+  padding-bottom: 50px;
+    h1 {
     //margin-top: 20px;
     //margin-bottom: 20px;
     //font-family: "Droid Sans";
@@ -2494,6 +2494,7 @@ img{
   background: -webkit-linear-gradient(top,  rgba(80,88,114,1) 0%,rgba(23,41,76,1) 50%,rgba(19,25,63,1) 51%,rgba(54,62,78,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(80,88,114,1) 0%,rgba(23,41,76,1) 50%,rgba(19,25,63,1) 51%,rgba(54,62,78,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505872', endColorstr='#363e4e',GradientType=0 ); /* IE6-9 */
+  margin-bottom: 50px;
   -webkit-animation: scale 1s; /* Safari 4+ */
   -moz-animation: scale 1s; /* Fx 5+ */
   -o-animation: scale 1s; /* Opera 12+ */
@@ -2579,6 +2580,7 @@ background-image: url("fondo-mps.png");
     border-radius: 3px;
     color: white;
     padding: 5px;
+    height: 23px!important;
     margin: 1px;
     align-items: center;
     outline: none;
@@ -2983,7 +2985,7 @@ background-image: url("fondo-mps.png");
 
 .nuevo-usuario-button-bar{
   display: flex;
-  justify-content: space-around!important;
+  justify-content: center!important;
 }
 
 .nuevo-usuario-button-bar a{
