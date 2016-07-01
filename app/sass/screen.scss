@@ -565,8 +565,11 @@ input {
       max-width: 650px;
     }
   }
+  #header-desktop-right a {
+    color: rgb(255,168,76)!important;
+  }
 
-  #header-desktop-left {
+    #header-desktop-left {
     justify-content: flex-start;
     width: 30%;
   }
@@ -578,6 +581,7 @@ input {
       font-family: 'Droid Sans', sans-serif;
       font-size: 16px;
       text-decoration: underline;
+      color: rgb(255,168,76)!important;
 
     }
     .desktop-link-login {
@@ -623,7 +627,6 @@ input {
     background-color: rgba(0, 0, 0, 0);
     border: 0 solid;
     //color: #3C5A6F;
-    color: gold;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -716,7 +719,7 @@ input {
 
 .desktop-link-nav a:hover,
 .desktop-link-login a:hover {
-  color: white;
+  color: rgb(255,168,76);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#505872+0,17294c+50,13193f+51,363e4e+100 */
   background: rgb(80,88,114); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(80,88,114,1) 0%, rgba(23,41,76,1) 50%, rgba(19,25,63,1) 51%, rgba(54,62,78,1) 100%); /* FF3.6-15 */
@@ -1393,12 +1396,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       }
 
         h2 {
-        font-family: 'Fjalla One', sans-serif;
+        font-family: "Droid Sans", sans-serif;
         font-weight: bold;
         font-size: 40px;
         overflow: auto;
         color: black;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         text-align: center;
         margin-top: 10px;
         height: 77px;
@@ -1406,7 +1409,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
 
       p {
         height: 94px;
-        font-family: 'Fjalla One', sans-serif;
+        font-family: "Droid Sans", sans-serif;
         font-size: 16px;
         line-height: 23px;
         text-align: left;
@@ -1842,7 +1845,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     outline: none;
   }
   span {
-    margin-bottom: 5px;
     color: white;
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
@@ -2181,7 +2183,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#677b8c', endColorstr='#0d8282',GradientType=0 ); /* IE6-9 */
     color: white;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 16px;
     input {
       margin-bottom: 10px;
       height: 20px;
@@ -2482,7 +2484,7 @@ img{
   max-width: 600px;
   width: 350px;
   margin: auto;
-  padding: 30px;
+  padding: 15px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid white;
@@ -2506,7 +2508,23 @@ img{
 .contenedor-ingreso {
   min-height: 400px;
   max-height: 542px;
+  margin-top: 30px;
 
+}
+
+.facebook-log{
+  background-repeat: no-repeat!important;
+  width: 100px;
+  height: 20px;
+  background-image: url("facebook-log-in.png")!important;
+
+}
+
+.google-log{
+  background-repeat: no-repeat!important;
+  width: 100px;
+  height: 20px;
+  background-image: url("google-log-in.png")!important;
 }
 
 //.contenedor-nuevo-usuario {
@@ -2521,6 +2539,7 @@ background-image: url("fondo-mps.png");
   padding-bottom: 50px;
   .administracion-button-bar button {
     margin-bottom: 20px;
+    height: 23px!important;
   }
 
 }
@@ -2530,14 +2549,14 @@ background-image: url("fondo-mps.png");
   padding-top: 50px;
   align-items: center;
   max-width: 800px;
-  padding-bottom: 30px;
+  //padding-bottom: 30px;
 
   h1 {
     margin-bottom: 20px;
     font-family: 'Droid Sans', sans-serif;
     font-size: 45px;
     font-weight: bold;
-    color: white;
+    color: rgb(255,183,107);
 
   }
   span {
@@ -2639,7 +2658,7 @@ background-image: url("fondo-mps.png");
     font-family: 'Droid Sans', sans-serif;
     font-size: 48px;
     font-weight: bold;
-    color: white;
+    color: rgb(255,183,107);
 
   }
   p {
@@ -3120,7 +3139,12 @@ background-image: url("fondo-mps.png");
 
 
 
+.boton-borrar{
+  width: 50px!important;
+  height: 20px!important;
+  padding: 0px!important;
 
+}
 
 #proyecto-comentarios button {
    width: 90px;
@@ -3387,12 +3411,20 @@ background-image: url("fondo-mps.png");
 }
 
 .texto-legales{
-  padding: 20px;
   line-height: 20px;
   color: white;
   margin-bottom: 10px;
+  font-size: 14px;
   a{
-    color: #3ABDC3;
+    color: white;
+  }
+  a:hover{
+    cursor: pointer;
+    color: #F7B35A;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
   }
 }
 
@@ -3414,6 +3446,7 @@ video{
   right: 0;
   bottom: 0;
   left: 0;
+  position: fixed;
   padding-top: 10px;
   padding-left: 10px;
   background: rgba(76,76,76,1);
@@ -3445,12 +3478,13 @@ video{
   display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
-  padding: 10px!important;
+  padding: 5px!important;
   background: rgb(103,123,140); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(103,123,140,1) 0%, rgba(13,130,130,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(103,123,140,1) 0%,rgba(13,130,130,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(103,123,140,1) 0%,rgba(13,130,130,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#677b8c', endColorstr='#0d8282',GradientType=0 ); /* IE6-9 */
+  white-space: nowrap;
 
 }
 
@@ -3459,12 +3493,19 @@ video{
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 16px;
+  input{
+    margin-left: 5px;
+  }
 }
 
 .paginacion-go-to{
   display: flex;
   margin-right: 20px;
   margin-right: 20px;
+  span{
+    width: 30%;
+margin-top: 16px }
+
 }
 
 

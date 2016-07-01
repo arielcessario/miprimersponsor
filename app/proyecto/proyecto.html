@@ -100,7 +100,7 @@
                 <span class="usuario-comentario">{{comentario.nombre}} {{comentario.apellido}} - {{comentario.fecha.substr(0,10) | date}}</span>
                 <br>
                 <span>{{comentario.detalles}}</span>
-                <button ng-if="proyectoCtrl.user.usuario_id == comentario.usuario_id"
+                <button class="boton-borrar" ng-if="proyectoCtrl.user.usuario_id == comentario.usuario_id"
                         ng-click="proyectoCtrl.borrarComentario(comentario.proyecto_comentario_id)">Borrar
                 </button>
 
