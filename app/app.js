@@ -203,14 +203,19 @@
         vm.filterByText = filterByText;
         vm.donacionRapida = donacionRapida;
         vm.goToDetalle = goToDetalle;
+        vm.getComision = getComision;
 
         // INIT
         ContactsService.facebookInit();
 
-
         if (vm.user != false) {
             vm.isLogged = true;
             vm.welcomeTo = vm.user.data.nombre;
+        }
+
+        function getComision(valor) {
+
+            return Math.floor(valor * 0.18);
         }
 
         CategoryService.get(function (data) {
@@ -226,7 +231,7 @@
 
         function goToDetalle(id, origen, e) {
 
-            if(event.target.tagName.toUpperCase() == 'INPUT' || event.target.tagName.toUpperCase() == 'BUTTON'){
+            if (event.target.tagName.toUpperCase() == 'INPUT' || event.target.tagName.toUpperCase() == 'BUTTON') {
                 return;
             }
             AppService.origen = origen;

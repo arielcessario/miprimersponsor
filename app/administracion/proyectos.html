@@ -140,14 +140,16 @@
                 Guardar
             </button>
             <button ac-validator ng-click="administracionCtrl.confirmarProyecto();"
-                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">Confirmar proyecto
+                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.status == '4'">
+                Confirmar proyecto
             </button>
             <button ng-click="administracionCtrl.removeProyecto();"
                     ng-if="administracionCtrl.user.data.id == administracionCtrl.proyecto.usuario_id">Borrar
             </button>
             <button ng-click="administracionCtrl.resetProyecto();">Cancelar</button>
             <button style="position: relative;"
-                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1"> Subir
+                    ng-if="administracionCtrl.user.data.rol == '0' && administracionCtrl.proyecto.proyecto_id !=-1">
+                Subir
                 Comprobante
                 <input style="position: absolute; opacity: 0; left: 0; top: 0;" type="file" name="images" id="images"
                        ac-upload-files="administracionCtrl.subirComprobante(selectedFileList)"/>
@@ -156,10 +158,7 @@
     </div>
 
 
-
-
-
-    </div>
+</div>
 
 <input type="text" class="buscador" placeholder="Buscar proyecto..." ng-model="administracionCtrl.filterProyecto">
 <div style="min-width: 100%; overflow-x: auto; max-width: 100%;">
@@ -172,6 +171,7 @@
             <th>Comprobante</th>
             <th>Estado</th>
             <th>En Slider</th>
+            <th ng-if="administracionCtrl.user.data.rol == 0">Comisión</th>
         </tr>
         <tr ng-repeat="row in administracionCtrl.proyectos | filter:administracionCtrl.filterProyecto| paginacion:'proyectos':administracionCtrl.limit | limitTo:administracionCtrl.limit:administracionCtrl.start "
             ng-click="administracionCtrl.modificarProyecto(row);"
@@ -193,6 +193,7 @@
                 <span ng-if="row.en_slider == 1">En Slider</span>
                 <span ng-if="row.en_slider == 0">--</span>
             </td>
+            <td ng-if="administracionCtrl.user.data.rol == 0">{{appCtrl.getComision(row.total_donado) | currency}}</td>
         </tr>
         </tbody>
 
