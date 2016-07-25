@@ -930,7 +930,7 @@ input {
   //background: radial-gradient(ellipse at center, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
   //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=1);
     box-shadow: 0px 0px 100px rgba(54, 62, 78, 0.4) inset;
-
+  padding-bottom: 39px;
   @media (min-width: 800px) {
     margin-top: 30px;
   }
@@ -1656,26 +1656,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
     align-items: center;
     max-width: 900px;
     .main-empresa {
-      height: 120px;
-      width: 120px;
-      min-height: 120px;
-      min-width: 120px;
-      background: rgba(255,255,255,1);
-      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-      background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-      background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+      //height: 120px;
+      //width: 120px;
+      //min-height: 120px;
+      //min-width: 120px;
+      //background: rgba(255,255,255,1);
+      //background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      //background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+      //background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      //background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      //background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      //background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+      //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
       margin: 10px;
-      border-radius: 3px;
-      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      //border-radius: 3px;
+      //-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      //-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
+      //box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
     }
   }
 
+}
+
+.main-empresa:hover{
+  cursor: pointer;
 }
 
 #contacto-container {
@@ -2541,7 +2545,7 @@ background-image: url("fondo-mps.png");
   .administracion-button-bar button {
     margin-bottom: 20px;
     height: 23px!important;
-    font-size: 12px;
+    font-size: 11px;
   }
 
 }
