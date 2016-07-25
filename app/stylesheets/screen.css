@@ -968,6 +968,7 @@ input {
   margin-top: 50px;
   background: white;
   box-shadow: 0px 0px 100px rgba(54, 62, 78, 0.4) inset;
+  padding-bottom: 39px;
 }
 @media (min-width: 800px) {
   /* line 925, ../sass/screen.scss */
@@ -2066,26 +2067,15 @@ input {
 }
 /* line 1658, ../sass/screen.scss */
 #main-nuestras-empresas #main-nuestras-empresas-list .main-empresa {
-  height: 120px;
-  width: 120px;
-  min-height: 120px;
-  min-width: 120px;
-  background: white;
-  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
-  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
   margin: 10px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
 /* line 1681, ../sass/screen.scss */
+.main-empresa:hover {
+  cursor: pointer;
+}
+
+/* line 1685, ../sass/screen.scss */
 #contacto-container {
   display: flex;
   flex-direction: column;
@@ -2097,7 +2087,7 @@ input {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   padding-bottom: 50px;
 }
-/* line 1692, ../sass/screen.scss */
+/* line 1696, ../sass/screen.scss */
 #contacto-container h1 {
   font-family: 'Fjalla One', sans-serif;
   width: 100%;
@@ -2106,7 +2096,7 @@ input {
   font-size: 60px;
   text-align: center;
 }
-/* line 1711, ../sass/screen.scss */
+/* line 1715, ../sass/screen.scss */
 #contacto-container input {
   margin-bottom: 10px;
   margin-top: 10px;
@@ -2120,13 +2110,13 @@ input {
   transition: all .5s ease-in;
   -o-transition: all .5s ease-in;
 }
-/* line 1725, ../sass/screen.scss */
+/* line 1729, ../sass/screen.scss */
 #contacto-container span {
   font-family: "Droid Sans";
   font-size: 18px;
   color: white;
 }
-/* line 1732, ../sass/screen.scss */
+/* line 1736, ../sass/screen.scss */
 #contacto-container textarea {
   margin-top: 10px;
   width: 270px;
@@ -2136,7 +2126,7 @@ input {
   border-radius: 3px;
   border-style: none;
 }
-/* line 1746, ../sass/screen.scss */
+/* line 1750, ../sass/screen.scss */
 #contacto-container #contacto-enviar-mobile {
   font-family: 'Droid Sans', sans-serif;
   font-size: 18px;
@@ -2152,7 +2142,7 @@ input {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 1762, ../sass/screen.scss */
+/* line 1766, ../sass/screen.scss */
 #contacto-container #contacto-enviar-mobile:hover {
   color: white;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa84c+0,ff7b0d+100;Orange+3D */
@@ -2177,44 +2167,44 @@ input {
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
-/* line 1783, ../sass/screen.scss */
+/* line 1787, ../sass/screen.scss */
 #contacto-container #contacto-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (min-width: 800px) {
-  /* line 1783, ../sass/screen.scss */
+  /* line 1787, ../sass/screen.scss */
   #contacto-container #contacto-form {
     flex-direction: row;
   }
 }
-/* line 1790, ../sass/screen.scss */
+/* line 1794, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel {
   margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
-/* line 1795, ../sass/screen.scss */
+/* line 1799, ../sass/screen.scss */
 #contacto-container #contacto-form .contacto-panel span {
   width: 100%;
   text-align: left;
 }
 
-/* line 1806, ../sass/screen.scss */
+/* line 1810, ../sass/screen.scss */
 .administracion-button-bar {
   margin: 10px;
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-/* line 1811, ../sass/screen.scss */
+/* line 1815, ../sass/screen.scss */
 .administracion-button-bar button {
   margin: 2px !important;
 }
 
-/* line 1817, ../sass/screen.scss */
+/* line 1821, ../sass/screen.scss */
 #administracion {
   display: flex;
   flex-direction: column;
@@ -2238,17 +2228,17 @@ input {
   /* IE6-9 */
   box-shadow: 0px 0px 200px rgba(0, 0, 0, 0.5) inset;
 }
-/* line 1838, ../sass/screen.scss */
+/* line 1842, ../sass/screen.scss */
 #administracion input {
   margin: 5px auto;
   padding: 5px;
   width: 95%;
 }
-/* line 1844, ../sass/screen.scss */
+/* line 1848, ../sass/screen.scss */
 #administracion input:focus {
   outline: none;
 }
-/* line 1847, ../sass/screen.scss */
+/* line 1851, ../sass/screen.scss */
 #administracion span {
   color: white;
   font-family: 'Droid Sans', sans-serif;
@@ -2256,7 +2246,7 @@ input {
   margin-left: 5px;
   text-align: left;
 }
-/* line 1856, ../sass/screen.scss */
+/* line 1860, ../sass/screen.scss */
 #administracion button,
 #administracion .boton-admin button,
 #administracion .boton-datos {
@@ -2293,11 +2283,11 @@ input {
   transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
 }
-/* line 1892, ../sass/screen.scss */
+/* line 1896, ../sass/screen.scss */
 #administracion .boton-datos {
   width: 75px !important;
 }
-/* line 1896, ../sass/screen.scss */
+/* line 1900, ../sass/screen.scss */
 #administracion .buscador {
   -webkit-border-radius: 5px;
   width: 97.8%;
@@ -2320,25 +2310,25 @@ input {
   /* IE6-9 */
   height: 30px;
 }
-/* line 1918, ../sass/screen.scss */
+/* line 1922, ../sass/screen.scss */
 #administracion ::-webkit-input-placeholder {
   color: white;
 }
-/* line 1922, ../sass/screen.scss */
+/* line 1926, ../sass/screen.scss */
 #administracion :-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
-/* line 1926, ../sass/screen.scss */
+/* line 1930, ../sass/screen.scss */
 #administracion ::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
-/* line 1930, ../sass/screen.scss */
+/* line 1934, ../sass/screen.scss */
 #administracion :-ms-input-placeholder {
   color: white;
 }
-/* line 1934, ../sass/screen.scss */
+/* line 1938, ../sass/screen.scss */
 #administracion .boton-admin button:hover,
 #administracion .boton-datos:hover,
 #administracion button:hover {
@@ -2360,7 +2350,7 @@ input {
   -o-transition: all .2s ease-in;
   cursor: pointer;
 }
-/* line 1952, ../sass/screen.scss */
+/* line 1956, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   overflow: hidden;
   border: 1px solid white;
@@ -2374,20 +2364,20 @@ input {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
 @media (min-width: 400px) {
-  /* line 1968, ../sass/screen.scss */
+  /* line 1972, ../sass/screen.scss */
   #administracion .administracion-inputs {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
   }
-  /* line 1978, ../sass/screen.scss */
+  /* line 1982, ../sass/screen.scss */
   #administracion .administracion-inputs .administracion-input {
     max-width: 400px;
     width: 400px;
   }
 }
-/* line 1986, ../sass/screen.scss */
+/* line 1990, ../sass/screen.scss */
 #administracion .administracion-input-contenedor {
   padding-top: 10px;
   display: flex;
@@ -2403,7 +2393,7 @@ input {
   -o-animation: fadein 2s ease-in-out;
   animation: fadein 2s ease-in-out;
 }
-/* line 2003, ../sass/screen.scss */
+/* line 2007, ../sass/screen.scss */
 #administracion .titulos-administracion {
   text-align: center;
   margin-bottom: auto;
@@ -2417,7 +2407,7 @@ input {
   -o-animation: fadein 2s ease-in-out;
   animation: fadein 2s ease-in-out;
 }
-/* line 2018, ../sass/screen.scss */
+/* line 2022, ../sass/screen.scss */
 #administracion #rol, #administracion .administracion-input select {
   background: #677b8c;
   /* Old browsers */
@@ -2437,7 +2427,7 @@ input {
   border-style: none;
   background-color: black !important;
 }
-/* line 2033, ../sass/screen.scss */
+/* line 2037, ../sass/screen.scss */
 #administracion .administracion-foto {
   display: flex;
   flex-direction: row;
@@ -2445,17 +2435,17 @@ input {
   min-width: 100%;
 }
 @media (min-width: 400px) {
-  /* line 2033, ../sass/screen.scss */
+  /* line 2037, ../sass/screen.scss */
   #administracion .administracion-foto {
     max-width: 400px;
     margin-left: 22px;
   }
 }
-/* line 2044, ../sass/screen.scss */
+/* line 2048, ../sass/screen.scss */
 #administracion .administracion-foto .foto {
   position: relative;
 }
-/* line 2047, ../sass/screen.scss */
+/* line 2051, ../sass/screen.scss */
 #administracion .administracion-foto .foto .input-foto {
   background-color: white;
   width: 100px;
@@ -2472,12 +2462,12 @@ input {
   -o-animation: fadein 2s ease-in-out;
   animation: fadein 2s ease-in-out;
 }
-/* line 2062, ../sass/screen.scss */
+/* line 2066, ../sass/screen.scss */
 #administracion .administracion-foto .foto .input-foto img {
   min-width: 150px;
   margin-left: calc(50% - 75px);
 }
-/* line 2069, ../sass/screen.scss */
+/* line 2073, ../sass/screen.scss */
 #administracion .administracion-foto .foto input {
   position: absolute;
   width: 100px;
@@ -2487,7 +2477,7 @@ input {
   top: 0;
   left: 0;
 }
-/* line 2084, ../sass/screen.scss */
+/* line 2088, ../sass/screen.scss */
 #administracion .administracion-input {
   display: flex;
   flex-direction: column;
@@ -2495,7 +2485,7 @@ input {
   padding: 5px;
   width: 100%;
 }
-/* line 2090, ../sass/screen.scss */
+/* line 2094, ../sass/screen.scss */
 #administracion .administracion-input select {
   margin: 5px;
   padding: 5px;
@@ -2503,7 +2493,7 @@ input {
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
 }
-/* line 2100, ../sass/screen.scss */
+/* line 2104, ../sass/screen.scss */
 #administracion textarea {
   width: 95%;
   font-size: 16px;
@@ -2511,11 +2501,11 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
-/* line 2108, ../sass/screen.scss */
+/* line 2112, ../sass/screen.scss */
 #administracion td {
   max-width: 50% !important;
 }
-/* line 2112, ../sass/screen.scss */
+/* line 2116, ../sass/screen.scss */
 #administracion #administracion-main,
 #administracion #administracion-usuarios-tabla {
   margin-top: 50px;
@@ -2524,18 +2514,18 @@ input {
   padding: 10px;
 }
 @media (max-width: 850px) {
-  /* line 2112, ../sass/screen.scss */
+  /* line 2116, ../sass/screen.scss */
   #administracion #administracion-main,
   #administracion #administracion-usuarios-tabla {
     max-width: 100%;
     min-width: 100%;
   }
 }
-/* line 2125, ../sass/screen.scss */
+/* line 2129, ../sass/screen.scss */
 #administracion .administracion-input-area {
   width: 98% !important;
 }
-/* line 2129, ../sass/screen.scss */
+/* line 2133, ../sass/screen.scss */
 #administracion #administracion-usuarios-tabla,
 #administracion #administracion-aportes-tabla,
 #administracion #administracion-proyectos-tabla,
@@ -2555,7 +2545,7 @@ input {
   animation: fadein 2s ease-in;
 }
 @media (max-width: 400px) {
-  /* line 2129, ../sass/screen.scss */
+  /* line 2133, ../sass/screen.scss */
   #administracion #administracion-usuarios-tabla,
   #administracion #administracion-aportes-tabla,
   #administracion #administracion-proyectos-tabla,
@@ -2563,16 +2553,16 @@ input {
     margin: 20px;
   }
 }
-/* line 2154, ../sass/screen.scss */
+/* line 2158, ../sass/screen.scss */
 #administracion #administracion-proyectos-tabla td:hover a {
   color: white;
 }
-/* line 2160, ../sass/screen.scss */
+/* line 2164, ../sass/screen.scss */
 #administracion #administracion-proyectos-tabla td a:hover {
   color: blue;
   cursor: pointer;
 }
-/* line 2168, ../sass/screen.scss */
+/* line 2172, ../sass/screen.scss */
 #administracion #administracion-main th, #administracion td {
   text-align: center;
   color: white;
@@ -2580,7 +2570,7 @@ input {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
-/* line 2178, ../sass/screen.scss */
+/* line 2182, ../sass/screen.scss */
 #administracion #administracion-main th {
   background: #677b8c;
   /* Old browsers */
@@ -2596,16 +2586,16 @@ input {
   font-weight: bolder;
   font-size: 16px;
 }
-/* line 2187, ../sass/screen.scss */
+/* line 2191, ../sass/screen.scss */
 #administracion #administracion-main th input {
   margin-bottom: 10px;
   height: 20px;
 }
-/* line 2196, ../sass/screen.scss */
+/* line 2200, ../sass/screen.scss */
 #administracion #ac-progress-bar {
   max-width: 100%;
 }
-/* line 2200, ../sass/screen.scss */
+/* line 2204, ../sass/screen.scss */
 #administracion .administracion-row:hover,
 #administracion .tr-selected {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#261624+0,3c5a6f+100 */
@@ -2627,7 +2617,7 @@ input {
   transition: all .3s;
 }
 
-/* line 2219, ../sass/screen.scss */
+/* line 2223, ../sass/screen.scss */
 #administracion-nav {
   width: 100%;
   display: flex;
@@ -2652,7 +2642,7 @@ input {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
-/* line 2237, ../sass/screen.scss */
+/* line 2241, ../sass/screen.scss */
 #administracion-nav :hover {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -2667,12 +2657,12 @@ input {
   transition: all .3s;
 }
 @media (max-width: 400px) {
-  /* line 2219, ../sass/screen.scss */
+  /* line 2223, ../sass/screen.scss */
   #administracion-nav {
     margin-top: 50px;
   }
 }
-/* line 2257, ../sass/screen.scss */
+/* line 2261, ../sass/screen.scss */
 #administracion-nav div {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -2687,7 +2677,7 @@ input {
   border-radius: 3px;
 }
 @media (max-width: 400px) {
-  /* line 2257, ../sass/screen.scss */
+  /* line 2261, ../sass/screen.scss */
   #administracion-nav div {
     width: 100%;
     margin-top: 10px;
@@ -2695,13 +2685,13 @@ input {
   }
 }
 
-/* line 2279, ../sass/screen.scss */
+/* line 2283, ../sass/screen.scss */
 .institucional-publicidad {
   margin: auto;
   max-width: 2400px;
   padding: 30px;
 }
-/* line 2284, ../sass/screen.scss */
+/* line 2288, ../sass/screen.scss */
 .institucional-publicidad h1 {
   color: #F7B35A;
   margin: 10px;
@@ -2712,12 +2702,12 @@ input {
   text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.46);
 }
 @media (max-width: 400px) {
-  /* line 2284, ../sass/screen.scss */
+  /* line 2288, ../sass/screen.scss */
   .institucional-publicidad h1 {
     font-size: 40px;
   }
 }
-/* line 2297, ../sass/screen.scss */
+/* line 2301, ../sass/screen.scss */
 .institucional-publicidad h2 {
   margin: 10px;
   font-family: 'Fjalla One', sans-serif;
@@ -2726,11 +2716,11 @@ input {
   text-align: justify;
 }
 
-/* line 2308, ../sass/screen.scss */
+/* line 2312, ../sass/screen.scss */
 #adminitracion-cambios {
   text-align: left;
 }
-/* line 2310, ../sass/screen.scss */
+/* line 2314, ../sass/screen.scss */
 #adminitracion-cambios input {
   height: 16px;
   -webkit-border-radius: 3px;
@@ -2743,7 +2733,7 @@ input {
   font-size: 16px;
   padding: 10px;
 }
-/* line 2322, ../sass/screen.scss */
+/* line 2326, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion {
   display: flex;
   flex-direction: row;
@@ -2752,7 +2742,7 @@ input {
   padding: 10px;
   justify-content: space-around;
 }
-/* line 2330, ../sass/screen.scss */
+/* line 2334, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado {
   margin: 5px;
@@ -2777,21 +2767,21 @@ input {
   border-radius: 3px;
 }
 @media (min-width: 800px) {
-  /* line 2330, ../sass/screen.scss */
+  /* line 2334, ../sass/screen.scss */
   #adminitracion-cambios #cambios-comparacion #cambios-original,
   #adminitracion-cambios #cambios-comparacion #cambios-modificado {
     width: calc(50% - 36px);
     min-width: calc(50% - 36px);
   }
 }
-/* line 2355, ../sass/screen.scss */
+/* line 2359, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original h2,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado h2 {
   font-weight: 700;
   font-size: 28px;
   color: white;
 }
-/* line 2361, ../sass/screen.scss */
+/* line 2365, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original p,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado p {
   margin-top: 5px;
@@ -2802,7 +2792,7 @@ input {
   font-weight: lighter;
   font-family: 'Droid Sans', sans-serif;
 }
-/* line 2372, ../sass/screen.scss */
+/* line 2376, ../sass/screen.scss */
 #adminitracion-cambios #cambios-comparacion #cambios-original span,
 #adminitracion-cambios #cambios-comparacion #cambios-modificado span {
   margin-top: 5px;
@@ -2813,7 +2803,7 @@ input {
   color: white;
 }
 
-/* line 2393, ../sass/screen.scss */
+/* line 2397, ../sass/screen.scss */
 .parrafo-in {
   -webkit-animation: parrafo-in 1s ease;
   -o-animation: parrafo-in 1s ease;
@@ -2846,12 +2836,12 @@ input {
     transform: translate(0px, 0);
   }
 }
-/* line 2432, ../sass/screen.scss */
+/* line 2436, ../sass/screen.scss */
 .parrafo-out {
   background-color: blue !important;
 }
 
-/* line 2436, ../sass/screen.scss */
+/* line 2440, ../sass/screen.scss */
 .administracion-input input {
   margin-bottom: 10px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
@@ -2866,7 +2856,7 @@ input {
   font-size: 16px;
 }
 
-/* line 2451, ../sass/screen.scss */
+/* line 2455, ../sass/screen.scss */
 .dias-restantes {
   color: black;
   font-family: 'Droid Sans', sans-serif;
@@ -2874,30 +2864,30 @@ input {
   text-align: left;
   margin-top: 10px;
 }
-/* line 2458, ../sass/screen.scss */
+/* line 2462, ../sass/screen.scss */
 .dias-restantes span {
   color: black;
   font-size: 45px;
 }
 
-/* line 2465, ../sass/screen.scss */
+/* line 2469, ../sass/screen.scss */
 .porcentaje {
   font-size: 45px;
   color: black;
   align-items: flex-end;
 }
 
-/* line 2472, ../sass/screen.scss */
+/* line 2476, ../sass/screen.scss */
 .cambios-fotos {
   display: flex;
   margin-top: 10px;
 }
-/* line 2476, ../sass/screen.scss */
+/* line 2480, ../sass/screen.scss */
 .cambios-fotos img {
   width: 22% !important;
 }
 
-/* line 2481, ../sass/screen.scss */
+/* line 2485, ../sass/screen.scss */
 .contenedor-ingreso,
 .contenedor-nuevo-usuario {
   min-width: 350px;
@@ -2934,14 +2924,14 @@ input {
   transition: all 1s cubic-bezier(0.98, 0, 1, 0.28);
 }
 
-/* line 2509, ../sass/screen.scss */
+/* line 2513, ../sass/screen.scss */
 .contenedor-ingreso {
   min-height: 400px;
   max-height: 542px;
   margin-top: 30px;
 }
 
-/* line 2516, ../sass/screen.scss */
+/* line 2520, ../sass/screen.scss */
 .facebook-log {
   background-repeat: no-repeat !important;
   width: 100px;
@@ -2949,7 +2939,7 @@ input {
   background-image: url("facebook-log-in.png") !important;
 }
 
-/* line 2524, ../sass/screen.scss */
+/* line 2528, ../sass/screen.scss */
 .google-log {
   background-repeat: no-repeat !important;
   width: 100px;
@@ -2957,7 +2947,7 @@ input {
   background-image: url("google-log-in.png") !important;
 }
 
-/* line 2535, ../sass/screen.scss */
+/* line 2539, ../sass/screen.scss */
 #ingreso,
 #nuevo-usuario {
   background-image: url("fondo-mps.png");
@@ -2965,22 +2955,22 @@ input {
   height: 80vw;
   padding-bottom: 50px;
 }
-/* line 2541, ../sass/screen.scss */
+/* line 2545, ../sass/screen.scss */
 #ingreso .administracion-button-bar button,
 #nuevo-usuario .administracion-button-bar button {
   margin-bottom: 20px;
   height: 23px !important;
-  font-size: 12px;
+  font-size: 11px;
 }
 
-/* line 2549, ../sass/screen.scss */
+/* line 2553, ../sass/screen.scss */
 #nuevo-usuario-form {
   margin: auto;
   padding-top: 50px;
   align-items: center;
   max-width: 800px;
 }
-/* line 2556, ../sass/screen.scss */
+/* line 2560, ../sass/screen.scss */
 #nuevo-usuario-form h1 {
   margin-bottom: 20px;
   font-family: 'Droid Sans', sans-serif;
@@ -2988,14 +2978,14 @@ input {
   font-weight: bold;
   color: #ffb76b;
 }
-/* line 2564, ../sass/screen.scss */
+/* line 2568, ../sass/screen.scss */
 #nuevo-usuario-form span {
   color: white;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
-/* line 2571, ../sass/screen.scss */
+/* line 2575, ../sass/screen.scss */
 #nuevo-usuario-form button {
   font-family: 'Droid Sans', sans-serif;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+50,ff7c00+51,ff7f04+100;Orange+Gloss */
@@ -3022,7 +3012,7 @@ input {
   transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
 }
-/* line 2594, ../sass/screen.scss */
+/* line 2598, ../sass/screen.scss */
 #nuevo-usuario-form button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9226+0,ffa73d+50,ff7c00+51,a54903+100 */
   background: #ff9226;
@@ -3044,7 +3034,7 @@ input {
   -o-transition: all .2s ease-in;
   cursor: pointer;
 }
-/* line 2612, ../sass/screen.scss */
+/* line 2616, ../sass/screen.scss */
 #nuevo-usuario-form p {
   margin-bottom: 20px;
   color: white;
@@ -3054,7 +3044,7 @@ input {
   line-height: 20px;
   text-align: left;
 }
-/* line 2623, ../sass/screen.scss */
+/* line 2627, ../sass/screen.scss */
 #nuevo-usuario-form input {
   font-family: "Droid Sans", sans-serif;
   width: 98%;
@@ -3071,7 +3061,7 @@ input {
   padding: 5px;
 }
 
-/* line 2645, ../sass/screen.scss */
+/* line 2649, ../sass/screen.scss */
 .titulo-nuevos-proyectos {
   font-family: 'Droid Sans', sans-serif;
   font-size: 24px;
@@ -3081,13 +3071,13 @@ input {
   margin-bottom: 20px;
 }
 
-/* line 2654, ../sass/screen.scss */
+/* line 2658, ../sass/screen.scss */
 #ingreso-form {
   margin: auto;
   padding-top: 50px;
   align-items: left;
 }
-/* line 2659, ../sass/screen.scss */
+/* line 2663, ../sass/screen.scss */
 #ingreso-form h1 {
   margin-bottom: 15px;
   font-family: 'Droid Sans', sans-serif;
@@ -3095,7 +3085,7 @@ input {
   font-weight: bold;
   color: #ffb76b;
 }
-/* line 2667, ../sass/screen.scss */
+/* line 2671, ../sass/screen.scss */
 #ingreso-form p {
   margin-bottom: 30px;
   color: white;
@@ -3105,14 +3095,14 @@ input {
   line-height: 24px;
   text-align: left;
 }
-/* line 2678, ../sass/screen.scss */
+/* line 2682, ../sass/screen.scss */
 #ingreso-form span {
   color: white;
   font-family: 'Droid Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
-/* line 2686, ../sass/screen.scss */
+/* line 2690, ../sass/screen.scss */
 #ingreso-form button {
   font-family: 'Droid Sans', sans-serif;
   margin: 2px;
@@ -3138,7 +3128,7 @@ input {
   transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
 }
-/* line 2707, ../sass/screen.scss */
+/* line 2711, ../sass/screen.scss */
 #ingreso-form button:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9226+0,ffa73d+50,ff7c00+51,a54903+100 */
   background: #ff9226;
@@ -3159,7 +3149,7 @@ input {
   transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
 }
-/* line 2723, ../sass/screen.scss */
+/* line 2727, ../sass/screen.scss */
 #ingreso-form input {
   font-family: "Droid Sans", sans-serif;
   width: 98%;
@@ -3175,13 +3165,13 @@ input {
   margin-top: 5px;
   padding: 4px;
 }
-/* line 2740, ../sass/screen.scss */
+/* line 2744, ../sass/screen.scss */
 #ingreso-form .administracion-button-bar {
   margin: 0px !important;
   justify-content: space-around !important;
 }
 
-/* line 2748, ../sass/screen.scss */
+/* line 2752, ../sass/screen.scss */
 #footer {
   text-align: center;
   position: fixed;
@@ -3201,7 +3191,7 @@ input {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );
   /* IE6-9 */
 }
-/* line 2764, ../sass/screen.scss */
+/* line 2768, ../sass/screen.scss */
 #footer h1 {
   font-family: 'Droid Sans', sans-serif;
   font-size: 45px;
@@ -3210,7 +3200,7 @@ input {
   text-align: center;
   margin: auto;
 }
-/* line 2775, ../sass/screen.scss */
+/* line 2779, ../sass/screen.scss */
 #footer h2, #footer .link {
   text-align: center;
   margin: 10px auto;
@@ -3226,13 +3216,13 @@ input {
   text-transform: uppercase;
 }
 @media (max-width: 500px) {
-  /* line 2775, ../sass/screen.scss */
+  /* line 2779, ../sass/screen.scss */
   #footer h2, #footer .link {
     font-size: 12px;
   }
 }
 
-/* line 2795, ../sass/screen.scss */
+/* line 2799, ../sass/screen.scss */
 #footer h2:hover, .link:hover {
   opacity: 1;
   -webkit-transition: all ease .3s;
@@ -3242,7 +3232,7 @@ input {
   transition: all ease .3s;
 }
 
-/* line 2806, ../sass/screen.scss */
+/* line 2810, ../sass/screen.scss */
 #fondo-detalle-proyecto {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
@@ -3256,7 +3246,7 @@ input {
   height: 100%;
 }
 
-/* line 2819, ../sass/screen.scss */
+/* line 2823, ../sass/screen.scss */
 #proyecto {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
   background-color: rgba(255, 255, 255, 0.7);
@@ -3274,7 +3264,7 @@ input {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 2835, ../sass/screen.scss */
+/* line 2839, ../sass/screen.scss */
 #ac-progress-bar {
   overflow: hidden;
   border: 1px solid white;
@@ -3288,7 +3278,7 @@ input {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.49);
 }
 
-/* line 2851, ../sass/screen.scss */
+/* line 2855, ../sass/screen.scss */
 span {
   font-family: "Droid Sans";
   font-size: 16px;
@@ -3299,7 +3289,7 @@ span {
   width: 100%;
 }
 
-/* line 2864, ../sass/screen.scss */
+/* line 2868, ../sass/screen.scss */
 .contenedor-proyecto-foto {
   text-align: center;
   overflow: hidden;
@@ -3310,19 +3300,19 @@ span {
   vertical-align: middle;
 }
 
-/* line 2877, ../sass/screen.scss */
+/* line 2881, ../sass/screen.scss */
 .foto-principal-seleccionada {
   width: 100%;
   vertical-align: middle;
 }
 
-/* line 2883, ../sass/screen.scss */
+/* line 2887, ../sass/screen.scss */
 #proyecto-container {
   text-align: center;
   margin: auto;
 }
 
-/* line 2888, ../sass/screen.scss */
+/* line 2892, ../sass/screen.scss */
 .titulo_proyecto_seleccionado {
   margin-top: 50px !important;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5883a0+0,3c5a6f+100 */
@@ -3344,13 +3334,13 @@ span {
   text-align: center;
 }
 @media (max-width: 500px) {
-  /* line 2888, ../sass/screen.scss */
+  /* line 2892, ../sass/screen.scss */
   .titulo_proyecto_seleccionado {
     font-size: 30px;
   }
 }
 
-/* line 2908, ../sass/screen.scss */
+/* line 2912, ../sass/screen.scss */
 .thumb {
   width: 36%;
   margin: 8px;
@@ -3359,14 +3349,14 @@ span {
   border: 1px solid #3ABDC3;
 }
 
-/* line 2917, ../sass/screen.scss */
+/* line 2921, ../sass/screen.scss */
 #proyecto-left {
   width: 60%;
   padding: 10px;
   background-color: white;
 }
 
-/* line 2925, ../sass/screen.scss */
+/* line 2929, ../sass/screen.scss */
 #proyecto-rigth {
   width: 38%;
   padding: 8px;
@@ -3378,27 +3368,27 @@ span {
   animation: fadein 1s ease-in-out;
 }
 @media (max-width: 600px) {
-  /* line 2925, ../sass/screen.scss */
+  /* line 2929, ../sass/screen.scss */
   #proyecto-rigth {
     width: 100%;
   }
 }
-/* line 2947, ../sass/screen.scss */
+/* line 2951, ../sass/screen.scss */
 #proyecto-rigth span {
   color: #3c5a6f;
   font-size: 24px;
 }
 @media (max-width: 500px) {
-  /* line 2947, ../sass/screen.scss */
+  /* line 2951, ../sass/screen.scss */
   #proyecto-rigth span {
     font-size: 17px;
   }
 }
-/* line 2955, ../sass/screen.scss */
+/* line 2959, ../sass/screen.scss */
 #proyecto-rigth #ac-progress-bar {
   max-width: 95%;
 }
-/* line 2959, ../sass/screen.scss */
+/* line 2963, ../sass/screen.scss */
 #proyecto-rigth button {
   font-family: 'Droid Sans', sans-serif;
   font-weight: bold;
@@ -3428,20 +3418,20 @@ span {
   -o-transition: all .2s ease-in;
 }
 
-/* line 2987, ../sass/screen.scss */
+/* line 2991, ../sass/screen.scss */
 .nuevo-usuario-button-bar {
   display: flex;
   justify-content: center !important;
 }
 
-/* line 2992, ../sass/screen.scss */
+/* line 2996, ../sass/screen.scss */
 .nuevo-usuario-button-bar a {
   color: white !important;
   display: flex;
   justify-content: space-around;
 }
 
-/* line 3000, ../sass/screen.scss */
+/* line 3004, ../sass/screen.scss */
 #proyecto-rigth button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9226+0,ffa73d+50,ff7c00+51,a54903+100 */
@@ -3462,30 +3452,30 @@ span {
   -o-transition: all .2s ease-in;
 }
 
-/* line 3019, ../sass/screen.scss */
+/* line 3023, ../sass/screen.scss */
 #proyecto-upper {
   width: 100%;
   display: flex;
 }
 @media (max-width: 600px) {
-  /* line 3019, ../sass/screen.scss */
+  /* line 3023, ../sass/screen.scss */
   #proyecto-upper {
     flex-wrap: wrap;
     flex-direction: column;
   }
-  /* line 3027, ../sass/screen.scss */
+  /* line 3031, ../sass/screen.scss */
   #proyecto-upper #proyecto-thums {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
   }
-  /* line 3035, ../sass/screen.scss */
+  /* line 3039, ../sass/screen.scss */
   #proyecto-upper #proyecto-left {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  /* line 3041, ../sass/screen.scss */
+  /* line 3045, ../sass/screen.scss */
   #proyecto-upper #proyecto-rigth {
     width: 93%;
     margin-top: 20px;
@@ -3493,7 +3483,7 @@ span {
   }
 }
 
-/* line 3052, ../sass/screen.scss */
+/* line 3056, ../sass/screen.scss */
 #proyecto-thums {
   text-align: center;
   align-items: center;
@@ -3502,12 +3492,12 @@ span {
   padding: 5px;
 }
 
-/* line 3061, ../sass/screen.scss */
+/* line 3065, ../sass/screen.scss */
 #proyecto-thums span {
   color: white;
 }
 
-/* line 3066, ../sass/screen.scss */
+/* line 3070, ../sass/screen.scss */
 #proyecto-comentarios textarea {
   width: 98%;
   font-family: "Droid Sans", sans-serif;
@@ -3523,14 +3513,14 @@ span {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 3081, ../sass/screen.scss */
+/* line 3085, ../sass/screen.scss */
 .usuario-comentario {
   color: lightgray;
   font-size: 12px;
   text-transform: uppercase;
 }
 
-/* line 3089, ../sass/screen.scss */
+/* line 3093, ../sass/screen.scss */
 #proyecto-comentarios textarea:after {
   content: "";
   position: absolute;
@@ -3546,7 +3536,7 @@ span {
   border-color: transparent #f3f3f4 #f3f3f4 transparent;
 }
 
-/* line 3106, ../sass/screen.scss */
+/* line 3110, ../sass/screen.scss */
 #proyecto-comentarios div {
   font-family: "Droid Sans", sans-serif;
   font-size: 14px;
@@ -3571,7 +3561,7 @@ span {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 3128, ../sass/screen.scss */
+/* line 3132, ../sass/screen.scss */
 #proyecto-comentarios div:after {
   content: "";
   position: absolute;
@@ -3587,14 +3577,14 @@ span {
   border-color: transparent #0d8282 #0d8282 transparent;
 }
 
-/* line 3145, ../sass/screen.scss */
+/* line 3149, ../sass/screen.scss */
 .boton-borrar {
   width: 50px !important;
   height: 20px !important;
   padding: 0px !important;
 }
 
-/* line 3152, ../sass/screen.scss */
+/* line 3156, ../sass/screen.scss */
 #proyecto-comentarios button {
   width: 90px;
   height: 32px;
@@ -3626,7 +3616,7 @@ span {
   -o-transition: all .2s ease-in;
 }
 
-/* line 3178, ../sass/screen.scss */
+/* line 3182, ../sass/screen.scss */
 #proyecto-comentarios button:hover {
   cursor: pointer;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9226+0,ffa73d+50,ff7c00+51,a54903+100 */
@@ -3647,7 +3637,7 @@ span {
   -o-transition: all .2s ease-in;
 }
 
-/* line 3197, ../sass/screen.scss */
+/* line 3201, ../sass/screen.scss */
 #proyecto-bottom p {
   font-family: 'Droid Sans', sans-serif;
   color: black;
@@ -3658,7 +3648,7 @@ span {
   text-justify: distribute;
 }
 
-/* line 3208, ../sass/screen.scss */
+/* line 3212, ../sass/screen.scss */
 #resultados {
   background: #606c88;
   /* Old browsers */
@@ -3676,7 +3666,7 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 3223, ../sass/screen.scss */
+/* line 3227, ../sass/screen.scss */
 #resultados h1 {
   font-family: 'Droid Sans', sans-serif;
   color: white;
@@ -3684,12 +3674,12 @@ span {
   margin: 20px;
 }
 
-/* line 3230, ../sass/screen.scss */
+/* line 3234, ../sass/screen.scss */
 .administracion-donacion-cancelada {
   background-color: red;
 }
 
-/* line 3234, ../sass/screen.scss */
+/* line 3238, ../sass/screen.scss */
 .contenedor-enconstruccion {
   text-align: center;
   padding-top: 100px;
@@ -3706,7 +3696,7 @@ span {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0 );
   margin: auto;
 }
-/* line 3249, ../sass/screen.scss */
+/* line 3253, ../sass/screen.scss */
 .contenedor-enconstruccion span {
   color: white;
   font-family: "Droid Sans", sans-serif;
@@ -3720,45 +3710,45 @@ span {
   animation: fadein 2s ease-in-out;
 }
 @media (max-width: 500px) {
-  /* line 3249, ../sass/screen.scss */
+  /* line 3253, ../sass/screen.scss */
   .contenedor-enconstruccion span {
     font-size: 40px;
   }
 }
 
-/* line 3269, ../sass/screen.scss */
+/* line 3273, ../sass/screen.scss */
 .contenedor-enconstruccion-img {
   width: 100%;
   margin: 30px auto;
 }
 
-/* line 3280, ../sass/screen.scss */
+/* line 3284, ../sass/screen.scss */
 .logo-menu-mobile {
   height: 77%;
   margin-top: 5px;
 }
 
-/* line 3286, ../sass/screen.scss */
+/* line 3290, ../sass/screen.scss */
 .first-status {
   border: 2px solid #e3001b !important;
 }
 
-/* line 3290, ../sass/screen.scss */
+/* line 3294, ../sass/screen.scss */
 .second-status {
   border: 2px solid #fa9819 !important;
 }
 
-/* line 3294, ../sass/screen.scss */
+/* line 3298, ../sass/screen.scss */
 .third-status {
   border: 2px solid #feed01 !important;
 }
 
-/* line 3298, ../sass/screen.scss */
+/* line 3302, ../sass/screen.scss */
 .fourth-status {
   border: 2px solid #00a148 !important;
 }
 
-/* line 3302, ../sass/screen.scss */
+/* line 3306, ../sass/screen.scss */
 .fa-lightbulb-o,
 .fa-hourglass-end,
 .fa {
@@ -3772,37 +3762,37 @@ span {
   animation: fadein 2s ease-in-out;
 }
 
-/* line 3315, ../sass/screen.scss */
+/* line 3319, ../sass/screen.scss */
 #a0-lock.a0-theme-default .a0-panel .a0-header h1 {
   text-align: center !important;
   margin-left: 20px !important;
   font-family: "Droid Sans", sans-serif;
 }
 
-/* line 3323, ../sass/screen.scss */
+/* line 3327, ../sass/screen.scss */
 .a0-lock.a0-theme-default .a0-panel .a0-footer .a0-logo i {
   opacity: 0;
 }
 
-/* line 3327, ../sass/screen.scss */
+/* line 3331, ../sass/screen.scss */
 #contenedor-main {
   background-image: url("fondo-mps.png");
   background-position: center !important;
 }
 
-/* line 3333, ../sass/screen.scss */
+/* line 3337, ../sass/screen.scss */
 .contenedorrr {
   height: 80vw;
 }
 
-/* line 3337, ../sass/screen.scss */
+/* line 3341, ../sass/screen.scss */
 .contenedor-video {
   display: flex;
   background-color: black;
   overflow: hidden;
 }
 
-/* line 3345, ../sass/screen.scss */
+/* line 3349, ../sass/screen.scss */
 .contenedor-video iframe, .contenedor-video object, .contenedor-video embed {
   position: absolute;
   width: 80%;
@@ -3811,7 +3801,7 @@ span {
   left: calc(40% - 30%);
 }
 
-/* line 3354, ../sass/screen.scss */
+/* line 3358, ../sass/screen.scss */
 #legales {
   position: fixed;
   top: 0;
@@ -3824,7 +3814,7 @@ span {
   z-index: 1000;
   overflow: auto;
 }
-/* line 3366, ../sass/screen.scss */
+/* line 3370, ../sass/screen.scss */
 #legales #legales-inner {
   font-family: "Droid Sans", sans-serif;
   font-size: 16px;
@@ -3837,7 +3827,7 @@ span {
   overflow: auto;
   background-color: white;
 }
-/* line 3377, ../sass/screen.scss */
+/* line 3381, ../sass/screen.scss */
 #legales #legales-inner button {
   font-family: 'Droid Sans', sans-serif;
   background: #ffb76b;
@@ -3862,7 +3852,7 @@ span {
   transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
 }
-/* line 3397, ../sass/screen.scss */
+/* line 3401, ../sass/screen.scss */
 #legales #legales-inner button:hover {
   background: #ff9226;
   /* Old browsers */
@@ -3884,18 +3874,18 @@ span {
   cursor: pointer;
 }
 
-/* line 3416, ../sass/screen.scss */
+/* line 3420, ../sass/screen.scss */
 .texto-legales {
   line-height: 20px;
   color: white;
   margin-bottom: 10px;
   font-size: 14px;
 }
-/* line 3421, ../sass/screen.scss */
+/* line 3425, ../sass/screen.scss */
 .texto-legales a {
   color: white;
 }
-/* line 3424, ../sass/screen.scss */
+/* line 3428, ../sass/screen.scss */
 .texto-legales a:hover {
   cursor: pointer;
   color: #F7B35A;
@@ -3905,7 +3895,7 @@ span {
   -o-transition: all .2s ease-in;
 }
 
-/* line 3434, ../sass/screen.scss */
+/* line 3438, ../sass/screen.scss */
 video {
   margin-top: 45px;
   width: 85%;
@@ -3914,7 +3904,7 @@ video {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.54);
 }
 
-/* line 3442, ../sass/screen.scss */
+/* line 3446, ../sass/screen.scss */
 .acdesarrollos {
   font-family: "Droid Sans", sans-serif;
   font-size: 22px;
@@ -3938,19 +3928,19 @@ video {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
 }
 @media (max-width: 500px) {
-  /* line 3442, ../sass/screen.scss */
+  /* line 3446, ../sass/screen.scss */
   .acdesarrollos {
     font-size: 15px !important;
   }
 }
 
-/* line 3469, ../sass/screen.scss */
+/* line 3473, ../sass/screen.scss */
 .acdesarrollos a {
   color: #A1CCA5 !important;
   padding-left: 10px;
 }
 
-/* line 3477, ../sass/screen.scss */
+/* line 3481, ../sass/screen.scss */
 .paginacion {
   color: white;
   justify-content: center;
@@ -3971,30 +3961,30 @@ video {
   white-space: nowrap;
 }
 
-/* line 3494, ../sass/screen.scss */
+/* line 3498, ../sass/screen.scss */
 .paginacion-paginas {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 16px;
 }
-/* line 3499, ../sass/screen.scss */
+/* line 3503, ../sass/screen.scss */
 .paginacion-paginas input {
   margin-left: 5px;
 }
 
-/* line 3504, ../sass/screen.scss */
+/* line 3508, ../sass/screen.scss */
 .paginacion-go-to {
   display: flex;
   margin-right: 20px;
   margin-right: 20px;
 }
-/* line 3508, ../sass/screen.scss */
+/* line 3512, ../sass/screen.scss */
 .paginacion-go-to span {
   width: 30%;
   margin-top: 16px;
 }
 
-/* line 3515, ../sass/screen.scss */
+/* line 3519, ../sass/screen.scss */
 .barra-01 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMjMxYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmMzcxNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4004,7 +3994,7 @@ video {
   background-image: linear-gradient(to right, #ff231b, #ff3714);
 }
 
-/* line 3518, ../sass/screen.scss */
+/* line 3522, ../sass/screen.scss */
 .barra-02 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMzcxNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNGEwZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4014,7 +4004,7 @@ video {
   background-image: linear-gradient(to right, #ff3714, #ff4a0d);
 }
 
-/* line 3521, ../sass/screen.scss */
+/* line 3525, ../sass/screen.scss */
 .barra-03 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNGEwZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNWQwNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4024,7 +4014,7 @@ video {
   background-image: linear-gradient(to right, #ff4a0d, #ff5d06);
 }
 
-/* line 3524, ../sass/screen.scss */
+/* line 3528, ../sass/screen.scss */
 .barra-04 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNWQwNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNzAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4034,7 +4024,7 @@ video {
   background-image: linear-gradient(to right, #ff5d06, #ff7000);
 }
 
-/* line 3527, ../sass/screen.scss */
+/* line 3531, ../sass/screen.scss */
 .barra-05 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNzAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZlODMwMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4044,7 +4034,7 @@ video {
   background-image: linear-gradient(to right, #ff7000, #fe8303);
 }
 
-/* line 3530, ../sass/screen.scss */
+/* line 3534, ../sass/screen.scss */
 .barra-06 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlODMwMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZlOTUwNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4054,7 +4044,7 @@ video {
   background-image: linear-gradient(to right, #fe8303, #fe9506);
 }
 
-/* line 3533, ../sass/screen.scss */
+/* line 3537, ../sass/screen.scss */
 .barra-07 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlOTUwNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZlYTcwOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4064,7 +4054,7 @@ video {
   background-image: linear-gradient(to right, #fe9506, #fea709);
 }
 
-/* line 3536, ../sass/screen.scss */
+/* line 3540, ../sass/screen.scss */
 .barra-08 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlYTcwOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZkZGMxMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4074,7 +4064,7 @@ video {
   background-image: linear-gradient(to right, #fea709, #fddc10);
 }
 
-/* line 3539, ../sass/screen.scss */
+/* line 3543, ../sass/screen.scss */
 .barra-09 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZGMxMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZkZmYxNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4084,7 +4074,7 @@ video {
   background-image: linear-gradient(to right, #fddc10, #fdff15);
 }
 
-/* line 3542, ../sass/screen.scss */
+/* line 3546, ../sass/screen.scss */
 .barra-10 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZmYxNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmYwZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4094,7 +4084,7 @@ video {
   background-image: linear-gradient(to right, #fdff15, #ffff0f);
 }
 
-/* line 3545, ../sass/screen.scss */
+/* line 3549, ../sass/screen.scss */
 .barra-11 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmYwZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzlhZDQwYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4104,7 +4094,7 @@ video {
   background-image: linear-gradient(to right, #ffff0f, #9ad40a);
 }
 
-/* line 3548, ../sass/screen.scss */
+/* line 3552, ../sass/screen.scss */
 .barra-12 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzlhZDQwYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzgxYzkwNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4114,7 +4104,7 @@ video {
   background-image: linear-gradient(to right, #9ad40a, #81c907);
 }
 
-/* line 3551, ../sass/screen.scss */
+/* line 3555, ../sass/screen.scss */
 .barra-13 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgxYzkwNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzY5YmYwNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4124,7 +4114,7 @@ video {
   background-image: linear-gradient(to right, #81c907, #69bf05);
 }
 
-/* line 3554, ../sass/screen.scss */
+/* line 3558, ../sass/screen.scss */
 .barra-14 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY5YmYwNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzUxYjUwMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4134,7 +4124,7 @@ video {
   background-image: linear-gradient(to right, #69bf05, #51b503);
 }
 
-/* line 3557, ../sass/screen.scss */
+/* line 3561, ../sass/screen.scss */
 .barra-15 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUxYjUwMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM3YWEwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -4144,7 +4134,7 @@ video {
   background-image: linear-gradient(to right, #51b503, #37aa00);
 }
 
-/* line 3560, ../sass/screen.scss */
+/* line 3564, ../sass/screen.scss */
 .barra-16 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM3YWEwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM3YWEwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
