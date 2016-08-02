@@ -399,7 +399,8 @@
                             ContactsService.sendMail(vm.user.data.mail,
                                 window.mailAdmins,
                                 'MPE', 'Donación Realizada',
-                                'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? vm.proyecto_nombre : vm.proyecto.nombre), function (data) {
+                                'NUEVA DONACIÓN - Proyecto ' + ((vm.proyecto.nombre == undefined) ? vm.proyecto_nombre : vm.proyecto.nombre),
+                                function (data) {
                                     console.log(data);
                                 });
 
@@ -483,7 +484,8 @@
                         $timeout(watchUrl, 1000);
                     } else {
                         twttr.widgets.createShareButton(
-                            'http://192.185.67.199/~arielces/miprimersponsor/#/proyecto/' + $scope.url,
+                            //'http://192.185.67.199/~arielces/miprimersponsor/#/proyecto/' + $scope.url,
+                            'http://miprimersponsor.com/#/proyecto/' + $scope.url,
                             $element[0],
                             function (el) {
                             }, {
@@ -497,7 +499,6 @@
         }
     }
 
-
     facebook.$inject = ['$window', '$timeout'];
     function facebook($window, $timeout) {
         return {
@@ -506,7 +507,7 @@
                 proyecto: '='
             },
             template: '<div class="fb-share-button main-button-face" style="height: 30px; width: 30px;" data-layout="button_count" data-mobile-iframe="true" ' +
-            'data-href="http://192.185.67.199/~arielces/miprimersponsor/#/proyecto/{{proyecto}}/"></div>',
+            'data-href="http://miprimersponsor.com/#/proyecto/{{proyecto}}/"></div>',
             link: function (scope, element, attrs, compile) {
                 scope.$watch(function () {
                         //console.log(scope.proyecto);
