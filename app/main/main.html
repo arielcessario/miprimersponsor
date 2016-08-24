@@ -4,7 +4,7 @@
 
         <img src="images/lupa.png" alt="" height="80" width="80">
 
-        <input placeholder="Encuentra un proyecto..." type="text" ng-model="appCtrl.textProyecto"
+        <input placeholder="Encontrá un proyecto..." type="text" ng-model="appCtrl.textProyecto"
                ng-model-options="{ debounce: 0 }" ng-keypress="">
 
     </div>
@@ -23,9 +23,9 @@
 
                 <div id="main-btn-crear" ng-click="mainCtrl.goToCrear()">
 
-                    <p>CREAR</p>
+                    <p>CREÁ</p>
 
-                    <span>un nuevo proyecto</span>
+                    <span>un proyecto</span>
 
                 </div>
 
@@ -182,7 +182,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor1" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor1" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor1, mainCtrl.proyecto_nuevo_01.proyecto_id, mainCtrl.proyecto_nuevo_01.nombre);">
 
@@ -254,7 +254,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor2" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor2" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor2, mainCtrl.proyecto_nuevo_02.proyecto_id, mainCtrl.proyecto_nuevo_02.nombre);">
 
@@ -317,7 +317,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor3" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor3" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor3, mainCtrl.proyecto_nuevo_03.proyecto_id, mainCtrl.proyecto_nuevo_03.nombre);">
 
@@ -348,6 +348,20 @@
 
     </div>
 
+    <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
+
+    <h1><b>▣</b>Quienes somos:</h1>
+
+
+    <h2>Mi Primer Sponsor es la plataforma digital de crowdfounding dedicada al desarrollo del deporte y actividades recreativas a través del financiamiento colectivo.<br>
+        Somos un grupo de jóvenes que apostamos por un vínculo social que permita concretar sueños.
+
+
+    </h2>
+
+</div>
+
+
     <div class="imagenes-publicitarias">
 
         <img class="img-publi" src="images/prueba1.gif" width="2300px"
@@ -361,15 +375,21 @@
         <img src="" alt="">
 
 
-        <h1><b>▣</b> Nuestra misión</h1>
+        <h1><b>▣</b>Qué queremos</h1>
 
 
-        <h2>Buscamos fomentar la unión y creación de vínculos entre personas o grupos que tengan un proyecto con otras que tengan ganas de ayudar a cumplir estas metas.
-            Que los proyectos se conviertan en realidad para que cada persona tenga la oportunidad de emprender un camino explotando su potencial y pasión.
-            Deseamos que esta aventura de ayudar, esté al alcance de todos.
+        <h2>Que cada proyecto se convierta en realidad para que todos tengan la oportunidad de emprender un camino explotando su potencial y pasión. <br>
+            Deseamos que esta aventura de ayudar, esté al alcance de todos, y que quienes posean una meta, puedan alcanzarla.
+
+
+
+
         </h2>
 
     </div>
+
+
+
 
 
     <div id="proyectos-finalizar">
@@ -422,7 +442,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor4" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor4" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor4, mainCtrl.proyecto_finalizar_01.proyecto_id, mainCtrl.proyecto_finalizar_01.nombre);">
 
@@ -490,7 +510,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor5" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor5" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor5, mainCtrl.proyecto_finalizar_02.proyecto_id, mainCtrl.proyecto_finalizar_02.nombre);">
 
@@ -558,7 +578,7 @@
 
                 <div class="donacion-rapida-details">
 
-                    <span>Dona:</span><input ng-model="mainCtrl.donacion_rapida_valor6" type="text">
+                    <span>Doná:</span><input ng-model="mainCtrl.donacion_rapida_valor6" type="text">
 
                     <button ng-click="appCtrl.donacionRapida(mainCtrl.donacion_rapida_valor6, mainCtrl.proyecto_finalizar_03.proyecto_id, mainCtrl.proyecto_finalizar_03.nombre);">
 
@@ -591,29 +611,10 @@
 
     </div>
 
-    <div class="imagenes-publicitarias">
-
-        <img src="images/prueba2.gif" width="2300px" height="530px" style="margin-left: calc(50% - 1150px)!important;">
-
-    </div>
 
 
-    <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
-
-        <img src="" alt="">
 
 
-        <h1><b>▣</b>Nuestro Objetivo</h1>
-
-
-        <h2>Mi Primer Sponsor es la plataforma digital de crowfunding dedicada al desarrollo del deporte y actividades recreativas a través del financiamiento colectivo.
-            Somos un grupo de jóvenes que apostamos por un vínculo social que permita concretar los sueños de todos los que deseen ir por ellos; Quienes poseen una meta, puedan alcanzarla mediante las herramientas otorgadas por otras personas dispuestas a ayudar.
-            Que tu pasión se concrete y tu sueño se pueda realizar.
-
-
-        </h2>
-
-    </div>
 
 
     <div id="main-nuestras-empresas">
@@ -646,12 +647,33 @@
                 </a>
             </div>
 
-
-        </div>
-
+            <div class="main-empresa">
+                <a href="http://wumsports.com/tv" target="_blank">
+                    <img src="images/logo-wum.png"  alt="" height="100" width="100">
+                </a>
+            </div>
 
     </div>
 
+
+    </div>
+    <div class="institucional-publicidad parrafo-movido" ac-animate animation-in="parrafo-in">
+
+        <img src="" alt="">
+
+
+        <h1><b>▣</b>Nuestro objetivo:</h1>
+
+
+        <h2>Buscamos fomentar la unión y creación de vínculos entre personas o grupos que tengan un proyecto con otras que tengan ganas de ayudar a cumplir estas metas. <br>
+            Que tu pasión se concrete y tu sueño se pueda cumplir.
+
+
+
+
+        </h2>
+
+    </div>
 
     <!--<div id="contacto-container" form-id="contacto">-->
 
