@@ -1180,11 +1180,13 @@ input {
       font-size: 16px;
       line-height: 20px;
       margin-bottom: 20px;
-      max-height: 80px;
+      max-height: 140px;
       color: white;
       overflow: hidden;
 
     }
+
+
     img {
       width: 100%;
       vertical-align: middle;
@@ -1263,6 +1265,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9226', end
       transition: all 0.4s;
     }
   }
+}
+
+
+.main-slider-proyecto:hover{
+  cursor: pointer;
+  border: 2px solid rgb(255,146,38)!important;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
 }
 
 .main-proyecto-nuevo-foto {
