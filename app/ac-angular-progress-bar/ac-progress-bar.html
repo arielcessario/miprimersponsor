@@ -1,27 +1,30 @@
-<div id="ac-progress-bar" style="position:relative; width: 500px; height: 40px; display: flex; flex-direction: row; align-items: center; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+<div style="position: relative;">
+    <div id="ac-progress-bar" style="position:relative; width: 500px; height: 40px; display: flex; flex-direction: row; align-items: center; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
 background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 ">
-    <div ng-class="{'barra-01':acProgressCtrl.toShow >= 0}" ng-style="" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-02':acProgressCtrl.toShow >= 1}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-03':acProgressCtrl.toShow >= 2}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-04':acProgressCtrl.toShow >= 3}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-05':acProgressCtrl.toShow >= 4}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-06':acProgressCtrl.toShow >= 5}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-07':acProgressCtrl.toShow >= 6}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-08':acProgressCtrl.toShow >= 7}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-09':acProgressCtrl.toShow >= 8}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-10':acProgressCtrl.toShow >= 9}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-11':acProgressCtrl.toShow >= 10}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-12':acProgressCtrl.toShow >= 11}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-13':acProgressCtrl.toShow >= 12}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-14':acProgressCtrl.toShow >= 13}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-15':acProgressCtrl.toShow >= 14}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
-    <div ng-class="{'barra-16':acProgressCtrl.toShow >= 15}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
-    <div ng-if="acProgressCtrl.showHint" style="position:absolute;top:40%;left: 50%;">{{acProgressCtrl.hint}}</div>
+        <div ng-class="{'barra-01':acProgressCtrl.toShow >= 0}" ng-style="" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-02':acProgressCtrl.toShow >= 1}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-03':acProgressCtrl.toShow >= 2}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-04':acProgressCtrl.toShow >= 3}" class="ac-progress-first" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-05':acProgressCtrl.toShow >= 4}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-06':acProgressCtrl.toShow >= 5}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-07':acProgressCtrl.toShow >= 6}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-08':acProgressCtrl.toShow >= 7}" class="ac-progress-second" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-09':acProgressCtrl.toShow >= 8}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-10':acProgressCtrl.toShow >= 9}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-11':acProgressCtrl.toShow >= 10}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-12':acProgressCtrl.toShow >= 11}" class="ac-progress-third" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-13':acProgressCtrl.toShow >= 12}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-14':acProgressCtrl.toShow >= 13}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-15':acProgressCtrl.toShow >= 14}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
+        <div ng-class="{'barra-16':acProgressCtrl.toShow >= 15}" class="ac-progress-fourth" style="width: 20px; height: 40px;"></div>
+    </div>
+    <div ng-if="acProgressCtrl.showHint" >{{acProgressCtrl.hint}}</div>
+
 </div>
 
 
