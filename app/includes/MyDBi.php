@@ -202,8 +202,8 @@ class MysqliDb
      * @param int $port
      * @param string $charset
      */
-    //    public function __construct($host ='192.185.4.175', $username = 'arielces_miprime', $password = ',CE~tlR;IJLu', $db = 'arielces_miprimersponsor', $port = NULL)
-    public function __construct($host ='192.185.4.175', $username = 'arielces_mp_dev', $password = 'DKMqCt9?tG$-', $db = 'arielces_mp_dev', $port = NULL)
+//        public function __construct($host ='192.185.4.175', $username = 'arielces_miprime', $password = ',CE~tlR;IJLu', $db = 'arielces_miprimersponsor', $port = NULL, $charset = 'utf8')
+    public function __construct($host ='192.185.4.175', $username = 'arielces_mp_dev', $password = 'DKMqCt9?tG$-', $db = 'arielces_mp_dev', $port = NULL, $charset = 'utf8')
 //    public function __construct($host = 'localhost', $username = 'root', $password = 'concentrador', $db = 'miprimersponsor', $port = NULL, $charset = 'utf8')
     {
         $isSubQuery = false;
