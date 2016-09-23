@@ -28,8 +28,8 @@
                 $timeout(function () {
                     //vm.showHint = $scope.hint == 'true';
                     vm.showHint = true;
-                    vm.hint = $scope.recaudado + '/' + $scope.objetivo;
-                    vm.porcentaje = (parseFloat($scope.recaudado) * 100) / parseFloat($scope.objetivo);
+                    vm.hint = (parseFloat($scope.recaudado) - (parseFloat($scope.recaudado) * 0.18)) + '/' + $scope.objetivo;
+                    vm.porcentaje = ((parseFloat($scope.recaudado)) - (parseFloat($scope.recaudado) * 0.18) * 100) / parseFloat($scope.objetivo);
                     vm.toShow = parseInt((vm.porcentaje * 16) / 100);
                 }, 1000);
 
