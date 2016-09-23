@@ -25,8 +25,9 @@
             controller: function ($scope, $element, $attrs) {
                 var vm = this;
 
-                $timeout(function(){
-                    vm.showHint = $scope.hint == 'true';
+                $timeout(function () {
+                    //vm.showHint = $scope.hint == 'true';
+                    vm.showHint = true;
                     vm.hint = $scope.recaudado + '/' + $scope.objetivo;
                     vm.porcentaje = (parseFloat($scope.recaudado) * 100) / parseFloat($scope.objetivo);
                     vm.toShow = parseInt((vm.porcentaje * 16) / 100);
