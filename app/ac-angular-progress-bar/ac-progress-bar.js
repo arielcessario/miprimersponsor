@@ -25,13 +25,33 @@
             controller: function ($scope, $element, $attrs) {
                 var vm = this;
 
-                $timeout(function () {
-                    //vm.showHint = $scope.hint == 'true';
-                    vm.showHint = true;
-                    vm.hint = (parseFloat($scope.recaudado) - (parseFloat($scope.recaudado) * 0.18)) + '/' + $scope.objetivo;
-                    vm.porcentaje = ((parseFloat($scope.recaudado)) - (parseFloat($scope.recaudado) * 0.18) * 100) / parseFloat($scope.objetivo);
-                    vm.toShow = parseInt((vm.porcentaje * 16) / 100);
-                }, 1000);
+                data();
+
+                function data() {
+
+
+                    $timeout(function () {
+
+
+                        if ($scope.recaudado.length == 0 || $scope.objetivo.length == 0) {
+                            if ($scope.recaudado.length == 0) {
+                                $scope.recaudado = 0;
+                            }
+                            if ($scope.objetivo.length == 0) {
+                                $scope.objetivo = 0;
+                            }
+                            data();
+                            return;
+                        }
+                        vm.showHint = true;
+                        var rec = (parseFloat($scope.recaudado) - (parseFloat($scope.recaudado) * 0.18));
+                        vm.hint = '$'+ ((Math.round(rec * 100)) / 100) + '/ $' + $scope.objetivo;
+                        vm.porcentaje = ((parseFloat($scope.recaudado)) - (parseFloat($scope.recaudado) * 0.18) * 100) / parseFloat($scope.objetivo);
+                        vm.toShow = parseInt((vm.porcentaje * 16) / 100);
+
+                    }, 1000);
+
+                }
 
 
             },
