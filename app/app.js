@@ -332,13 +332,9 @@
                 return;
             }
 
-            console.log(UserService.getFromToken().data);
-            console.log(vm.user.data);
-
             vm.donacion = {
                 'proyecto_id': proyecto_id,
-                //'donador_id': vm.user.data.id,
-                'donador_id': 30,
+                'donador_id': vm.user.data.id,
                 'valor': cantidad,
                 'status': 0
             };
