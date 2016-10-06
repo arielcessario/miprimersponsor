@@ -16,7 +16,8 @@
         'acUploads',
         'acProgressBar',
         'acContacts',
-        'acAnimate'
+        'acAnimate',
+        'acHelper'
     ]).config(['$routeProvider', 'authProvider',
             function ($routeProvider, authProvider) {
 
@@ -176,9 +177,9 @@
     ;
 
     AppController.$inject = ['UserService', '$location', 'AppService', 'CategoryService', '$timeout', '$document', '$scope',
-        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService', '$window', 'MPService'];
+        'DonationService', 'AcUtils', 'ContactsService', 'ProyectService', '$window', 'MPService', 'HelperService'];
     function AppController(UserService, $location, AppService, CategoryService, $timeout, $document, $scope,
-                           DonationService, AcUtils, ContactsService, ProyectService, $window, MPService) {
+                           DonationService, AcUtils, ContactsService, ProyectService, $window, MPService, HelperService) {
 
 
         var vm = this;
@@ -331,10 +332,13 @@
                 return;
             }
 
+            console.log(UserService.getFromToken().data);
+            console.log(vm.user.data);
 
             vm.donacion = {
                 'proyecto_id': proyecto_id,
-                'donador_id': vm.user.data.id,
+                //'donador_id': vm.user.data.id,
+                'donador_id': 30,
                 'valor': cantidad,
                 'status': 0
             };
@@ -384,6 +388,17 @@
             //    AcUtils.showMessage('error', 'El usuario no completó el proceso de pago, no se ha generado ningún pago');
             //    return;
             //}
+
+            var helper_obj = {
+                donacion : vm.donacion,
+                item : vm.item
+            };
+
+            console.log(helper_obj);
+
+            HelperService.create(helper_obj).then(function(data){
+                console.log(data);
+            });
 
             DonationService.create(vm.donacion, function (data) {
 
