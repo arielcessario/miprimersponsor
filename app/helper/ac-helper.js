@@ -33,10 +33,11 @@
                     'data': JSON.stringify(data)
                 })
                 .then(function (data) {
-                    console.log(data);
+                    //console.log(data);
+                    console.log('ok');
                 })
                 .catch(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     console.log('error');
                 });
         }
